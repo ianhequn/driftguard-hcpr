@@ -1,0 +1,22 @@
+# Cloud image baseline:
+# Python 3.10.8
+# Keep the image-provided CUDA PyTorch; do not reinstall torch or the system CUDA.
+torch==2.1.2+cu118
+torchvision==0.16.2+cu118
+
+# Project runtime dependencies compatible with the image baseline.
+transformers==4.44.2
+accelerate==0.34.2
+opencv-python==4.10.0.84
+numpy==1.26.4
+scipy==1.14.1
+pandas==2.2.3
+scikit-learn==1.5.2
+matplotlib==3.7.5
+tqdm==4.67.1
+Pillow==11.1.0
+PyYAML==6.0.2
+einops==0.8.0
+tensorboard==2.18.0
+psutil==6.1.1
+pytest==8.3.5

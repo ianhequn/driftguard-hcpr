@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.coverage
+.venv/
+venv/
+
+# Local configuration and secrets
+.env
+.env.*
+
+# Model and dataset artifacts
+data/raw/*
+data/processed/*
+data/samples/*
+!data/samples/phase2/
+!data/samples/phase2/.gitkeep
+checkpoints/*
+*.pt
+*.pth
+*.safetensors
+*.bin
+
+# Generated experiment outputs
+outputs/*
+results/*
+!results/E01_temporal_redundancy/
+!results/E01_temporal_redundancy/*.csv
+!results/E01_temporal_redundancy/*.json
+figures/*
+!figures/E01_temporal_redundancy/
+!figures/E01_temporal_redundancy/*.png
+logs/*
+reports/*
+
+# Keep directory placeholders
+!.gitkeep
+
+# IDE and OS
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db

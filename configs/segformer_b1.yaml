@@ -1,0 +1,13 @@
+model:
+  name: nvidia/segformer-b1-finetuned-ade-512-512
+  backbone: segformer-b1
+  num_labels: 150
+  input_size: 512
+device: auto
+seed: 42
+inference:
+  batch_size: 1
+  output_hidden_states: false
+profiling:
+  warmup_iterations: 100
+  measured_iterations: 500

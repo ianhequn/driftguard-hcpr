@@ -1,0 +1,11 @@
+dataset:
+  name: UAVid
+  root: data/raw/UAVid
+  split: train
+  image_dir_names:
+    - Images
+    - images
+  mask_dir_names:
+    - Labels
+    - labels
+    - masks

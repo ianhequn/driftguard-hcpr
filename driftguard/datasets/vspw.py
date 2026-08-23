@@ -1,0 +1,143 @@
+"""VSPW loader skeleton with conservative directory discovery."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any, Callable
+
+from PIL import Image
+from torch.utils.data import Dataset
+
+
+DEFAULT_IMAGE_DIR_NAMES = ("origin", "images", "img")
+DEFAULT_MASK_DIR_NAMES = ("mask", "masks", "label", "labels")
+
+
+@dataclass(frozen=True)
+class VSPWSample:
+    video_id: str
+    frame_id: str
+    image_path: Path
+    mask_path: Path | None
+
+
+def _find_child(parent: Path, names: tuple[str, ...]) -> Path | None:
+    for name in names:
+        candidate = parent / name
+        if candidate.is_dir():
+            return candidate
+    return None
+
+
+def _image_files(directory: Path) -> list[Path]:
+    extensions = {".jpg", ".jpeg", ".png", ".bmp"}
+    return sorted(
+        path for path in directory.rglob("*") if path.is_file() and path.suffix.lower() in extensions
+    )
+
+
+def discover_vspw_samples(
+    root: str | Path,
+    split: str = "train",
+    image_dir_names: tuple[str, ...] = DEFAULT_IMAGE_DIR_NAMES,
+    mask_dir_names: tuple[str, ...] = DEFAULT_MASK_DIR_NAMES,
+) -> list[VSPWSample]:
+    root = Path(root)
+    split_root = root / split if (root / split).is_dir() else root
+    samples: list[VSPWSample] = []
+    for video_dir in sorted(path for path in split_root.iterdir() if path.is_dir()):
+        image_dir = _find_child(video_dir, image_dir_names)
+        if image_dir is None:
+            continue
+        mask_dir = _find_child(video_dir, mask_dir_names)
+        masks = {path.stem: path for path in _image_files(mask_dir)} if mask_dir else {}
+        for image_path in _image_files(image_dir):
+            samples.append(
+                VSPWSample(
+                    video_id=video_dir.name,
+                    frame_id=image_path.stem,
+                    image_path=image_path,
+                    mask_path=masks.get(image_path.stem),
+                )
+            )
+    return samples
+
+
+def inspect_vspw_structure(root: str | Path, split: str = "train") -> dict[str, Any]:
+    root = Path(root)
+    split_root = root / split if (root / split).is_dir() else root
+    exists = root.is_dir()
+    videos = []
+    if exists:
+        for video_dir in sorted(path for path in split_root.iterdir() if path.is_dir()):
+            image_dir = _find_child(video_dir, DEFAULT_IMAGE_DIR_NAMES)
+            mask_dir = _find_child(video_dir, DEFAULT_MASK_DIR_NAMES)
+            videos.append(
+                {
+                    "video_id": video_dir.name,
+                    "image_dir": str(image_dir) if image_dir else None,
+                    "mask_dir": str(mask_dir) if mask_dir else None,
+                    "image_count": len(_image_files(image_dir)) if image_dir else 0,
+                    "mask_count": len(_image_files(mask_dir)) if mask_dir else 0,
+                }
+            )
+    samples = discover_vspw_samples(root, split=split) if exists else []
+    return {
+        "root": str(root),
+        "split": split,
+        "exists": exists,
+        "split_root": str(split_root),
+        "video_count": len(videos),
+        "sample_count": len(samples),
+        "videos": videos,
+        "warnings": (
+            []
+            if samples
+            else [
+                "No image samples were discovered. Check the root, split, and "
+                "origin/mask directory names."
+            ]
+        ),
+    }
+
+
+class VSPWDataset(Dataset):
+    """A minimal frame-level VSPW dataset.
+
+    Each item returns a dictionary with a PIL RGB image, an optional PIL mask,
+    and identifiers needed by later temporal experiments.
+    """
+
+    def __init__(
+        self,
+        root: str | Path,
+        split: str = "train",
+        transform: Callable | None = None,
+        require_masks: bool = False,
+    ) -> None:
+        self.root = Path(root)
+        self.split = split
+        self.transform = transform
+        self.samples = discover_vspw_samples(self.root, split=split)
+        if require_masks:
+            self.samples = [sample for sample in self.samples if sample.mask_path is not None]
+
+    def __len__(self) -> int:
+        return len(self.samples)
+
+    def __getitem__(self, index: int) -> dict[str, Any]:
+        sample = self.samples[index]
+        image = Image.open(sample.image_path).convert("RGB")
+        mask = Image.open(sample.mask_path) if sample.mask_path else None
+        item: dict[str, Any] = {
+            "image": image,
+            "mask": mask,
+            "video_id": sample.video_id,
+            "frame_id": sample.frame_id,
+            "image_path": str(sample.image_path),
+            "mask_path": str(sample.mask_path) if sample.mask_path else None,
+        }
+        if self.transform is not None:
+            item = self.transform(item)
+        return item

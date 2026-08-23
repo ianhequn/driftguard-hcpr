@@ -1,0 +1,13 @@
+dataset:
+  name: VSPW
+  root: data/raw/VSPW
+  split: train
+  image_dir_names:
+    - origin
+    - images
+    - img
+  mask_dir_names:
+    - mask
+    - masks
+    - label
+    - labels
