@@ -1,0 +1,5 @@
+feature,target,num_samples,pearson,spearman
+feature_drift,kl_divergence,645,0.727670094361563,0.8758999210556051
+feature_drift,pixel_disagreement_ratio,645,0.5962002689584963,0.6907984424840431
+feature_drift,logit_relative_l2,645,0.95123791837959,0.9622675007403431
+feature_drift,motion_residual,645,0.687035305451526,0.7426565792204712

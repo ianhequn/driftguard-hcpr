@@ -1,0 +1,7 @@
+{
+  "person-bicycle-car-detection": "train",
+  "one-by-one-person-detection": "train",
+  "people-detection": "train",
+  "car-detection": "val",
+  "bottle-detection": "test"
+}

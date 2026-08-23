@@ -1,0 +1,2 @@
+model,device,input_size,warmup_iterations,measured_iterations,mean_latency_ms,median_latency_ms,p95_latency_ms,p99_latency_ms,fps,peak_vram_mb,timing_backend
+nvidia/segformer-b0-finetuned-ade-512-512,cpu,512,100,500,157.65926020150073,155.18759994301945,180.78725499217398,199.38670799834654,6.342792670230233,0.0,perf_counter_cpu

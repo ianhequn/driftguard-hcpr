@@ -1,0 +1,13 @@
+{
+  "videos": [
+    "bottle-detection",
+    "car-detection",
+    "one-by-one-person-detection",
+    "people-detection",
+    "person-bicycle-car-detection"
+  ],
+  "video_count": 5,
+  "frames_per_video": 32,
+  "device": "cuda",
+  "runtime_sec": 540.3865428869613
+}

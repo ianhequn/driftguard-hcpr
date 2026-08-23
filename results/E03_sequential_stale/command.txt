@@ -1,0 +1,1 @@
+scripts/analyze_sequential_stale.py --video-dir data/real_videos --model /root/autodl-tmp/models/segformer-b0 --max-frames 32 --offsets 1 2 4 8 16 --device cuda --output-root results/E03_sequential_stale

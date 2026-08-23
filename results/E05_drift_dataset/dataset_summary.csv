@@ -1,0 +1,4 @@
+split,video_count,sample_count,mean_feature_drift,p90_feature_drift,videos
+train,3,6192,0.1566838175058365,0.3824484497308732,"one-by-one-person-detection,people-detection,person-bicycle-car-detection"
+val,1,2064,0.12128575146198273,0.16595320254564286,car-detection
+test,1,2064,0.11229953914880753,0.20090887993574144,bottle-detection

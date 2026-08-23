@@ -1,0 +1,21 @@
+{
+  "video": "D:\\DriftGuard\\data\\samples\\synthetic_video.mp4",
+  "video_id": "synthetic_video",
+  "frames_requested": 3,
+  "frames_processed": 3,
+  "resolution": "320x240",
+  "source_fps": 10.0,
+  "model": "nvidia/segformer-b0-finetuned-ade-512-512",
+  "device": "cpu",
+  "offsets": [
+    1,
+    2
+  ],
+  "block_grid": 4,
+  "total_analysis_time_sec": 0.9870497999945655,
+  "per_frame_feature_extraction_time_ms": 262.7207999660944,
+  "buffer_max_size": 3,
+  "buffer_peak_size": 3,
+  "pair_count": 12,
+  "block_metric_count": 192
+}

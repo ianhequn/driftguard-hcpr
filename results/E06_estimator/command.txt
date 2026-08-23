@@ -1,0 +1,1 @@
+scripts/train_drift_estimator.py --dataset-root results/E05_drift_dataset --output-root results/E06_estimator --device cuda --epochs 100 --patience 10 --batch-size 256 --seed 42

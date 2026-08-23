@@ -1,0 +1,7 @@
+[
+  "local_residual",
+  "cache_age",
+  "previous_entropy",
+  "global_residual",
+  "local_variance"
+]

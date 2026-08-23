@@ -1,0 +1,1 @@
+scripts/train_drift_estimator.py --dataset-root results/E05_drift_dataset --output-root results/E06_estimator_rev3 --device cuda --epochs 100 --patience 10 --batch-size 256 --target-transform identity --target-clip-percentile 100 --feature-revision interactions --seed 42

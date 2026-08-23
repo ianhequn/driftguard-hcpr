@@ -1,0 +1,26 @@
+{
+  "feature_columns": [
+    "local_residual",
+    "cache_age",
+    "previous_entropy",
+    "global_residual",
+    "local_variance"
+  ],
+  "mean": [
+    0.006514545995742083,
+    5.046511650085449,
+    0.10013125091791153,
+    0.006514566019177437,
+    0.0004058553313370794
+  ],
+  "std": [
+    0.01026682648807764,
+    4.7786102294921875,
+    0.08482043445110321,
+    0.005184724926948547,
+    0.001342929434031248
+  ],
+  "target_transform": "identity",
+  "target_clip_percentile": 95.0,
+  "target_clip_value": 0.45635114163160323
+}

@@ -1,0 +1,5 @@
+video_dir: data/real_videos
+model: /root/autodl-tmp/models/segformer-b0
+max_frames: 32
+offsets: [1, 2, 4, 8, 16]
+device: cuda

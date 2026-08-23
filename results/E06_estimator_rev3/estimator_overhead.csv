@@ -1,0 +1,2 @@
+device,batch_size,mean_latency_ms,p95_latency_ms,p99_latency_ms,per_sample_mean_ms,parameters
+cuda,16,0.1890605436861515,0.20769759416580197,0.23451647743582724,0.011816283980384468,833

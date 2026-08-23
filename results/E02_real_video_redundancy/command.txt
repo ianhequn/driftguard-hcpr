@@ -1,0 +1,1 @@
+scripts/analyze_real_videos.py --video-dir data/real_videos --model /root/autodl-tmp/models/segformer-b0 --max-frames 32 --offsets 1 2 4 8 16 --block-grids 4 8 --device cuda --output-root results/E02_real_video_redundancy

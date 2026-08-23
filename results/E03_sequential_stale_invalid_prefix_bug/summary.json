@@ -1,0 +1,13 @@
+{
+  "video_count": 5,
+  "frames_per_video": 32,
+  "row_count": 2580,
+  "runtime_sec": 47.35307936836034,
+  "resolution": {
+    "bottle-detection": "640x360",
+    "car-detection": "768x432",
+    "one-by-one-person-detection": "768x432",
+    "people-detection": "768x432",
+    "person-bicycle-car-detection": "768x432"
+  }
+}

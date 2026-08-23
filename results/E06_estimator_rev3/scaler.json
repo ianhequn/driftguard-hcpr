@@ -1,0 +1,36 @@
+{
+  "feature_columns": [
+    "local_residual",
+    "cache_age",
+    "previous_entropy",
+    "global_residual",
+    "local_variance",
+    "local_residual_x_age",
+    "global_residual_x_age",
+    "log1p_age"
+  ],
+  "mean": [
+    0.006514545995742083,
+    5.046511650085449,
+    0.10013125091791153,
+    0.006514566019177437,
+    0.0004058553313370794,
+    0.047825440764427185,
+    0.04782559722661972,
+    1.5315988063812256
+  ],
+  "std": [
+    0.01026682648807764,
+    4.7786102294921875,
+    0.08482043445110321,
+    0.005184724926948547,
+    0.001342929434031248,
+    0.11110556125640869,
+    0.0702783465385437,
+    0.7116315364837646
+  ],
+  "target_transform": "identity",
+  "target_clip_percentile": 100.0,
+  "target_clip_value": null,
+  "feature_revision": "interactions"
+}

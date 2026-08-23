@@ -1,0 +1,8 @@
+dataset_root: results/E05_drift_dataset
+device: cuda
+epochs: 100
+patience: 10
+batch_size: 256
+target_transform: identity
+target_clip_percentile: 100.0
+feature_revision: interactions

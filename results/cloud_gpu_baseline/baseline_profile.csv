@@ -1,0 +1,2 @@
+model,device,input_size,warmup_iterations,measured_iterations,mean_latency_ms,median_latency_ms,p95_latency_ms,p99_latency_ms,fps,peak_vram_mb,timing_backend
+/root/autodl-tmp/models/segformer-b0,cuda,512,100,500,21.266226779937742,20.755456924438477,24.094873428344723,29.182822570800777,47.022916211134635,301.3466796875,cuda_event

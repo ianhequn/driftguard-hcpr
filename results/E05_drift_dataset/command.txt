@@ -1,0 +1,1 @@
+scripts/generate_drift_dataset.py --video-dir data/real_videos --model /root/autodl-tmp/models/segformer-b0 --cut 4 --max-frames 32 --ages 1 2 4 8 16 32 --block-grid 4 --device cuda --output-root results/E05_drift_dataset
