@@ -1,16 +1,29 @@
 {
   "round": 3,
-  "status": "running",
+  "status": "completed",
   "start_date": "2026-08-24",
+  "completion_date": "2026-08-24",
   "frozen_predictor": "TinyRiskCNN Patch+Age",
   "baseline": "Age",
-  "afvt_complete": false,
-  "magvr_complete": false,
-  "scientific_result": null,
-  "algorithm_winner": null,
-  "deployment_readiness": null,
+  "afvt_complete": true,
+  "magvr_complete": true,
+  "scientific_result": "STRONG GO",
+  "algorithm_winner": "AFVT",
+  "deployment_readiness": "ALGORITHM LOCKED - PIPELINE OPTIMIZATION REQUIRED",
   "test_configuration_frozen": true,
   "frozen_magvr_rule": "Amax = ceil(16 / K) - 1",
   "validation_sweep_used": false,
-  "test_set_tuning": false
+  "test_set_tuning": false,
+  "formal_test_runs": 1,
+  "formal_policy_frame_rows": 5076,
+  "tests_passed": 19,
+  "secondary_metric_warning_budgets": [
+    0.375
+  ],
+  "selector_ms_at_37_5": {
+    "afvt": 38.40393970999867,
+    "magvr": 39.58173483237624
+  },
+  "next_step": "GPU-Resident Selector Pipeline Optimization",
+  "partial_computation_authorized": false
 }
