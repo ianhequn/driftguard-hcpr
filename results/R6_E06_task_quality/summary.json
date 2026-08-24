@@ -1,0 +1,12 @@
+{
+  "test_videos": [
+    "asl_brother",
+    "asl_milk",
+    "asl_school"
+  ],
+  "aggregation": "max",
+  "visual_threshold": -2.2600908279418945,
+  "stage_age_visual_max_age": 5,
+  "frames": 1296,
+  "quality_only_clean_process": true
+}
