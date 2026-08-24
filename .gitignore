@@ -56,6 +56,10 @@ reports/*
 !reports/round6_progress.md
 !reports/round6_stage_reuse_audit.md
 !reports/round6_final_report.md
+!reports/round7_state.json
+!reports/round7_progress.md
+!reports/round7_dataset_audit.md
+!reports/round7_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
@@ -210,6 +214,29 @@ results/R6_*/*.npy
 results/R6_*/*.npz
 results/R6_*/*.pickle
 results/R6_*/*.pkl
+
+# Round 7 lightweight dataset-gate artifacts
+!results/R7_*/
+!results/R7_*/*.csv
+!results/R7_*/*.json
+!results/R7_*/*.yaml
+!results/R7_*/*.txt
+!results/R7_*/*.md
+!results/R7_*/*.png
+
+# Keep any future Round 7 dataset material and raw dumps out of Git
+results/R7_*/raw/
+results/R7_*/*.tar
+results/R7_*/*.tar.gz
+results/R7_*/*.zip
+results/R7_*/*.mp4
+results/R7_*/*.avi
+results/R7_*/*.jpg
+results/R7_*/*.jpeg
+results/R7_*/*.png
+results/R7_*/*.npy
+results/R7_*/*.npz
+results/R7_*/*.pt
 
 # Keep directory placeholders
 !.gitkeep

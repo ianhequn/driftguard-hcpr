@@ -1,0 +1,19 @@
+Official source inspected:
+VSPW-dataset/VSPW-dataset-download
+
+Repository commit:
+dd0acea3836074dd282d55cc386477268a6a5ecf
+
+Source files inspected:
+- README.md
+- vspw_videolist.txt
+- video_download.sh
+- download_hd.py
+
+The official README reports:
+- a full VSPW package of approximately 43 GB
+- a separate official 480P package
+- mask values 0..124 and 255
+- 0 and 255 treated as void during evaluation
+
+No dataset archive was retained in this repository.

@@ -1,0 +1,19 @@
+{
+  "round": 7,
+  "status": "completed",
+  "task": "formal_ground_truth_video_segmentation_benchmark",
+  "model": "frozen SegFormer-B0",
+  "reuse_mode": "whole_stage4_final_f4",
+  "primary_policy": "FixedInterval-2",
+  "dataset": "VSPW",
+  "split": null,
+  "label_space_status": "INCOMPATIBLE",
+  "dataset_access_status": "BLOCKED",
+  "full_miou": null,
+  "fi2_miou": null,
+  "fi2_miou_drop": null,
+  "fi2_speedup": null,
+  "final_decision": "ROUND 7 = MODEL-DATASET COMPATIBILITY NO-GO",
+  "ground_truth_validated_speedup": false,
+  "reason": "VSPW is not installed or downloadable in the current environment, and the frozen ADE20K-150 checkpoint has no verified complete mapping to VSPW's normalized 124-class label space."
+}
