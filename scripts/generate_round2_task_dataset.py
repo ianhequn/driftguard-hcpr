@@ -33,7 +33,7 @@ from driftguard.utils.common import choose_device, set_seed  # noqa: E402
 from driftguard.utils.video import iter_video_frames  # noqa: E402
 
 
-AGES = (1, 2, 4, 8, 16)
+DEFAULT_AGES = (1, 2, 4, 8, 16)
 
 
 def _patches(current: np.ndarray, reference: np.ndarray, grid: int, size: int) -> np.ndarray:
@@ -97,6 +97,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model", default="nvidia/segformer-b0-finetuned-ade-512-512")
     parser.add_argument("--output-root", default="results/R2_E01_task_damage_dataset")
     parser.add_argument("--frames", type=int, default=48)
+    parser.add_argument("--min-frames", type=int, default=32)
+    parser.add_argument("--ages", type=int, nargs="+", default=list(DEFAULT_AGES))
+    parser.add_argument("--max-videos", type=int, default=None)
     parser.add_argument("--patch-size", type=int, default=16)
     parser.add_argument("--block-grid", type=int, default=4)
     parser.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
@@ -110,13 +113,17 @@ def main() -> None:
     device = choose_device(args.device)
     if args.block_grid != 4:
         raise ValueError("Round 2 main experiment fixes block-grid=4")
+    ages = tuple(sorted({int(value) for value in args.ages}))
+    if not ages or any(value <= 0 for value in ages):
+        raise ValueError("--ages must contain positive integers")
     inventory = _write_inventory(PROJECT_ROOT / args.inventory)
+    if args.max_videos is not None:
+        inventory = inventory[: args.max_videos]
     output_root = PROJECT_ROOT / args.output_root
     shard_root = output_root / "shards"
     shard_root.mkdir(parents=True, exist_ok=True)
     processor, model = load_segformer(args.model, device=device)
     start = time.perf_counter()
-    all_damage_train = []
     completed = []
 
     for record in inventory:
@@ -127,8 +134,8 @@ def main() -> None:
             continue
         video_path = PROJECT_ROOT / record["path"]
         frames = list(iter_video_frames(video_path, max_frames=args.frames))
-        if len(frames) < 32:
-            raise RuntimeError(f"{video_id}: only {len(frames)} frames")
+        if len(frames) < args.min_frames:
+            raise RuntimeError(f"{video_id}: only {len(frames)} frames, need {args.min_frames}")
         frame_rgb_by_id = {frame_id: frame for frame_id, frame in frames}
         features_by_id: dict[int, list[torch.Tensor]] = {}
         logits_by_id: dict[int, torch.Tensor] = {}
@@ -147,7 +154,7 @@ def main() -> None:
                 full_logits = decode_features(model, current_features).detach()
             features_by_id[frame_id] = current_features
             logits_by_id[frame_id] = full_logits
-            for age in AGES:
+            for age in ages:
                 reference_id = frame_id - age
                 if reference_id not in features_by_id:
                     continue
@@ -206,7 +213,7 @@ def main() -> None:
                         }
                     )
             for old_id in list(features_by_id):
-                if old_id < frame_id - max(AGES):
+                if old_id < frame_id - max(ages):
                     features_by_id.pop(old_id, None)
                     logits_by_id.pop(old_id, None)
                     frame_rgb_by_id.pop(old_id, None)
@@ -229,8 +236,6 @@ def main() -> None:
             block_index=np.asarray([row["block_index"] for row in rows], dtype=np.int32),
         )
         completed.append(video_id)
-        if record["split"] == "train":
-            all_damage_train.extend(float(row["task_damage"]) for row in rows)
         print(f"completed {video_id}: samples={len(rows)}", flush=True)
 
     train_values = []
@@ -280,7 +285,7 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(summary_rows)
     (output_root / "config.yaml").write_text(
-        f"video_dir: {args.video_dir}\nframes: {args.frames}\nages: {list(AGES)}\n"
+        f"video_dir: {args.video_dir}\nframes: {args.frames}\nages: {list(ages)}\n"
         f"block_grid: {args.block_grid}\npatch_size: {args.patch_size}\ndevice: {device}\n",
         encoding="utf-8",
     )

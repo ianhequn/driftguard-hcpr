@@ -15,7 +15,8 @@ download() {
     return
   fi
   echo "[download] $name"
-  wget -c --tries=5 --waitretry=5 -O "$name" "$url"
+  wget -c --tries=5 --waitretry=5 -O "$name.part" "$url"
+  mv "$name.part" "$name"
 }
 
 # Five clips were used in Round 1 and are retained. These additional clips
@@ -43,5 +44,5 @@ for name in again bird book brother eat help hungry learn milk night no please s
   download "asl_${name}.mkv" "$BASE/asl_gestures/${name}.mkv"
 done
 
-rm -f classroom.mp4.partial
+rm -f classroom.mp4.partial classroom.mp4.part
 ls -lh

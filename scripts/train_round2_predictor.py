@@ -208,7 +208,7 @@ def _predict(model, values, mean, std, device, batch_size=512) -> np.ndarray:
 def _benchmark(model, patch, metadata, mean, std, device) -> list[dict]:
     model.eval()
     rows = []
-    for batch_size, count in ((1, 1), (16, 16), (16, 16)):
+    for mode, count in (("batch_1", 1), ("batch_16", 16), ("all_16_blocks", 16)):
         batch_patch = torch.from_numpy(np.tile(patch[:1], (count, 1, 1, 1))).to(device)
         batch_metadata = torch.from_numpy(np.tile(((metadata[:1] - mean) / std), (count, 1))).to(device)
         for _ in range(10):
@@ -231,13 +231,16 @@ def _benchmark(model, patch, metadata, mean, std, device) -> list[dict]:
                 timings.append((time.perf_counter() - start) * 1000.0)
         rows.append(
             {
-                "batch_size": batch_size if count == 1 else 16,
+                "mode": mode,
+                "batch_size": count,
                 "count": count,
                 "mean_ms": float(np.mean(timings)),
                 "median_ms": float(np.median(timings)),
                 "p95_ms": float(np.quantile(timings, 0.95)),
                 "p99_ms": float(np.quantile(timings, 0.99)),
-                "risk_per_frame_mean_ms": float(np.mean(timings) if count == 16 else np.mean(timings) * 16),
+                "risk_per_frame_mean_ms": float(
+                    np.mean(timings) if mode == "all_16_blocks" else np.mean(timings) * 16
+                ),
             }
         )
     return rows
@@ -310,7 +313,8 @@ def main() -> None:
         old_mean = np.asarray(checkpoint["mean"], dtype=np.float32)
         old_std = np.asarray(checkpoint["std"], dtype=np.float32)
         old_std[old_std < 1e-8] = 1.0
-        old_features = (test["metadata"] - old_mean) / old_std
+        old_order = test["metadata"][:, [3, 0, 1, 2, 4]]
+        old_features = (old_order - old_mean) / old_std
         with torch.inference_mode():
             old_score = old(torch.from_numpy(old_features)).numpy()
         old_score = (old_score - old_score.min()) / max(1e-8, old_score.max() - old_score.min())
