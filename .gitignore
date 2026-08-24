@@ -52,6 +52,10 @@ reports/*
 !reports/round5_compute_economics.md
 !reports/round5_stage4_dependency_audit.md
 !reports/round5_final_report.md
+!reports/round6_state.json
+!reports/round6_progress.md
+!reports/round6_stage_reuse_audit.md
+!reports/round6_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
@@ -189,6 +193,23 @@ results/R5_*/*.npy
 results/R5_*/*.npz
 results/R5_*/*.pickle
 results/R5_*/*.pkl
+
+# Round 6 lightweight structured-reuse artifacts
+!results/R6_*/
+!results/R6_*/*.csv
+!results/R6_*/*.json
+!results/R6_*/*.yaml
+!results/R6_*/*.txt
+!results/R6_*/*.md
+!results/R6_*/*.png
+
+# Keep large Round 6 tensors and traces out of Git
+results/R6_*/raw/
+results/R6_*/*.pt
+results/R6_*/*.npy
+results/R6_*/*.npz
+results/R6_*/*.pickle
+results/R6_*/*.pkl
 
 # Keep directory placeholders
 !.gitkeep
