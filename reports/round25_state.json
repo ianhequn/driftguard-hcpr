@@ -1,0 +1,29 @@
+{
+  "round": 2.5,
+  "status": "completed",
+  "completion_date": "2026-08-24",
+  "videos": 3,
+  "test_videos": [
+    "asl_brother",
+    "asl_milk",
+    "asl_school"
+  ],
+  "motion_coverage": [
+    "high",
+    "low",
+    "medium"
+  ],
+  "random_seeds": 50,
+  "simulator_audit": "corrected",
+  "tests_passed": 8,
+  "best_learned_candidate": "CNN Patch+Age",
+  "final_selector": "Marginal / No Clear Winner",
+  "selector_decision_locked": true,
+  "production_selector_locked": false,
+  "scientific_conclusion": "MARGINAL / MORE SCIENTIFIC WORK REQUIRED",
+  "real_partial_computation_authorized": false,
+  "next_hypotheses_only": [
+    "Age Prior + Visual Risk Correction",
+    "Age-Aware Cache Lifetime"
+  ]
+}

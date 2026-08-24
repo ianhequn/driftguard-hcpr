@@ -37,10 +37,33 @@ reports/*
 !reports/round2_state.json
 !reports/round2_progress.md
 !reports/round2_final_report.md
+!reports/round25_state.json
+!reports/round25_progress.md
+!reports/round25_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
 !results/R2_*/*
+
+# Round 2.5 lightweight audit, tables, and figures
+!results/R25_*/
+!results/R25_E00_simulator_audit/*
+!results/R25_E01_selector_closure/main_refresh_table.csv
+!results/R25_E01_selector_closure/per_video_results.csv
+!results/R25_E01_selector_closure/motion_conditioned.csv
+!results/R25_E01_selector_closure/corrected_summary.csv
+!results/R25_E01_selector_closure/refresh_budget_vs_task_damage.png
+!results/R25_E02_selector_diagnostics/selector_quality.csv
+!results/R25_E02_selector_diagnostics/age_diagnostic.csv
+!results/R25_E02_selector_diagnostics/bootstrap_comparisons.csv
+!results/R25_E02_selector_diagnostics/bootstrap_vs_age.csv
+!results/R25_E02_selector_diagnostics/decision.json
+!results/R25_E02_selector_diagnostics/age_vs_task_damage.png
+!results/R25_E02_selector_diagnostics/oracle_overlap_by_policy.png
+!results/R25_E03_selector_profiling/selector_overhead.csv
+!results/R25_E03_selector_profiling/selector_complexity.csv
+!results/R25_E03_selector_profiling/selector_overhead_vs_damage.png
+!results/R25_E03_selector_profiling/model_only_recheck.txt
 
 # Keep directory placeholders
 !.gitkeep
