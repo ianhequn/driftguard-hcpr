@@ -1,0 +1,5 @@
+artifact,source,author,official,url,access_date,checksum,notes
+vspw_dataset_download_repository,VSPW-dataset/VSPW-dataset-download,VSPW dataset organization,yes,https://github.com/VSPW-dataset/VSPW-dataset-download,2026-08-24,dd0acea3836074dd282d55cc386477268a6a5ecf,Official download metadata and mask semantics
+vspw_baseline_repository,VSPW-dataset/VSPW_baseline,VSPW dataset organization,yes,https://github.com/VSPW-dataset/VSPW_baseline,2026-08-24,2dcd3fc04ca44d6ff2a3a9b9e4cd9da4ed5e6f30,Official baseline code; no VSPW checkpoint found
+vspw_code_repository,VSPW-dataset/VSPW_code,VSPW dataset organization,yes,https://github.com/VSPW-dataset/VSPW_code,2026-08-24,73b98ceb92cd9639da210da14f1bb0e02946f846,Official evaluation repository; no public checkpoint found
+community_implementation,sssdddwww2/CVPR2021_VSPW_Implement,community maintainer,no,https://github.com/sssdddwww2/CVPR2021_VSPW_Implement,2026-08-24,3ead088804fe34d3b826b656e026d50562a3f7bd,Secondary code reference; no verified checkpoint

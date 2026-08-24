@@ -1,0 +1,12 @@
+{
+  "candidates_found": 5,
+  "valid_checkpoints": 0,
+  "vspw_trained": 0,
+  "segformer_candidates": 0,
+  "selected_candidate": null,
+  "selection_reason": "No candidate passed checkpoint, explicit VSPW training provenance, exact taxonomy order, and loadability gates.",
+  "official_repositories_audited": 4,
+  "public_reimplementations_audited": 1,
+  "model_search_status": "COMPLETED_WITHOUT_VALID_CHECKPOINT",
+  "training_fallback": "REQUIRED_IF_DATASET_IS_RECOVERED_AND_NO_CHECKPOINT_APPEARS"
+}

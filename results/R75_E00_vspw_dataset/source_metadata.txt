@@ -1,0 +1,23 @@
+Official repository:
+VSPW-dataset/VSPW-dataset-download
+
+Repository head:
+dd0acea3836074dd282d55cc386477268a6a5ecf
+
+Official package options:
+- full VSPW package, approximately 43 GB
+- separate VSPW 480P package
+
+Official metadata:
+- extracted RGB frames and ground-truth masks
+- vspw_videolist.txt
+- official frame extraction scripts
+- no checksum found in audited README
+- no explicit license file found in audited repositories
+
+Preferred target:
+/root/autodl-tmp/DriftGuard/data/raw/VSPW
+
+Current status:
+package not acquired
+dataset status BLOCKED

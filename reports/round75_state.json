@@ -1,0 +1,22 @@
+{
+  "round": "7.5",
+  "status": "completed",
+  "task": "vspw_dataset_and_compatible_model_recovery",
+  "dataset": "VSPW",
+  "dataset_status": "BLOCKED",
+  "dataset_source": "VSPW-dataset/VSPW-dataset-download",
+  "dataset_split_verified": false,
+  "label_semantics_verified": false,
+  "model_search_completed": true,
+  "valid_model_candidates": [],
+  "selected_model": null,
+  "selected_model_num_classes": null,
+  "class_alignment_verified": false,
+  "structured_reuse_compatibility": "MAJOR ADAPTATION for config-only MPVSS; UNKNOWN for selected model",
+  "model_status": "NOT FOUND",
+  "benchmark_readiness": "NOT READY",
+  "final_decision": "ROUND 7.5 = COMPATIBILITY RECOVERY BLOCKED",
+  "manual_download_required": true,
+  "training_executed": false,
+  "temporal_reuse_executed": false
+}

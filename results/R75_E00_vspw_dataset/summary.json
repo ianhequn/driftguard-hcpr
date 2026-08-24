@@ -1,0 +1,19 @@
+{
+  "round": "7.5",
+  "experiment": "vspw_dataset_recovery",
+  "dataset": "VSPW",
+  "source": "VSPW-dataset/VSPW-dataset-download",
+  "download_status": "BLOCKED",
+  "root": "/root/autodl-tmp/DriftGuard/data/raw/VSPW",
+  "package": "official 480P package",
+  "total_size_gb": null,
+  "num_videos": null,
+  "num_frames": null,
+  "num_masks": null,
+  "num_classes": 124,
+  "ignore_index": 255,
+  "split_status": "NOT VERIFIED",
+  "manifest_status": "NOT CREATED - package absent",
+  "annotation_semantics_status": "README VERIFIED, REAL MASKS NOT VERIFIED",
+  "decision": "DATASET STATUS = BLOCKED"
+}

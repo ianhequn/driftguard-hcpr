@@ -1,0 +1,4 @@
+status=UNVERIFIED
+verified_rows=0
+required_rows=124
+reason=No selected checkpoint with explicit VSPW class order exists.

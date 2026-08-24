@@ -1,0 +1,14 @@
+{
+  "selected_model": null,
+  "config_only_reference": "ziplab/MPVSS",
+  "status": "CONFIG_ONLY_NOT_SELECTED",
+  "num_classes": 124,
+  "ignore_value": 255,
+  "stage_channels": "Mask2Former backbone-dependent; not a SegFormer F1-F4 contract",
+  "stage_depths": null,
+  "stage_output_shapes": null,
+  "stage4_token_resolution": null,
+  "decoder_inputs": "multi_scale_pixel_decoder res2/res3/res4/res5",
+  "final_stage4_tensor_shape": null,
+  "structured_reuse_compatibility": "MAJOR ADAPTATION"
+}

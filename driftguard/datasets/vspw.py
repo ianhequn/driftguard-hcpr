@@ -14,6 +14,16 @@ DEFAULT_IMAGE_DIR_NAMES = ("origin", "images", "img")
 DEFAULT_MASK_DIR_NAMES = ("mask", "masks", "label", "labels")
 
 
+def normalize_vspw_mask(mask):
+    """Apply the official VSPW void/class-id normalization rule."""
+
+    normalized = mask.copy()
+    normalized[normalized == 0] = 255
+    normalized = normalized - 1
+    normalized[normalized == 254] = 255
+    return normalized
+
+
 @dataclass(frozen=True)
 class VSPWSample:
     video_id: str

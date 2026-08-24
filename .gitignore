@@ -60,6 +60,13 @@ reports/*
 !reports/round7_progress.md
 !reports/round7_dataset_audit.md
 !reports/round7_final_report.md
+!reports/round75_state.json
+!reports/round75_progress.md
+!reports/round75_vspw_source_audit.md
+!reports/round75_model_discovery.md
+!reports/round75_model_compatibility.md
+!reports/round75_training_requirement.md
+!reports/round75_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
@@ -237,6 +244,31 @@ results/R7_*/*.png
 results/R7_*/*.npy
 results/R7_*/*.npz
 results/R7_*/*.pt
+
+# Round 7.5 lightweight recovery and compatibility artifacts
+!results/R75_*/
+!results/R75_*/*.csv
+!results/R75_*/*.json
+!results/R75_*/*.yaml
+!results/R75_*/*.txt
+!results/R75_*/*.md
+!results/R75_*/*.log
+
+# Keep dataset archives, frames, and model weights out of Git
+results/R75_*/raw/
+results/R75_*/*.tar
+results/R75_*/*.tar.gz
+results/R75_*/*.zip
+results/R75_*/*.mp4
+results/R75_*/*.avi
+results/R75_*/*.jpg
+results/R75_*/*.jpeg
+results/R75_*/*.png
+results/R75_*/*.npy
+results/R75_*/*.npz
+results/R75_*/*.pt
+results/R75_*/*.pth
+results/R75_*/*.safetensors
 
 # Keep directory placeholders
 !.gitkeep

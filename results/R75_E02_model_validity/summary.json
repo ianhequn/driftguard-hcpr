@@ -1,0 +1,11 @@
+{
+  "checkpoint_load": false,
+  "num_classes": null,
+  "training_dataset": null,
+  "class_order_verified": false,
+  "forward_smoke": false,
+  "prediction_range": null,
+  "reuse_architecture_compatibility": "MAJOR ADAPTATION for config-only MPVSS; UNKNOWN for selected model",
+  "valid_candidate": null,
+  "reason": "No public VSPW-compatible checkpoint was verified."
+}

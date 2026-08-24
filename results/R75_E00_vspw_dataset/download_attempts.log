@@ -1,0 +1,19 @@
+2026-08-24T17:25:41+08:00
+source=https://drive.google.com/uc?export=download&id=1rRujAmy3mzYqI0NjrdyVANDfrnFnBEp1
+package=official VSPW 480P package
+method=wget --spider --timeout=20 --tries=1
+target=/root/autodl-tmp/DriftGuard/data/raw/VSPW
+result=FAILED
+detail=HTTPS connection to drive.google.com timed out; IPv6 fallback could not assign requested address
+attempts=1
+
+2026-08-24T17:26:00+08:00
+source=https://drive.google.com/uc?export=download&id=1rRujAmy3mzYqI0NjrdyVANDfrnFnBEp1
+package=official VSPW 480P package
+method=curl -I -L --max-time 30
+target=/root/autodl-tmp/DriftGuard/data/raw/VSPW
+result=FAILED
+detail=no response within bounded timeout
+attempts=1
+
+manual_download_required=true
