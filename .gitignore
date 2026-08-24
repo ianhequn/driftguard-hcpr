@@ -47,6 +47,11 @@ reports/*
 !reports/round4_progress.md
 !reports/round4_pipeline_audit.md
 !reports/round4_final_report.md
+!reports/round5_state.json
+!reports/round5_progress.md
+!reports/round5_compute_economics.md
+!reports/round5_stage4_dependency_audit.md
+!reports/round5_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
@@ -167,6 +172,23 @@ results/R4_*/raw/
 results/R4_*/*.pt
 results/R4_*/*.npy
 results/R4_*/*.npz
+
+# Round 5 lightweight audits, tables, figures, and run metadata
+!results/R5_*/
+!results/R5_*/*.csv
+!results/R5_*/*.json
+!results/R5_*/*.yaml
+!results/R5_*/*.txt
+!results/R5_*/*.md
+!results/R5_*/*.png
+
+# Keep large Round 5 traces and feature dumps out of Git
+results/R5_*/raw/
+results/R5_*/*.pt
+results/R5_*/*.npy
+results/R5_*/*.npz
+results/R5_*/*.pickle
+results/R5_*/*.pkl
 
 # Keep directory placeholders
 !.gitkeep

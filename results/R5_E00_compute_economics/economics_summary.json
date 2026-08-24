@@ -1,0 +1,41 @@
+{
+  "formula_note": "Physical latency uses T_ideal = T_other + r*T_stage4 + T_selector. The minus signs in the task brief are treated as a typographical error because component latencies add.",
+  "full_ms": 22.571457010269164,
+  "stage4_ms": 4.612332123756409,
+  "other_ms": 17.959124886512754,
+  "stage4_fraction": 0.20434357080528615,
+  "budgets": [
+    {
+      "budget": 0.25,
+      "full_stage4_ms": 4.612332123756409,
+      "selector_ms": 0.12554203858599067,
+      "ideal_partial_ms": 1.1530830309391022,
+      "maximum_partial_ms_for_any_speedup": 4.486790085170418,
+      "ideal_total_ms": 19.237749956037845,
+      "ideal_system_speedup": 1.1732898629959072
+    },
+    {
+      "budget": 0.375,
+      "full_stage4_ms": 4.612332123756409,
+      "selector_ms": 1.2321898695081472,
+      "ideal_partial_ms": 1.7296245464086533,
+      "maximum_partial_ms_for_any_speedup": 3.3801422542482618,
+      "ideal_total_ms": 20.920939302429556,
+      "ideal_system_speedup": 1.0788930976750137
+    },
+    {
+      "budget": 0.5,
+      "full_stage4_ms": 4.612332123756409,
+      "selector_ms": 0.11443394608795643,
+      "ideal_partial_ms": 2.3061660618782045,
+      "maximum_partial_ms_for_any_speedup": 4.497898177668453,
+      "ideal_total_ms": 20.379724894478915,
+      "ideal_system_speedup": 1.1075447351295704
+    }
+  ],
+  "early_stop_a": {
+    "threshold_speedup": 1.03,
+    "core_budgets_below_threshold": 0,
+    "triggered": false
+  }
+}

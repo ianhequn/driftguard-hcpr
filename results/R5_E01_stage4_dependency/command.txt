@@ -1,0 +1,1 @@
+scripts/inspect_round5_stage4.py --model /root/autodl-tmp/models/segformer-b0 --output-root results/R5_E01_stage4_dependency

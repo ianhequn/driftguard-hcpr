@@ -1,0 +1,63 @@
+{
+  "torch_version": "2.1.2+cu118",
+  "transformers_version": "4.44.2",
+  "model_path": "/root/autodl-tmp/models/segformer-b0",
+  "model_class": "SegformerForSemanticSegmentation",
+  "encoder_class": "SegformerEncoder",
+  "hidden_sizes": [
+    32,
+    64,
+    160,
+    256
+  ],
+  "depths": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "num_attention_heads": [
+    1,
+    2,
+    5,
+    8
+  ],
+  "sr_ratios": [
+    8,
+    4,
+    2,
+    1
+  ],
+  "patch_sizes": [
+    7,
+    3,
+    3,
+    3
+  ],
+  "strides": [
+    4,
+    2,
+    2,
+    2
+  ],
+  "reshape_last_stage": true,
+  "decoder_hidden_size": 256,
+  "stage4_patch_embedding": "SegformerOverlapPatchEmbeddings(\n  (proj): Conv2d(160, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))\n  (layer_norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)\n)",
+  "stage4_blocks": [
+    "SegformerLayer(\n  (layer_norm_1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)\n  (attention): SegformerAttention(\n    (self): SegformerEfficientSelfAttention(\n      (query): Linear(in_features=256, out_features=256, bias=True)\n      (key): Linear(in_features=256, out_features=256, bias=True)\n      (value): Linear(in_features=256, out_features=256, bias=True)\n      (dropout): Dropout(p=0.0, inplace=False)\n    )\n    (output): SegformerSelfOutput(\n      (dense): Linear(in_features=256, out_features=256, bias=True)\n      (dropout): Dropout(p=0.0, inplace=False)\n    )\n  )\n  (drop_path): SegformerDropPath(p=0.08571428805589676)\n  (layer_norm_2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)\n  (mlp): SegformerMixFFN(\n    (dense1): Linear(in_features=256, out_features=1024, bias=True)\n    (dwconv): SegformerDWConv(\n      (dwconv): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1024)\n    )\n    (intermediate_act_fn): GELUActivation()\n    (dense2): Linear(in_features=1024, out_features=256, bias=True)\n    (dropout): Dropout(p=0.0, inplace=False)\n  )\n)",
+    "SegformerLayer(\n  (layer_norm_1): LayerNorm((256,), eps=1e-05, elementwise_affine=True)\n  (attention): SegformerAttention(\n    (self): SegformerEfficientSelfAttention(\n      (query): Linear(in_features=256, out_features=256, bias=True)\n      (key): Linear(in_features=256, out_features=256, bias=True)\n      (value): Linear(in_features=256, out_features=256, bias=True)\n      (dropout): Dropout(p=0.0, inplace=False)\n    )\n    (output): SegformerSelfOutput(\n      (dense): Linear(in_features=256, out_features=256, bias=True)\n      (dropout): Dropout(p=0.0, inplace=False)\n    )\n  )\n  (drop_path): SegformerDropPath(p=0.10000000149011612)\n  (layer_norm_2): LayerNorm((256,), eps=1e-05, elementwise_affine=True)\n  (mlp): SegformerMixFFN(\n    (dense1): Linear(in_features=256, out_features=1024, bias=True)\n    (dwconv): SegformerDWConv(\n      (dwconv): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1024)\n    )\n    (intermediate_act_fn): GELUActivation()\n    (dense2): Linear(in_features=1024, out_features=256, bias=True)\n    (dropout): Dropout(p=0.0, inplace=False)\n  )\n)"
+  ],
+  "stage4_layer_norm": "LayerNorm((256,), eps=1e-05, elementwise_affine=True)",
+  "decode_head": "SegformerDecodeHead(\n  (linear_c): ModuleList(\n    (0): SegformerMLP(\n      (proj): Linear(in_features=32, out_features=256, bias=True)\n    )\n    (1): SegformerMLP(\n      (proj): Linear(in_features=64, out_features=256, bias=True)\n    )\n    (2): SegformerMLP(\n      (proj): Linear(in_features=160, out_features=256, bias=True)\n    )\n    (3): SegformerMLP(\n      (proj): Linear(in_features=256, out_features=256, bias=True)\n    )\n  )\n  (linear_fuse): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  (batch_norm): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n  (activation): ReLU()\n  (dropout): Dropout(p=0.1, inplace=False)\n  (classifier): Conv2d(256, 150, kernel_size=(1, 1), stride=(1, 1))\n)",
+  "forward_signatures": {
+    "SegformerOverlapPatchEmbeddings": "(self, pixel_values)",
+    "SegformerDWConv": "(self, hidden_states, height, width)",
+    "SegformerEfficientSelfAttention": "(self, hidden_states, height, width, output_attentions=False)",
+    "SegformerSelfOutput": "(self, hidden_states, input_tensor)",
+    "SegformerAttention": "(self, hidden_states, height, width, output_attentions=False)",
+    "SegformerMixFFN": "(self, hidden_states, height, width)",
+    "SegformerLayer": "(self, hidden_states, height, width, output_attentions=False)",
+    "SegformerEncoder": "(self, pixel_values: torch.FloatTensor, output_attentions: Optional[bool] = False, output_hidden_states: Optional[bool] = False, return_dict: Optional[bool] = True) -> Union[Tuple, transformers.modeling_outputs.BaseModelOutput]",
+    "SegformerDecodeHead": "(self, encoder_hidden_states: torch.FloatTensor) -> torch.Tensor"
+  }
+}

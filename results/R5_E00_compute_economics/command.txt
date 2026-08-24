@@ -1,0 +1,1 @@
+scripts/profile_round5_compute_economics.py --model /root/autodl-tmp/models/segformer-b0 --image data/samples/segmentation_input.jpg --warmup 200 --measurements 1000 --output-root results/R5_E00_compute_economics
