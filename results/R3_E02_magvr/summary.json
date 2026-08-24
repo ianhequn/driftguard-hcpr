@@ -1,0 +1,61 @@
+{
+  "method": "MAG-VR",
+  "frozen_predictor": "TinyRiskCNN Patch+Age",
+  "tunable_hyperparameters": 0,
+  "summary": [
+    {
+      "method": "magvr",
+      "method_display": "MAG-VR",
+      "budget": 0.125,
+      "video_count": 3,
+      "logit_relative_l2": 0.02591920688299211,
+      "global_kl": 0.009444607891545281,
+      "pixel_disagreement": 0.017488953069592198
+    },
+    {
+      "method": "magvr",
+      "method_display": "MAG-VR",
+      "budget": 0.25,
+      "video_count": 3,
+      "logit_relative_l2": 0.01814083362671923,
+      "global_kl": 0.004351206594856839,
+      "pixel_disagreement": 0.011431322030141843
+    },
+    {
+      "method": "magvr",
+      "method_display": "MAG-VR",
+      "budget": 0.375,
+      "video_count": 3,
+      "logit_relative_l2": 0.012926880008514626,
+      "global_kl": 0.0023688644794945387,
+      "pixel_disagreement": 0.00906913162123227
+    },
+    {
+      "method": "magvr",
+      "method_display": "MAG-VR",
+      "budget": 0.5,
+      "video_count": 3,
+      "logit_relative_l2": 0.010579057157548236,
+      "global_kl": 0.0014914958815129885,
+      "pixel_disagreement": 0.005988371287677305
+    },
+    {
+      "method": "magvr",
+      "method_display": "MAG-VR",
+      "budget": 0.75,
+      "video_count": 3,
+      "logit_relative_l2": 0.0060839729184608456,
+      "global_kl": 0.0006966452201724536,
+      "pixel_disagreement": 0.004192812222960993
+    },
+    {
+      "method": "magvr",
+      "method_display": "MAG-VR",
+      "budget": 1.0,
+      "video_count": 3,
+      "logit_relative_l2": 3.1541042610876396e-06,
+      "global_kl": 4.019768934579232e-11,
+      "pixel_disagreement": 4.3287344858156027e-07
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+split: val
+max_videos: 1
+max_frames: 20
+ratios: [0.25, 0.375, 0.5]
+decoder_batch: 32
+device: cuda
+seed: 42
+predictor: results/R2_E03_ablation/patch_age.pt
+magvr_max_age: budget_derived

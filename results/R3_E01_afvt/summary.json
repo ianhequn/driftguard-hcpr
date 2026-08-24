@@ -1,0 +1,61 @@
+{
+  "method": "AFVT",
+  "frozen_predictor": "TinyRiskCNN Patch+Age",
+  "tunable_hyperparameters": 0,
+  "summary": [
+    {
+      "method": "afvt",
+      "method_display": "AFVT",
+      "budget": 0.125,
+      "video_count": 3,
+      "logit_relative_l2": 0.02574741820547175,
+      "global_kl": 0.009759574757017038,
+      "pixel_disagreement": 0.016859122201906027
+    },
+    {
+      "method": "afvt",
+      "method_display": "AFVT",
+      "budget": 0.25,
+      "video_count": 3,
+      "logit_relative_l2": 0.01795891486108303,
+      "global_kl": 0.004281932149571201,
+      "pixel_disagreement": 0.011275487588652482
+    },
+    {
+      "method": "afvt",
+      "method_display": "AFVT",
+      "budget": 0.375,
+      "video_count": 3,
+      "logit_relative_l2": 0.012978835530077101,
+      "global_kl": 0.0023933334222361892,
+      "pixel_disagreement": 0.00881416916001773
+    },
+    {
+      "method": "afvt",
+      "method_display": "AFVT",
+      "budget": 0.5,
+      "video_count": 3,
+      "logit_relative_l2": 0.010579057157548236,
+      "global_kl": 0.0014914958815129885,
+      "pixel_disagreement": 0.005988371287677305
+    },
+    {
+      "method": "afvt",
+      "method_display": "AFVT",
+      "budget": 0.75,
+      "video_count": 3,
+      "logit_relative_l2": 0.0060839729184608456,
+      "global_kl": 0.0006966452201724536,
+      "pixel_disagreement": 0.004192812222960993
+    },
+    {
+      "method": "afvt",
+      "method_display": "AFVT",
+      "budget": 1.0,
+      "video_count": 3,
+      "logit_relative_l2": 3.1541042610876396e-06,
+      "global_kl": 4.019768934579232e-11,
+      "pixel_disagreement": 4.3287344858156027e-07
+    }
+  ]
+}

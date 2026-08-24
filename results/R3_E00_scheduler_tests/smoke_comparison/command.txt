@@ -1,0 +1,1 @@
+scripts/run_round3_scheduler_study.py --split val --max-videos 1 --max-frames 20 --ratios 0.25 0.375 0.5 --model /root/autodl-tmp/models/segformer-b0 --output-root results/R3_E00_scheduler_tests/smoke_comparison --diagnostics-root results/R3_E00_scheduler_tests/smoke_diagnostics --device cuda --decoder-batch 32

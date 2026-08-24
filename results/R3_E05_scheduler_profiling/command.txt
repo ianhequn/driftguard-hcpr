@@ -1,0 +1,1 @@
+scripts/profile_round3_schedulers.py --device cuda --warmup 100 --repeats 500

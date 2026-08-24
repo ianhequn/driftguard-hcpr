@@ -40,6 +40,9 @@ reports/*
 !reports/round25_state.json
 !reports/round25_progress.md
 !reports/round25_final_report.md
+!reports/round3_state.json
+!reports/round3_progress.md
+!reports/round3_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
@@ -64,6 +67,70 @@ reports/*
 !results/R25_E03_selector_profiling/selector_complexity.csv
 !results/R25_E03_selector_profiling/selector_overhead_vs_damage.png
 !results/R25_E03_selector_profiling/model_only_recheck.txt
+
+# Round 3 lightweight audit, tables, configs, and figures
+!results/R3_*/
+!results/R3_E00_scheduler_tests/
+!results/R3_E00_scheduler_tests/smoke_comparison/
+!results/R3_E00_scheduler_tests/smoke_comparison/command.txt
+!results/R3_E00_scheduler_tests/smoke_comparison/config.yaml
+!results/R3_E00_scheduler_tests/smoke_comparison/runtime.txt
+!results/R3_E00_scheduler_tests/smoke_comparison/summary.csv
+!results/R3_E00_scheduler_tests/smoke_comparison/summary.json
+!results/R3_E00_scheduler_tests/smoke_diagnostics/
+!results/R3_E00_scheduler_tests/smoke_diagnostics/command.txt
+!results/R3_E00_scheduler_tests/smoke_diagnostics/config.yaml
+!results/R3_E00_scheduler_tests/smoke_diagnostics/runtime.txt
+!results/R3_E00_scheduler_tests/smoke_diagnostics/cache_fairness_per_video.csv
+!results/R3_E01_afvt/
+!results/R3_E01_afvt/*
+!results/R3_E02_magvr/
+!results/R3_E02_magvr/*
+!results/R3_E03_scheduler_comparison/
+!results/R3_E03_scheduler_comparison/analysis_command.txt
+!results/R3_E03_scheduler_comparison/analysis_config.yaml
+!results/R3_E03_scheduler_comparison/analysis_runtime.txt
+!results/R3_E03_scheduler_comparison/bootstrap_comparisons.csv
+!results/R3_E03_scheduler_comparison/bootstrap_vs_age.csv
+!results/R3_E03_scheduler_comparison/command.txt
+!results/R3_E03_scheduler_comparison/config.yaml
+!results/R3_E03_scheduler_comparison/main_scheduler_table.csv
+!results/R3_E03_scheduler_comparison/motion_conditioned.csv
+!results/R3_E03_scheduler_comparison/per_video_results.csv
+!results/R3_E03_scheduler_comparison/runtime.txt
+!results/R3_E03_scheduler_comparison/scheduler_budget_vs_pixel_disagreement.png
+!results/R3_E03_scheduler_comparison/scheduler_budget_vs_task_damage.png
+!results/R3_E03_scheduler_comparison/secondary_metrics.csv
+!results/R3_E03_scheduler_comparison/summary.csv
+!results/R3_E03_scheduler_comparison/summary.json
+!results/R3_E04_scheduler_diagnostics/
+!results/R3_E04_scheduler_diagnostics/afvt_tie_group_distribution.png
+!results/R3_E04_scheduler_diagnostics/analysis_command.txt
+!results/R3_E04_scheduler_diagnostics/analysis_config.yaml
+!results/R3_E04_scheduler_diagnostics/analysis_runtime.txt
+!results/R3_E04_scheduler_diagnostics/cache_age_distribution_by_policy.png
+!results/R3_E04_scheduler_diagnostics/cache_fairness.csv
+!results/R3_E04_scheduler_diagnostics/cache_fairness_per_video.csv
+!results/R3_E04_scheduler_diagnostics/command.txt
+!results/R3_E04_scheduler_diagnostics/config.yaml
+!results/R3_E04_scheduler_diagnostics/decision.json
+!results/R3_E04_scheduler_diagnostics/magvr_budget_allocation.png
+!results/R3_E04_scheduler_diagnostics/max_stale_run_by_policy.png
+!results/R3_E04_scheduler_diagnostics/oracle_overlap.csv
+!results/R3_E04_scheduler_diagnostics/runtime.txt
+!results/R3_E04_scheduler_diagnostics/selector_latency_vs_task_damage.png
+!results/R3_E04_scheduler_diagnostics/visual_compute_usage.csv
+!results/R3_E05_scheduler_profiling/
+!results/R3_E05_scheduler_profiling/*
+
+# Keep Round 3 raw frame records and resumable shards out of Git
+results/R3_E00_scheduler_tests/smoke_comparison/metrics.csv
+results/R3_E00_scheduler_tests/smoke_diagnostics/oracle_overlap_per_frame.csv
+results/R3_E00_scheduler_tests/smoke_diagnostics/scheduler_frame_diagnostics.csv
+results/R3_E03_scheduler_comparison/metrics.csv
+results/R3_E03_scheduler_comparison/shards/
+results/R3_E04_scheduler_diagnostics/oracle_overlap_per_frame.csv
+results/R3_E04_scheduler_diagnostics/scheduler_frame_diagnostics.csv
 
 # Keep directory placeholders
 !.gitkeep

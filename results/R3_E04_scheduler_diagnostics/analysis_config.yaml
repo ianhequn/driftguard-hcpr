@@ -1,0 +1,5 @@
+bootstrap_resamples: 1000
+bootstrap_unit: video
+primary_metric: logit_relative_l2
+secondary_pixel_warning_ratio: 1.05
+selector_readiness_ms: 2.0

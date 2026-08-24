@@ -1,0 +1,1 @@
+scripts/run_round3_scheduler_study.py --split test --max-frames 48 --ratios 0.125 0.25 0.375 0.5 0.75 1.0 --model /root/autodl-tmp/models/segformer-b0 --output-root results/R3_E03_scheduler_comparison --diagnostics-root results/R3_E04_scheduler_diagnostics --device cuda --decoder-batch 32

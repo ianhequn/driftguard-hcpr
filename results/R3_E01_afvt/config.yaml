@@ -1,0 +1,4 @@
+predictor: TinyRiskCNN Patch+Age (frozen)
+cache_cut: Stage 4
+block_grid: 4
+scheduler: age_first_visual_tie_break

@@ -1,0 +1,16 @@
+{
+  "round": 3,
+  "status": "running",
+  "start_date": "2026-08-24",
+  "frozen_predictor": "TinyRiskCNN Patch+Age",
+  "baseline": "Age",
+  "afvt_complete": false,
+  "magvr_complete": false,
+  "scientific_result": null,
+  "algorithm_winner": null,
+  "deployment_readiness": null,
+  "test_configuration_frozen": true,
+  "frozen_magvr_rule": "Amax = ceil(16 / K) - 1",
+  "validation_sweep_used": false,
+  "test_set_tuning": false
+}

@@ -1,0 +1,63 @@
+{
+  "scientific_result": "STRONG GO",
+  "algorithm_winner": "AFVT",
+  "deployment_readiness": "ALGORITHM LOCKED - PIPELINE OPTIMIZATION REQUIRED",
+  "best_new_candidate": "AFVT",
+  "selector_ms_at_37_5": 38.40393970999867,
+  "evidence": {
+    "afvt": {
+      "damage_by_budget": [
+        0.01795891486108303,
+        0.012978835530077101,
+        0.010579057157548236
+      ],
+      "delta_vs_age": [
+        -0.00032621111839692754,
+        -0.001434953317726492,
+        -9.758918131668945e-05
+      ],
+      "noninferior_core_budgets": 3,
+      "strict_negative_ci_count": 2,
+      "stable_3_of_3_video_budget_count": 2,
+      "secondary_warning_budgets": [
+        0.375
+      ],
+      "max_stale_run_ratio_vs_age": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "severe_starvation": false
+    },
+    "magvr": {
+      "damage_by_budget": [
+        0.01814083362671923,
+        0.012926880008514626,
+        0.010579057157548236
+      ],
+      "delta_vs_age": [
+        -0.0001442923527607276,
+        -0.0014869088392889668,
+        -9.758918131668945e-05
+      ],
+      "noninferior_core_budgets": 3,
+      "strict_negative_ci_count": 2,
+      "stable_3_of_3_video_budget_count": 2,
+      "secondary_warning_budgets": [
+        0.375
+      ],
+      "max_stale_run_ratio_vs_age": [
+        1.6666666666666667,
+        1.5,
+        1.0
+      ],
+      "severe_starvation": false
+    }
+  },
+  "decision_rules": {
+    "primary_noninferior_all_core_budgets": true,
+    "strong_go_strict_bootstrap_budgets": 2,
+    "secondary_warning_threshold": "pixel disagreement > 1.05x Age",
+    "selector_readiness_threshold_ms": 2.0
+  }
+}

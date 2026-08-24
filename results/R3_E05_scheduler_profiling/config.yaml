@@ -1,0 +1,5 @@
+warmup: 100
+repeats: 500
+device: cuda
+representative_inputs: frozen_test_sequences
+patch_preparation: candidate_only

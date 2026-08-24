@@ -1,0 +1,5 @@
+predictor: TinyRiskCNN Patch+Age (frozen)
+cache_cut: Stage 4
+block_grid: 4
+scheduler: budget_derived_max_age_guard
+max_age: ceil(16 / K) - 1
