@@ -32,6 +32,17 @@ class SchedulerDecision:
         return int(len(self.cnn_indices) > 0)
 
 
+@dataclass(frozen=True)
+class AFVTPartition:
+    older: np.ndarray
+    tie: np.ndarray
+    remaining: int
+
+    @property
+    def needs_visual_ranking(self) -> bool:
+        return 0 < self.remaining < len(self.tie)
+
+
 def _validate_ages(ages: np.ndarray) -> np.ndarray:
     values = np.asarray(ages, dtype=np.float64)
     if values.ndim != 1 or len(values) == 0:
@@ -39,6 +50,27 @@ def _validate_ages(ages: np.ndarray) -> np.ndarray:
     if not np.isfinite(values).all() or (values < 0).any():
         raise ValueError("ages must be finite and non-negative")
     return values
+
+
+def partition_afvt(ages: np.ndarray, ratio: float) -> AFVTPartition:
+    """Return the frozen AFVT age hierarchy before visual tie breaking."""
+
+    values = _validate_ages(ages)
+    count = refresh_count(len(values), ratio)
+    if count == 0:
+        return AFVTPartition(
+            older=np.empty(0, dtype=np.int64),
+            tie=np.empty(0, dtype=np.int64),
+            remaining=0,
+        )
+    threshold = np.sort(values)[::-1][count - 1]
+    older = np.flatnonzero(values > threshold)
+    tie = np.flatnonzero(values == threshold)
+    return AFVTPartition(
+        older=older,
+        tie=tie,
+        remaining=int(count - len(older)),
+    )
 
 
 def _visual_top_k(
@@ -76,9 +108,9 @@ def select_afvt(
     """Age hierarchy first, visual risk only within the K-boundary tie."""
 
     values = _validate_ages(ages)
-    count = refresh_count(len(values), ratio)
+    partition = partition_afvt(values, ratio)
     mask = np.zeros(len(values), dtype=bool)
-    if count == 0:
+    if partition.remaining == 0 and len(partition.tie) == 0:
         return SchedulerDecision(
             mask=mask,
             cnn_indices=np.empty(0, dtype=np.int64),
@@ -89,22 +121,18 @@ def select_afvt(
             max_age=None,
         )
 
-    threshold = np.sort(values)[::-1][count - 1]
-    older = np.flatnonzero(values > threshold)
-    tie = np.flatnonzero(values == threshold)
-    remaining = count - len(older)
     selected_tie, cnn_indices = _visual_top_k(
-        tie,
-        remaining,
+        partition.tie,
+        partition.remaining,
         visual_score_fn,
     )
-    mask[older] = True
+    mask[partition.older] = True
     mask[selected_tie] = True
     return SchedulerDecision(
         mask=mask,
         cnn_indices=cnn_indices,
-        tie_group_size=int(len(tie)),
-        forced_blocks=int(len(older)),
+        tie_group_size=int(len(partition.tie)),
+        forced_blocks=int(len(partition.older)),
         visual_selected_blocks=int(len(selected_tie)),
         forced_overflow=False,
         max_age=None,

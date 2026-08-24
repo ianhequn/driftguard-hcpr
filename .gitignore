@@ -43,6 +43,10 @@ reports/*
 !reports/round3_state.json
 !reports/round3_progress.md
 !reports/round3_final_report.md
+!reports/round4_state.json
+!reports/round4_progress.md
+!reports/round4_pipeline_audit.md
+!reports/round4_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
@@ -131,6 +135,38 @@ results/R3_E03_scheduler_comparison/metrics.csv
 results/R3_E03_scheduler_comparison/shards/
 results/R3_E04_scheduler_diagnostics/oracle_overlap_per_frame.csv
 results/R3_E04_scheduler_diagnostics/scheduler_frame_diagnostics.csv
+
+# Round 4 lightweight audit, equivalence, profiling tables, and figures
+!results/R4_*/
+!results/R4_E00_pipeline_audit/
+!results/R4_E00_pipeline_audit/*
+!results/R4_E01_gpu_residual/
+!results/R4_E01_gpu_residual/*
+!results/R4_E02_gpu_patch/
+!results/R4_E02_gpu_patch/*
+!results/R4_E03_candidate_batch/
+!results/R4_E03_candidate_batch/*
+!results/R4_E04_fast_path/
+!results/R4_E04_fast_path/*
+!results/R4_E05_final_selector/
+!results/R4_E05_final_selector/*
+!results/R4_E06_equivalence/
+!results/R4_E06_equivalence/*.csv
+!results/R4_E06_equivalence/*.json
+!results/R4_E06_equivalence/*.yaml
+!results/R4_E06_equivalence/*.txt
+!results/R4_E07_profiling/
+!results/R4_E07_profiling/*.csv
+!results/R4_E07_profiling/*.json
+!results/R4_E07_profiling/*.yaml
+!results/R4_E07_profiling/*.txt
+!results/R4_E07_profiling/*.png
+
+# Keep raw Round 4 timing samples and large traces out of Git
+results/R4_*/raw/
+results/R4_*/*.pt
+results/R4_*/*.npy
+results/R4_*/*.npz
 
 # Keep directory placeholders
 !.gitkeep

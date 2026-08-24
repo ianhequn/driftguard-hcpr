@@ -1,0 +1,12 @@
+{
+  "round": 4,
+  "status": "running",
+  "algorithm": "AFVT",
+  "predictor": "TinyRiskCNN Patch+Age",
+  "original_latency_ms": 38.40393970999867,
+  "target_latency_ms": 2.0,
+  "policy_equivalence": null,
+  "final_latency_ms": null,
+  "engineering_result": null,
+  "partial_computation_authorized": false
+}
