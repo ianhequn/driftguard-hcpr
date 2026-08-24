@@ -35,3 +35,44 @@
 - P95 latency: not used for the scientific smoke decision.
 - Speedup: not applicable.
 - Next action: run one formal equivalence pass on the three frozen test videos.
+
+## 2026-08-24 - Formal Equivalence
+
+- Optimization stage: Phase 4.6 frozen test equivalence.
+- Code change: none after validation freeze.
+- Correctness result: 423/423 frame-budget selections exactly match Round 3;
+  maximum risk difference is `1.0252e-5`; task metrics reproduce to numerical
+  tolerance; max stale runs remain `3/2/1`.
+- Mean latency: not used in the equivalence pass.
+- P95 latency: not used in the equivalence pass.
+- Speedup: not applicable.
+- Next action: run the frozen 1,000-measurement three-budget profile.
+
+## 2026-08-24 - Formal Profiling
+
+- Optimization stage: Phase 4.7 formal profiling.
+- Code change: no algorithm or predictor changes; Strategy A remains frozen.
+- Correctness result: all waterfall stages retain 100% policy equivalence.
+- Mean latency: `0.126 / 1.232 / 0.114 ms` at 25% / 37.5% / 50%.
+- P95 latency: `0.772 / 1.332 / 0.116 ms`.
+- Speedup: formal 37.5% implementation speedup is 31.17x versus the frozen
+  Round 3 selector baseline.
+- Next action: apply the frozen engineering decision rules.
+
+## 2026-08-24 - Final Decision
+
+- Optimization stage: Round 4 closure.
+- Code change: results packaging, figures, and final report only.
+- Correctness result: 26 tests pass; 5 figures pass visual QA; JSON/CSV and
+  Python compilation validation pass.
+- Mean latency: all core budgets are below 2 ms with CUDA-resident inputs.
+- P95 latency: all core budgets are below 3 ms.
+- Speedup: 31.17x at the formal 37.5% decision point.
+- Next action: stop. Real Partial Computation may be proposed as a separate
+  phase but is not executed in Round 4.
+
+```text
+ROUND 4 = STRONG ENGINEERING GO
+DEPLOYMENT READINESS =
+SELECTOR READY FOR PARTIAL-COMPUTE INTEGRATION
+```

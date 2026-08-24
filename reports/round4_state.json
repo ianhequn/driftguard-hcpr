@@ -1,12 +1,31 @@
 {
   "round": 4,
-  "status": "running",
+  "status": "completed",
+  "completion_date": "2026-08-24",
   "algorithm": "AFVT",
   "predictor": "TinyRiskCNN Patch+Age",
   "original_latency_ms": 38.40393970999867,
   "target_latency_ms": 2.0,
-  "policy_equivalence": null,
-  "final_latency_ms": null,
-  "engineering_result": null,
+  "policy_equivalence": 1.0,
+  "max_risk_difference": 0.000010251998901367188,
+  "final_latency_ms": {
+    "0.25": 0.12554203858599067,
+    "0.375": 1.2321898695081472,
+    "0.5": 0.11443394608795643
+  },
+  "final_p95_ms": {
+    "0.25": 0.771712907589972,
+    "0.375": 1.3319402700290084,
+    "0.5": 0.11636442504823204
+  },
+  "formal_speedup_at_37_5": 31.1672256527546,
+  "peak_additional_gpu_memory_mb": 14.06298828125,
+  "engineering_result": "STRONG ENGINEERING GO",
+  "deployment_readiness": "SELECTOR READY FOR PARTIAL-COMPUTE INTEGRATION",
+  "gpu_resident_input_required": true,
+  "including_h2d_mean_ms_at_37_5": 18.450281844008714,
+  "tests_passed": 26,
+  "figures_qa_passed": 5,
+  "round3_scientific_result_reopened": false,
   "partial_computation_authorized": false
 }
