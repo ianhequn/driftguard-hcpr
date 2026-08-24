@@ -13,15 +13,15 @@
 
 ### Phase 2.6
 
-- Status: IN PROGRESS
+- Status: COMPLETED
 - Objective: verify temporal redundancy on a small real-video collection.
 - Configuration: SegFormer-B0, offsets `1,2,4,8,16`, global and block metrics, block grids `4x4` and `8x8`.
-- Smoke test: pending.
+- Smoke test: completed.
 - Result: 5 real videos, 32 frames/video, 160 frames total. All videos decoded successfully.
 - Global Stage 4 cosine: `0.9949` at offset 1, `0.9528` at offset 16.
 - Random Stage 4 cosine baseline: `0.9456`.
 - Go/No-Go: GO. Adjacent-frame similarity exceeded random remote-pair similarity and decreased with offset.
-- Next: sequential stale propagation.
+- Next: sequential stale propagation, completed in Phase 2.7.
 
 ### Phase 2.7
 
@@ -65,3 +65,10 @@
 - Tiny MLP overhead: mean `0.206 ms` per batch of 16, `0.0129 ms` per sample on RTX 4090.
 - Go/No-Go: NO-GO for the learned DriftGuard estimator. Three controlled revisions did not beat the cheap RGB residual baseline.
 - Scientific stop: do not run Phase 7 refresh simulation because the proposed learned predictor has no demonstrated incremental value.
+
+### Round 1 Metadata
+
+- Selected cache stage: `Stage 4`.
+- Selected cache cut: `Cut 4`.
+- Round 1 status: scientifically stopped after Phase 6 NO-GO.
+- Round 2 is maintained in independent `results/R2_*` directories and does not overwrite Round 1 artifacts.

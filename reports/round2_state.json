@@ -1,0 +1,10 @@
+{
+  "round": 2,
+  "status": "running",
+  "videos": 0,
+  "task_label": "unsafe_task_damage",
+  "best_model": null,
+  "best_baseline": null,
+  "predictor_go": null,
+  "refresh_go": null
+}

@@ -34,6 +34,12 @@ figures/*
 !figures/E01_temporal_redundancy/*.png
 logs/*
 reports/*
+!reports/round2_state.json
+!reports/round2_progress.md
+
+# Round 2 lightweight metadata and summaries
+!results/R2_*/
+!results/R2_*/*
 
 # Keep directory placeholders
 !.gitkeep
