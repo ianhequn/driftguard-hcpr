@@ -1,10 +1,10 @@
 {
   "round": 2,
-  "status": "running",
-  "videos": 0,
+  "status": "completed",
+  "videos": 21,
   "task_label": "unsafe_task_damage",
-  "best_model": null,
-  "best_baseline": null,
-  "predictor_go": null,
-  "refresh_go": null
+  "best_model": "TinyRiskCNN",
+  "best_baseline": "age_policy",
+  "predictor_go": "GO",
+  "refresh_go": "STRONG GO"
 }

@@ -36,6 +36,7 @@ logs/*
 reports/*
 !reports/round2_state.json
 !reports/round2_progress.md
+!reports/round2_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/

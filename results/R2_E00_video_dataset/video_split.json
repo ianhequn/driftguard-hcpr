@@ -1,0 +1,23 @@
+{
+  "asl_again": "train",
+  "asl_bird": "train",
+  "asl_book": "train",
+  "asl_brother": "test",
+  "asl_eat": "train",
+  "asl_help": "train",
+  "asl_hungry": "val",
+  "asl_learn": "val",
+  "asl_milk": "test",
+  "asl_night": "train",
+  "asl_no": "train",
+  "asl_please": "train",
+  "asl_school": "test",
+  "bolt-detection": "train",
+  "bolt-multi-size-detection": "train",
+  "bottle-detection": "train",
+  "car-detection": "train",
+  "classroom": "train",
+  "one-by-one-person-detection": "val",
+  "people-detection": "train",
+  "person-bicycle-car-detection": "train"
+}

@@ -1,0 +1,18 @@
+{
+  "threshold": "p80",
+  "device": "cuda",
+  "tiny_risk_cnn": {
+    "auroc": 0.9504259119753637,
+    "auprc": 0.8002795706371889,
+    "precision": 0.676450034940601,
+    "recall": 0.738367658276125,
+    "f1": 0.7060539752005836,
+    "balanced_accuracy": 0.842638708165697,
+    "spearman_task_damage": 0.776834888980851,
+    "precision_at_10": 0.796812749003984,
+    "precision_at_25": 0.4688995215311005,
+    "recall_at_25": 0.897025171624714,
+    "decision_threshold": 0.5967404103279114,
+    "positive_ratio": 0.13068181818181818
+  }
+}

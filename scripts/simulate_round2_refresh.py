@@ -74,6 +74,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-root", default="results/R2_E04_refresh_simulation")
     parser.add_argument("--max-frames", type=int, default=48)
     parser.add_argument("--random-seeds", type=int, default=20)
+    parser.add_argument("--decoder-batch", type=int, default=8)
     parser.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
     parser.add_argument("--seed", type=int, default=42)
     return parser.parse_args()
@@ -168,27 +169,40 @@ def main() -> None:
                 variants.append(state["cache"])
                 descriptors.append((policy, seed, ratio, int(mask.sum()), true_drift))
 
-            batch_stage = torch.cat(variants, dim=0)
-            batch_features = [feature.expand(batch_stage.shape[0], -1, -1, -1) for feature in current_features]
-            batch_features[3] = batch_stage
-            with torch.inference_mode():
-                stale_logits = decode_features(model, batch_features)
-            metrics = _task_metrics(full_logits, stale_logits, 4)
-            for index, (policy, seed, ratio, refresh_blocks, _) in enumerate(descriptors):
-                rows.append(
-                    {
-                        "video_id": record["video_id"],
-                        "split": record["split"],
-                        "frame_id": frame_id,
-                        "policy": policy,
-                        "seed": seed,
-                        "refresh_ratio": ratio,
-                        "refresh_blocks": refresh_blocks,
-                        "global_kl": float(metrics["global_kl"][index]),
-                        "logit_relative_l2": float(metrics["logit_relative_l2"][index]),
-                        "global_pixel_disagreement": float(metrics["global_pixel_disagreement"][index]),
-                    }
-                )
+            # Keep the policy state space large enough for 20 random seeds,
+            # but decode in small micro-batches to bound GPU memory.
+            for start_index in range(0, len(variants), args.decoder_batch):
+                end_index = start_index + args.decoder_batch
+                batch_stage = torch.cat(variants[start_index:end_index], dim=0)
+                batch_features = [
+                    feature.expand(batch_stage.shape[0], -1, -1, -1)
+                    for feature in current_features
+                ]
+                batch_features[3] = batch_stage
+                with torch.inference_mode():
+                    stale_logits = decode_features(model, batch_features)
+                metrics = _task_metrics(full_logits, stale_logits, 4)
+                for index, (policy, seed, ratio, refresh_blocks, _) in enumerate(
+                    descriptors[start_index:end_index]
+                ):
+                    rows.append(
+                        {
+                            "video_id": record["video_id"],
+                            "split": record["split"],
+                            "frame_id": frame_id,
+                            "policy": policy,
+                            "seed": seed,
+                            "refresh_ratio": ratio,
+                            "refresh_blocks": refresh_blocks,
+                            "global_kl": float(metrics["global_kl"][index]),
+                            "logit_relative_l2": float(metrics["logit_relative_l2"][index]),
+                            "global_pixel_disagreement": float(
+                                metrics["global_pixel_disagreement"][index]
+                            ),
+                        }
+                    )
+                del batch_stage, batch_features, stale_logits
+            del variants, descriptors
             previous_frame = frame_rgb
             previous_logits = full_logits
         print(f"completed {record['video_id']}", flush=True)
@@ -235,7 +249,8 @@ def main() -> None:
         plt.close()
     output_root.mkdir(parents=True, exist_ok=True)
     (output_root / "config.yaml").write_text(
-        f"max_frames: {args.max_frames}\nrandom_seeds: {args.random_seeds}\ndevice: {device}\nratios: {list(RATIOS)}\n",
+        f"max_frames: {args.max_frames}\nrandom_seeds: {args.random_seeds}\n"
+        f"decoder_batch: {args.decoder_batch}\ndevice: {device}\nratios: {list(RATIOS)}\n",
         encoding="utf-8",
     )
     (output_root / "command.txt").write_text(" ".join(sys.argv) + "\n", encoding="utf-8")

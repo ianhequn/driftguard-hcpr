@@ -1,0 +1,72 @@
+{
+  "rows": [
+    {
+      "variant": "patch_only",
+      "metadata_dim": 0,
+      "parameters": 5705,
+      "auroc": 0.9169393586117519,
+      "auprc": 0.7369693953935263,
+      "precision": 0.7019572953736655,
+      "recall": 0.6018306636155606,
+      "f1": 0.6480492813141684,
+      "balanced_accuracy": 0.7817088187932177,
+      "spearman_task_damage": 0.6779057491805887,
+      "precision_at_10": 0.7420318725099602,
+      "precision_at_25": 0.4270334928229665,
+      "recall_at_25": 0.816933638443936,
+      "decision_threshold": 0.6857728934288023,
+      "positive_ratio": 0.13068181818181818
+    },
+    {
+      "variant": "patch_age",
+      "metadata_dim": 1,
+      "parameters": 5737,
+      "auroc": 0.9518622513618417,
+      "auprc": 0.8159348866296188,
+      "precision": 0.7324940991345398,
+      "recall": 0.7101449275362319,
+      "f1": 0.721146398140976,
+      "balanced_accuracy": 0.8355792863802017,
+      "spearman_task_damage": 0.7366890174709051,
+      "precision_at_10": 0.8346613545816733,
+      "precision_at_25": 0.4665071770334928,
+      "recall_at_25": 0.8924485125858124,
+      "decision_threshold": 0.575348691344261,
+      "positive_ratio": 0.13068181818181818
+    },
+    {
+      "variant": "patch_age_entropy",
+      "metadata_dim": 2,
+      "parameters": 5769,
+      "auroc": 0.9393719937959795,
+      "auprc": 0.7670907399578546,
+      "precision": 0.6900958466453674,
+      "recall": 0.6590389016018307,
+      "f1": 0.6742099102614124,
+      "balanced_accuracy": 0.807274295428825,
+      "spearman_task_damage": 0.7286008570649358,
+      "precision_at_10": 0.7470119521912351,
+      "precision_at_25": 0.45614035087719296,
+      "recall_at_25": 0.8726163234172387,
+      "decision_threshold": 0.6651252961158752,
+      "positive_ratio": 0.13068181818181818
+    },
+    {
+      "variant": "patch_all_metadata",
+      "metadata_dim": 5,
+      "parameters": 5865,
+      "auroc": 0.9504213638296996,
+      "auprc": 0.8002606903992479,
+      "precision": 0.676450034940601,
+      "recall": 0.738367658276125,
+      "f1": 0.7060539752005836,
+      "balanced_accuracy": 0.842638708165697,
+      "spearman_task_damage": 0.776827855560917,
+      "precision_at_10": 0.796812749003984,
+      "precision_at_25": 0.4688995215311005,
+      "recall_at_25": 0.897025171624714,
+      "decision_threshold": 0.5967820942401886,
+      "positive_ratio": 0.13068181818181818
+    }
+  ]
+}

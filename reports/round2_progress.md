@@ -11,9 +11,50 @@
 
 ### Phase A: Dataset Expansion
 
-- Status: PENDING cloud connectivity.
-- Target: at least 20 real consecutive-video clips, with low, medium, and high motion represented in each evaluation split.
+- Status: COMPLETED.
+- Result: 21 complete real videos, 15 train / 3 validation / 3 test, 48-frame inventory window.
+- Motion distribution: 7 low / 7 medium / 7 high; test contains low, medium, and high motion.
 - Data policy: synthetic video is excluded from all Round 2 train, validation, and test data.
+
+### Phase B: Task-Damage Label Generation
+
+- Status: COMPLETED.
+- Result: 21 resumable per-video shards, with 3,344 samples per normal 48-frame video and 3,264 for the 47-frame clip.
+- Intervention: Stage 4 / Cut 4, 4x4 blocks, cache ages `1,2,4,8,16`.
+- Main continuous label: `logit_relative_l2`.
+- Training-only thresholds: P70 `0.0084835`, P80 `0.0114374`, P90 `0.0177729`.
+- Smoke test: passed on 2 videos, 16 frames, ages `1,4`.
+
+### Phase C-E: Predictor
+
+- Status: COMPLETED.
+- Test threshold: training-video P80, unsafe positive ratio `0.1307`.
+- TinyRiskCNN: 5,865 parameters; AUROC `0.9504`; AUPRC `0.8003`; Spearman `0.7768`.
+- Residual Mean: AUROC `0.9231`; AUPRC `0.7672`; Spearman `0.6956`.
+- Logistic Regression: AUROC `0.9443`; AUPRC `0.7918`; Spearman `0.7494`.
+- Historical Tiny MLP is retained as a classification baseline; it was stronger than TinyRiskCNN on this label, but is not retuned.
+- Predictor latency: all 16 blocks `0.585 ms` mean; P95 `0.628 ms`.
+
+### Phase E Ablation
+
+- Status: COMPLETED because TinyRiskCNN beat the primary residual baseline.
+- Patch only: AUPRC `0.7370`.
+- Patch + age: AUPRC `0.8159`.
+- Patch + age + entropy: AUPRC `0.7671`.
+- Patch + all metadata: AUPRC `0.8003`.
+- Interpretation: spatial residual structure contributes, while cache age is the most useful metadata addition in this experiment.
+
+### Phase F-G: Refresh Simulation
+
+- Status: COMPLETED.
+- Test videos: `asl_brother`, `asl_milk`, `asl_school`.
+- Refresh ratios: `0.125, 0.25, 0.375, 0.5, 0.75, 1.0`.
+- At 25% / 37.5% / 50%, TinyRiskCNN mean logit damage was `0.02017 / 0.01581 / 0.01285`.
+- At the same ratios, Residual Mean was `0.02999 / 0.02320 / 0.01722`.
+- TinyRiskCNN beat Residual Mean, Residual P90, and 20-seed Random on all 3 test videos at all three key ratios.
+- Age policy was stronger than TinyRiskCNN; this is recorded as the strongest simple refresh baseline.
+- Bootstrap: 1,000 video-level resamples; CNN-minus-baseline 95% CIs were below zero for all key comparisons.
+- Final internal decision: `STRONG GO`.
 
 ### Planned Artifacts
 

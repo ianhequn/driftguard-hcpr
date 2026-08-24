@@ -1,0 +1,12 @@
+{
+  "videos": 21,
+  "train": 15,
+  "val": 3,
+  "test": 3,
+  "frames_per_video": 48,
+  "motion_distribution": {
+    "low": 7,
+    "medium": 7,
+    "high": 7
+  }
+}

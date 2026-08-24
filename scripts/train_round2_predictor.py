@@ -85,8 +85,13 @@ def _precision_at(score: np.ndarray, y_true: np.ndarray, fraction: float) -> flo
     return float(np.mean(y_true[indices]))
 
 
-def _metrics(y: np.ndarray, score: np.ndarray, damage: np.ndarray, threshold: float) -> dict[str, float]:
-    predicted = score >= 0.5
+def _metrics(
+    y: np.ndarray,
+    score: np.ndarray,
+    damage: np.ndarray,
+    decision_threshold: float,
+) -> dict[str, float]:
+    predicted = score >= decision_threshold
     return {
         "auroc": _safe_auc(roc_auc_score, y, score),
         "auprc": _safe_auc(average_precision_score, y, score),
@@ -98,21 +103,31 @@ def _metrics(y: np.ndarray, score: np.ndarray, damage: np.ndarray, threshold: fl
         "precision_at_10": _precision_at(score, y, 0.10),
         "precision_at_25": _precision_at(score, y, 0.25),
         "recall_at_25": float(y[np.argsort(score)[-max(1, int(np.ceil(len(score) * 0.25))):]].sum() / max(1, y.sum())),
-        "threshold": threshold,
+        "decision_threshold": decision_threshold,
         "positive_ratio": float(y.mean()),
     }
 
 
-def _per_video(y, score, damage, video_ids, threshold) -> list[dict]:
+def _per_video(y, score, damage, video_ids, decision_threshold) -> list[dict]:
     rows = []
     for video_id in sorted(set(video_ids.tolist())):
         mask = video_ids == video_id
         if mask.sum() < 2:
             continue
         row = {"video_id": str(video_id), "samples": int(mask.sum())}
-        row.update(_metrics(y[mask], score[mask], damage[mask], threshold))
+        row.update(_metrics(y[mask], score[mask], damage[mask], decision_threshold))
         rows.append(row)
     return rows
+
+
+def _best_f1_threshold(y: np.ndarray, score: np.ndarray) -> float:
+    candidates = np.unique(np.quantile(score, np.linspace(0.05, 0.95, 91)))
+    best_threshold, best_value = 0.5, -1.0
+    for candidate in candidates:
+        value = f1_score(y, score >= candidate, zero_division=0)
+        if value > best_value:
+            best_threshold, best_value = float(candidate), float(value)
+    return best_threshold
 
 
 def _fit_standardizer(metadata: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
@@ -275,19 +290,21 @@ def main() -> None:
 
     rows = []
     models = {}
+    baseline_train_scores = {
+        "Residual Mean": train["metadata"][:, 3],
+        "Residual P90": np.quantile(
+            train["patch"].reshape(len(train["patch"]), -1), 0.90, axis=1
+        ),
+        "Residual Max": train["patch"].reshape(len(train["patch"]), -1).max(axis=1),
+    }
     baseline_scores = {
         "Residual Mean": test["metadata"][:, 3],
         "Residual P90": np.quantile(test["patch"].reshape(len(test["patch"]), -1), 0.90, axis=1),
         "Residual Max": test["patch"].reshape(len(test["patch"]), -1).max(axis=1),
     }
-    train_scores = {
-        "Residual Mean": train["metadata"][:, 3],
-        "Residual P90": np.quantile(train["patch"].reshape(len(train["patch"]), -1), 0.90, axis=1),
-        "Residual Max": train["patch"].reshape(len(train["patch"]), -1).max(axis=1),
-    }
     for name, score in baseline_scores.items():
-        normalized = (score - score.min()) / max(1e-8, score.max() - score.min())
-        metric = _metrics(y_test, normalized, test["task_damage"], threshold)
+        decision_threshold = _best_f1_threshold(y_train, baseline_train_scores[name])
+        metric = _metrics(y_test, score, test["task_damage"], decision_threshold)
         rows.append({"model": name, "parameters": 0, **metric})
 
     for name, estimator in (
@@ -295,12 +312,16 @@ def main() -> None:
         ("Random Forest", RandomForestClassifier(n_estimators=200, max_depth=10, class_weight="balanced", random_state=args.seed, n_jobs=-1)),
     ):
         estimator.fit((train["metadata"] - mean) / std, y_train)
+        val_score = estimator.predict_proba((val["metadata"] - mean) / std)[:, 1]
         score = estimator.predict_proba((test["metadata"] - mean) / std)[:, 1]
-        rows.append({"model": name, "parameters": 0, **_metrics(y_test, score, test["task_damage"], threshold)})
+        decision_threshold = _best_f1_threshold(y_val, val_score)
+        rows.append({"model": name, "parameters": 0, **_metrics(y_test, score, test["task_damage"], decision_threshold)})
 
     model, training_log = _train_cnn(train, val, y_train, y_val, mean, std, device, args.seed)
+    val_score = _predict(model, val, mean, std, device)
     score = _predict(model, test, mean, std, device)
-    cnn_metrics = _metrics(y_test, score, test["task_damage"], threshold)
+    cnn_decision_threshold = _best_f1_threshold(y_val, val_score)
+    cnn_metrics = _metrics(y_test, score, test["task_damage"], cnn_decision_threshold)
     rows.append({"model": "TinyRiskCNN", "parameters": parameter_count(model), **cnn_metrics})
     models["TinyRiskCNN"] = score
 
@@ -317,14 +338,24 @@ def main() -> None:
         old_features = (old_order - old_mean) / old_std
         with torch.inference_mode():
             old_score = old(torch.from_numpy(old_features)).numpy()
-        old_score = (old_score - old_score.min()) / max(1e-8, old_score.max() - old_score.min())
-        rows.append({"model": "Old Tiny MLP (historical)", "parameters": sum(p.numel() for p in old.parameters()), **_metrics(y_test, old_score, test["task_damage"], threshold)})
+        old_val_order = val["metadata"][:, [3, 0, 1, 2, 4]]
+        old_val_features = (old_val_order - old_mean) / old_std
+        with torch.inference_mode():
+            old_val_score = old(torch.from_numpy(old_val_features)).numpy()
+        old_decision_threshold = _best_f1_threshold(y_val, old_val_score)
+        rows.append({"model": "Old Tiny MLP (historical)", "parameters": sum(p.numel() for p in old.parameters()), **_metrics(y_test, old_score, test["task_damage"], old_decision_threshold)})
 
     with (output_root / "model_comparison.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
         writer.writeheader()
         writer.writerows(rows)
-    per_video = _per_video(y_test, score, test["task_damage"], test["video_id"], threshold)
+    per_video = _per_video(
+        y_test,
+        score,
+        test["task_damage"],
+        test["video_id"],
+        cnn_decision_threshold,
+    )
     with (output_root / "tiny_risk_per_video.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(per_video[0]))
         writer.writeheader()
@@ -340,6 +371,7 @@ def main() -> None:
             "metadata_std": std,
             "metadata_columns": METADATA_COLUMNS,
             "threshold": threshold,
+            "decision_threshold": cnn_decision_threshold,
             "threshold_name": args.threshold,
             "parameter_count": parameter_count(model),
         },

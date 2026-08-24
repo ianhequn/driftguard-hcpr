@@ -1,0 +1,72 @@
+{
+  "decision": "STRONG GO",
+  "latency_all_16_blocks_mean_ms": 0.5850009572505951,
+  "target_ratios": [
+    0.25,
+    0.375,
+    0.5
+  ],
+  "stability": {
+    "0.25": {
+      "residual_mean": {
+        "better_videos": 3,
+        "video_count": 3,
+        "bootstrap_ci_low": -0.012209006783334498,
+        "bootstrap_ci_high": -0.00608886724853135
+      },
+      "residual_p90": {
+        "better_videos": 3,
+        "video_count": 3,
+        "bootstrap_ci_low": -0.013304064486255034,
+        "bootstrap_ci_high": -0.008626280174134896
+      },
+      "random": {
+        "better_videos": 3,
+        "video_count": 3,
+        "bootstrap_ci_low": -0.003932188202607189,
+        "bootstrap_ci_high": -0.0016059703134158852
+      }
+    },
+    "0.375": {
+      "residual_mean": {
+        "better_videos": 3,
+        "video_count": 3,
+        "bootstrap_ci_low": -0.009307306893962492,
+        "bootstrap_ci_high": -0.005820107111271393
+      },
+      "residual_p90": {
+        "better_videos": 3,
+        "video_count": 3,
+        "bootstrap_ci_low": -0.01087844743333915,
+        "bootstrap_ci_high": -0.005898886954689278
+      },
+      "random": {
+        "better_videos": 3,
+        "video_count": 3,
+        "bootstrap_ci_low": -0.002694487685654709,
+        "bootstrap_ci_high": -0.0005087317215239119
+      }
+    },
+    "0.5": {
+      "residual_mean": {
+        "better_videos": 3,
+        "video_count": 3,
+        "bootstrap_ci_low": -0.005735109619637753,
+        "bootstrap_ci_high": -0.0034143801907354845
+      },
+      "residual_p90": {
+        "better_videos": 3,
+        "video_count": 3,
+        "bootstrap_ci_low": -0.006538676385312005,
+        "bootstrap_ci_high": -0.004106626850850089
+      },
+      "random": {
+        "better_videos": 3,
+        "video_count": 3,
+        "bootstrap_ci_low": -0.00187092520286666,
+        "bootstrap_ci_high": -0.00021339729799829503
+      }
+    }
+  },
+  "note": "Project-internal decision rule; not a universal statistical standard."
+}
