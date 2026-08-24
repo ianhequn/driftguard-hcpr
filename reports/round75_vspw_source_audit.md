@@ -4,76 +4,92 @@
 
 ```text
 official source verified: YES
-package acquired: NO
-dataset status: BLOCKED
+official 480P package acquired: YES
+official damaged-frame repair applied: YES
+dataset status: READY
 ```
 
-This round inspected official/public VSPW source metadata and performed a
-bounded recovery attempt. No third-party mirror, re-upload, or unknown archive
-was accepted as a benchmark source.
+## Provenance
 
-## Official Sources
-
-| Source | Maintainer | Role | Status |
-|---|---|---|---|
-| `VSPW-dataset/VSPW-dataset-download` | VSPW dataset organization | official package download metadata and extraction scripts | verified |
-| `VSPW-dataset/VSPW_baseline` | VSPW dataset organization | official baseline code and dataset preparation reference | verified |
-| `VSPW-dataset/VSPW_code` | VSPW dataset organization | official evaluation repository | verified |
-| `sssdddwww2/CVPR2021_VSPW_Implement` | public reimplementation | secondary code reference only | not an official package source |
-
-Repository heads audited on August 24, 2026:
+The package source is the official `VSPW-dataset/VSPW-dataset-download`
+repository maintained by the VSPW dataset organization:
 
 ```text
-VSPW-dataset/VSPW-dataset-download:
-dd0acea3836074dd282d55cc386477268a6a5ecf
-
-VSPW-dataset/VSPW_baseline:
-2dcd3fc04ca44d6ff2a3a9b9e4cd9da4ed5e6f30
-
-VSPW-dataset/VSPW_code:
-73b98ceb92cd9639da210da14f1bb0e02946f846
-
-sssdddwww2/CVPR2021_VSPW_Implement:
-3ead088804fe34d3b826b656e026d50562a3f7bd
+repository: https://github.com/VSPW-dataset/VSPW-dataset-download
+package: VSPW_480p.zip
+resolution: 480P
+package URL: https://drive.google.com/file/d/1rRujAmy3mzYqI0NjrdyVANDfrnFnBEp1/view
+archive bytes: 14843646874
+local SHA256: 3f350427005c01efab49fc951af21e542a473f586107d5eb841174af51d13f4f
+official checksum: UNKNOWN
+license file: UNKNOWN
+access requirement: browser download was required for the main package
 ```
 
-## Package Information
+The package contains extracted RGB frames, semantic masks, official
+`train.txt`, `val.txt`, and `test.txt` files, and the official class dictionary.
 
-The official download README identifies:
+## Integrity And Repair
+
+Archive-to-extraction inventory matched exactly before repair:
 
 ```text
-full VSPW package: approximately 43 GB
-separate VSPW 480P package: available
-contents: extracted RGB frames and ground-truth masks
-official frame extraction scripts: provided
-checksums: not provided in the audited README
-license/usage notice: no explicit license file found in the audited repositories
+archive files: 472068
+missing extracted files: 0
+size mismatches: 0
 ```
 
-The preferred 480P package was selected because it is the smallest official
-package suitable for this benchmark. It must still contain both RGB frames and
-semantic masks before being considered complete.
-
-## Expected Structure
-
-The project expects a split/video/frame layout compatible with:
+The official archive contains the issue documented by its maintainer for
+video `988_f_Xvy_DCPt8`. Twelve RGB files were zero bytes. The official repair
+archive was downloaded from:
 
 ```text
-VSPW/
-  <split or video root>/
-    <video_id>/
-      origin/ or images/
-      mask/ or labels/
+https://drive.google.com/file/d/1kuQksbhw_sgB5n6fKzts2G9KZn41-q_N/view
+bytes: 1904640
+local SHA256: 241f1686b49fc72b1fcd394e35138700053cb3779391dfd7e8703a0b13bac960
 ```
 
-The exact installed package tree remains unverified because the package was not
-acquired. The official `vspw_videolist.txt` was inspected for video IDs and
-frame metadata, but it does not substitute for an installed manifest.
+All 44 replacement JPEGs in that archive were decoded successfully at
+`853x480` and applied. Zero-byte RGB files remaining: `0`.
+
+## Installed Layout
+
+```text
+D:/datasets/VSPW_480p/VSPW_480p/
+  data/<video_id>/origin/*.jpg
+  data/<video_id>/mask/*.png
+  train.txt
+  val.txt
+  test.txt
+  data.txt
+  label_num_dic_final.json
+
+D:/DriftGuard/data/raw/VSPW
+  -> directory junction to the installed root above
+```
+
+## Deterministic Inventory
+
+```text
+videos: 3536
+RGB frames: 250412
+semantic masks: 221645
+train: 2806 videos, 197253 RGB-mask pairs
+validation: 343 videos, 24392 RGB-mask pairs
+test: 387 videos, 28767 RGB frames, no published masks
+split overlap: 0
+missing split directories: 0
+unassigned video directories: 0
+```
+
+The official validation split is therefore the ground-truth benchmark split.
+No custom split was created.
 
 ## Annotation Semantics
 
-The official README documents mask values `0..124` and `255`, with `0` and
-`255` treated as void. The official normalization is:
+Twenty real masks across twenty videos were fully decoded. Observed raw labels
+were a subset of `0..124` plus `255`; observed normalized labels were a subset
+of `0..123` plus `255`. The audited normalization remains:
 
 ```python
 label[label == 0] = 255
@@ -81,44 +97,12 @@ label = label - 1
 label[label == 254] = 255
 ```
 
-This gives valid class IDs `0..123` and ignore index `255`. A real-mask audit
-over at least 20 masks and 5 videos was not possible because no masks were
-installed.
-
-## Download Attempts
+Artifacts:
 
 ```text
-target:
-/root/autodl-tmp/DriftGuard/data/raw/VSPW
-
-official 480P Google Drive:
-bounded curl probe: no response
-bounded wget probe: HTTPS connection timed out
-attempt count: 2
+results/R75_E00_vspw_dataset/dataset_manifest.csv
+results/R75_E00_vspw_dataset/split_manifest.csv
+results/R75_E00_vspw_dataset/mask_semantics_audit.csv
+results/R75_E00_vspw_dataset/summary.json
+results/R75_E00_vspw_dataset/sha256.txt
 ```
-
-The cloud machine has approximately 130 GB free on `/root/autodl-tmp`, so
-storage is not the blocker. The blocker is official package access through the
-available non-interactive network path.
-
-The official Baidu Pan link is recorded in the source README, but the current
-environment has no verified non-interactive Baidu download client/session.
-Using it would require manual download or a separately authenticated client.
-
-```text
-MANUAL DOWNLOAD REQUIRED
-DATASET ACCESS BLOCKED
-```
-
-## Required Manual Recovery
-
-Download the official 480P package from the source README, then place it at:
-
-```text
-/root/autodl-tmp/DriftGuard/data/raw/VSPW
-```
-
-Afterward run the future Round 7 recovery audit to create the manifest,
-inspect at least 20 masks across 5 videos, verify the official split, and
-check missing-file completeness. Do not start mIoU or reuse benchmarking
-before those checks pass.

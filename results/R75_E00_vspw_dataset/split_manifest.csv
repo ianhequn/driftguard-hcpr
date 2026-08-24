@@ -1,0 +1,4 @@
+split,videos,rgb_frames,masks,paired_frames
+train,2806,197253,197253,197253
+val,343,24392,24392,24392
+test,387,28767,0,0

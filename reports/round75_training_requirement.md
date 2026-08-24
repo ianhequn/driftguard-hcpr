@@ -3,8 +3,8 @@
 ## Status
 
 ```text
-MODEL STATUS: NOT FOUND
-FUTURE TRAINING: REQUIRED IF NO COMPATIBLE PUBLIC CHECKPOINT IS RECOVERED
+MODEL STATUS: TRAINING REQUIRED
+FUTURE TRAINING: REQUIRED
 TRAINING EXECUTION: NOT AUTHORIZED IN ROUND 7.5
 ```
 
@@ -24,6 +24,10 @@ ignore index: 255 after official mask normalization
 loss: standard semantic segmentation loss with ignore_index=255
 checkpoint rule: highest validation mIoU with reproducible seed/config
 reuse benchmark: only after checkpoint is frozen and compatibility audited
+expected storage: reserve 25-40 GB beyond the installed dataset for
+                  environments, optimizer states, checkpoints, and logs
+expected GPU time: provisionally 12-48 RTX 4090 GPU-hours; replace this range
+                   after a short throughput calibration fixes batch size and schedule
 ```
 
 This is a planning artifact, not a training run. No GPU hours, expected mIoU,

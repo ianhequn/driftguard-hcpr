@@ -19,5 +19,17 @@ Preferred target:
 /root/autodl-tmp/DriftGuard/data/raw/VSPW
 
 Current status:
-package not acquired
-dataset status BLOCKED
+package acquired from the official 480P Google Drive link by the user
+local archive=D:/datasets/VSPW_480p.zip
+local dataset=D:/datasets/VSPW_480p/VSPW_480p
+project junction=D:/DriftGuard/data/raw/VSPW
+archive bytes=14843646874
+archive SHA256=3f350427005c01efab49fc951af21e542a473f586107d5eb841174af51d13f4f
+
+Official repair package:
+source=https://drive.google.com/file/d/1kuQksbhw_sgB5n6fKzts2G9KZn41-q_N/view?usp=sharing
+bytes=1904640
+SHA256=241f1686b49fc72b1fcd394e35138700053cb3779391dfd7e8703a0b13bac960
+44 replacement JPEGs applied to 988_f_Xvy_DCPt8/origin
+
+dataset status READY

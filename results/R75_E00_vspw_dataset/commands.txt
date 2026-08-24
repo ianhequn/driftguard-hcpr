@@ -1,0 +1,5 @@
+# Local deterministic dataset audit
+.venv/Scripts/python.exe scripts/audit_round75_vspw_dataset.py --root D:/datasets/VSPW_480p/VSPW_480p --output results/R75_E00_vspw_dataset
+
+# Round 7.5 compatibility tests
+.venv/Scripts/python.exe -m pytest tests/test_vspw_label_normalization.py tests/test_vspw_manifest.py tests/test_vspw_official_layout.py tests/test_vspw_video_boundary.py tests/test_model_vspw_class_count.py tests/test_model_vspw_class_alignment.py -q

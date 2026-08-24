@@ -1,12 +1,12 @@
 # Round 7.5 Readiness Checklist
 
 ```text
-[ ] official VSPW package installed
-[ ] package integrity checked
-[ ] official split known
-[ ] real mask semantics verified
-[ ] 124 classes verified from installed masks
-[ ] ignore index 255 verified from installed masks
+[x] official VSPW package installed
+[x] package integrity checked
+[x] official split known
+[x] real mask semantics verified
+[x] 124 classes verified from installed taxonomy and masks
+[x] ignore index 255 verified from installed masks
 [ ] compatible checkpoint found
 [ ] checkpoint source recorded
 [ ] checkpoint SHA256 recorded
@@ -35,6 +35,14 @@ BENCHMARK READINESS = NOT READY
 Blocking conditions:
 
 ```text
-DATASET ACCESS BLOCKED
 NO VERIFIED VSPW-COMPATIBLE CHECKPOINT
+```
+
+Dataset notes:
+
+```text
+official train/val/test videos: 2806 / 343 / 387
+official test GT: not included
+GT benchmark split: official validation
+official damaged-frame repair: applied and verified
 ```

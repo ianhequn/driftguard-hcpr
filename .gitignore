@@ -254,6 +254,9 @@ results/R7_*/*.pt
 !results/R75_*/*.md
 !results/R75_*/*.log
 
+# The full VSPW frame-level manifest has hundreds of thousands of rows.
+results/R75_E00_vspw_dataset/dataset_manifest.csv
+
 # Keep dataset archives, frames, and model weights out of Git
 results/R75_*/raw/
 results/R75_*/*.tar

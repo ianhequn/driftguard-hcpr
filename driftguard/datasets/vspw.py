@@ -1,4 +1,4 @@
-"""VSPW loader skeleton with conservative directory discovery."""
+"""VSPW frame discovery and label normalization utilities."""
 
 from __future__ import annotations
 
@@ -47,6 +47,28 @@ def _image_files(directory: Path) -> list[Path]:
     )
 
 
+def resolve_vspw_data_root(root: str | Path) -> Path:
+    """Return the directory containing official per-video folders."""
+
+    root = Path(root)
+    data_root = root / "data"
+    return data_root if data_root.is_dir() else root
+
+
+def read_vspw_split(root: str | Path, split: str) -> list[str] | None:
+    """Read an official VSPW split file when it is present."""
+
+    root = Path(root)
+    split_file = root / f"{split}.txt"
+    if not split_file.is_file():
+        return None
+    video_ids = [
+        line.strip()
+        for line in split_file.read_text(encoding="utf-8-sig").splitlines()
+    ]
+    return [video_id for video_id in video_ids if video_id]
+
+
 def discover_vspw_samples(
     root: str | Path,
     split: str = "train",
@@ -54,9 +76,19 @@ def discover_vspw_samples(
     mask_dir_names: tuple[str, ...] = DEFAULT_MASK_DIR_NAMES,
 ) -> list[VSPWSample]:
     root = Path(root)
-    split_root = root / split if (root / split).is_dir() else root
+    data_root = resolve_vspw_data_root(root)
+    split_video_ids = read_vspw_split(root, split)
+    if split_video_ids is None:
+        legacy_split_root = root / split
+        split_root = legacy_split_root if legacy_split_root.is_dir() else data_root
+        video_dirs = sorted(path for path in split_root.iterdir() if path.is_dir())
+    else:
+        split_root = data_root
+        video_dirs = [data_root / video_id for video_id in split_video_ids]
     samples: list[VSPWSample] = []
-    for video_dir in sorted(path for path in split_root.iterdir() if path.is_dir()):
+    for video_dir in video_dirs:
+        if not video_dir.is_dir():
+            continue
         image_dir = _find_child(video_dir, image_dir_names)
         if image_dir is None:
             continue
@@ -76,16 +108,24 @@ def discover_vspw_samples(
 
 def inspect_vspw_structure(root: str | Path, split: str = "train") -> dict[str, Any]:
     root = Path(root)
-    split_root = root / split if (root / split).is_dir() else root
     exists = root.is_dir()
+    data_root = resolve_vspw_data_root(root)
+    split_video_ids = read_vspw_split(root, split) if exists else None
+    legacy_split_root = root / split
+    split_root = legacy_split_root if legacy_split_root.is_dir() else data_root
     videos = []
     if exists:
-        for video_dir in sorted(path for path in split_root.iterdir() if path.is_dir()):
+        if split_video_ids is None:
+            video_dirs = sorted(path for path in split_root.iterdir() if path.is_dir())
+        else:
+            video_dirs = [data_root / video_id for video_id in split_video_ids]
+        for video_dir in video_dirs:
             image_dir = _find_child(video_dir, DEFAULT_IMAGE_DIR_NAMES)
             mask_dir = _find_child(video_dir, DEFAULT_MASK_DIR_NAMES)
             videos.append(
                 {
                     "video_id": video_dir.name,
+                    "exists": video_dir.is_dir(),
                     "image_dir": str(image_dir) if image_dir else None,
                     "mask_dir": str(mask_dir) if mask_dir else None,
                     "image_count": len(_image_files(image_dir)) if image_dir else 0,
@@ -98,6 +138,7 @@ def inspect_vspw_structure(root: str | Path, split: str = "train") -> dict[str, 
         "split": split,
         "exists": exists,
         "split_root": str(split_root),
+        "official_split_file": str(root / f"{split}.txt") if split_video_ids is not None else None,
         "video_count": len(videos),
         "sample_count": len(samples),
         "videos": videos,
