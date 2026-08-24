@@ -1,0 +1,11 @@
+Method,Budget,Logical Refresh,Physical Compute,Latency,P95,FPS,Logit L2,KL,Pixel Disagreement,Status
+Full,1.0,1.0,1.0,22.571457010269164,25.455249,44.303741647915665,0.0,0.0,0.0,measured CUDA-resident full baseline
+Age Real Partial,0.25,0.25,,,,,,,,NOT RUN - Early Stop B before model integration
+Age Real Partial,0.375,0.375,,,,,,,,NOT RUN - Early Stop B before model integration
+Age Real Partial,0.5,0.5,,,,,,,,NOT RUN - Early Stop B before model integration
+AFVT Real Partial,0.25,0.25,,,,,,,,NOT RUN - Early Stop B before model integration
+AFVT Real Partial,0.375,0.375,,,,,,,,NOT RUN - Early Stop B before model integration
+AFVT Real Partial,0.5,0.5,,,,,,,,NOT RUN - Early Stop B before model integration
+Offline AFVT Reference,0.25,0.25,,,,,0.017958917,0.004282,0.011275,Round 3 offline reference; not deployable latency
+Offline AFVT Reference,0.375,0.375,,,,,0.012978835,0.002393,0.008814,Round 3 offline reference; not deployable latency
+Offline AFVT Reference,0.5,0.5,,,,,0.010579057,0.001491,0.005988,Round 3 offline reference; not deployable latency

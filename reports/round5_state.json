@@ -1,0 +1,27 @@
+{
+  "round": 5,
+  "status": "completed",
+  "scheduler": "AFVT",
+  "cache_cut": 4,
+  "compute_economics": {
+    "full_ms": 22.571457010269164,
+    "stage4_ms": 4.612332123756409,
+    "stage4_fraction": 0.20434357080528615,
+    "early_stop_a": false
+  },
+  "exact_partial_feasible": "computationally_pointless",
+  "approx_partial_feasible": "feasible",
+  "selected_partial_route": "Cached-Context Approximate Partial",
+  "real_speedup": {
+    "measured_end_to_end": false,
+    "early_stop_b": true,
+    "stage4_full_isolated_ms": 4.3655595450401306,
+    "core_partial_stage4_ms": {
+      "0.25": 6.7405500121116635,
+      "0.375": 6.6616220703125,
+      "0.5": 6.913767040252686
+    }
+  },
+  "quality_result": "not_run_early_stop_b",
+  "final_decision": "ROUND 5 = REAL PARTIAL NO-GO"
+}
