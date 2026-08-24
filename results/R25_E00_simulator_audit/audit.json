@@ -1,0 +1,27 @@
+{
+  "round": 2.5,
+  "round2_deployable_cache_semantics_correct": true,
+  "age_policy_correct": true,
+  "age_uses_independent_block_state": true,
+  "refresh_before_task_evaluation": true,
+  "refreshed_age_reset": 0,
+  "unrefreshed_age_increment": 1,
+  "budget_rule": "ceil(16 * ratio)",
+  "deterministic_tie_breaking": "lower block index first",
+  "bugs_found": [
+    {
+      "scope": "historical_round2_oracle",
+      "problem": "feature drift was used instead of task damage",
+      "impact": "old Oracle was not a valid task-damage upper bound"
+    },
+    {
+      "scope": "initial_round25_oracle",
+      "problem": "Oracle cache initialized one evaluated frame late",
+      "impact": "Oracle only; deployable policies were unaffected"
+    }
+  ],
+  "corrected_oracle_score": "single_block_logit_relative_l2",
+  "oracle_analysis_only": true,
+  "tests_passed": 8,
+  "tests_failed": 0
+}

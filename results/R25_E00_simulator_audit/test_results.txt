@@ -1,0 +1,5 @@
+Command:
+/root/miniconda3/bin/python -m pytest tests/test_refresh_semantics.py -q
+
+Result:
+8 passed in 2.58s

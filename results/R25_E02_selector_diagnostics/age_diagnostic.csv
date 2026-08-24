@@ -1,0 +1,11 @@
+kind,motion_level,refresh_ratio,age,count,fraction,mean_task_damage,spearman_age_damage
+damage_by_age,all,all_core,0,2628,,0.003383001602256403,
+damage_by_age,all,all_core,1,2520,,0.00463607595726018,
+damage_by_age,all,all_core,2,1092,,0.005856673850148281,
+damage_by_age,all,all_core,3,528,,0.0062848184364459785,
+motion_correlation,high,all_core,-1,2256,,0.005122246409418369,0.39242858266773556
+motion_correlation,low,all_core,-1,2256,,0.003676913238553857,0.48111497671002296
+motion_correlation,medium,all_core,-1,2256,,0.00462606712588898,0.3162263410480553
+oracle_top6_age_distribution,all,0.375,0,144,0.1702127659574468,,
+oracle_top6_age_distribution,all,0.375,1,326,0.38534278959810875,,
+oracle_top6_age_distribution,all,0.375,2,376,0.4444444444444444,,

@@ -1,0 +1,7 @@
+method,learned,params,required_inputs,model_forward_ms,total_selector_ms
+Residual Mean,False,0,"current RGB, previous RGB",0.0,9.660025826655328
+Residual P90,False,0,16 residual patches,0.0,43.7693409351632
+Age,False,0,16 block ages,0.0,0.02608327753841877
+Old Tiny MLP,True,737,"residual stats, age, entropy",0.24422601440548897,11.246377647854388
+CNN All,True,5865,"16 residual patches, age, entropy, residual stats",0.5546639358997345,134.9906964134425
+CNN Patch+Age,True,5737,"16 residual patches, 16 block ages",0.4986079682409763,96.7686303127557

@@ -1,0 +1,4 @@
+warmup: 200
+repeats: 1000
+inputs: synthetic tensors with production batch shapes
+reason: isolate CUDA forward from CPU-heavy input preparation

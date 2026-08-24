@@ -1,0 +1,67 @@
+{
+  "final_selector": "Marginal / No Clear Winner",
+  "scientific_conclusion": "MARGINAL / MORE SCIENTIFIC WORK REQUIRED",
+  "outcome": "mixed_task_gain_with_cost_or_stability_tradeoff",
+  "best_learned_candidate": "CNN Patch+Age",
+  "best_learned_evidence": {
+    "core_ratio_wins": 2,
+    "relative_reduction_by_ratio": [
+      0.02932921199513986,
+      0.04831822001457974,
+      -0.0002401667099688889
+    ],
+    "mean_relative_reduction": 0.02580242176658357,
+    "video_ratio_wins": 6,
+    "video_ratio_comparisons": 9,
+    "negative_bootstrap_mean_count": 2,
+    "strict_negative_ci_count": 1,
+    "selector_latency_ms": 96.7686303127557,
+    "latency_vs_age_ratio": 3709.9873729527494
+  },
+  "all_learned_evidence": {
+    "old_tiny_mlp": {
+      "core_ratio_wins": 0,
+      "relative_reduction_by_ratio": [
+        -0.1829017031066505,
+        -0.23249052503996728,
+        -0.34889040389893256
+      ],
+      "mean_relative_reduction": -0.25476087734851677,
+      "video_ratio_wins": 0,
+      "video_ratio_comparisons": 9,
+      "negative_bootstrap_mean_count": 0,
+      "strict_negative_ci_count": 0,
+      "selector_latency_ms": 11.246377647854388
+    },
+    "cnn_all": {
+      "core_ratio_wins": 0,
+      "relative_reduction_by_ratio": [
+        -0.10326613947677585,
+        -0.09674968017814635,
+        -0.20312552560316066
+      ],
+      "mean_relative_reduction": -0.13438044841936095,
+      "video_ratio_wins": 0,
+      "video_ratio_comparisons": 9,
+      "negative_bootstrap_mean_count": 0,
+      "strict_negative_ci_count": 0,
+      "selector_latency_ms": 134.9906964134425
+    },
+    "cnn_patch_age": {
+      "core_ratio_wins": 2,
+      "relative_reduction_by_ratio": [
+        0.02932921199513986,
+        0.04831822001457974,
+        -0.0002401667099688889
+      ],
+      "mean_relative_reduction": 0.02580242176658357,
+      "video_ratio_wins": 6,
+      "video_ratio_comparisons": 9,
+      "negative_bootstrap_mean_count": 2,
+      "strict_negative_ci_count": 1,
+      "selector_latency_ms": 96.7686303127557,
+      "latency_vs_age_ratio": 3709.9873729527494
+    }
+  },
+  "decision_rule": "held-out task damage, cross-video stability, selector overhead, then parameter complexity; <2% or inconsistent gains are marginal"
+}
