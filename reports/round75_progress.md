@@ -80,3 +80,14 @@ model status: TRAINING REQUIRED
 final decision: ROUND 7.5 = DATA READY - MODEL TRAINING REQUIRED
 next action: Round 7.6 training task only; no temporal benchmark started
 ```
+
+## 2026-08-25 - Cloud Installation Verification
+
+```text
+cloud root: /root/autodl-tmp/DriftGuard/data/raw/VSPW
+archive SHA256: matched local archive
+repair SHA256: matched local repair archive
+cloud deterministic audit: PASS
+cloud tests: 4 passed, 2 skipped (checkpoint-dependent tests)
+dataset status: READY on local and cloud
+```

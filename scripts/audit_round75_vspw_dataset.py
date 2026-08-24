@@ -234,7 +234,7 @@ def audit(root: Path, output: Path, sample_count: int, seed: int) -> dict[str, o
     summary: dict[str, object] = {
         "dataset": "VSPW",
         "source": "official VSPW_480p package",
-        "download_status": "installed_local",
+        "download_status": "installed",
         "root": str(root),
         "package": "VSPW_480p.zip",
         "total_size_gb": round(sum(path.stat().st_size for path in root.rglob("*") if path.is_file()) / 1e9, 6),

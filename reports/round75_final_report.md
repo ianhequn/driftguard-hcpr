@@ -32,7 +32,9 @@ any accuracy/latency benchmark.
 
 The official VSPW 480P package is installed locally at
 `D:/datasets/VSPW_480p/VSPW_480p` and exposed to the project through
-`D:/DriftGuard/data/raw/VSPW`.
+`D:/DriftGuard/data/raw/VSPW`. The same archive was checksum-verified,
+independently extracted, repaired, and audited at
+`/root/autodl-tmp/DriftGuard/data/raw/VSPW` on the cloud machine.
 
 ```text
 package bytes: 14843646874
@@ -41,6 +43,9 @@ videos: 3536
 RGB frames: 250412
 masks: 221645
 manifest rows: 250412
+cloud audit: PASS
+local tests: 4 passed, 2 checkpoint-dependent skips
+cloud tests: 4 passed, 2 checkpoint-dependent skips
 ```
 
 The package's official damaged-frame issue was real: twelve files in

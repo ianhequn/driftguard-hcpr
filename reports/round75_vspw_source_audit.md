@@ -66,6 +66,9 @@ D:/datasets/VSPW_480p/VSPW_480p/
 
 D:/DriftGuard/data/raw/VSPW
   -> directory junction to the installed root above
+
+/root/autodl-tmp/DriftGuard/data/raw/VSPW
+  -> independently extracted, repaired, and audited cloud installation
 ```
 
 ## Deterministic Inventory

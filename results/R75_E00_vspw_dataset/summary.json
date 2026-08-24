@@ -1,7 +1,7 @@
 {
   "dataset": "VSPW",
   "source": "official VSPW_480p package",
-  "download_status": "installed_local",
+  "download_status": "installed",
   "root": "D:\\datasets\\VSPW_480p\\VSPW_480p",
   "package": "VSPW_480p.zip",
   "total_size_gb": 14.890211,

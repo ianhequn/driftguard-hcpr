@@ -6,6 +6,8 @@
   "dataset_status": "READY",
   "dataset_source": "official VSPW_480p package from VSPW-dataset/VSPW-dataset-download",
   "dataset_root_local": "D:/DriftGuard/data/raw/VSPW",
+  "dataset_root_cloud": "/root/autodl-tmp/DriftGuard/data/raw/VSPW",
+  "dataset_cloud_verified": true,
   "dataset_split_verified": true,
   "label_semantics_verified": true,
   "model_search_completed": true,
