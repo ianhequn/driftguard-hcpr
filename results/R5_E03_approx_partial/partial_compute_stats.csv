@@ -1,0 +1,4 @@
+video,frame,budget,logical_refresh_blocks,physical_tokens,full_tokens,physical_compute_ratio,halo_tokens,cache_reads,cache_writes
+R5_stage4_microbenchmark,0,0.25,4,64,256,0.25,0,2176,768
+R5_stage4_microbenchmark,0,0.375,6,96,256,0.375,0,2752,1152
+R5_stage4_microbenchmark,0,0.5,8,128,256,0.5,0,3328,1536
