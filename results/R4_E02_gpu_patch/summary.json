@@ -1,0 +1,36 @@
+{
+  "stage": "GPU patch and resize",
+  "description": "Vectorize the 4x4 partition and batch bilinear resize.",
+  "results": [
+    {
+      "OptimizationStage": "O2 GPU Patch",
+      "Mean": "1.1026920429430902",
+      "Median": "1.0243982542306185",
+      "P90": "1.5046569053083658",
+      "P95": "1.524730189703405",
+      "P99": "1.6805237438529717",
+      "Min": "0.8661788888275623",
+      "Max": "3.0162809416651726",
+      "Std": "0.2236712619486586",
+      "GPUEventSpan": "1.080121214926243",
+      "SpeedupVsO0": 43.926249064368044,
+      "SelectedBlockEquivalence": "1.0",
+      "SpeedupVsFrozenRound3": 34.827438862711276
+    },
+    {
+      "OptimizationStage": "O3 GPU Resize",
+      "Mean": "0.8158433870412409",
+      "Median": "0.8310994599014521",
+      "P90": "0.869309064000845",
+      "P95": "0.8777973707765341",
+      "P99": "0.9028761880472302",
+      "Min": "0.7244991138577461",
+      "Max": "1.3588368892669678",
+      "Std": "0.05747892688846477",
+      "GPUEventSpan": "0.7953851197361946",
+      "SpeedupVsO0": 59.37061706815858,
+      "SelectedBlockEquivalence": "1.0",
+      "SpeedupVsFrozenRound3": 47.07268615521345
+    }
+  ]
+}

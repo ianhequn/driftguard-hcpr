@@ -1,0 +1,1 @@
+scripts/run_round4_equivalence.py --split test --max-frames 48 --output-root results/R4_E06_equivalence

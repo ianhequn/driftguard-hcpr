@@ -1,0 +1,6 @@
+split: test
+warmup: 200
+repeats: 1000
+precision: fp32
+final_extraction: all_blocks
+input: cuda_resident_bchw_uint8

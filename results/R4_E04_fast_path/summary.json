@@ -1,0 +1,21 @@
+{
+  "stage": "Fast path",
+  "description": "Skip residual, patch, and CNN work when no visual rank is needed.",
+  "results": [
+    {
+      "OptimizationStage": "O5 Fast Path",
+      "Mean": "0.7680244701914489",
+      "Median": "0.7753490936011076",
+      "P90": "0.8055165875703096",
+      "P95": "0.8136038901284337",
+      "P99": "0.8289004163816571",
+      "Min": "0.6758659146726131",
+      "Max": "1.5403185971081257",
+      "Std": "0.04921424211858823",
+      "GPUEventSpan": "0.747877599477768",
+      "SpeedupVsO0": 63.067164132857464,
+      "SelectedBlockEquivalence": "1.0",
+      "SpeedupVsFrozenRound3": 50.003536606620806
+    }
+  ]
+}

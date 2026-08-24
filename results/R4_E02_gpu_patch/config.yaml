@@ -1,0 +1,4 @@
+algorithm: AFVT
+predictor: TinyRiskCNN Patch+Age
+precision: fp32
+policy_changed: false

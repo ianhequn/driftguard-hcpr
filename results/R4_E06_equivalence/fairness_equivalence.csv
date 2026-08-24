@@ -1,0 +1,10 @@
+video_id,budget,max_stale_run,max_stale_runs
+asl_brother,0.25,3,3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+asl_brother,0.375,2,2 2 2 2 2 2 2 2 2 2 1 2 2 2 2 2
+asl_brother,0.5,1,1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+asl_milk,0.25,3,3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+asl_milk,0.375,2,2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+asl_milk,0.5,1,1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+asl_school,0.25,3,3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+asl_school,0.375,2,2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+asl_school,0.5,1,1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1

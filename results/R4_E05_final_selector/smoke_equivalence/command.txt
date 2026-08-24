@@ -1,0 +1,1 @@
+scripts/run_round4_equivalence.py --split val --max-videos 1 --max-frames 20 --round3-diagnostics results/R3_E00_scheduler_tests/smoke_diagnostics/scheduler_frame_diagnostics.csv --output-root results/R4_E05_final_selector/smoke_equivalence

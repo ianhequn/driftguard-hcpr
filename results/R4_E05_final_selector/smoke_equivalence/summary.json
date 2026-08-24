@@ -1,0 +1,42 @@
+{
+  "split": "val",
+  "videos": [
+    "asl_hungry"
+  ],
+  "policy_rows": 57,
+  "exact_match_rate": 1.0,
+  "max_risk_diff": 1.2636184692382812e-05,
+  "mean_risk_diff": 3.7998832119842917e-07,
+  "task_metrics": [
+    {
+      "Budget": 0.25,
+      "Round4LogitRelativeL2": 0.030067139599276215,
+      "Round3LogitRelativeL2": "",
+      "Round4KL": 0.018573204557852524,
+      "Round3KL": "",
+      "Round4PixelDisagreement": 0.03252531352796053,
+      "Round3PixelDisagreement": "",
+      "MaxStaleRun": 3
+    },
+    {
+      "Budget": 0.375,
+      "Round4LogitRelativeL2": 0.020460279168267,
+      "Round3LogitRelativeL2": "",
+      "Round4KL": 0.008679100900496306,
+      "Round3KL": "",
+      "Round4PixelDisagreement": 0.020286158511513157,
+      "Round3PixelDisagreement": "",
+      "MaxStaleRun": 2
+    },
+    {
+      "Budget": 0.5,
+      "Round4LogitRelativeL2": 0.016069948317875202,
+      "Round3LogitRelativeL2": "",
+      "Round4KL": 0.006468076047129121,
+      "Round3KL": "",
+      "Round4PixelDisagreement": 0.015650699013157895,
+      "Round3PixelDisagreement": "",
+      "MaxStaleRun": 1
+    }
+  ]
+}

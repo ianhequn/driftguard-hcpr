@@ -1,0 +1,36 @@
+{
+  "stage": "Final selector",
+  "description": "Compare direct gather and freeze the faster all-block strategy.",
+  "results": [
+    {
+      "OptimizationStage": "O6 Direct Gather",
+      "Mean": "0.8105737385340035",
+      "Median": "0.8305702358484268",
+      "P90": "0.8556302636861801",
+      "P95": "0.8637858321890235",
+      "P99": "0.8874268783256412",
+      "Min": "0.6675249896943569",
+      "Max": "1.5094378031790257",
+      "Std": "0.05963564185966893",
+      "GPUEventSpan": "0.790627424299717",
+      "SpeedupVsO0": 59.75659340656405,
+      "SelectedBlockEquivalence": "1.0",
+      "SpeedupVsFrozenRound3": 47.37871199658614
+    },
+    {
+      "OptimizationStage": "O7 Final",
+      "Mean": "0.8204371077008545",
+      "Median": "0.790958758443594",
+      "P90": "0.8997399359941485",
+      "P95": "1.2700362596660852",
+      "P99": "1.3302243407815695",
+      "Min": "0.6159748882055283",
+      "Max": "1.756724901497364",
+      "Std": "0.14211766055922126",
+      "GPUEventSpan": "0.7992831051945687",
+      "SpeedupVsO0": 59.03819423203858,
+      "SelectedBlockEquivalence": "1.0",
+      "SpeedupVsFrozenRound3": 46.80912083269813
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "stage": "Candidate batch",
+  "description": "Index AFVT candidates before batched resize and CNN inference.",
+  "results": [
+    {
+      "OptimizationStage": "O4 Candidate Batch",
+      "Mean": "0.7679948946461082",
+      "Median": "0.7783130276948214",
+      "P90": "0.8109591901302338",
+      "P95": "0.8209622465074062",
+      "P99": "0.8569519687443972",
+      "Min": "0.6307670846581459",
+      "Max": "2.035134006291628",
+      "Std": "0.07910642778075323",
+      "GPUEventSpan": "0.7478143031001091",
+      "SpeedupVsO0": 63.06959285443534,
+      "SelectedBlockEquivalence": "1.0",
+      "SpeedupVsFrozenRound3": 50.00546224684891
+    }
+  ]
+}

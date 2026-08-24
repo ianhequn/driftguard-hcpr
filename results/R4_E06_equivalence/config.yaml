@@ -1,0 +1,6 @@
+split: test
+max_videos: None
+max_frames: 48
+precision: fp32
+reference: immediately_previous_rgb_frame
+extraction: all_blocks

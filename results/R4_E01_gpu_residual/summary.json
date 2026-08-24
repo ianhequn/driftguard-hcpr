@@ -1,0 +1,21 @@
+{
+  "stage": "GPU residual",
+  "description": "Move normalized RGB residual construction to CUDA.",
+  "results": [
+    {
+      "OptimizationStage": "O1 GPU Residual",
+      "Mean": "1.459369566757232",
+      "Median": "1.4508070889860392",
+      "P90": "1.499894354492426",
+      "P95": "1.6469630412757397",
+      "P99": "1.9064564863219857",
+      "Min": "1.1978130787611008",
+      "Max": "2.5997739285230637",
+      "Std": "0.1131707995925228",
+      "GPUEventSpan": "1.430956159234047",
+      "SpeedupVsO0": 33.19044498594275,
+      "SelectedBlockEquivalence": "1.0",
+      "SpeedupVsFrozenRound3": 26.315431392291885
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "split": "test",
+  "videos": [
+    "asl_brother",
+    "asl_milk",
+    "asl_school"
+  ],
+  "policy_rows": 423,
+  "exact_match_rate": 1.0,
+  "max_risk_diff": 1.0251998901367188e-05,
+  "mean_risk_diff": 2.887061814580522e-07,
+  "task_metrics": [
+    {
+      "Budget": 0.25,
+      "Round4LogitRelativeL2": 0.01795891657841544,
+      "Round3LogitRelativeL2": 0.01795891486108303,
+      "Round4KL": 0.0042819327807734255,
+      "Round3KL": 0.004281932149571201,
+      "Round4PixelDisagreement": 0.011275487588652482,
+      "Round3PixelDisagreement": 0.011275487588652482,
+      "MaxStaleRun": 3
+    },
+    {
+      "Budget": 0.375,
+      "Round4LogitRelativeL2": 0.012978834815897998,
+      "Round3LogitRelativeL2": 0.012978835530077101,
+      "Round4KL": 0.0023933325451156286,
+      "Round3KL": 0.0023933334222361892,
+      "Round4PixelDisagreement": 0.00881416916001773,
+      "Round3PixelDisagreement": 0.00881416916001773,
+      "MaxStaleRun": 2
+    },
+    {
+      "Budget": 0.5,
+      "Round4LogitRelativeL2": 0.010579056788486897,
+      "Round3LogitRelativeL2": 0.010579057157548236,
+      "Round4KL": 0.001491495996515691,
+      "Round3KL": 0.0014914958815129885,
+      "Round4PixelDisagreement": 0.005987938414228723,
+      "Round3PixelDisagreement": 0.005988371287677305,
+      "MaxStaleRun": 1
+    }
+  ]
+}

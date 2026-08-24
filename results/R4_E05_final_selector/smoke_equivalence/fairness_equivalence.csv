@@ -1,0 +1,4 @@
+video_id,budget,max_stale_run,max_stale_runs
+asl_hungry,0.25,3,3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+asl_hungry,0.375,2,2 2 2 2 2 2 1 2 2 2 2 2 2 2 2 2
+asl_hungry,0.5,1,1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1

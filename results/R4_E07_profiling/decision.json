@@ -1,0 +1,40 @@
+{
+  "engineering_result": "STRONG ENGINEERING GO",
+  "deployment_readiness": "SELECTOR READY FOR PARTIAL-COMPUTE INTEGRATION",
+  "algorithm": "AFVT",
+  "predictor": "TinyRiskCNN Patch+Age",
+  "precision": "FP32",
+  "final_extraction": "all_blocks_vectorized_then_candidate_index",
+  "policy_exact_match_rate": 1.0,
+  "max_risk_diff": 1.0251998901367188e-05,
+  "mean_risk_diff": 2.887061814580522e-07,
+  "formal_latency_ms": {
+    "0.25": {
+      "Mean": 0.12554203858599067,
+      "Median": 0.07808557711541653,
+      "P95": 0.771712907589972,
+      "P99": 0.8472447283565998,
+      "IncludingH2DMean": 12.545305211097002,
+      "PeakMemoryMB": 14.06298828125
+    },
+    "0.375": {
+      "Mean": 1.2321898695081472,
+      "Median": 1.2342436239123344,
+      "P95": 1.3319402700290084,
+      "P99": 1.5673938114196062,
+      "IncludingH2DMean": 18.450281844008714,
+      "PeakMemoryMB": 14.06298828125
+    },
+    "0.5": {
+      "Mean": 0.11443394608795643,
+      "Median": 0.0942661426961422,
+      "P95": 0.11636442504823204,
+      "P99": 0.9527744818478823,
+      "IncludingH2DMean": 8.998352332506329,
+      "PeakMemoryMB": 14.06298828125
+    }
+  },
+  "formal_speedup_vs_round3_at_37_5": 31.1672256527546,
+  "round3_scientific_result_reopened": false,
+  "partial_computation_executed": false
+}

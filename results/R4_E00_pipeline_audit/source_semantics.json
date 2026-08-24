@@ -1,0 +1,9 @@
+{
+  "round3_reference": "immediately previous decoded RGB frame",
+  "residual": "abs(current.float()/255 - previous.float()/255)",
+  "grid": "4x4",
+  "resize": "torch bilinear 16x16 align_corners=False",
+  "metadata": "cache age standardized by frozen checkpoint mean/std",
+  "source_semantics_ambiguity": "Terminology ambiguity resolved from source and stored outputs; no executable ambiguity remained.",
+  "final_extraction": "vectorize all 16 logical blocks, then index candidates"
+}

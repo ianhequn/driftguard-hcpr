@@ -1,0 +1,6 @@
+split: val
+max_videos: 1
+max_frames: 20
+precision: fp32
+reference: immediately_previous_rgb_frame
+extraction: all_blocks
