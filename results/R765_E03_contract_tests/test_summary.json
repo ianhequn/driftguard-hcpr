@@ -1,0 +1,12 @@
+{
+  "official_contract_tests": 12,
+  "passed": 12,
+  "warnings": "runtime warnings intentionally emitted for out-of-range raw-derived IDs",
+  "synthetic_valid_mask_equivalence": true,
+  "synthetic_confusion_equivalence": true,
+  "real_anomaly_mask_validity_equivalence": true,
+  "real_anomaly_mask_confusion_equivalence": true,
+  "cross_entropy_ignore_test": true,
+  "miou_void_invariance_test": true,
+  "miou_valid_pixel_sensitivity_test": true
+}

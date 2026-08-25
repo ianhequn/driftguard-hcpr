@@ -5,23 +5,62 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable
+import warnings
 
+import numpy as np
 from PIL import Image
 from torch.utils.data import Dataset
 
 
 DEFAULT_IMAGE_DIR_NAMES = ("origin", "images", "img")
 DEFAULT_MASK_DIR_NAMES = ("mask", "masks", "label", "labels")
+VSPW_NUM_CLASSES = 124
+VSPW_IGNORE_INDEX = 255
+_WARNED_RAW_LABEL_SETS: set[tuple[int, ...]] = set()
 
 
-def normalize_vspw_mask(mask):
-    """Apply the official VSPW void/class-id normalization rule."""
+def official_normalize_vspw_mask(mask):
+    """Reproduce the released official loader before canonicalization."""
 
-    normalized = mask.copy()
-    normalized[normalized == 0] = 255
+    normalized = np.asarray(mask).astype(np.int64, copy=True)
+    normalized[normalized == 0] = VSPW_IGNORE_INDEX
     normalized = normalized - 1
-    normalized[normalized == 254] = 255
+    normalized[normalized == VSPW_IGNORE_INDEX - 1] = VSPW_IGNORE_INDEX
     return normalized
+
+
+def normalize_vspw_mask(mask, source: str | Path | None = None):
+    """Canonicalize VSPW labels using official valid-range semantics.
+
+    The official loader's normalization is preserved first. The official
+    evaluator then admits only normalized IDs in ``[0, 124)``. Any other
+    normalized ID, including the released-package raw value 253 -> 252, is
+    represented canonically as the project ignore index 255.
+    """
+
+    normalized = official_normalize_vspw_mask(mask)
+    invalid = (normalized < 0) | (
+        (normalized >= VSPW_NUM_CLASSES) & (normalized != VSPW_IGNORE_INDEX)
+    )
+    invalid_ids = tuple(int(value) for value in np.unique(normalized[invalid]))
+    if invalid_ids and invalid_ids not in _WARNED_RAW_LABEL_SETS:
+        location = f" in {source}" if source is not None else ""
+        warnings.warn(
+            "VSPW normalized out-of-range IDs "
+            f"{list(invalid_ids)}{location} are canonicalized to void 255",
+            RuntimeWarning,
+            stacklevel=2,
+        )
+        _WARNED_RAW_LABEL_SETS.add(invalid_ids)
+    normalized[invalid] = VSPW_IGNORE_INDEX
+    return normalized
+
+
+def vspw_official_valid_mask(normalized):
+    """Return the exact official evaluator validity predicate."""
+
+    normalized = np.asarray(normalized)
+    return (normalized >= 0) & (normalized < VSPW_NUM_CLASSES)
 
 
 @dataclass(frozen=True)

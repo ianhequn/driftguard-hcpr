@@ -74,6 +74,11 @@ reports/*
 !reports/round76_training_calibration.md
 !reports/round76_model_card.md
 !reports/round76_final_report.md
+!reports/round765_state.json
+!reports/round765_progress.md
+!reports/round765_official_semantics_audit.md
+!reports/round765_label_contract.md
+!reports/round765_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
@@ -298,6 +303,18 @@ results/R76_*/*.bin
 results/R76_*/*.safetensors
 results/R76_*/*.npy
 results/R76_*/*.npz
+
+# Round 7.65 label-contract audits and lightweight evidence
+!results/R765_*/
+!results/R765_*/*.csv
+!results/R765_*/*.json
+!results/R765_*/*.yaml
+!results/R765_*/*.txt
+!results/R765_*/*.md
+
+# Keep no raw dataset or prediction material in Round 7.65 artifacts
+results/R765_*/raw/
+results/R765_*/*.png
 
 # Keep directory placeholders
 !.gitkeep

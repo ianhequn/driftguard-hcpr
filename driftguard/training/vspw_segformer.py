@@ -68,14 +68,7 @@ class VSPWFrameDataset(Dataset):
         image_tensor = torch.from_numpy(image_array).permute(2, 0, 1)
         image_tensor = (image_tensor - IMAGE_MEAN) / IMAGE_STD
         raw_mask = np.asarray(mask, dtype=np.uint8)
-        raw_valid = (raw_mask <= NUM_CLASSES) | (raw_mask == IGNORE_INDEX)
-        if not raw_valid.all():
-            invalid_ids = np.unique(raw_mask[~raw_valid]).tolist()
-            raise ValueError(
-                f"{sample.mask_path}: raw VSPW mask contains out-of-domain IDs {invalid_ids}; "
-                "expected 0..124 or 255"
-            )
-        mask_array = normalize_vspw_mask(raw_mask)
+        mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
         labels = torch.from_numpy(mask_array.astype(np.int64, copy=False))
         return {
             "pixel_values": image_tensor,

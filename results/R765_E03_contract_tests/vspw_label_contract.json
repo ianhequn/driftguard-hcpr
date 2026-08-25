@@ -1,0 +1,19 @@
+{
+  "num_classes": 124,
+  "valid_normalized_min": 0,
+  "valid_normalized_max": 123,
+  "canonical_ignore_index": 255,
+  "evaluation_valid_rule": "0 <= normalized_gt < 124",
+  "out_of_range_policy": "canonicalize_to_255",
+  "raw_253_policy": "void",
+  "training_loss_policy": "CrossEntropy(ignore_index=255)",
+  "validation_metric_policy": "exclude canonical ignore pixels from confusion matrix",
+  "source_basis": [
+    "official VSPW dataset semantics",
+    "official VSPW baseline evaluator",
+    "released VSPW_480P package audit"
+  ],
+  "dataset_files_modified": false,
+  "official_equivalence_verified": true,
+  "full_domain_audit_after_canonicalization": true
+}

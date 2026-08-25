@@ -1,0 +1,45 @@
+{
+  "synthetic": {
+    "raw": [
+      0,
+      1,
+      124,
+      253,
+      255
+    ],
+    "official_normalized": [
+      255,
+      0,
+      123,
+      252,
+      255
+    ],
+    "canonical_normalized": [
+      255,
+      0,
+      123,
+      255,
+      255
+    ],
+    "official_valid_mask": [
+      false,
+      true,
+      true,
+      false,
+      false
+    ],
+    "project_valid_mask": [
+      false,
+      true,
+      true,
+      false,
+      false
+    ],
+    "valid_mask_equal": true,
+    "confusion_equal": true
+  },
+  "real_anomaly_masks": 17,
+  "real_valid_mask_all_equal": true,
+  "real_confusion_all_equal": true,
+  "equivalence_pass": true
+}
