@@ -1,0 +1,28 @@
+seed: 42
+dataset_root: /root/autodl-tmp/DriftGuard/data/raw/VSPW
+initialization: /root/autodl-tmp/models/segformer-b0
+architecture: SegFormer-B0
+num_classes: 124
+ignore_index: 255
+image_size: 512
+augmentation:
+  random_horizontal_flip: 0.5
+  mask_interpolation: nearest
+optimizer:
+  name: AdamW
+  learning_rate: 0.00006
+  weight_decay: 0.01
+scheduler:
+  name: polynomial
+  power: 0.9
+  warmup_ratio: 0.02
+precision: bf16
+max_grad_norm: 1.0
+effective_batch_size_target: 8
+validation_every_steps: 5000
+save_every_steps: 5000
+pilot_steps: 10000
+main_steps: 40000
+hard_cap_steps: 80000
+early_stop_validations: 3
+meaningful_miou_improvement: 0.001
