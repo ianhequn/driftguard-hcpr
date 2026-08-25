@@ -290,6 +290,7 @@ results/R75_*/*.safetensors
 !results/R76_*/*.png
 
 # Keep Round 7.6 weights, optimizer states, and large predictions out of Git
+results/R76_*/*.log
 results/R76_*/raw/
 results/R76_*/*.pt
 results/R76_*/*.pth

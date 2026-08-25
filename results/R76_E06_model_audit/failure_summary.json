@@ -1,0 +1,19 @@
+{
+  "decision": "MODEL TRAINING NO-GO",
+  "failure_gate": "dataset integrity unexpectedly fails",
+  "training_steps": 5000,
+  "epoch_equivalent": 0.20278525548407375,
+  "final_logged_loss": 1.204059934616089,
+  "active_training_hours": 0.5183,
+  "attempted_validation_hours": 0.113,
+  "total_gpu_process_hours": 0.6366,
+  "train_masks_scanned": 197253,
+  "train_anomalous_masks": 0,
+  "validation_masks_scanned": 24392,
+  "validation_anomalous_masks": 17,
+  "invalid_raw_id": 253,
+  "invalid_validation_pixels": 68314,
+  "frozen_checkpoint": null,
+  "validation_miou": null,
+  "benchmark_readiness": "NOT READY"
+}

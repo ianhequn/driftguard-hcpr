@@ -1,0 +1,18 @@
+{
+  "expected_raw_domain": "0..124 or 255",
+  "splits": {
+    "train": {
+      "mask_count": 197253,
+      "anomalous_mask_count": 0,
+      "invalid_pixel_count": 0
+    },
+    "val": {
+      "mask_count": 24392,
+      "anomalous_mask_count": 17,
+      "invalid_pixel_count": 68314
+    }
+  },
+  "dataset_domain_pass": false,
+  "anomalous_mask_count": 17,
+  "invalid_pixel_count": 68314
+}

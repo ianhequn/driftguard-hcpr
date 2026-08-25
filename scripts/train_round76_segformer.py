@@ -259,6 +259,12 @@ def main() -> None:
             interval_loss = 0.0
             interval_count = 0
 
+        checkpoint = None
+        if args.mode == "train" and step % args.save_every == 0:
+            checkpoint = save_step_checkpoint(
+                checkpoint_root, step, model, optimizer, scheduler, best_miou, scaler
+            )
+
         if args.mode == "train" and step % args.validation_every == 0:
             validation = validate(model, validation_loader, device, args.precision)
             validation["step"] = step
@@ -293,10 +299,6 @@ def main() -> None:
                     json.dumps({"step": step, "miou": best_miou}, indent=2) + "\n",
                     encoding="utf-8",
                 )
-
-        if args.mode == "train" and step % args.save_every == 0 and step % args.validation_every:
-            save_step_checkpoint(checkpoint_root, step, model, optimizer, scheduler, best_miou, scaler)
-
     smoke_validation = None
     if args.mode == "smoke":
         smoke_validation = validate(

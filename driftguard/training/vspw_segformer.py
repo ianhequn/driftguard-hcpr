@@ -67,7 +67,15 @@ class VSPWFrameDataset(Dataset):
         image_array = np.asarray(image, dtype=np.float32).copy() / 255.0
         image_tensor = torch.from_numpy(image_array).permute(2, 0, 1)
         image_tensor = (image_tensor - IMAGE_MEAN) / IMAGE_STD
-        mask_array = normalize_vspw_mask(np.asarray(mask, dtype=np.uint8))
+        raw_mask = np.asarray(mask, dtype=np.uint8)
+        raw_valid = (raw_mask <= NUM_CLASSES) | (raw_mask == IGNORE_INDEX)
+        if not raw_valid.all():
+            invalid_ids = np.unique(raw_mask[~raw_valid]).tolist()
+            raise ValueError(
+                f"{sample.mask_path}: raw VSPW mask contains out-of-domain IDs {invalid_ids}; "
+                "expected 0..124 or 255"
+            )
+        mask_array = normalize_vspw_mask(raw_mask)
         labels = torch.from_numpy(mask_array.astype(np.int64, copy=False))
         return {
             "pixel_values": image_tensor,
@@ -136,6 +144,15 @@ class StreamingSegmentationMetrics:
     def update(self, prediction: torch.Tensor, target: torch.Tensor) -> None:
         prediction = prediction.detach().to("cpu", torch.int64).reshape(-1)
         target = target.detach().to("cpu", torch.int64).reshape(-1)
+        invalid_target = (target != self.ignore_index) & (
+            (target < 0) | (target >= self.num_classes)
+        )
+        if invalid_target.any():
+            invalid_ids = target[invalid_target].unique().tolist()
+            raise ValueError(
+                f"target contains out-of-range class IDs {invalid_ids}; "
+                f"expected 0..{self.num_classes - 1} or {self.ignore_index}"
+            )
         valid = target != self.ignore_index
         prediction = prediction[valid]
         target = target[valid]
