@@ -67,6 +67,13 @@ reports/*
 !reports/round75_model_compatibility.md
 !reports/round75_training_requirement.md
 !reports/round75_final_report.md
+!reports/round76_state.json
+!reports/round76_progress.md
+!reports/round76_initialization_audit.md
+!reports/round76_preprocessing_audit.md
+!reports/round76_training_calibration.md
+!reports/round76_model_card.md
+!reports/round76_final_report.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
@@ -272,6 +279,24 @@ results/R75_*/*.npz
 results/R75_*/*.pt
 results/R75_*/*.pth
 results/R75_*/*.safetensors
+
+# Round 7.6 lightweight training metadata, metrics, and figures
+!results/R76_*/
+!results/R76_*/*.csv
+!results/R76_*/*.json
+!results/R76_*/*.yaml
+!results/R76_*/*.txt
+!results/R76_*/*.md
+!results/R76_*/*.png
+
+# Keep Round 7.6 weights, optimizer states, and large predictions out of Git
+results/R76_*/raw/
+results/R76_*/*.pt
+results/R76_*/*.pth
+results/R76_*/*.bin
+results/R76_*/*.safetensors
+results/R76_*/*.npy
+results/R76_*/*.npz
 
 # Keep directory placeholders
 !.gitkeep

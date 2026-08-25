@@ -1,0 +1,22 @@
+{
+  "round": "7.6",
+  "status": "running",
+  "task": "train_and_freeze_vspw_segformer",
+  "dataset": "VSPW",
+  "dataset_status": "READY",
+  "architecture": "SegFormer-B0",
+  "num_classes": 124,
+  "ignore_index": 255,
+  "initialization": "/root/autodl-tmp/models/segformer-b0",
+  "batch_size": null,
+  "effective_batch_size": null,
+  "precision": null,
+  "training_steps": 0,
+  "best_step": null,
+  "best_validation_miou": null,
+  "frozen_checkpoint": null,
+  "class_alignment_verified": false,
+  "forward_smoke": false,
+  "training_result": null,
+  "benchmark_readiness": "NOT READY"
+}
