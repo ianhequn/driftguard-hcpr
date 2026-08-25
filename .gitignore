@@ -353,6 +353,35 @@ results/R7R_*/**/run.log
 results/R765_*/raw/
 results/R765_*/*.png
 
+# Round 7.1 repeated B0 latency robustness artifacts
+!reports/round71_*.md
+!reports/round71_state.json
+!results/R71_*/
+!results/R71_*/*.csv
+!results/R71_*/*.json
+!results/R71_*/*.png
+!results/R71_*/*.txt
+results/R71_*/run.log
+
+# Round 8 B1 generalization lightweight artifacts
+!reports/round8_*.md
+!reports/round8_state.json
+!results/R8_*/
+!results/R8_*/*.csv
+!results/R8_*/*.json
+!results/R8_*/*.yaml
+!results/R8_*/*.md
+!results/R8_*/*.png
+!results/R8_*/*.txt
+results/R8_*/run.log
+results/R8_*/**/run.log
+results/R8_*/**/*.pt
+results/R8_*/**/*.pth
+results/R8_*/**/*.bin
+results/R8_*/**/*.safetensors
+results/R8_*/**/*.npy
+results/R8_*/**/*.npz
+
 # Keep directory placeholders
 !.gitkeep
 

@@ -1,0 +1,147 @@
+{
+  "model_sha256": "8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b",
+  "warmup": 200,
+  "measurements": 1000,
+  "repetitions": 3,
+  "precision": "bf16",
+  "input_shape": [
+    1,
+    3,
+    512,
+    512
+  ],
+  "rows": [
+    {
+      "repetition": 1,
+      "component": "Full",
+      "mean_ms": 11.553352181434631,
+      "median_ms": 11.784704208374023,
+      "p95_ms": 13.3093665599823,
+      "p99_ms": 14.937336969375611,
+      "std_ms": 1.5060590679203967
+    },
+    {
+      "repetition": 1,
+      "component": "Stage1-3",
+      "mean_ms": 7.219156260967255,
+      "median_ms": 7.03441596031189,
+      "p95_ms": 8.673894166946411,
+      "p99_ms": 10.317855081558228,
+      "std_ms": 0.8198906634018995
+    },
+    {
+      "repetition": 1,
+      "component": "Stage4",
+      "mean_ms": 2.288778275489807,
+      "median_ms": 2.358272075653076,
+      "p95_ms": 2.49147367477417,
+      "p99_ms": 3.0133266687393183,
+      "std_ms": 0.2713365239821787
+    },
+    {
+      "repetition": 1,
+      "component": "Decoder",
+      "mean_ms": 0.8112576940655708,
+      "median_ms": 0.749567985534668,
+      "p95_ms": 0.9926143854856487,
+      "p99_ms": 1.0599417912960052,
+      "std_ms": 0.12334047855766715
+    },
+    {
+      "repetition": 2,
+      "component": "Full",
+      "mean_ms": 10.873059366226196,
+      "median_ms": 9.792511940002441,
+      "p95_ms": 14.41570115089416,
+      "p99_ms": 31.419425029754635,
+      "std_ms": 4.394646007655651
+    },
+    {
+      "repetition": 2,
+      "component": "Stage1-3",
+      "mean_ms": 7.892341533660889,
+      "median_ms": 7.001536130905151,
+      "p95_ms": 11.658433723449706,
+      "p99_ms": 23.936653347015373,
+      "std_ms": 3.4244331597286224
+    },
+    {
+      "repetition": 2,
+      "component": "Stage4",
+      "mean_ms": 2.861049755334854,
+      "median_ms": 1.871071994304657,
+      "p95_ms": 6.425600218772882,
+      "p99_ms": 12.423862667083739,
+      "std_ms": 2.0749515714906175
+    },
+    {
+      "repetition": 2,
+      "component": "Decoder",
+      "mean_ms": 1.0956839695572853,
+      "median_ms": 0.7805440127849579,
+      "p95_ms": 2.4908511161804188,
+      "p99_ms": 3.4131064581871033,
+      "std_ms": 0.6493008832400924
+    },
+    {
+      "repetition": 3,
+      "component": "Full",
+      "mean_ms": 11.556933841705323,
+      "median_ms": 11.629568099975586,
+      "p95_ms": 13.37096967697143,
+      "p99_ms": 29.405283603668213,
+      "std_ms": 3.2401906001184693
+    },
+    {
+      "repetition": 3,
+      "component": "Stage1-3",
+      "mean_ms": 8.483307894706726,
+      "median_ms": 7.263888120651245,
+      "p95_ms": 17.09250898361202,
+      "p99_ms": 33.65022449493407,
+      "std_ms": 5.069605439087223
+    },
+    {
+      "repetition": 3,
+      "component": "Stage4",
+      "mean_ms": 2.997822368144989,
+      "median_ms": 2.040832042694092,
+      "p95_ms": 6.496287846565245,
+      "p99_ms": 11.140190601348875,
+      "std_ms": 2.1013286966135536
+    },
+    {
+      "repetition": 3,
+      "component": "Decoder",
+      "mean_ms": 1.0452904334664346,
+      "median_ms": 1.0035200119018555,
+      "p95_ms": 1.257417619228363,
+      "p99_ms": 1.8176352179050443,
+      "std_ms": 0.14440260927971763
+    }
+  ],
+  "summary_by_component": {
+    "Full": {
+      "mean_ms": 11.327781796455383,
+      "std_across_repetitions_ms": 0.39380524817189466,
+      "repetitions": 3
+    },
+    "Stage1-3": {
+      "mean_ms": 7.86493522977829,
+      "std_across_repetitions_ms": 0.6325212782119846,
+      "repetitions": 3
+    },
+    "Stage4": {
+      "mean_ms": 2.7158834663232168,
+      "std_across_repetitions_ms": 0.3761526550901378,
+      "repetitions": 3
+    },
+    "Decoder": {
+      "mean_ms": 0.9840773656964302,
+      "std_across_repetitions_ms": 0.15177238318246022,
+      "repetitions": 3
+    }
+  },
+  "stage4_fraction_of_full": 0.23975421800348004,
+  "profile_boundary": "CUDA-resident structured reuse pipeline, CUDA Event"
+}

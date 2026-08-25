@@ -1,0 +1,74 @@
+{
+  "round": "7.1",
+  "round71": "ROBUST GO",
+  "implementation": "VALID",
+  "round8_long_training": "AUTHORIZED",
+  "fi2": {
+    "repetitions": 5,
+    "mean_speedup": 1.0923767346812105,
+    "std_speedup": 0.07572837516181272,
+    "cv_speedup": 0.06932441231816659,
+    "min_speedup": 1.006833980414882,
+    "max_speedup": 1.1783463179216647,
+    "ci95_low": 1.033718236153744,
+    "ci95_high": 1.151035233208677,
+    "mean_latency_ms": 11.875226138114929
+  },
+  "fi4": {
+    "status": "TRANSIENT OUTLIER",
+    "speedups": [
+      1.3817066054877303,
+      1.0794124671513785,
+      1.0699474380122804,
+      1.2040774259271096,
+      1.1550045052727262
+    ],
+    "historical_round7_speedup": 0.8684246131951041,
+    "historical_round7_p95_ms": 43.733145523071265
+  },
+  "validity_checks": {
+    "model_sha256": true,
+    "environment_sha256": true,
+    "environment_gate": true,
+    "five_repetitions": true,
+    "warmup_200": true,
+    "measurements_1000": true,
+    "bf16": true,
+    "all_policies_present": true,
+    "paired_full_fields_present": true,
+    "profile_three_repetitions": true
+  },
+  "profile": {
+    "Full": {
+      "mean_ms": 11.327781796455383,
+      "std_across_repetitions_ms": 0.39380524817189466,
+      "repetitions": 3
+    },
+    "Stage1-3": {
+      "mean_ms": 7.86493522977829,
+      "std_across_repetitions_ms": 0.6325212782119846,
+      "repetitions": 3
+    },
+    "Stage4": {
+      "mean_ms": 2.7158834663232168,
+      "std_across_repetitions_ms": 0.3761526550901378,
+      "repetitions": 3
+    },
+    "Decoder": {
+      "mean_ms": 0.9840773656964302,
+      "std_across_repetitions_ms": 0.15177238318246022,
+      "repetitions": 3
+    }
+  },
+  "profile_stage4_fraction": 0.23975421800348004,
+  "profile_boundary": "CUDA-resident structured reuse pipeline, CUDA Event",
+  "environment": {
+    "gpu_query": "NVIDIA GeForce RTX 4090, 595.71.05, 48, 210, 1, 24564, 0",
+    "compute_apps_query": ""
+  },
+  "interpretation": {
+    "fi2_primary": "mean speedup is above 1.0 and its five-repetition bootstrap CI is above 1.0",
+    "fi4": "Round 7's low FI-4 row was not reproduced across the five fixed-order repetitions",
+    "boundary_warning": "profile-derived Amdahl and paired end-to-end speedup use different decompositions"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "timestamp_utc": "2026-08-25T15:12:52.543362+00:00",
+  "model_dir": "/root/autodl-tmp/models/segformer-b0-vspw124",
+  "model_sha256": "8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b",
+  "expected_sha256": "8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b",
+  "model_sha256_pass": true,
+  "gpu_query": "NVIDIA GeForce RTX 4090, 595.71.05, 48, 210, 1, 24564, 0",
+  "compute_apps_query": "",
+  "process_snapshot": "PID     ELAPSED CMD\n     1  2-02:09:50 bash /init/boot/boot.sh\n  1136  2-02:09:46 /bin/supervisord -c /init/supervisor/supervisor.ini\n  1153  2-02:09:45 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups\n  1154  2-02:09:45 autopanel serve --work-dir=/root/autodl-tmp --cache-dir=/root/autodl-tmp\n  1156  2-02:09:45 /root/miniconda3/bin/python /root/miniconda3/bin/jupyter-lab --allow-root --config=/init/jupyter/jupyter_config.py\n  1157  2-02:09:45 /root/miniconda3/bin/python /root/miniconda3/bin/tensorboard --host 0.0.0.0 --port 6007 --logdir /root/tf-logs\n  1158  2-02:09:45 proxy -c /init/proxy/proxy.ini\n  1159  2-02:09:45 proxy -c /init/proxy/proxy-hot-backup.ini\n  1215  2-02:09:44 /root/miniconda3/lib/python3.10/site-packages/tensorboard_data_server/bin/server --logdir=/root/tf-logs --reload=5 --samples-per-plugin= --port=0 --port-file=/tmp/tensorboard_data_server_e8uk7bmn/port --die-after-stdin --error-file=/tmp/tensorboard_data_server_e8uk7bmn/startup_error\n  4984  1-23:52:57 /bin/bash -l\n349877       00:01 sshd: root@notty\n349888       00:00 /root/miniconda3/bin/python3.10 scripts/run_round71_environment.py --model-dir /root/autodl-tmp/models/segformer-b0-vspw124 --output results/R71_E00_environment/environment.json\n349893       00:00 ps -eo pid,etime,cmd",
+  "gate": "PASS"
+}
