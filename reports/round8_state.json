@@ -1,0 +1,19 @@
+{
+  "round": 8,
+  "status": "blocked",
+  "decision": "ROUND 8 = SOURCE CHECKPOINT BLOCKED",
+  "source_identifier": "nvidia/segformer-b1-finetuned-ade-512-512",
+  "source_gate": "BLOCKED",
+  "source_available": false,
+  "source_block_reason": "huggingface.co:443 connection timed out in cloud and local environments; no local snapshot",
+  "round71_gate": "ROBUST GO",
+  "round71_implementation": "VALID",
+  "round71_fi2_mean_speedup": 1.0923767346812105,
+  "round71_fi2_ci95": [1.033718236153744, 1.151035233208677],
+  "training_started": false,
+  "b1_checkpoint_frozen": false,
+  "gt_benchmark_started": false,
+  "latency_benchmark_started": false,
+  "b0_checkpoint_modified": false,
+  "stop_reason": "authorized source checkpoint could not be obtained or verified"
+}

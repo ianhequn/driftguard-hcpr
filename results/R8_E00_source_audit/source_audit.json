@@ -1,0 +1,7 @@
+{
+  "source_identifier": "nvidia/segformer-b1-finetuned-ade-512-512",
+  "source_gate": "BLOCKED",
+  "error_type": "LocalEntryNotFoundError",
+  "error": "An error happened while trying to locate the files on the Hub and we cannot find the appropriate snapshot folder for the specified revision on the local disk. Please check your internet connection and try again.",
+  "reason": "verified public checkpoint could not be obtained from Hugging Face and no local snapshot was available"
+}
