@@ -1,0 +1,24 @@
+{
+  "audit_date": "2026-08-25",
+  "sources": [
+    {
+      "name": "VSPW official download repository",
+      "url": "https://github.com/VSPW-dataset/VSPW-dataset-download",
+      "role": "documented mask domain and normalization"
+    },
+    {
+      "name": "VSPW official baseline dataset.py",
+      "url": "https://github.com/VSPW-dataset/VSPW_baseline/blob/master/dataset.py",
+      "role": "released loader normalization"
+    },
+    {
+      "name": "VSPW official baseline utils.py",
+      "url": "https://github.com/VSPW-dataset/VSPW_baseline/blob/master/utils.py",
+      "role": "confusion-matrix valid-range filtering"
+    }
+  ],
+  "released_archive_sha256": "3f350427005c01efab49fc951af21e542a473f586107d5eb841174af51d13f4f",
+  "local_cloud_anomaly_sha256_match": true,
+  "raw253_classification": "official_released_annotation_artifact",
+  "semantic_class_mapping_for_253": null
+}
