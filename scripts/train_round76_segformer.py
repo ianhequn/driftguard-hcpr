@@ -120,6 +120,11 @@ def main() -> None:
     parser.add_argument("--dataset-root", type=Path, required=True)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
+    parser.add_argument(
+        "--checkpoint-root",
+        type=Path,
+        default=PROJECT_ROOT / "checkpoints/vspw_segformer_b0",
+    )
     parser.add_argument("--batch-size", type=int, required=True)
     parser.add_argument("--accumulation", type=int, default=1)
     parser.add_argument("--workers", type=int, default=8)
@@ -182,6 +187,7 @@ def main() -> None:
             "dataset_root": str(args.dataset_root),
             "source": str(args.source),
             "output_root": str(args.output_root),
+            "checkpoint_root": str(args.checkpoint_root),
             "resume": str(args.resume) if args.resume else None,
         },
         "initialization": initialization.__dict__,
@@ -199,7 +205,7 @@ def main() -> None:
     )
 
     history_path = args.output_root / "training_history.csv"
-    checkpoint_root = PROJECT_ROOT / "checkpoints/vspw_segformer_b0"
+    checkpoint_root = args.checkpoint_root
     iterator = iter(train_loader)
     optimizer.zero_grad(set_to_none=True)
     torch.cuda.reset_peak_memory_stats()
@@ -304,14 +310,35 @@ def main() -> None:
         smoke_validation = validate(
             model, validation_loader, device, args.precision, max_batches=1
         )
+        smoke_checkpoint = args.output_root / "smoke_resume.pt"
         save_training_checkpoint(
-            args.output_root / "smoke_resume.pt",
+            smoke_checkpoint,
             model,
             optimizer,
             scheduler,
             args.steps,
             best_miou,
             scaler,
+        )
+        resumed = load_training_checkpoint(
+            smoke_checkpoint,
+            model,
+            optimizer,
+            scheduler,
+            scaler,
+        )
+        (args.output_root / "smoke_resume_check.json").write_text(
+            json.dumps(
+                {
+                    "checkpoint": str(smoke_checkpoint),
+                    "reloaded_step": resumed["step"],
+                    "reloaded_best_miou": resumed["best_miou"],
+                    "pass": resumed["step"] == args.steps,
+                },
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
         )
 
     summary = {

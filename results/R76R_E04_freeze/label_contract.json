@@ -1,0 +1,10 @@
+{
+  "num_classes": 124,
+  "valid_ids": [
+    0,
+    123
+  ],
+  "ignore_index": 255,
+  "normalization": "official normalization then out-of-range to 255",
+  "raw253": "253 -> 252 -> 255 -> excluded"
+}

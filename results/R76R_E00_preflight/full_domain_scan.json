@@ -1,0 +1,35 @@
+{
+  "raw_domain_statement": "0..124 and 255",
+  "normalization": "official loader normalization followed by canonical invalid-to-255",
+  "evaluation_valid_rule": "0 <= normalized_gt < 124",
+  "canonical_ignore_index": 255,
+  "splits": {
+    "train": {
+      "mask_count": 197253,
+      "total_pixels": 80587873440,
+      "invalid_before_canonicalization": 0,
+      "invalid_after_canonicalization": 0,
+      "canonical_ignore_pixels": 496044958,
+      "anomalous_mask_count": 0
+    },
+    "val": {
+      "mask_count": 24392,
+      "total_pixels": 9945037920,
+      "invalid_before_canonicalization": 68314,
+      "invalid_after_canonicalization": 0,
+      "canonical_ignore_pixels": 44490471,
+      "anomalous_mask_count": 17
+    }
+  },
+  "full_mask_count": 221645,
+  "full_domain_scan_pass": true,
+  "remaining_invalid_after_canonicalization": 0,
+  "raw253_masks": 17,
+  "raw253_pixels": 68314,
+  "validation_total_pixels": 9945037920,
+  "raw253_validation_pixel_fraction": 6.869154300821409e-06,
+  "affected_validation_videos": 1,
+  "validation_video_count": 343,
+  "affected_validation_video_fraction": 0.0029154518950437317,
+  "affected_validation_mask_fraction": 0.0006969498196129878
+}

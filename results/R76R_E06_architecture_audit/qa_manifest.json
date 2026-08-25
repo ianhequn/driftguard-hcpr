@@ -1,0 +1,187 @@
+{
+  "count": 20,
+  "model_dir": "/root/autodl-tmp/models/segformer-b0-vspw124",
+  "contract": "canonical VSPW IDs 0..123, ignore 255",
+  "files": [
+    {
+      "index": 0,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001622",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001622.jpg",
+      "rgb": "frame_0000_rgb.png",
+      "gt": "frame_0000_gt.png",
+      "prediction": "frame_0000_prediction.png"
+    },
+    {
+      "index": 1,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001623",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001623.jpg",
+      "rgb": "frame_0001_rgb.png",
+      "gt": "frame_0001_gt.png",
+      "prediction": "frame_0001_prediction.png"
+    },
+    {
+      "index": 2,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001624",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001624.jpg",
+      "rgb": "frame_0002_rgb.png",
+      "gt": "frame_0002_gt.png",
+      "prediction": "frame_0002_prediction.png"
+    },
+    {
+      "index": 3,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001625",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001625.jpg",
+      "rgb": "frame_0003_rgb.png",
+      "gt": "frame_0003_gt.png",
+      "prediction": "frame_0003_prediction.png"
+    },
+    {
+      "index": 4,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001626",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001626.jpg",
+      "rgb": "frame_0004_rgb.png",
+      "gt": "frame_0004_gt.png",
+      "prediction": "frame_0004_prediction.png"
+    },
+    {
+      "index": 5,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001627",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001627.jpg",
+      "rgb": "frame_0005_rgb.png",
+      "gt": "frame_0005_gt.png",
+      "prediction": "frame_0005_prediction.png"
+    },
+    {
+      "index": 6,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001628",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001628.jpg",
+      "rgb": "frame_0006_rgb.png",
+      "gt": "frame_0006_gt.png",
+      "prediction": "frame_0006_prediction.png"
+    },
+    {
+      "index": 7,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001629",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001629.jpg",
+      "rgb": "frame_0007_rgb.png",
+      "gt": "frame_0007_gt.png",
+      "prediction": "frame_0007_prediction.png"
+    },
+    {
+      "index": 8,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001630",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001630.jpg",
+      "rgb": "frame_0008_rgb.png",
+      "gt": "frame_0008_gt.png",
+      "prediction": "frame_0008_prediction.png"
+    },
+    {
+      "index": 9,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001631",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001631.jpg",
+      "rgb": "frame_0009_rgb.png",
+      "gt": "frame_0009_gt.png",
+      "prediction": "frame_0009_prediction.png"
+    },
+    {
+      "index": 10,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001632",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001632.jpg",
+      "rgb": "frame_0010_rgb.png",
+      "gt": "frame_0010_gt.png",
+      "prediction": "frame_0010_prediction.png"
+    },
+    {
+      "index": 11,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001633",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001633.jpg",
+      "rgb": "frame_0011_rgb.png",
+      "gt": "frame_0011_gt.png",
+      "prediction": "frame_0011_prediction.png"
+    },
+    {
+      "index": 12,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001634",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001634.jpg",
+      "rgb": "frame_0012_rgb.png",
+      "gt": "frame_0012_gt.png",
+      "prediction": "frame_0012_prediction.png"
+    },
+    {
+      "index": 13,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001635",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001635.jpg",
+      "rgb": "frame_0013_rgb.png",
+      "gt": "frame_0013_gt.png",
+      "prediction": "frame_0013_prediction.png"
+    },
+    {
+      "index": 14,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001636",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001636.jpg",
+      "rgb": "frame_0014_rgb.png",
+      "gt": "frame_0014_gt.png",
+      "prediction": "frame_0014_prediction.png"
+    },
+    {
+      "index": 15,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001637",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001637.jpg",
+      "rgb": "frame_0015_rgb.png",
+      "gt": "frame_0015_gt.png",
+      "prediction": "frame_0015_prediction.png"
+    },
+    {
+      "index": 16,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001638",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001638.jpg",
+      "rgb": "frame_0016_rgb.png",
+      "gt": "frame_0016_gt.png",
+      "prediction": "frame_0016_prediction.png"
+    },
+    {
+      "index": 17,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001639",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001639.jpg",
+      "rgb": "frame_0017_rgb.png",
+      "gt": "frame_0017_gt.png",
+      "prediction": "frame_0017_prediction.png"
+    },
+    {
+      "index": 18,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001640",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001640.jpg",
+      "rgb": "frame_0018_rgb.png",
+      "gt": "frame_0018_gt.png",
+      "prediction": "frame_0018_prediction.png"
+    },
+    {
+      "index": 19,
+      "video_id": "127_-hIVCYO4C90",
+      "frame_id": "00001641",
+      "image_path": "data/raw/VSPW/data/127_-hIVCYO4C90/origin/00001641.jpg",
+      "rgb": "frame_0019_rgb.png",
+      "gt": "frame_0019_gt.png",
+      "prediction": "frame_0019_prediction.png"
+    }
+  ]
+}

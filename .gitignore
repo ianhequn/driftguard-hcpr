@@ -79,6 +79,12 @@ reports/*
 !reports/round765_official_semantics_audit.md
 !reports/round765_label_contract.md
 !reports/round765_final_report.md
+!reports/round76_restart_state.json
+!reports/round76_restart_progress.md
+!reports/round76_restart_training.md
+!reports/round76_restart_frozen_model.md
+!reports/round76_restart_final_report.md
+!reports/round76_restart_model_card.md
 
 # Round 2 lightweight metadata and summaries
 !results/R2_*/
@@ -238,6 +244,21 @@ results/R6_*/*.pkl
 !results/R7_*/
 !results/R7_*/*.csv
 !results/R7_*/*.json
+
+# Round 7.6 Restart lightweight training, validation, and audit artifacts
+!results/R76R_*/
+!results/R76R_*/*.csv
+!results/R76R_*/*.json
+!results/R76R_*/*.yaml
+!results/R76R_*/*.txt
+!results/R76R_*/*.md
+!results/R76R_*/*.png
+
+# Keep Round 7.6 Restart weights, checkpoints, and large logs out of Git
+results/R76R_*/**/*.pt
+results/R76R_*/**/*.pth
+results/R76R_*/**/*.safetensors
+results/R76R_*/train.log
 !results/R7_*/*.yaml
 !results/R7_*/*.txt
 !results/R7_*/*.md

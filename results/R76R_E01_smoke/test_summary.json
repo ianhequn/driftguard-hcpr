@@ -1,0 +1,14 @@
+{
+  "full_suite": {
+    "passed": 94,
+    "skipped": 2,
+    "warnings": 3,
+    "elapsed_seconds": 92.76
+  },
+  "vspw_contract_subset": {
+    "passed": 17,
+    "skipped": 2,
+    "warnings": 2
+  },
+  "status": "PASS"
+}

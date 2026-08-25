@@ -1,0 +1,6 @@
+{
+  "checkpoint": "results/R76R_E01_smoke/smoke_resume.pt",
+  "reloaded_step": 100,
+  "reloaded_best_miou": -Infinity,
+  "pass": true
+}

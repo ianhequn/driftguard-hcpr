@@ -1,0 +1,14 @@
+{
+  "mode": "train",
+  "start_step": 0,
+  "end_step": 40000,
+  "batch_size": 8,
+  "effective_batch_size": 8,
+  "precision": "bf16",
+  "mean_step_time_seconds": 0.36921387578873455,
+  "images_per_second": 21.66765802858836,
+  "peak_vram_gb": 4.5349202156066895,
+  "elapsed_seconds": 31481.7792351353,
+  "smoke_validation": null,
+  "best_miou": 0.3012895793848641
+}
