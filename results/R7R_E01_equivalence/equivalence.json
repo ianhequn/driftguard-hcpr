@@ -1,0 +1,41 @@
+{
+  "model_sha256": "8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b",
+  "expected_sha256": "8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b",
+  "sha256_pass": true,
+  "num_labels": 124,
+  "frames": 20,
+  "stage_shapes": [
+    [
+      1,
+      32,
+      128,
+      128
+    ],
+    [
+      1,
+      64,
+      64,
+      64
+    ],
+    [
+      1,
+      160,
+      32,
+      32
+    ],
+    [
+      1,
+      256,
+      16,
+      16
+    ]
+  ],
+  "max_abs_error": 0.0,
+  "mean_abs_error": 0.0,
+  "relative_l2": 0.0,
+  "max_prediction_disagreement": 0.0,
+  "allclose": true,
+  "stage4_calls": 20,
+  "decoder_frames": 20,
+  "temporal_reuse_executed": false
+}

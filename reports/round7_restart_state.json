@@ -1,0 +1,49 @@
+{
+  "round": "7_restart",
+  "status": "completed",
+  "decision": "ROUND 7 RESTART = STRONG GO",
+  "primary_policy": "FI-2",
+  "model_dir": "/root/autodl-tmp/models/segformer-b0-vspw124",
+  "model_sha256": "8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b",
+  "dataset_split": "VSPW official validation",
+  "videos": 343,
+  "frames": 24392,
+  "num_labels": 124,
+  "validation_split_reused_for_checkpoint_selection": true,
+  "public_test_has_ground_truth": false,
+  "full_reference_miou": 0.30129196806407454,
+  "full_benchmark_miou": 0.30129196806407454,
+  "fi2_miou": 0.3003732475378488,
+  "fi2_drop_miou_points": 0.09187205262257692,
+  "fi2_refresh_ratio": 0.5038127254837652,
+  "fi2_stage4_calls": 12289,
+  "fi2_decoder_frames": 24392,
+  "fi2_paired_speedup": 1.2323210563355165,
+  "fi2_mean_latency_ms": 12.185296356678009,
+  "fi2_paired_full_latency_ms": 15.016197278022766,
+  "stage4_fraction_of_profiled_full": 0.17536370900227496,
+  "amdahl_upper_bound_zero_stage4": 1.2126558228356685,
+  "persistent_f4_cache_mb_bf16": 0.125,
+  "latency_peak_allocated_gb": 0.856842041015625,
+  "equivalence": {
+    "frames": 20,
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "relative_l2": 0.0,
+    "prediction_disagreement": 0.0,
+    "allclose": true
+  },
+  "bootstrap": {
+    "samples": 10000,
+    "seed": 42,
+    "fi2_delta_miou_mean": 0.0035817708431103205,
+    "fi2_delta_miou_ci95": [0.002386075400529425, 0.0047993888438771564]
+  },
+  "constraints_preserved": [
+    "stage1-3 fresh every frame",
+    "decoder every frame",
+    "whole Stage4 dense refresh or cached final F4",
+    "no new model or dataset",
+    "no sparse/partial/custom CUDA/Triton/TensorRT"
+  ]
+}

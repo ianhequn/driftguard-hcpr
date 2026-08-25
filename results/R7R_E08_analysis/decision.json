@@ -1,0 +1,18 @@
+{
+  "full_reference_miou": 0.30129196806407454,
+  "full_benchmark_miou": 0.30129196806407454,
+  "baseline_delta": 0.0,
+  "primary_policy": "FI-2",
+  "fi2_speedup": 1.2323210563355165,
+  "fi2_drop_miou_points": 0.09187205262257692,
+  "decision": "ROUND 7 RESTART = STRONG GO",
+  "bootstrap_fi2": {
+    "policy": "FI-2",
+    "videos": 343,
+    "mean_delta_miou": 0.0035817708431103205,
+    "ci95_low": 0.002386075400529425,
+    "ci95_high": 0.0047993888438771564,
+    "seed": 42,
+    "samples": 10000
+  }
+}

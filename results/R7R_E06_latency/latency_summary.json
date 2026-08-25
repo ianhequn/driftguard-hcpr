@@ -1,0 +1,200 @@
+{
+  "warmup": 200,
+  "measurements": 1000,
+  "pool": 256,
+  "precision": "bf16",
+  "rows": [
+    {
+      "policy": "Full",
+      "refresh_interval": 1,
+      "refresh_frames": 1000,
+      "reuse_frames": 0,
+      "refresh_ratio": 1.0,
+      "stage4_calls": 1000,
+      "total_frames": 1000,
+      "persistent_cache_mb": 0.0,
+      "peak_allocated_gb": 0.856842041015625,
+      "latency": {
+        "mean_ms": 14.323186624526977,
+        "median_ms": 14.1528639793396,
+        "p95_ms": 19.510890483856194,
+        "p99_ms": 36.858859558105465,
+        "std_ms": 4.543065518307763,
+        "wall_mean_ms": 14.35903638182208,
+        "fps": 69.81686591219885,
+        "measurements": 1000
+      },
+      "paired_full_latency": {
+        "mean_ms": 14.323186624526977,
+        "median_ms": 14.1528639793396,
+        "p95_ms": 19.510890483856194,
+        "p99_ms": 36.858859558105465,
+        "std_ms": 4.543065518307763,
+        "wall_mean_ms": 14.35903638182208,
+        "fps": 69.81686591219885,
+        "measurements": 1000
+      },
+      "speedup": 1.0
+    },
+    {
+      "policy": "FI-2",
+      "refresh_interval": 2,
+      "refresh_frames": 500,
+      "reuse_frames": 500,
+      "refresh_ratio": 0.5,
+      "stage4_calls": 500,
+      "total_frames": 1000,
+      "persistent_cache_mb": 0.125,
+      "peak_allocated_gb": 0.856842041015625,
+      "latency": {
+        "mean_ms": 12.185296356678009,
+        "median_ms": 11.654016017913818,
+        "p95_ms": 15.070024013519287,
+        "p99_ms": 16.382012100219725,
+        "std_ms": 1.9319936746050235,
+        "wall_mean_ms": 12.22339300531894,
+        "fps": 82.0661205709586,
+        "measurements": 1000
+      },
+      "paired_full_latency": {
+        "mean_ms": 15.016197278022766,
+        "median_ms": 14.648800373077393,
+        "p95_ms": 21.606850051879878,
+        "p99_ms": 44.736108970642086,
+        "std_ms": 5.948421793280063,
+        "wall_mean_ms": 15.06277374504134,
+        "fps": 66.59475641436654,
+        "measurements": 1000
+      },
+      "speedup": 1.2323210563355165
+    },
+    {
+      "policy": "FI-3",
+      "refresh_interval": 3,
+      "refresh_frames": 336,
+      "reuse_frames": 664,
+      "refresh_ratio": 0.336,
+      "stage4_calls": 336,
+      "total_frames": 1000,
+      "persistent_cache_mb": 0.125,
+      "peak_allocated_gb": 0.856842041015625,
+      "latency": {
+        "mean_ms": 12.390230174064635,
+        "median_ms": 11.771392345428467,
+        "p95_ms": 15.238595104217529,
+        "p99_ms": 16.893616504669186,
+        "std_ms": 1.7229806377465098,
+        "wall_mean_ms": 12.430342910345644,
+        "fps": 80.70875084251549,
+        "measurements": 1000
+      },
+      "paired_full_latency": {
+        "mean_ms": 12.90507302570343,
+        "median_ms": 12.83182430267334,
+        "p95_ms": 15.191662073135374,
+        "p99_ms": 16.026498813629146,
+        "std_ms": 1.766566409096556,
+        "wall_mean_ms": 12.938274370040745,
+        "fps": 77.48890672747604,
+        "measurements": 1000
+      },
+      "speedup": 1.0415523234359656
+    },
+    {
+      "policy": "FI-4",
+      "refresh_interval": 4,
+      "refresh_frames": 250,
+      "reuse_frames": 750,
+      "refresh_ratio": 0.25,
+      "stage4_calls": 250,
+      "total_frames": 1000,
+      "persistent_cache_mb": 0.125,
+      "peak_allocated_gb": 0.856842041015625,
+      "latency": {
+        "mean_ms": 15.912872949600219,
+        "median_ms": 11.886159896850586,
+        "p95_ms": 43.733145523071265,
+        "p99_ms": 61.88922634124755,
+        "std_ms": 10.858106917926396,
+        "wall_mean_ms": 15.965707740746439,
+        "fps": 62.84220348941598,
+        "measurements": 1000
+      },
+      "paired_full_latency": {
+        "mean_ms": 13.819130536079406,
+        "median_ms": 14.545504093170166,
+        "p95_ms": 15.965248203277588,
+        "p99_ms": 17.43172397613525,
+        "std_ms": 1.7699277923153531,
+        "wall_mean_ms": 13.855545475613326,
+        "fps": 72.36345277940386,
+        "measurements": 1000
+      },
+      "speedup": 0.8684246131951041
+    },
+    {
+      "policy": "FI-6",
+      "refresh_interval": 6,
+      "refresh_frames": 168,
+      "reuse_frames": 832,
+      "refresh_ratio": 0.168,
+      "stage4_calls": 168,
+      "total_frames": 1000,
+      "persistent_cache_mb": 0.125,
+      "peak_allocated_gb": 0.856842041015625,
+      "latency": {
+        "mean_ms": 11.409124887943268,
+        "median_ms": 11.556351661682129,
+        "p95_ms": 14.892779064178466,
+        "p99_ms": 16.281775016784668,
+        "std_ms": 1.7301392975628993,
+        "wall_mean_ms": 11.447425561025739,
+        "fps": 87.64914135147755,
+        "measurements": 1000
+      },
+      "paired_full_latency": {
+        "mean_ms": 12.764854877471924,
+        "median_ms": 12.61246395111084,
+        "p95_ms": 15.058337545394895,
+        "p99_ms": 16.9253392791748,
+        "std_ms": 2.051074334231505,
+        "wall_mean_ms": 12.797756927553564,
+        "fps": 78.340099405662,
+        "measurements": 1000
+      },
+      "speedup": 1.1188285694866344
+    },
+    {
+      "policy": "FI-8",
+      "refresh_interval": 8,
+      "refresh_frames": 125,
+      "reuse_frames": 875,
+      "refresh_ratio": 0.125,
+      "stage4_calls": 125,
+      "total_frames": 1000,
+      "persistent_cache_mb": 0.125,
+      "peak_allocated_gb": 0.856842041015625,
+      "latency": {
+        "mean_ms": 10.868126273155212,
+        "median_ms": 10.955263614654541,
+        "p95_ms": 14.195865678787232,
+        "p99_ms": 15.480831851959227,
+        "std_ms": 1.5614507450584307,
+        "wall_mean_ms": 10.904857534915209,
+        "fps": 92.01218083654838,
+        "measurements": 1000
+      },
+      "paired_full_latency": {
+        "mean_ms": 14.000410788059234,
+        "median_ms": 12.054431915283203,
+        "p95_ms": 27.293900203704798,
+        "p99_ms": 60.24947692871093,
+        "std_ms": 8.507040911188657,
+        "wall_mean_ms": 14.034445159137249,
+        "fps": 71.4264756326212,
+        "measurements": 1000
+      },
+      "speedup": 1.2882083292168691
+    }
+  ]
+}

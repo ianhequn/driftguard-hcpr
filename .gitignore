@@ -333,6 +333,22 @@ results/R76_*/*.npz
 !results/R765_*/*.txt
 !results/R765_*/*.md
 
+# Round 7 Restart ground-truth temporal-reuse benchmark
+!reports/round7_restart_*.md
+!reports/round7_restart_state.json
+!results/R7R_*/
+!results/R7R_*/*.csv
+!results/R7R_*/*.json
+!results/R7R_*/*.md
+!results/R7R_*/*.png
+!results/R7R_*/*.txt
+
+# Keep raw frame records and profiler logs out of Git
+results/R7R_*/frame_records.csv
+results/R7R_*/**/frame_records.csv
+results/R7R_*/run.log
+results/R7R_*/**/run.log
+
 # Keep no raw dataset or prediction material in Round 7.65 artifacts
 results/R765_*/raw/
 results/R765_*/*.png
