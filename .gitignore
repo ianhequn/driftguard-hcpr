@@ -382,6 +382,26 @@ results/R8_*/**/*.safetensors
 results/R8_*/**/*.npy
 results/R8_*/**/*.npz
 
+# Round 8 Resume source recovery and B1 generalization artifacts
+!reports/round8_source_recovery.md
+!reports/round8_resume_*.md
+!reports/round8_resume_state.json
+!results/R8R_*/
+!results/R8R_*/*.csv
+!results/R8R_*/*.json
+!results/R8R_*/*.yaml
+!results/R8R_*/*.md
+!results/R8R_*/*.png
+!results/R8R_*/*.txt
+results/R8R_*/run.log
+results/R8R_*/**/run.log
+results/R8R_*/**/*.pt
+results/R8R_*/**/*.pth
+results/R8R_*/**/*.bin
+results/R8R_*/**/*.safetensors
+results/R8R_*/**/*.npy
+results/R8R_*/**/*.npz
+
 # Keep directory placeholders
 !.gitkeep
 

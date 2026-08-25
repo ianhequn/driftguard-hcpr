@@ -1,0 +1,30 @@
+{
+  "round": "8-resume",
+  "status": "running",
+  "historical_round8_status": "SOURCE CHECKPOINT BLOCKED",
+  "source_identifier": "nvidia/segformer-b1-finetuned-ade-512-512",
+  "download_endpoint": "https://hf-mirror.com",
+  "source_recovery": "passed",
+  "resolved_revision": "a775b4f5dcb2179e57006dca0e268281306412ef",
+  "source_sha256": {
+    "config.json": "8f1b7bcd2e1835ef0ef3a04a0d4dfe87ff9a6374253e7a3ca1751de812a420ff",
+    "preprocessor_config.json": "8039d1d210abaa7117ad78e58cdfd6141a2ec72c03dae891b3cd76737e422c6c",
+    "pytorch_model.bin": "ac49bf62c8c0578dcf17ff048930b4f886ab0bc080d23f5591669afad5ddf7da",
+    "derived_model.safetensors": "4dbca19129b1373ca6bce75d68834a246d6b1e5e5202886183cd284d2f41abef"
+  },
+  "architecture_verified": true,
+  "source_num_labels_verified": true,
+  "fresh_load_pass": true,
+  "forward_smoke_pass": true,
+  "training_started": false,
+  "training_steps": 0,
+  "best_step": null,
+  "best_validation_miou": null,
+  "frozen_checkpoint": null,
+  "full_miou": null,
+  "fi2_miou": null,
+  "fi2_drop_pp": null,
+  "fi2_speedup_mean": null,
+  "cross_scale_generalization": null,
+  "final_decision": null
+}

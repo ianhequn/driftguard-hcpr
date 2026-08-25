@@ -1,0 +1,18 @@
+{
+  "config.json": {
+    "bytes": 6885,
+    "sha256": "8f1b7bcd2e1835ef0ef3a04a0d4dfe87ff9a6374253e7a3ca1751de812a420ff"
+  },
+  "model.safetensors": {
+    "bytes": 54889568,
+    "sha256": "4dbca19129b1373ca6bce75d68834a246d6b1e5e5202886183cd284d2f41abef"
+  },
+  "preprocessor_config.json": {
+    "bytes": 271,
+    "sha256": "8039d1d210abaa7117ad78e58cdfd6141a2ec72c03dae891b3cd76737e422c6c"
+  },
+  "pytorch_model.bin": {
+    "bytes": 54944801,
+    "sha256": "ac49bf62c8c0578dcf17ff048930b4f886ab0bc080d23f5591669afad5ddf7da"
+  }
+}

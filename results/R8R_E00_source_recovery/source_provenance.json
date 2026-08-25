@@ -1,0 +1,84 @@
+{
+  "source_identifier": "nvidia/segformer-b1-finetuned-ade-512-512",
+  "download_endpoint": "https://hf-mirror.com",
+  "resolved_revision": "a775b4f5dcb2179e57006dca0e268281306412ef",
+  "snapshot_path": "/root/autodl-tmp/models/segformer-b1-ade512-source",
+  "architecture": "SegFormer-B1",
+  "model_type": "segformer",
+  "source_task": "ADE20K semantic segmentation",
+  "source_num_labels": 150,
+  "encoder_depths": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "hidden_sizes": [
+    64,
+    128,
+    320,
+    512
+  ],
+  "attention_heads": [
+    1,
+    2,
+    5,
+    8
+  ],
+  "sr_ratios": [
+    8,
+    4,
+    2,
+    1
+  ],
+  "decoder_hidden_size": 256,
+  "processor_class": "SegformerImageProcessor",
+  "processor_size": {
+    "height": 512,
+    "width": 512
+  },
+  "logits_shape": [
+    1,
+    150,
+    128,
+    128
+  ],
+  "logits_finite": true,
+  "device": "cuda",
+  "original_weight_file": "pytorch_model.bin",
+  "weight_conversion": {
+    "from": "pytorch_model.bin",
+    "to": "model.safetensors",
+    "method": "safetensors.torch.save_file",
+    "source_sha256": "ac49bf62c8c0578dcf17ff048930b4f886ab0bc080d23f5591669afad5ddf7da",
+    "converted_sha256": "4dbca19129b1373ca6bce75d68834a246d6b1e5e5202886183cd284d2f41abef"
+  },
+  "download_time": "2026-08-25T15:58:29.249361+00:00",
+  "file_hashes": {
+    "config.json": {
+      "bytes": 6885,
+      "sha256": "8f1b7bcd2e1835ef0ef3a04a0d4dfe87ff9a6374253e7a3ca1751de812a420ff"
+    },
+    "model.safetensors": {
+      "bytes": 54889568,
+      "sha256": "4dbca19129b1373ca6bce75d68834a246d6b1e5e5202886183cd284d2f41abef"
+    },
+    "preprocessor_config.json": {
+      "bytes": 271,
+      "sha256": "8039d1d210abaa7117ad78e58cdfd6141a2ec72c03dae891b3cd76737e422c6c"
+    },
+    "pytorch_model.bin": {
+      "bytes": 54944801,
+      "sha256": "ac49bf62c8c0578dcf17ff048930b4f886ab0bc080d23f5591669afad5ddf7da"
+    }
+  },
+  "checks": {
+    "identifier_verified": true,
+    "architecture_verified": true,
+    "source_num_labels_verified": true,
+    "weights_complete": true,
+    "fresh_load_pass": true,
+    "forward_smoke_pass": true
+  },
+  "source_gate": "PASS"
+}
