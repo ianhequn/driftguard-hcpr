@@ -27,6 +27,11 @@
    - pixel accuracy: `0.7213631786`.
    - full validation elapsed: `2241.9567 s`.
    - checkpoint was saved before validation and training resumed at step 10,001.
+11. Reached the second formal validation point at step 20,000:
+   - mIoU: `0.3549961238`.
+   - pixel accuracy: `0.7407368149`.
+   - full validation elapsed: `1958.1028 s`.
+   - 20k is the current best checkpoint by validation mIoU.
 
 ## Current status
 
@@ -37,4 +42,4 @@ ROUND 8 B1 CALIBRATION = PASS
 ROUND 8 RESUME = AUTHORIZED
 ```
 
-Clean training is running beyond step 10,000. Formal validation is scheduled only at 20k, 30k, and 40k next; Round 7.1 will not be rerun.
+Clean training is running beyond step 20,000. Formal validation is scheduled only at 30k and 40k next; Round 7.1 will not be rerun.
