@@ -39,8 +39,10 @@ and device memory use reported by `nvidia-smi` was about 6.5 GB.
 estimated 10k training time: 0.97 hours, excluding validation
 estimated 40k training time: 3.87 hours, excluding validation
 estimated hours per 10k steps: 0.97
-validation time: to be replaced by the first complete measured validation
+attempted validation before semantic hard stop: approximately 0.113 hours
 ```
 
 The measured training cost supports the 10k pilot and 40k main target. The
 Round 7.5 provisional 12-48 GPU-hour range is superseded by this calibration.
+No complete validation duration was obtained because the first full pass hit
+the frozen dataset-integrity stop condition after approximately 6.8 minutes.
