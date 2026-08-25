@@ -1,0 +1,14 @@
+{
+  "mode": "calibrate",
+  "start_step": 0,
+  "end_step": 500,
+  "batch_size": 8,
+  "effective_batch_size": 8,
+  "precision": "bf16",
+  "mean_step_time_seconds": 0.3733934290105632,
+  "images_per_second": 21.425122614500218,
+  "peak_vram_gb": 5.4145588874816895,
+  "elapsed_seconds": 193.25686262967065,
+  "smoke_validation": null,
+  "best_miou": null
+}

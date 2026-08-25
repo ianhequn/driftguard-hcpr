@@ -1,0 +1,97 @@
+{
+  "architecture": "SegFormer-B1",
+  "source_dir": "/root/autodl-tmp/models/segformer-b1-ade512-source",
+  "num_labels": 124,
+  "class_names": 124,
+  "ignore_index": 255,
+  "initialization": {
+    "source": "/root/autodl-tmp/models/segformer-b1-ade512-source",
+    "loaded_parameter_tensors": 206,
+    "missing_keys": [
+      "decode_head.classifier.bias",
+      "decode_head.classifier.weight"
+    ],
+    "unexpected_keys": [],
+    "reinitialized_parameters": [
+      "decode_head.classifier.bias",
+      "decode_head.classifier.weight"
+    ],
+    "trainable_parameters": 13709116,
+    "total_parameters": 13709116
+  },
+  "total_parameters": 13709116,
+  "trainable_parameters": 13709116,
+  "feature_shapes": [
+    [
+      1,
+      64,
+      128,
+      128
+    ],
+    [
+      1,
+      128,
+      64,
+      64
+    ],
+    [
+      1,
+      320,
+      32,
+      32
+    ],
+    [
+      1,
+      512,
+      16,
+      16
+    ]
+  ],
+  "logits_shape": [
+    1,
+    124,
+    128,
+    128
+  ],
+  "encoder_depths": [
+    2,
+    2,
+    2,
+    2
+  ],
+  "hidden_sizes": [
+    64,
+    128,
+    320,
+    512
+  ],
+  "attention_heads": [
+    1,
+    2,
+    5,
+    8
+  ],
+  "sr_ratios": [
+    8,
+    4,
+    2,
+    1
+  ],
+  "decoder_hidden_size": 256,
+  "stage4_cache_f4_shape": [
+    1,
+    512,
+    16,
+    16
+  ],
+  "structured_reuse_compatibility": "DIRECT",
+  "checks": {
+    "num_labels_124": true,
+    "ignore_index_255": true,
+    "four_features": true,
+    "stage4_callable_from_f3": true,
+    "decoder_consumes_f1_f4": true,
+    "finite_logits": true,
+    "all_parameters_trainable": true
+  }
+}
