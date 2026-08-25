@@ -1,0 +1,46 @@
+{
+  "arguments": {
+    "mode": "train",
+    "dataset_root": "/root/autodl-tmp/DriftGuard/data/raw/VSPW",
+    "source": "/root/autodl-tmp/models/segformer-b1-ade512-source",
+    "output_root": "results/R8R_E04_training",
+    "checkpoint_root": "/root/autodl-tmp/checkpoints/r8r_b1_vspw124",
+    "batch_size": 8,
+    "accumulation": 1,
+    "workers": 8,
+    "steps": 40000,
+    "schedule_steps": 40000,
+    "validation_every": 10000,
+    "save_every": 5000,
+    "precision": "bf16",
+    "learning_rate": 6e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.02,
+    "max_grad_norm": 1.0,
+    "resume": null,
+    "seed": 42
+  },
+  "initialization": {
+    "source": "/root/autodl-tmp/models/segformer-b1-ade512-source",
+    "loaded_parameter_tensors": 206,
+    "missing_keys": [
+      "decode_head.classifier.bias",
+      "decode_head.classifier.weight"
+    ],
+    "unexpected_keys": [],
+    "reinitialized_parameters": [
+      "decode_head.classifier.bias",
+      "decode_head.classifier.weight"
+    ],
+    "trainable_parameters": 13709116,
+    "total_parameters": 13709116
+  },
+  "warmup_steps": 800,
+  "train_samples": 197253,
+  "validation_samples": 24392,
+  "torch": "2.1.2+cu118",
+  "cuda": "11.8",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "cudnn_benchmark": true,
+  "deterministic": false
+}

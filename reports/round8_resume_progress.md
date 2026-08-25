@@ -22,6 +22,11 @@
    - throughput: `21.4251 images/s`.
    - peak VRAM: `5.4146 GB`.
    - estimated pure 40k-step training time: approximately `4.15 h`, excluding validation and checkpoint I/O.
+10. Reached the first formal validation point at step 10,000:
+   - mIoU: `0.2988457653`.
+   - pixel accuracy: `0.7213631786`.
+   - full validation elapsed: `2241.9567 s`.
+   - checkpoint was saved before validation and training resumed at step 10,001.
 
 ## Current status
 
@@ -32,4 +37,4 @@ ROUND 8 B1 CALIBRATION = PASS
 ROUND 8 RESUME = AUTHORIZED
 ```
 
-An independent full-validation timing pass is running before clean 40k training. Round 7.1 will not be rerun.
+Clean training is running beyond step 10,000. Formal validation is scheduled only at 20k, 30k, and 40k next; Round 7.1 will not be rerun.
