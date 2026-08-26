@@ -1,7 +1,7 @@
 # Citation Consistency Audit
 
-Generated from the current `main.tex`, `references.bib`, and
-`reference_audit.csv` after the manuscript revision.
+Generated from the final `main.tex`, `references.bib`, and
+`reference_audit.csv` after the Round 10 manuscript rewrite.
 
 | Key | Cited in TeX | Present in BibTeX | Verified in audit | used_in_paper flag | Result |
 | --- | --- | --- | --- | --- | --- |
@@ -14,15 +14,19 @@ Generated from the current `main.tex`, `references.bib`, and
 | wang2022rtformer | yes | yes | yes | yes | PASS |
 | baghbaderani2024bofp | yes | yes | yes | yes | PASS |
 | liu2024dovit | yes | yes | yes | yes | PASS |
+| lin2024tfc | yes | yes | yes | yes | PASS |
 | hu2023arseg | yes | yes | yes | yes | PASS |
 
 Summary:
 
 ```text
-cited_in_tex = 10
-present_in_bib = 10 / 10
-verified_in_audit = 10 / 10
-used_in_paper_yes_and_cited = 10 / 10
+cited_in_tex = 11
+present_in_bib = 11 / 11
+verified_in_audit = 11 / 11
+used_in_paper_yes_and_cited = 11 / 11
 undefined citations = 0
 unused verified bibliography entries = 0
 ```
+
+`lin2024tfc` is verified against the official AAAI article page listed in
+`reference_audit.csv`.

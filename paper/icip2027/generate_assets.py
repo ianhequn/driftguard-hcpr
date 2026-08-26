@@ -1,9 +1,10 @@
-"""Generate paper figures and source sidecars from frozen DriftGuard artifacts."""
+"""Generate the final Round 10 manuscript assets from frozen artifacts."""
 
 from __future__ import annotations
 
 import csv
 import json
+import shutil
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -12,141 +13,74 @@ import matplotlib.pyplot as plt
 ROOT = Path(__file__).resolve().parents[2]
 PAPER = Path(__file__).resolve().parent
 FIGURES = PAPER / "figures"
-FIGURES.mkdir(parents=True, exist_ok=True)
 TABLES = PAPER / "tables"
-TABLES.mkdir(parents=True, exist_ok=True)
+R10 = ROOT / "results" / "R10_E06_analysis"
+REPORTS = ROOT / "reports"
 
 
-def read_cross_scale() -> list[dict[str, str]]:
-    path = ROOT / "results" / "R8R_E10_cross_scale" / "cross_scale_table.csv"
-    with path.open(newline="", encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
-
-
-def write_sidecar(name: str, sources: list[str], claims: list[str]) -> None:
-    (FIGURES / name).write_text(
-        json.dumps({"sources": sources, "claims": claims}, indent=2) + "\n",
-        encoding="utf-8",
-    )
-
-
-def write_tables(rows: list[dict[str, str]]) -> None:
-    main_path = TABLES / "main_results.csv"
-    with main_path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=[
-            "Model", "Policy", "Full_mIoU", "Policy_mIoU", "Drop_pp",
-            "Repeated_speedup", "Stage4_fraction", "F4_cache_MB",
-        ])
-        writer.writeheader()
-        for row in rows:
-            writer.writerow(row)
-    (TABLES / "table_1_sources.json").write_text(json.dumps({
-        "source": "results/R8R_E10_cross_scale/cross_scale_table.csv",
-        "description": "Cross-scale frozen VSPW quality and repeated speed table",
-    }, indent=2) + "\n", encoding="utf-8")
-
-    b0 = json.loads((ROOT / "results" / "R71_E02_profile" / "profile_repetitions.json").read_text(encoding="utf-8"))
-    b1 = json.loads((ROOT / "results" / "R8R_E10_cross_scale" / "stage_profile.json").read_text(encoding="utf-8"))
-    profile_rows = [
-        {"Model": "SegFormer-B0", "Stage4_fraction": f"{b0['stage4_fraction_of_full']:.12f}",
-         "F4_dtype": b0["precision"], "F4_cache_MB": "0.125"},
-        {"Model": "SegFormer-B1", "Stage4_fraction": f"{b1['mean_stage4_fraction']:.12f}",
-         "F4_dtype": b1["f4_dtype"], "F4_cache_MB": f"{b1['persistent_cache_mb']:.3f}"},
-    ]
-    profile_path = TABLES / "stage4_profile.csv"
-    with profile_path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(profile_rows[0]))
-        writer.writeheader()
-        writer.writerows(profile_rows)
-    (TABLES / "table_2_sources.json").write_text(json.dumps({
-        "sources": [
-            "results/R71_E02_profile/profile_repetitions.json",
-            "results/R8R_E10_cross_scale/stage_profile.json",
-        ],
-        "description": "Measured Stage4 share and final F4 cache footprint",
-    }, indent=2) + "\n", encoding="utf-8")
-
-
-def save_figure(name: str) -> None:
-    plt.savefig(FIGURES / name, bbox_inches="tight", pad_inches=0.03)
-    plt.close()
+def copy_round10_figures() -> None:
+    FIGURES.mkdir(parents=True, exist_ok=True)
+    for source, target in {
+        "R10_F01_boundary_pareto.pdf": "round10_boundary_pareto.pdf",
+        "R10_F02_quality_refresh.pdf": "round10_quality_refresh.pdf",
+        "R10_F03_runtime_opportunity_vs_speed.pdf": "round10_runtime_opportunity.pdf",
+    }.items():
+        shutil.copyfile(R10 / source, FIGURES / target)
 
 
 def method_overview() -> None:
-    fig, ax = plt.subplots(figsize=(6.4, 2.2))
-    ax.axis("off")
-    boxes = [
-        (0.02, "Frame $t$\nCUDA tensor"),
-        (0.22, "Stages 1--3\nfresh"),
-        (0.44, "Fixed interval\nrefresh decision"),
-        (0.68, "Stage 4\ndense refresh / F4 reuse"),
-        (0.90, "Decoder\nper frame"),
-    ]
-    for x, label in boxes:
-        ax.text(x, 0.5, label, ha="center", va="center", fontsize=9,
-                bbox={"boxstyle": "round,pad=0.45", "fc": "0.94", "ec": "0.18", "lw": 1.0})
-    for (x0, _), (x1, _) in zip(boxes, boxes[1:]):
-        ax.annotate("", xy=(x1 - 0.065, 0.5), xytext=(x0 + 0.065, 0.5),
-                    arrowprops={"arrowstyle": "->", "lw": 1.0, "color": "0.2"})
-    ax.text(0.56, 0.12, "reuse returns cached final F4; no Stage 4 forward is executed",
-            ha="center", va="center", fontsize=8, color="0.25")
-    save_figure("method_overview.pdf")
-    write_sidecar("figure_1_sources.json", [
-        "reports/round6_final_report.md",
-        "reports/round7_restart_equivalence.md",
-        "driftguard/structured_reuse/pipeline.py",
-    ], ["Stage 1-3 fresh", "whole Stage 4 dense refresh or cached final F4", "decoder per frame"])
+    fig, axes = plt.subplots(3, 1, figsize=(6.4, 3.5), sharex=True)
+    stages = ["F1", "F2", "F3", "F4"]
+    boundaries = [("S4", 3), ("S3-S4", 2), ("S2-S4", 1)]
+    for ax, (name, fresh_count) in zip(axes, boundaries):
+        ax.set_xlim(-0.5, 5.4); ax.set_ylim(-0.45, 0.55); ax.axis("off")
+        ax.text(-0.45, 0.05, name, ha="left", va="center", fontsize=9, fontweight="bold")
+        for index, stage in enumerate(stages):
+            fresh = index < fresh_count
+            ax.text(index + 0.35, 0.05, stage, ha="center", va="center", fontsize=8,
+                    bbox={"boxstyle": "round,pad=0.28", "fc": "0.90" if fresh else "0.76", "ec": "0.15", "lw": 0.8})
+            if index < len(stages) - 1:
+                ax.annotate("", xy=(index + 0.95, 0.05), xytext=(index + 0.68, 0.05),
+                            arrowprops={"arrowstyle": "->", "lw": 0.8, "color": "0.25"})
+        ax.annotate("", xy=(4.85, 0.05), xytext=(4.25, 0.05), arrowprops={"arrowstyle": "->", "lw": 0.8})
+        ax.text(5.05, 0.05, "Decoder", ha="center", va="center", fontsize=8,
+                bbox={"boxstyle": "round,pad=0.28", "fc": "0.90", "ec": "0.15", "lw": 0.8})
+        ax.text(2.2, -0.30, "fresh prefix" if fresh_count < 4 else "all stages fresh",
+                ha="center", va="center", fontsize=7, color="0.25")
+        ax.text(3.35, -0.30, "cached suffix on reuse frames" if fresh_count < 4 else "",
+                ha="center", va="center", fontsize=7, color="0.25")
+    fig.tight_layout(pad=0.25)
+    fig.savefig(FIGURES / "method_overview.pdf", bbox_inches="tight", pad_inches=0.03)
+    plt.close(fig)
 
 
-def pareto(rows: list[dict[str, str]]) -> None:
-    wanted = [("B0", "FI-2", "0.15"), ("B1", "FI-2", "0.35"), ("B1", "FI-8", "0.55")]
-    selected = []
-    for model, policy, shade in wanted:
-        row = next(item for item in rows if item["Model"] == model and item["Policy"] == policy)
-        speed = float(row["Repeated_speedup"].split()[0])
-        drop = float(row["Drop_pp"])
-        selected.append((f"{model} {policy}", speed, drop, shade))
-    fig, ax = plt.subplots(figsize=(3.35, 2.45))
-    for label, speed, drop, shade in selected:
-        ax.scatter(speed, drop, s=34, color=shade, edgecolor="black", linewidth=0.5)
-        ax.annotate(label, (speed, drop), xytext=(4, 4), textcoords="offset points", fontsize=7)
-    ax.axvline(1.0, color="0.65", lw=0.7, ls="--")
-    ax.set_xlabel("Paired end-to-end speedup (x)")
-    ax.set_ylabel("mIoU drop (percentage points)")
-    ax.grid(True, color="0.88", lw=0.5)
-    fig.tight_layout(pad=0.5)
-    save_figure("accuracy_latency_pareto.pdf")
-    write_sidecar("figure_2_sources.json", [
-        "results/R8R_E10_cross_scale/cross_scale_table.csv",
-        "reports/round71_latency_robustness.md",
-        "reports/round8_resume_cross_scale.md",
-    ], ["B0 FI-2", "B1 FI-2", "B1 FI-8"])
-
-
-def stage_share() -> None:
-    labels = ["SegFormer-B0", "SegFormer-B1"]
-    values = [0.23975421800348004 * 100, 0.18990660459834086 * 100]
-    fig, ax = plt.subplots(figsize=(3.15, 2.35))
-    bars = ax.bar(labels, values, color=["0.25", "0.55"], width=0.55)
-    ax.set_ylabel("Stage 4 share of full latency (%)")
-    ax.set_ylim(0, 30)
-    ax.grid(axis="y", color="0.88", lw=0.5)
-    for bar, value in zip(bars, values):
-        ax.text(bar.get_x() + bar.get_width() / 2, value + 0.7, f"{value:.2f}",
-                ha="center", va="bottom", fontsize=8)
-    fig.tight_layout(pad=0.5)
-    save_figure("stage4_runtime_share.pdf")
-    write_sidecar("figure_3_sources.json", [
-        "results/R71_E02_profile/profile_repetitions.json",
-        "results/R8R_E10_cross_scale/stage_profile.json",
-    ], ["B0 Stage 4 share", "B1 Stage 4 share"])
+def write_tables() -> None:
+    TABLES.mkdir(parents=True, exist_ok=True)
+    source = REPORTS / "round10_boundary_quality_latency_table.csv"
+    with source.open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    selected = [row for row in rows if row["Boundary"] != "FULL"]
+    fields = ["Model", "Boundary", "Interval", "Actual Refresh", "mIoU drop (pp)", "Mean Speedup", "CI Low", "CI High"]
+    with (TABLES / "round10_main_results.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields); writer.writeheader()
+        for row in selected:
+            writer.writerow({"Model": row["Model"], "Boundary": row["Boundary"], "Interval": row["Interval"],
+                             "Actual Refresh": row["Actual Refresh"], "mIoU drop (pp)": row["mIoU_drop_pp"],
+                             "Mean Speedup": row["Mean Speedup"], "CI Low": row["CI Low"], "CI High": row["CI High"]})
+    profile = []
+    with (REPORTS / "round10_profile_table.csv").open(encoding="utf-8", newline="") as handle:
+        profile = list(csv.DictReader(handle))
+    with (TABLES / "round10_profile_cache.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(profile[0])); writer.writeheader(); writer.writerows(profile)
+    (TABLES / "round10_sources.json").write_text(json.dumps({
+        "main": "reports/round10_boundary_quality_latency_table.csv",
+        "profile": "reports/round10_profile_table.csv",
+        "pareto": "reports/round10_pareto_frontier.csv",
+        "cache": "reports/round10_cache_memory_table.csv",
+    }, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
-    rows = read_cross_scale()
-    if len(rows) < 3:
-        raise RuntimeError("cross-scale source table is incomplete")
-    write_tables(rows)
+    copy_round10_figures()
     method_overview()
-    pareto(rows)
-    stage_share()
+    write_tables()

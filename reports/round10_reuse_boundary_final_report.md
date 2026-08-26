@@ -101,15 +101,23 @@ system-level speedups.
 
 ## 9. Memory and Semantics
 
-Only final stage features are cached. Persistent cache sizes are:
+Only final stage features are logically required by the boundary, but the current
+implementation retains F2, F3, and F4 in `BoundaryCacheState` after refresh. The
+corrected table therefore reports both logical cache cost and actual allocated
+persistent cost:
 
-| Model | S4 | S3-S4 | S2-S4 |
-|---|---:|---:|---:|
-| B0 | 0.25 MiB | 0.875 MiB | 1.875 MiB |
-| B1 | 0.50 MiB | 1.75 MiB | 3.75 MiB |
+| Model | Boundary | Logical cache | Allocated cache |
+|---|---|---:|---:|
+| B0 | S4 | 0.25 MiB | 1.875 MiB |
+| B0 | S3-S4 | 0.875 MiB | 1.875 MiB |
+| B0 | S2-S4 | 1.875 MiB | 1.875 MiB |
+| B1 | S4 | 0.50 MiB | 3.75 MiB |
+| B1 | S3-S4 | 1.75 MiB | 3.75 MiB |
+| B1 | S2-S4 | 3.75 MiB | 3.75 MiB |
 
 No route exceeds the 1 GB internal warning boundary. No K/V cache, alignment,
-custom kernel, sparse operator, or decoder modification is used.
+custom kernel, sparse operator, or decoder modification is used. The detailed
+audit is in `reports/round10_cache_memory_audit.md`.
 
 ## 10. Interpretation
 

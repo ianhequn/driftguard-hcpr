@@ -1,19 +1,38 @@
-# Claim Audit
+# Round 10 Manuscript Claim Audit
 
-## Allowed claims
+Audit target: `main.tex`, compiled blind and publish PDFs, and the frozen Round 10 artifacts. The manuscript is a controlled characterization, not a new reuse architecture.
 
-- Whole-Stage4 temporal reuse can skip a dense Stage 4 forward in the tested SegFormer-B0/B1 pipelines.
-- B0 FI-2 has a repeated paired mean speedup of 1.0924x with a small official validation mIoU drop of 0.0919 percentage points.
-- B1 preserves quality at FI-2 but has weak and statistically uncertain speed gain; FI-8 exposes a larger quality/latency trade-off.
-- Stage 4 runtime share limits the system benefit through Amdahl's law.
-- The separately scoped Round 5 B0 Stage4 microbenchmark measured 4.366 ms for dense Stage4 and 6.662 ms for the 37.5% cached-context route.
+## Permitted claims and evidence
 
-## Prohibited claims
+| Claim | Evidence |
+| --- | --- |
+| Whole-stage S4, S3--S4, and S2--S4 reuse can physically skip the cached suffix in the tested SegFormer pipelines. | `reports/round10_call_table.csv`; Table 1 |
+| The same five-point reuse frontier is recovered for B0 and B1. | `reports/round10_pareto_audit.md`; `reports/round10_pareto_frontier.csv`; Table 2 and Fig. 2 |
+| S4/FI-2 is the lowest-damage tested point, while S2--S4/FI-8 is the highest-speed tested point. | `reports/round10_boundary_quality_latency_table.csv`; `reports/round10_reuse_boundary_state.json` |
+| Earlier boundaries expose more profiled suffix runtime, but realized speed is not proportional to opportunity. | `reports/round10_profile_table.csv`; `results/R10_E06_analysis/R10_F03_runtime_opportunity_vs_speed.pdf`; Table 3 and Fig. 4 |
+| Cache memory must distinguish logical boundary-specific cache from allocated F2--F4 persistent state. | `reports/round10_cache_memory_audit.md`; `reports/round10_cache_memory_table.csv` |
+| 100% refresh equivalence validates cache plumbing, not equality of stale features to current features. | `reports/round10_reuse_boundary_state.json`; Round 10 equivalence tests |
 
-- State-of-the-art performance.
-- Generalization to all SegFormer models or all video datasets.
-- Independent VSPW test-set accuracy.
-- Edge-device validation or real-time guarantees.
-- Speedup from block-sparse or partial attention computation.
-- Cityscapes cross-dataset results.
-- A causal or universal relationship between Stage4 share and model scale.
+## Numeric spot checks
+
+| Model / setting | mIoU drop (pp) | Paired speedup | 95% CI |
+| --- | ---: | ---: | --- |
+| B0 S4/FI-2 | 0.091 | 1.068 | [1.036, 1.100] |
+| B0 S2--S4/FI-8 | 1.835 | 2.396 | [2.292, 2.492] |
+| B1 S4/FI-2 | 0.118 | 1.111 | [1.061, 1.200] |
+| B1 S2--S4/FI-8 | 2.715 | 2.282 | [2.086, 2.479] |
+
+## Prohibited claims checked
+
+- No first/novel/universal-optimality claim.
+- No SOTA, edge-device, real-time guarantee, or cross-dataset generalization claim.
+- No claim that S3--S4 reproduces TFC; it is explicitly labelled a vanilla baseline.
+- No historical Round 5 RTX 4090 microbenchmark number is mixed with Round 10 RTX 4090 D results.
+- No component-only speedup is reported as system speedup; the paper uses paired end-to-end latency.
+
+## Result
+
+`CLAIM AUDIT = PASS` for the final source and compiled PDFs. The word
+“real-time” appears only in the description of cited RTFormer prior work, and
+the manuscript explicitly limits its own evidence to the tested VSPW/B0/B1 and
+RTX 4090 D protocol.

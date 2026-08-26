@@ -1,0 +1,7 @@
+model,boundary,F2_bytes,F3_bytes,F4_bytes,logical_cache_bytes,logical_cache_mib,allocated_cache_bytes,allocated_cache_mib,source_code_location,verified
+B0,s4,1048576,655360,262144,262144,0.25,1966080,1.875,"driftguard/structured_reuse/boundaries.py:20-30,102-104,163-165",True
+B0,s3_s4,1048576,655360,262144,917504,0.875,1966080,1.875,"driftguard/structured_reuse/boundaries.py:20-30,102-104,163-165",True
+B0,s2_s4,1048576,655360,262144,1966080,1.875,1966080,1.875,"driftguard/structured_reuse/boundaries.py:20-30,102-104,163-165",True
+B1,s4,2097152,1310720,524288,524288,0.5,3932160,3.75,"driftguard/structured_reuse/boundaries.py:20-30,102-104,163-165",True
+B1,s3_s4,2097152,1310720,524288,1835008,1.75,3932160,3.75,"driftguard/structured_reuse/boundaries.py:20-30,102-104,163-165",True
+B1,s2_s4,2097152,1310720,524288,3932160,3.75,3932160,3.75,"driftguard/structured_reuse/boundaries.py:20-30,102-104,163-165",True

@@ -16,8 +16,10 @@
     "mIoU_drop_pp": 0.0,
     "pixel_accuracy": 0.7030894249946016,
     "mean_class_accuracy": 0.39889618145561007,
-    "cache_bytes": 0,
-    "cache_mib": 0.0
+    "logical_cache_bytes": 0,
+    "logical_cache_mib": 0,
+    "allocated_cache_bytes": 0,
+    "allocated_cache_mib": 0.0
   },
   {
     "model": "B0",
@@ -36,8 +38,10 @@
     "mIoU_drop_pp": 0.23130394519251807,
     "pixel_accuracy": 0.6998589058832304,
     "mean_class_accuracy": 0.3964914189282273,
-    "cache_bytes": 1966080,
-    "cache_mib": 1.875
+    "logical_cache_bytes": 1966080,
+    "logical_cache_mib": 1.875,
+    "allocated_cache_bytes": 1966080,
+    "allocated_cache_mib": 1.875
   },
   {
     "model": "B0",
@@ -56,8 +60,10 @@
     "mIoU_drop_pp": 0.8253910316201873,
     "pixel_accuracy": 0.6920941181723615,
     "mean_class_accuracy": 0.3901935279744503,
-    "cache_bytes": 1966080,
-    "cache_mib": 1.875
+    "logical_cache_bytes": 1966080,
+    "logical_cache_mib": 1.875,
+    "allocated_cache_bytes": 1966080,
+    "allocated_cache_mib": 1.875
   },
   {
     "model": "B0",
@@ -76,8 +82,10 @@
     "mIoU_drop_pp": 1.835033282461196,
     "pixel_accuracy": 0.6780902584800168,
     "mean_class_accuracy": 0.3796724478763266,
-    "cache_bytes": 1966080,
-    "cache_mib": 1.875
+    "logical_cache_bytes": 1966080,
+    "logical_cache_mib": 1.875,
+    "allocated_cache_bytes": 1966080,
+    "allocated_cache_mib": 1.875
   },
   {
     "model": "B0",
@@ -96,8 +104,10 @@
     "mIoU_drop_pp": 0.18388048211957497,
     "pixel_accuracy": 0.7007589277817368,
     "mean_class_accuracy": 0.3969329237303833,
-    "cache_bytes": 1966080,
-    "cache_mib": 1.875
+    "logical_cache_bytes": 917504,
+    "logical_cache_mib": 0.875,
+    "allocated_cache_bytes": 1966080,
+    "allocated_cache_mib": 1.875
   },
   {
     "model": "B0",
@@ -116,8 +126,10 @@
     "mIoU_drop_pp": 0.7090891352327988,
     "pixel_accuracy": 0.6943905961142618,
     "mean_class_accuracy": 0.39127024187310194,
-    "cache_bytes": 1966080,
-    "cache_mib": 1.875
+    "logical_cache_bytes": 917504,
+    "logical_cache_mib": 0.875,
+    "allocated_cache_bytes": 1966080,
+    "allocated_cache_mib": 1.875
   },
   {
     "model": "B0",
@@ -136,8 +148,10 @@
     "mIoU_drop_pp": 1.644129748860651,
     "pixel_accuracy": 0.6819234552020613,
     "mean_class_accuracy": 0.3815202418791368,
-    "cache_bytes": 1966080,
-    "cache_mib": 1.875
+    "logical_cache_bytes": 917504,
+    "logical_cache_mib": 0.875,
+    "allocated_cache_bytes": 1966080,
+    "allocated_cache_mib": 1.875
   },
   {
     "model": "B0",
@@ -156,8 +170,10 @@
     "mIoU_drop_pp": 0.09102398279099422,
     "pixel_accuracy": 0.7022641674354473,
     "mean_class_accuracy": 0.3977861431427476,
-    "cache_bytes": 1966080,
-    "cache_mib": 1.875
+    "logical_cache_bytes": 262144,
+    "logical_cache_mib": 0.25,
+    "allocated_cache_bytes": 1966080,
+    "allocated_cache_mib": 1.875
   },
   {
     "model": "B0",
@@ -176,8 +192,10 @@
     "mIoU_drop_pp": 0.4373275037218127,
     "pixel_accuracy": 0.699141152984898,
     "mean_class_accuracy": 0.3937880938709555,
-    "cache_bytes": 1966080,
-    "cache_mib": 1.875
+    "logical_cache_bytes": 262144,
+    "logical_cache_mib": 0.25,
+    "allocated_cache_bytes": 1966080,
+    "allocated_cache_mib": 1.875
   },
   {
     "model": "B0",
@@ -196,8 +214,10 @@
     "mIoU_drop_pp": 1.1325929162108228,
     "pixel_accuracy": 0.6916061228944719,
     "mean_class_accuracy": 0.3862841490986784,
-    "cache_bytes": 1966080,
-    "cache_mib": 1.875
+    "logical_cache_bytes": 262144,
+    "logical_cache_mib": 0.25,
+    "allocated_cache_bytes": 1966080,
+    "allocated_cache_mib": 1.875
   },
   {
     "model": "B1",
@@ -216,8 +236,10 @@
     "mIoU_drop_pp": 0.0,
     "pixel_accuracy": 0.7490031517262382,
     "mean_class_accuracy": 0.47379447044835615,
-    "cache_bytes": 0,
-    "cache_mib": 0.0
+    "logical_cache_bytes": 0,
+    "logical_cache_mib": 0,
+    "allocated_cache_bytes": 0,
+    "allocated_cache_mib": 0.0
   },
   {
     "model": "B1",
@@ -236,8 +258,10 @@
     "mIoU_drop_pp": 0.3967076407124237,
     "pixel_accuracy": 0.745097258037993,
     "mean_class_accuracy": 0.47004113500856815,
-    "cache_bytes": 3932160,
-    "cache_mib": 3.75
+    "logical_cache_bytes": 3932160,
+    "logical_cache_mib": 3.75,
+    "allocated_cache_bytes": 3932160,
+    "allocated_cache_mib": 3.75
   },
   {
     "model": "B1",
@@ -256,8 +280,10 @@
     "mIoU_drop_pp": 1.2802349556489512,
     "pixel_accuracy": 0.7364090647068238,
     "mean_class_accuracy": 0.4616084013809855,
-    "cache_bytes": 3932160,
-    "cache_mib": 3.75
+    "logical_cache_bytes": 3932160,
+    "logical_cache_mib": 3.75,
+    "allocated_cache_bytes": 3932160,
+    "allocated_cache_mib": 3.75
   },
   {
     "model": "B1",
@@ -276,8 +302,10 @@
     "mIoU_drop_pp": 2.7154598725672994,
     "pixel_accuracy": 0.7206951370427316,
     "mean_class_accuracy": 0.4481400420476102,
-    "cache_bytes": 3932160,
-    "cache_mib": 3.75
+    "logical_cache_bytes": 3932160,
+    "logical_cache_mib": 3.75,
+    "allocated_cache_bytes": 3932160,
+    "allocated_cache_mib": 3.75
   },
   {
     "model": "B1",
@@ -296,8 +324,10 @@
     "mIoU_drop_pp": 0.28288357383501883,
     "pixel_accuracy": 0.7463732868457377,
     "mean_class_accuracy": 0.4710195631179874,
-    "cache_bytes": 3932160,
-    "cache_mib": 3.75
+    "logical_cache_bytes": 1835008,
+    "logical_cache_mib": 1.75,
+    "allocated_cache_bytes": 3932160,
+    "allocated_cache_mib": 3.75
   },
   {
     "model": "B1",
@@ -316,8 +346,10 @@
     "mIoU_drop_pp": 1.02463505309916,
     "pixel_accuracy": 0.7396202430851477,
     "mean_class_accuracy": 0.46383543529143595,
-    "cache_bytes": 3932160,
-    "cache_mib": 3.75
+    "logical_cache_bytes": 1835008,
+    "logical_cache_mib": 1.75,
+    "allocated_cache_bytes": 3932160,
+    "allocated_cache_mib": 3.75
   },
   {
     "model": "B1",
@@ -336,8 +368,10 @@
     "mIoU_drop_pp": 2.334877620211917,
     "pixel_accuracy": 0.7259040037364984,
     "mean_class_accuracy": 0.45153198306581094,
-    "cache_bytes": 3932160,
-    "cache_mib": 3.75
+    "logical_cache_bytes": 1835008,
+    "logical_cache_mib": 1.75,
+    "allocated_cache_bytes": 3932160,
+    "allocated_cache_mib": 3.75
   },
   {
     "model": "B1",
@@ -356,8 +390,10 @@
     "mIoU_drop_pp": 0.11820466459607215,
     "pixel_accuracy": 0.748115958602455,
     "mean_class_accuracy": 0.472414027266202,
-    "cache_bytes": 3932160,
-    "cache_mib": 3.75
+    "logical_cache_bytes": 524288,
+    "logical_cache_mib": 0.5,
+    "allocated_cache_bytes": 3932160,
+    "allocated_cache_mib": 3.75
   },
   {
     "model": "B1",
@@ -376,8 +412,10 @@
     "mIoU_drop_pp": 0.5529760805497663,
     "pixel_accuracy": 0.7453135007445918,
     "mean_class_accuracy": 0.46776662868767827,
-    "cache_bytes": 3932160,
-    "cache_mib": 3.75
+    "logical_cache_bytes": 524288,
+    "logical_cache_mib": 0.5,
+    "allocated_cache_bytes": 3932160,
+    "allocated_cache_mib": 3.75
   },
   {
     "model": "B1",
@@ -396,7 +434,9 @@
     "mIoU_drop_pp": 1.435046100883286,
     "pixel_accuracy": 0.7379001070784281,
     "mean_class_accuracy": 0.4591362247524115,
-    "cache_bytes": 3932160,
-    "cache_mib": 3.75
+    "logical_cache_bytes": 524288,
+    "logical_cache_mib": 0.5,
+    "allocated_cache_bytes": 3932160,
+    "allocated_cache_mib": 3.75
   }
 ]

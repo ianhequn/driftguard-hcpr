@@ -1,0 +1,6 @@
+{
+  "main": "reports/round10_boundary_quality_latency_table.csv",
+  "profile": "reports/round10_profile_table.csv",
+  "pareto": "reports/round10_pareto_frontier.csv",
+  "cache": "reports/round10_cache_memory_table.csv"
+}

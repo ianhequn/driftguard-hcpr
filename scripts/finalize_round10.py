@@ -17,6 +17,18 @@ OUT = ROOT / "results" / "R10_E06_analysis"
 REPORTS = ROOT / "reports"
 
 
+def cache_contract() -> dict[str, dict[str, int]]:
+    contract = {}
+    for path in sorted(PROFILE_ROOT.glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        model = "B0" if data["model"].startswith("segformer-b0") else "B1"
+        contract[model] = {"s4": data["cache_bytes"]["S4"],
+                           "s3_s4": data["cache_bytes"]["S3-S4"],
+                           "s2_s4": data["cache_bytes"]["S2-S4"],
+                           "allocated": sum(data["cache_bytes"].values())}
+    return contract
+
+
 def write_csv(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if not rows:
@@ -28,6 +40,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 def load_quality() -> list[dict]:
     rows = []
+    cache_sizes = cache_contract()
     for model_dir in sorted(QUALITY_ROOT.glob("b*")):
         payloads = sorted(model_dir.glob("*.json"))
         full = json.loads((model_dir / "full.json").read_text(encoding="utf-8"))
@@ -48,7 +61,10 @@ def load_quality() -> list[dict]:
                 "mIoU_drop_pp": 100.0 * (full["mIoU"] - data["mIoU"]),
                 "pixel_accuracy": data["pixel_accuracy"],
                 "mean_class_accuracy": data["mean_class_accuracy"],
-                "cache_bytes": data["cache_bytes"], "cache_mib": data["cache_mib"],
+                "logical_cache_bytes": 0 if data["boundary"] == "full" else cache_sizes["B0" if data["model"].startswith("segformer-b0") else "B1"][data["boundary"]],
+                "logical_cache_mib": 0 if data["boundary"] == "full" else cache_sizes["B0" if data["model"].startswith("segformer-b0") else "B1"][data["boundary"]] / (1024 * 1024),
+                "allocated_cache_bytes": data["cache_bytes"],
+                "allocated_cache_mib": data["cache_bytes"] / (1024 * 1024),
             })
     return rows
 
@@ -138,8 +154,9 @@ def main() -> None:
             "S3_calls": row["S3_calls"], "S4_calls": row["S4_calls"],
             "decoder_calls": row["Decoder_calls"], "mIoU": row["mIoU"],
             "mIoU_drop_pp": row["mIoU_drop_pp"], "pixel_accuracy": row["pixel_accuracy"],
-            "mean_class_accuracy": row["mean_class_accuracy"], "cache_bytes": row["cache_bytes"],
-            "cache_mib": row["cache_mib"],
+            "mean_class_accuracy": row["mean_class_accuracy"],
+            "logical_cache_bytes": row["logical_cache_bytes"], "logical_cache_mib": row["logical_cache_mib"],
+            "allocated_cache_bytes": row["allocated_cache_bytes"], "allocated_cache_mib": row["allocated_cache_mib"],
         })
     write_csv(ROOT / "results" / "R10_quality" / "full_results.csv", quality_export)
     (ROOT / "results" / "R10_quality" / "full_results.json").write_text(json.dumps(quality_export, indent=2) + "\n", encoding="utf-8")
@@ -161,7 +178,7 @@ def main() -> None:
     for path in sorted(PROFILE_ROOT.glob("*.json")):
         data = json.loads(path.read_text(encoding="utf-8")); model = "B0" if data["model"].startswith("segformer-b0") else "B1"
         profile_payload[model] = {"S4": data["shares"]["S4"], "S3-S4": data["shares"]["S3-S4"], "S2-S4": data["shares"]["S2-S4"]}
-        profile_rows.append({"Model": model, **{key: data["summary"][key]["mean_ms"] for key in ("Stage1", "Stage2", "Stage3", "Stage4", "Decoder", "Full")}, "S4 Share": data["shares"]["S4"], "S3-S4 Share": data["shares"]["S3-S4"], "S2-S4 Share": data["shares"]["S2-S4"]})
+        profile_rows.append({"Model": model, **{key: data["summary"][key]["mean_ms"] for key in ("Stage1", "Stage2", "Stage3", "Stage4", "Decoder", "Full")}, "S4 Share": data["shares"]["S4"], "S3-S4 Share": data["shares"]["S3-S4"], "S2-S4 Share": data["shares"]["S2-S4"], "S4 Logical Cache MiB": data["cache_bytes"]["S4"] / (1024 * 1024), "S3-S4 Logical Cache MiB": data["cache_bytes"]["S3-S4"] / (1024 * 1024), "S2-S4 Logical Cache MiB": data["cache_bytes"]["S2-S4"] / (1024 * 1024), "Allocated Cache MiB": data["cache_bytes"]["S2-S4"] / (1024 * 1024)})
     write_csv(REPORTS / "round10_profile_table.csv", profile_rows)
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "round10_rows.json").write_text(json.dumps(rows, indent=2) + "\n", encoding="utf-8")
