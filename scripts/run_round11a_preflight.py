@@ -26,12 +26,11 @@ EXPECTED = {
 }
 
 
-def sha256_directory(path: Path) -> str:
+def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
-    for file_path in sorted(path.rglob("*")):
-        if file_path.is_file():
-            digest.update(file_path.relative_to(path).as_posix().encode())
-            digest.update(file_path.read_bytes())
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
     return digest.hexdigest()
 
 
@@ -45,6 +44,10 @@ def main() -> None:
     gpu = torch.cuda.get_device_name(0) if torch.cuda.is_available() else "no CUDA"
     dataset = VSPWFrameDataset(args.dataset_root, "val", training=False)
     videos = len({sample.video_id for sample in dataset.samples})
+    try:
+        driver = subprocess.run(["nvidia-smi", "--query-gpu=driver_version", "--format=csv,noheader"], capture_output=True, text=True, check=False).stdout.strip()
+    except OSError:
+        driver = "unavailable"
     payload = {
         "python": sys.version.split()[0],
         "platform": platform.platform(),
@@ -52,13 +55,14 @@ def main() -> None:
         "transformers": transformers.__version__,
         "cuda_available": bool(torch.cuda.is_available()),
         "gpu": gpu,
+        "driver": driver,
         "cuda_runtime": torch.version.cuda,
         "dataset": {"split": "val", "videos": videos, "frames": len(dataset), "classes": 124, "ignore": 255},
         "precision": "bf16",
         "resolution": [512, 512],
         "batch_size": 1,
-        "checkpoints": {"B0": {"path": str(args.b0_dir), "sha256": sha256_directory(args.b0_dir)},
-                         "B1": {"path": str(args.b1_dir), "sha256": sha256_directory(args.b1_dir)}},
+        "checkpoints": {"B0": {"path": str(args.b0_dir), "sha256": sha256_file(args.b0_dir / "model.safetensors")},
+                         "B1": {"path": str(args.b1_dir), "sha256": sha256_file(args.b1_dir / "model.safetensors")}},
     }
     payload["contract_pass"] = (
         payload["gpu"] == "NVIDIA GeForce RTX 4090 D"
