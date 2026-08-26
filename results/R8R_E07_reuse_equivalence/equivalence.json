@@ -1,0 +1,193 @@
+{
+  "architecture": "SegFormer-B1",
+  "frames_checked": 20,
+  "max_abs_error": 0.0,
+  "mean_abs_error": 0.0,
+  "max_relative_l2": 0.0,
+  "all_refresh": true,
+  "stage4_call_deltas": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "allclose_atol_1e-5_rtol_1e-4": true,
+  "rows": [
+    {
+      "frame_index": 0,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 1,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 2,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 3,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 4,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 5,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 6,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 7,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 8,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 9,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 10,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 11,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 12,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 13,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 14,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 15,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 16,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 17,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 18,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    },
+    {
+      "frame_index": 19,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "relative_l2": 0.0,
+      "stage4_calls_delta": 1,
+      "actual_refresh": true
+    }
+  ]
+}

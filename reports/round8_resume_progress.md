@@ -37,6 +37,18 @@
    - pixel accuracy: `0.7485014599`.
    - full validation elapsed: `2113.3245 s`.
    - 30k is the current best checkpoint by validation mIoU.
+13. Completed step 40,000 and final validation:
+   - mIoU: `0.3715982824`.
+   - pixel accuracy: `0.7490073203`.
+   - validation elapsed: `2057.2351 s`.
+   - clean training total wall time: `23091.05 s` including four validations.
+   - 40k selected as best checkpoint.
+14. Frozen and fresh-reloaded B1:
+   - model-scale: SegFormer-B1, VSPW-124, 124/124 class alignment.
+   - reload mIoU: `0.3715979313`; absolute difference from 40k: `3.51e-7`.
+15. Whole-Stage4 reuse validation passed:
+   - 20 real frames, 100% refresh, max/mean absolute error `0`, relative L2 `0`.
+16. Completed Full/FI-2/FI-4/FI-8 full VSPW validation and paired repeated latency.
 
 ## Current status
 
@@ -44,7 +56,9 @@
 ROUND 8 SOURCE RECOVERY = PASS
 ROUND 8 B1 INITIALIZATION = PASS
 ROUND 8 B1 CALIBRATION = PASS
-ROUND 8 RESUME = AUTHORIZED
+ROUND 8 B1 TRAINING = COMPLETE
+ROUND 8 B1 FREEZE = PASS
+ROUND 8 B1 REUSE = VALID
 ```
 
-Clean training is running beyond step 30,000. Formal validation is scheduled only at 40k next; Round 7.1 will not be rerun.
+Round 8 resume experiments are complete. Round 7.1 was not rerun.

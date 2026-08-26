@@ -1,0 +1,16 @@
+{
+  "initialization_source": "/root/autodl-tmp/models/segformer-b1-ade512-source",
+  "initialization_model_sha256": "4dbca19129b1373ca6bce75d68834a246d6b1e5e5202886183cd284d2f41abef",
+  "checkpoint": "/root/autodl-tmp/checkpoints/r8r_b1_vspw124/best/training_state.pt",
+  "checkpoint_sha256": "379bb3acf305c75e7a4ce0ec4aaa42466eb8544debe4b8bd66ed8cafb49644d7",
+  "loaded_parameter_tensors": 206,
+  "missing_keys": [
+    "decode_head.classifier.bias",
+    "decode_head.classifier.weight"
+  ],
+  "unexpected_keys": [],
+  "reinitialized_parameters": [
+    "decode_head.classifier.bias",
+    "decode_head.classifier.weight"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "round": "8-resume",
-  "status": "running",
+  "status": "completed",
   "historical_round8_status": "SOURCE CHECKPOINT BLOCKED",
   "source_identifier": "nvidia/segformer-b1-finetuned-ade-512-512",
   "download_endpoint": "https://hf-mirror.com",
@@ -17,14 +17,14 @@
   "fresh_load_pass": true,
   "forward_smoke_pass": true,
   "training_started": true,
-  "training_steps": 30310,
-  "best_step": 30000,
-  "best_validation_miou": 0.3715116431123579,
-  "frozen_checkpoint": null,
-  "full_miou": null,
-  "fi2_miou": null,
-  "fi2_drop_pp": null,
-  "fi2_speedup_mean": null,
-  "cross_scale_generalization": null,
-  "final_decision": null
+  "training_steps": 40000,
+  "best_step": 40000,
+  "best_validation_miou": 0.37159828238560033,
+  "frozen_checkpoint": "/root/autodl-tmp/models/segformer-b1-vspw124",
+  "full_miou": 0.37159793127621504,
+  "fi2_miou": 0.3704133728540334,
+  "fi2_drop_pp": 0.11845584221820138,
+  "fi2_speedup_mean": 1.0202779540422438,
+  "cross_scale_generalization": "positive_tradeoff_but_primary_fi2_speedup_weak",
+  "final_decision": "ROUND 8 = MODEL-SCALE CONDITIONAL"
 }

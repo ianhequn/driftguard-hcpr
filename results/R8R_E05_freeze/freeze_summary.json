@@ -1,0 +1,10 @@
+{
+  "architecture": "SegFormer-B1",
+  "num_labels": 124,
+  "selected_step": 40000,
+  "selected_validation_miou": 0.37159828238560033,
+  "checkpoint_sha256": "379bb3acf305c75e7a4ce0ec4aaa42466eb8544debe4b8bd66ed8cafb49644d7",
+  "model_sha256": "892a6589874d762c6b9c911e559e062fccbb226b33309aa6c8317dbec091fcfb",
+  "class_alignment_count": 124,
+  "encoder_frozen": false
+}

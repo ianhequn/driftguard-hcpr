@@ -1,0 +1,26 @@
+{
+  "videos": 343,
+  "samples": 10000,
+  "seed": 42,
+  "official_global_miou_full": 0.371597931276215,
+  "official_global_miou_fi2": 0.370413372854033,
+  "official_global_drop_pp": 0.11845584221820138,
+  "video_mean_miou_full": 0.20698971894143653,
+  "video_mean_miou_fi2": 0.20933397026632497,
+  "video_mean_drop_pp": -0.2344251324888441,
+  "bootstrap_drop_pp_mean": -0.23390282919369507,
+  "bootstrap_drop_pp_ci95": [
+    -0.3740137100945963,
+    -0.09818560976549243
+  ],
+  "bootstrap_full_video_mean_miou_ci95": [
+    0.1936002938523505,
+    0.2206654061983758
+  ],
+  "bootstrap_fi2_video_mean_miou_ci95": [
+    0.195908238872142,
+    0.22295833740586954
+  ],
+  "video_mean_pixel_accuracy_full": 0.7407676522699962,
+  "video_mean_pixel_accuracy_fi2": 0.7399664370855894
+}

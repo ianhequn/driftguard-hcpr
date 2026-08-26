@@ -47,6 +47,7 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--selection", type=Path)
     parser.add_argument("--training-config", type=Path)
+    parser.add_argument("--architecture", default="SegFormer-B0")
     args = parser.parse_args()
 
     if args.output_dir.exists() and any(args.output_dir.iterdir()):
@@ -106,7 +107,7 @@ def main() -> None:
         shutil.copy2(args.training_config, args.output_dir / "training_config.yaml")
     else:
         (args.output_dir / "training_config.yaml").write_text(
-            "architecture: SegFormer-B0\nnum_classes: 124\nimage_size: 512\n"
+            f"architecture: {args.architecture}\nnum_classes: 124\nimage_size: 512\n"
             "precision: bf16\nbatch_size: 8\nseed: 42\n",
             encoding="utf-8",
         )
@@ -116,7 +117,7 @@ def main() -> None:
     write_json(
         args.output_dir / "freeze_summary.json",
         {
-            "architecture": "SegFormer-B0",
+            "architecture": args.architecture,
             "num_labels": int(model.config.num_labels),
             "selected_step": selection.get("step", state.get("step")),
             "selected_validation_miou": selection.get("miou"),
