@@ -28,7 +28,7 @@
 \maketitle
 
 \begin{abstract}
-Temporal redundancy can reduce video semantic segmentation cost, but fewer updated features do not necessarily reduce GPU latency. We study a structured reuse policy that either recomputes the complete final encoder stage or reuses its cached output, while earlier stages and the decoder stay dense. On a frozen VSPW validation protocol, whole-Stage4 reuse with a fixed two-frame interval reduces SegFormer-B0 mIoU by 0.0919 percentage points and obtains a repeated paired end-to-end speedup of 1.0924x. A SegFormer-B1 transfer preserves a 0.1185-point loss at the same policy, but its speed gain is weak; a more aggressive interval reaches 1.2245x with a 1.4353-point loss. Stage4 accounts for 23.98\% and 18.99\% of measured B0 and B1 latency, explaining the scale-dependent ceiling. The results show that coarse reuse can be useful, while fine-grained sparsity is not automatically beneficial.
+Temporal redundancy can reduce video semantic segmentation cost, but fewer updated features do not necessarily reduce GPU latency. We study a structured reuse policy that either recomputes the complete final encoder stage or reuses its cached output, while earlier stages and the decoder stay dense. On a frozen VSPW validation protocol, whole-Stage4 reuse with a fixed two-frame interval reduces SegFormer-B0 mIoU by 0.0919 percentage points and obtains a repeated paired end-to-end speedup of 1.0924x. A SegFormer-B1 transfer preserves a 0.1185-point loss at the same policy, but its speed gain is weak; a more aggressive interval reaches 1.2245x with a 1.4353-point loss. Stage4 accounts for 23.98\% and 18.99\% of measured B0 and B1 latency, respectively, consistent with the scale-dependent difference in realized speedup. The results show that coarse reuse can be useful, while fine-grained sparsity is not automatically beneficial.
 \end{abstract}
 
 \begin{keywords}
@@ -43,9 +43,9 @@ Our study isolates this question with three constraints. First, the task policy 
 The contributions are: (1) a measured whole-stage reuse pipeline whose skipped Stage4 calls are instrumented; (2) a paired sequential CUDA evaluation separating quality loss from latency variability; (3) a cross-scale analysis on SegFormer-B0 and B1 that relates system gains to the measured Stage4 fraction; and (4) an explicit negative result for fine-grained partial computation, which motivates the coarse granularity of the final method.
 
 \section{Related Work}
-Temporal feature propagation reduces redundant backbone work by transferring features between frames \cite{zhu2017dff}. Periodic execution policies provide a simple alternative, as in Clockwork Convnets \cite{shelhamer2016clockwork}. Efficient semantic segmentation has also explored corrective fusion \cite{jain2019accel}, stable temporal adaptation \cite{zhang2022auxadapt}, real-time transformer designs \cite{wang2022rtformer}, and dynamic token processing \cite{liu2024dovit}. These approaches differ in where temporal state is introduced and how much of the network is conditionally executed.
+Temporal feature propagation reduces redundant backbone work by transferring features between frames \cite{zhu2017dff}. Periodic execution policies provide a simple alternative, as in Clockwork Convnets \cite{shelhamer2016clockwork}. Efficient semantic segmentation has also explored corrective fusion \cite{jain2019accel}, stable temporal adaptation \cite{zhang2022auxadapt}, real-time transformer designs \cite{wang2022rtformer}, and dynamic token processing \cite{liu2024dovit}. Recent work further studies temporally consistent propagation and efficient segmentation for compressed video \cite{baghbaderani2024bofp,hu2023arseg}. These approaches differ in where temporal state is introduced and how much of the network is conditionally executed.
 
-The present work focuses on a narrower systems boundary. It does not propose a new segmentation architecture, sparse kernel, or predictor. Instead, it asks whether a frozen task-aware schedule can create actual end-to-end acceleration when the reusable unit is the entire final encoder stage. This distinction is important because a masked dense forward can preserve output semantics while providing no compute saving.
+The present work focuses on a narrower systems boundary. It does not propose a new segmentation architecture, sparse kernel, or predictor. Instead, it asks whether a fixed temporal schedule can create actual end-to-end acceleration when the reusable unit is the entire final encoder stage. This distinction is important because a masked dense forward can preserve output semantics while providing no compute saving.
 
 \section{Structured Temporal Reuse}
 \subsection{Execution contract}
@@ -57,12 +57,12 @@ Let $F^1_t,F^2_t,F^3_t$ denote fresh features from Stages 1--3 and let $F^4_t$ b
  \end{cases}
  \qquad C_t=F^4_t.
 \end{equation}
-The decoder consumes $(F^1_t,F^2_t,F^3_t,F^4_t)$ for every frame. A video begins with $m_1=1$; refresh resets cache age and reuse increments it. Thus reuse is a real omission of the Stage4 forward, not a full forward followed by output masking.
+The decoder consumes $(F^1_t,F^2_t,F^3_t,F^4_t)$ for every frame. A video begins with $m_1=1$ and the cache is reset at each video boundary. Thus reuse is a real omission of the Stage4 forward, not a full forward followed by output masking.
 
-The primary policy, FixedInterval-2 (FI-2), refreshes every second frame. The logical refresh ratio is therefore 50\%, while the complete B0 validation sequence executes 12,289 Stage4 calls over 24,392 frames because each video has a compulsory first refresh. We also evaluate FI-8 on B1 to expose the more aggressive end of the trade-off.
+The primary policy, FixedInterval-2 (FI-2), refreshes every second frame. The logical refresh ratio is therefore 50\%, while the complete validation sequence executes 12,289 Stage4 calls over 24,392 frames, an actual ratio of 50.381\%, because each video has a compulsory first refresh. We also evaluate FI-8 on B1; its actual ratio is 13.041\% (3,181 calls), exposing the more aggressive end of the trade-off.
 
 \subsection{Why coarse reuse is hardware-aware}
-Fine-grained Stage4 partial computation was audited in the preceding study. Attention requires a current query to interact with a broad key-value context, while MixFFN depthwise convolution introduces spatial neighborhood dependencies. Cached-context approximations therefore require additional gathers, cache management, and stale context. In our measurements, the PyTorch-level partial route did not beat dense Stage4. We consequently retain the exact dense Stage4 contract on refresh frames and make the approximation explicit only across frames.
+Fine-grained Stage4 partial computation was audited in the preceding study. Attention requires a current query to interact with a broad key-value context, while MixFFN depthwise convolution introduces spatial neighborhood dependencies. Cached-context approximations therefore require additional gathers, cache management, and stale context. In a separately scoped RTX 4090 Stage4-only B0 microbenchmark, dense Stage4 required 4.366 ms, whereas the 37.5\% cached-context route required 6.662 ms. This benchmark uses the Round 5 Stage4 boundary rather than the end-to-end VSPW table, but it provides quantitative evidence for the PyTorch-level negative result. We consequently retain the exact dense Stage4 contract on refresh frames and make the approximation explicit only across frames.
 
 \begin{figure}[t]
   \centering
@@ -73,10 +73,10 @@ Fine-grained Stage4 partial computation was audited in the preceding study. Atte
 
 \section{Experimental Protocol}
 \subsection{Models and data}
-We use the frozen official VSPW label normalization and evaluate on 343 validation videos containing 24,392 RGB-ground-truth pairs across 124 classes. The split is used for checkpoint selection and ground-truth evaluation because public VSPW test labels are unavailable; results are not independent test-set claims. The B0 model is the frozen VSPW-compatible checkpoint from the previous round. B1 uses the same compatibility contract and was trained for 40,000 optimizer steps with BF16, batch size 8, AdamW, learning rate $6\times10^{-5}$, weight decay 0.01, 800 warmup steps, and seed 42.
+We use the frozen official VSPW label normalization and evaluate on the VSPW validation split~\cite{miao2021vspw}, comprising 343 validation videos, 24,392 RGB-ground-truth pairs, and 124 classes. The split is used for checkpoint selection and ground-truth evaluation because public VSPW test labels are unavailable; results are not independent test-set claims. The B0 model is the frozen VSPW-compatible checkpoint from the previous round. B1 uses the same compatibility contract and was trained for 40,000 optimizer steps with BF16, batch size 8, AdamW, learning rate $6\times10^{-5}$, weight decay 0.01, 800 warmup steps, and seed 42.
 
 \subsection{Measurements}
-The primary latency boundary starts at a CUDA-resident input tensor and ends at ready segmentation logits. It includes fresh Stages 1--3, the refresh decision, Stage4 refresh or cache reuse, and the decoder; it excludes video decoding, disk I/O, pageable CPU-to-GPU transfer, visualization, and result writing. Measurements use CUDA events, 200 warmup iterations, and 1,000 measurement iterations. Sequential cache state is retained across frames and reset only between videos. We report paired speedups against a Full run measured immediately under the same process and input boundary.
+The primary latency boundary starts at a CUDA-resident input tensor and ends at ready segmentation logits. It includes fresh Stages 1--3, the refresh decision, Stage4 refresh or cache reuse, and the decoder; it excludes video decoding, disk I/O, pageable CPU-to-GPU transfer, visualization, and result writing. Latency uses an NVIDIA RTX 4090, BF16, batch size 1, and $512\times512$ input tensors. Measurements use CUDA events, 200 warmup iterations, and 1,000 measurement iterations. Sequential cache state is retained across frames and reset only between videos. We report paired speedups against a Full run measured immediately under the same process and input boundary.
 
 Quality is official-style global validation mIoU and mIoU drop in percentage points. We additionally retain the project's logit-relative error and pixel disagreement diagnostics. The 100\% refresh equivalence gate uses 20 real validation frames and compares the whole-stage pipeline against the native full forward.
 
@@ -86,22 +86,23 @@ Table~\ref{tab:main} summarizes the frozen cross-scale results. FI-2 retains nea
 
 \begin{table}[t]
 \centering
-\caption{Frozen VSPW validation results. Refresh is the logical interval ratio; speed is repeated paired end-to-end speedup.}
+\caption{Frozen VSPW validation results. Refresh is the actual Stage4 call ratio; speed is repeated paired end-to-end speedup.}
 \label{tab:main}
-\setlength{\tabcolsep}{3.0pt}
+\scriptsize
+\setlength{\tabcolsep}{1.5pt}
 \begin{tabular}{lrrrrr}
 \toprule
-Model/policy & Refresh & Full mIoU & Policy mIoU & Drop (pp) & Speedup \\
+Method & Actual & Full & Reuse & Drop & Speed \\
 \midrule
-B0 / FI-2 & 50.00\% & .301292 & .300373 & .0919 & 1.0924$\pm$.0757 \\
-B1 / FI-2 & 50.00\% & .371598 & .370413 & .1185 & 1.0203$\pm$.0679 \\
-B1 / FI-8 & 12.50\% & .371598 & .357245 & 1.4353 & 1.2245$\pm$.1591 \\
+B0 / FI-2 & 50.381\% & .301292 & .300373 & .0919 & 1.0924$\pm$.0757 \\
+B1 / FI-2 & 50.381\% & .371598 & .370413 & .1185 & 1.0203$\pm$.0679 \\
+B1 / FI-8 & 13.041\% & .371598 & .357245 & 1.4353 & 1.2245$\pm$.1591 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Runtime share and compute avoidance}
-The measured Stage4 fraction is 23.98\% for B0 and 18.99\% for B1 (Fig.~\ref{fig:share}). This is the dominant reason that the same reuse schedule transfers imperfectly across model scale: even an ideal removal of Stage4 is bounded by its fraction of total latency, and actual reuse also pays scheduling and memory costs. The B0 formal run provides a direct execution check: Full performs 24,392 Stage4 calls, while FI-2 performs 12,289, with the decoder still processing all 24,392 frames.
+The measured Stage4 fraction is 23.98\% for B0 and 18.99\% for B1 (Fig.~\ref{fig:share}). The smaller B1 share is consistent with its weaker realized FI-2 speedup, since less end-to-end latency is available to recover by skipping this stage; this interpretation is bounded to the two measured model scales. The B0 formal run provides a direct execution check: Full performs 24,392 Stage4 calls, while FI-2 performs 12,289, with the decoder still processing all 24,392 frames.
 
 \begin{figure}[t]
   \centering
@@ -113,7 +114,7 @@ The measured Stage4 fraction is 23.98\% for B0 and 18.99\% for B1 (Fig.~\ref{fig
 \subsection{Correctness and trade-off}
 At 100\% refresh, both B0 and B1 whole-stage pipelines match the native full forward on 20 validation frames: maximum absolute error, mean absolute error, and relative L2 are all zero, with allclose passing for B1. This verifies refresh semantics, not current-frame exactness during reuse; reuse intentionally returns the previous frame's final F4.
 
-Figure~\ref{fig:pareto} shows the measured quality-latency trade-off. B0 FI-2 is the most balanced operating point in the primary study: it crosses the project's internal 1.0 speedup line while losing less than 0.1 mIoU percentage point. B1 FI-2 preserves quality but does not establish reliable acceleration. B1 FI-8 crosses 1.2x, but its 1.4353-point drop makes it an aggressive operating point rather than a default setting.
+Figure~\ref{fig:pareto} shows the measured quality-latency trade-off. B0 FI-2 is the most balanced operating point in the primary study: it achieves a positive measured speedup while losing less than 0.1 mIoU percentage point. B1 FI-2 preserves quality but does not establish reliable acceleration. B1 FI-8 exceeds 1.2x, but its 1.4353-point drop makes it an aggressive operating point rather than a default setting.
 
 \begin{figure}[t]
   \centering
@@ -126,9 +127,8 @@ Figure~\ref{fig:pareto} shows the measured quality-latency trade-off. B0 FI-2 is
 The main limitation is scope. The experiment uses the VSPW validation split and two SegFormer sizes; it does not establish public-test generalization, cross-dataset transfer, edge-device behavior, or real-time guarantees. The B1 latency sample is small and variable, so its FI-2 speed result is reported as uncertain rather than overinterpreted. The method also reuses a complete final feature and does not reduce Stages 1--3 or decoder work. Finally, the preceding fine-grained partial-computation study found no usable PyTorch-level route; lower-level kernels are outside this paper's scope.
 
 \section{Conclusion}
-We evaluated whether temporal redundancy can become measured GPU acceleration under a conservative execution contract. Whole-Stage4 dense refresh or cached reuse avoids a clearly instrumented dense forward and yields a repeated 1.0924x B0 end-to-end speedup at a 0.0919-point validation mIoU drop. The cross-scale B1 result shows why the gain is not universal: Stage4 occupies a smaller share of the total path, making FI-2 speed weak, while FI-8 trades quality for a larger gain. The practical conclusion is therefore specific: structured whole-stage reuse is a credible deployment mechanism for the tested B0 setting, but its value must be re-profiled per model scale and measured end to end.
+We evaluated whether temporal redundancy can become measured GPU acceleration under a conservative execution contract. Whole-Stage4 dense refresh or cached reuse avoids a clearly instrumented dense forward and yields a repeated 1.0924x B0 end-to-end speedup at a 0.0919-point validation mIoU drop. The B1 result illustrates the scale dependence observed under our measured runtime composition: its smaller Stage4 share is associated with weaker FI-2 speed, while FI-8 trades quality for a larger gain. The practical conclusion is specific: structured whole-stage reuse is a viable inference mechanism under the tested B0 setting, but its value must be re-profiled per model scale and measured end to end.
 
-\clearpage
 \bibliographystyle{IEEEbib}
 \bibliography{references}
 

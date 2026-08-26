@@ -6,12 +6,12 @@
 MANUSCRIPT SOURCE = COMPLETE
 EVIDENCE AUDIT = COMPLETE
 FIGURE/TABLE SOURCES = COMPLETE
-PDF COMPILATION = BLOCKED BY ENVIRONMENT
+PDF COMPILATION = PASS
+PDF AUDIT = PASS WITH NON-FATAL UNDERFULL WARNINGS
 ```
 
-The manuscript is a source draft, not a submission-ready PDF. The requested
-blind and publish output paths are reserved under `output/`, but no PDF is
-claimed until a TeX toolchain compiles and audits both variants.
+Both requested PDFs are present under `output/` and were audited with MiKTeX
+pdfTeX, `pdfinfo`, `pdffonts`, `pdftotext`, and visual page rendering.
 
 ## Title
 
@@ -57,10 +57,9 @@ authors' arXiv record. No fabricated entries were added to meet a target count.
 
 1. Provide the final author list, affiliation, email, funding, and
    acknowledgments if applicable; see `AUTHORS_TODO.md`.
-2. Compile both `blind.tex` and `publish.tex` with a TeX installation.
-3. Run the ICIP PDF checker and inspect page count, embedded fonts, metadata,
+2. Run the final ICIP PDF checker and inspect page count, embedded fonts, metadata,
    anonymous text, and reference-only page policy.
-4. Recheck the final ICIP 2027 Author Kit before submission.
+3. Recheck the final ICIP 2027 Author Kit before submission.
 
 ## Explicit non-claims
 

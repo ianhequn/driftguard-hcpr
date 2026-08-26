@@ -11,7 +11,7 @@ This matrix is the source-of-truth gate for every quantitative claim in the manu
 | E05 | B0 Stage 4 share | 0.23975421800348004 of full latency | `results/R71_E02_profile/profile_repetitions.json` | High | Profile table |
 | E06 | B0 F4 cache footprint | 0.125 MB, BF16 F4 cache | `results/R8R_E10_cross_scale/cross_scale_table.csv`; `reports/round8_resume_cross_scale.md` | High | Profile table |
 | E07 | B1 Full official-style mIoU | 0.37159793127621504 | `results/R8R_E06_full_validation/metrics.json`; `reports/round8_resume_gt_benchmark.md` | High | Main table |
-| E08 | B1 FI-2 mIoU and drop | 0.3704133728540334; 0.11845584221820138 pp | `results/R8R_E10_cross_scale/cross_scale_table.csv`; `reports/round8_resume_gt_benchmark.md` | High | Main table |
+| E08 | B1 FI-2 mIoU and drop | 0.3704133728540334; 0.11845584221816252 pp | `results/R8R_E10_cross_scale/cross_scale_table.csv`; `reports/round8_resume_gt_benchmark.md` | High | Main table |
 | E09 | B1 FI-2 repeated speed | 1.020278 +/- 0.067943x; 95% CI [0.851484, 1.189071]; 3 repetitions | `reports/round8_resume_latency.md`; `results/R8R_E10_cross_scale/cross_scale_table.csv` | High | Cross-scale discussion |
 | E10 | B1 FI-8 speed and quality cost | 1.224525 +/- 0.159141x; 1.4352972785053764 pp drop | `results/R8R_E10_cross_scale/cross_scale_table.csv`; `reports/round8_resume_cross_scale.md` | High | Trade-off discussion |
 | E11 | B1 Stage 4 share | 0.18990660459834086 of full latency | `results/R8R_E10_cross_scale/stage_profile.json` | High | Profile table |
@@ -26,6 +26,8 @@ This matrix is the source-of-truth gate for every quantitative claim in the manu
 | E20 | Round 6 structured reuse result | Whole Stage 4 dense refresh/reuse was a strong engineering GO; dynamic stage policy was NO-GO | `reports/round6_final_report.md` | High | Motivation and method |
 | E21 | B0 formal refresh execution | Full: 24,392 Stage 4 calls; FI-2: 12,289; decoder remained per-frame | `reports/round7_restart_final_report.md` | High | Actual compute avoidance |
 | E22 | Quality metric semantics | VSPW validation labels use the frozen official normalization; no pseudo-ground-truth | `reports/round7_restart_equivalence.md`; `reports/round7_restart_final_report.md` | High | Setup and limitation |
+| E23 | Actual refresh ratios | B0/B1 FI-2: 12,289 / 24,392 = 50.381%; B1 FI-8: 3,181 / 24,392 = 13.041% | `reports/round8_resume_gt_benchmark.md`; `reports/round7_restart_final_report.md` | High | Main table and method |
+| E24 | Fine-grained negative microbenchmark | Dense Stage4 4.366 ms; 37.5% cached-context route 6.662 ms | `reports/round5_final_report.md`; `reports/round5_progress.md` | High | Motivation only; separately scoped |
 
 ## Claim exclusions
 
