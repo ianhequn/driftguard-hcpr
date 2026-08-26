@@ -22,18 +22,17 @@ def copy_round10_figures() -> None:
     FIGURES.mkdir(parents=True, exist_ok=True)
     for source, target in {
         "R10_F01_boundary_pareto.pdf": "round10_boundary_pareto.pdf",
-        "R10_F02_quality_refresh.pdf": "round10_quality_refresh.pdf",
         "R10_F03_runtime_opportunity_vs_speed.pdf": "round10_runtime_opportunity.pdf",
     }.items():
         shutil.copyfile(R10 / source, FIGURES / target)
 
 
 def method_overview() -> None:
-    fig, axes = plt.subplots(3, 1, figsize=(6.4, 3.5), sharex=True)
+    fig, axes = plt.subplots(3, 1, figsize=(6.4, 2.55), sharex=True)
     stages = ["F1", "F2", "F3", "F4"]
     boundaries = [("S4", 3), ("S3-S4", 2), ("S2-S4", 1)]
     for ax, (name, fresh_count) in zip(axes, boundaries):
-        ax.set_xlim(-0.5, 5.4); ax.set_ylim(-0.45, 0.55); ax.axis("off")
+        ax.set_xlim(-0.5, 5.4); ax.set_ylim(-0.34, 0.45); ax.axis("off")
         ax.text(-0.45, 0.05, name, ha="left", va="center", fontsize=9, fontweight="bold")
         for index, stage in enumerate(stages):
             fresh = index < fresh_count
@@ -45,9 +44,9 @@ def method_overview() -> None:
         ax.annotate("", xy=(4.85, 0.05), xytext=(4.25, 0.05), arrowprops={"arrowstyle": "->", "lw": 0.8})
         ax.text(5.05, 0.05, "Decoder", ha="center", va="center", fontsize=8,
                 bbox={"boxstyle": "round,pad=0.28", "fc": "0.90", "ec": "0.15", "lw": 0.8})
-        ax.text(2.2, -0.30, "fresh prefix" if fresh_count < 4 else "all stages fresh",
+        ax.text(2.2, -0.25, "fresh prefix" if fresh_count < 4 else "all stages fresh",
                 ha="center", va="center", fontsize=7, color="0.25")
-        ax.text(3.35, -0.30, "cached suffix on reuse frames" if fresh_count < 4 else "",
+        ax.text(3.35, -0.25, "cached suffix on reuse frames" if fresh_count < 4 else "",
                 ha="center", va="center", fontsize=7, color="0.25")
     fig.tight_layout(pad=0.25)
     fig.savefig(FIGURES / "method_overview.pdf", bbox_inches="tight", pad_inches=0.03)

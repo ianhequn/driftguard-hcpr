@@ -12,7 +12,7 @@
 | Technical page count | 4 |
 | Reference-only page count | 1 (page 5) |
 | Total pages | 5 |
-| Figure count | 4 |
+| Figure count | 3 in final layout (quality-refresh Fig. 3 removed) |
 | Table count | 3 manuscript tables; generated CSV tables retained as supplements |
 | Citation count | 11 unique keys |
 | Verified references | 11 / 11 |
@@ -29,6 +29,7 @@
 | Citation audit | PASS |
 | Reviewer #2 simulation | PASS; no fatal scientific flaw; novelty risk remains borderline |
 | Reviewed PDFs | `output/icip2027_blind_reviewed.pdf`, `output/icip2027_publish_reviewed.pdf` |
+| Layout-final PDFs | `output/icip2027_blind_layout_final.pdf`, `output/icip2027_publish_layout_final.pdf` |
 
 ## Build status
 

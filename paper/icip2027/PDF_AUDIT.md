@@ -6,10 +6,12 @@ Date: 2026-08-26
 | --- | ---: | --- | --- | --- |
 | `output/icip2027_blind_round10.pdf` | 5 | 612 x 792 pt, US Letter | yes | PASS |
 | `output/icip2027_publish_round10.pdf` | 5 | 612 x 792 pt, US Letter | yes | placeholder only |
+| `output/icip2027_blind_layout_final.pdf` | 5 | 612 x 792 pt, US Letter | yes | PASS |
+| `output/icip2027_publish_layout_final.pdf` | 5 | 612 x 792 pt, US Letter | yes | placeholder only |
 
-Both files were built with MiKTeX 25.12 pdfTeX and the standard four-step
-sequence (`pdflatex`, `bibtex`, `pdflatex`, `pdflatex`). The technical content
-occupies pages 1--4; the references begin on page 5.
+All files were built with MiKTeX 25.12 pdfTeX and the standard four-step
+sequence (`pdflatex`, `bibtex`, `pdflatex`, `pdflatex`). The layout-final
+technical content occupies pages 1--4; the references begin on page 5.
 
 ## Warning checks
 

@@ -92,7 +92,7 @@ Table~\ref{tab:calls} gives a concrete physical-execution check for FI-8. The sa
 \setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{lrrr}
 \toprule
-Boundary & Fresh-stage calls & Cached-suffix calls & Decoder calls \\
+Boundary & Fresh-stage calls & Refresh-only suffix calls & Decoder calls \\
 \midrule
 Full & S1--S4: 24,392 each & none & 24,392 \\
 S4 & S1--S3: 24,392 each & S4: 3,181 & 24,392 \\
@@ -114,47 +114,40 @@ Table~\ref{tab:main} reports all 18 reuse settings. Full validation mIoU is 0.30
 \label{tab:main}
 \scriptsize
 \setlength{\tabcolsep}{3.0pt}
-\begin{tabular}{llrrrrrr}
+\begin{tabular}{llrrrrr}
 \toprule
-Model & Boundary & FI & Refresh (\%) & mIoU drop (pp) & Speedup & CI low & CI high \\
+Model & Boundary & FI & Refresh (\%) & mIoU drop (pp) & Speedup & 95\% CI \\
 \midrule
-B0 & S4 & 2 & 50.381 & 0.091 & 1.068 & 1.036 & 1.100 \\
-B0 & S4 & 4 & 25.508 & 0.437 & 1.215 & 1.157 & 1.290 \\
-B0 & S4 & 8 & 13.041 & 1.133 & 1.244 & 1.184 & 1.297 \\
-B0 & S3--S4 & 2 & 50.381 & 0.184 & 1.254 & 1.220 & 1.286 \\
-B0 & S3--S4 & 4 & 25.508 & 0.709 & 1.456 & 1.382 & 1.524 \\
-B0 & S3--S4 & 8 & 13.041 & 1.644 & 1.682 & 1.625 & 1.756 \\
-B0 & S2--S4 & 2 & 50.381 & 0.231 & 1.505 & 1.390 & 1.621 \\
-B0 & S2--S4 & 4 & 25.508 & 0.825 & 2.057 & 2.013 & 2.123 \\
-B0 & S2--S4 & 8 & 13.041 & 1.835 & 2.396 & 2.292 & 2.492 \\
+B0 & S4 & 2 & 50.381 & 0.091 & 1.068 & [1.036,1.100] \\
+B0 & S4 & 4 & 25.508 & 0.437 & 1.215 & [1.157,1.290] \\
+B0 & S4 & 8 & 13.041 & 1.133 & 1.244 & [1.184,1.297] \\
+B0 & S3--S4 & 2 & 50.381 & 0.184 & 1.254 & [1.220,1.286] \\
+B0 & S3--S4 & 4 & 25.508 & 0.709 & 1.456 & [1.382,1.524] \\
+B0 & S3--S4 & 8 & 13.041 & 1.644 & 1.682 & [1.625,1.756] \\
+B0 & S2--S4 & 2 & 50.381 & 0.231 & 1.505 & [1.390,1.621] \\
+B0 & S2--S4 & 4 & 25.508 & 0.825 & 2.057 & [2.013,2.123] \\
+B0 & S2--S4 & 8 & 13.041 & 1.835 & 2.396 & [2.292,2.492] \\
 \midrule
-B1 & S4 & 2 & 50.381 & 0.118 & 1.111 & 1.061 & 1.200 \\
-B1 & S4 & 4 & 25.508 & 0.553 & 1.140 & 1.059 & 1.192 \\
-B1 & S4 & 8 & 13.041 & 1.435 & 1.181 & 1.139 & 1.228 \\
-B1 & S3--S4 & 2 & 50.381 & 0.283 & 1.331 & 1.279 & 1.406 \\
-B1 & S3--S4 & 4 & 25.508 & 1.025 & 1.446 & 1.355 & 1.537 \\
-B1 & S3--S4 & 8 & 13.041 & 2.335 & 1.659 & 1.613 & 1.731 \\
-B1 & S2--S4 & 2 & 50.381 & 0.397 & 1.554 & 1.516 & 1.608 \\
-B1 & S2--S4 & 4 & 25.508 & 1.280 & 1.952 & 1.792 & 2.097 \\
-B1 & S2--S4 & 8 & 13.041 & 2.715 & 2.282 & 2.086 & 2.479 \\
+B1 & S4 & 2 & 50.381 & 0.118 & 1.111 & [1.061,1.200] \\
+B1 & S4 & 4 & 25.508 & 0.553 & 1.140 & [1.059,1.192] \\
+B1 & S4 & 8 & 13.041 & 1.435 & 1.181 & [1.139,1.228] \\
+B1 & S3--S4 & 2 & 50.381 & 0.283 & 1.331 & [1.279,1.406] \\
+B1 & S3--S4 & 4 & 25.508 & 1.025 & 1.446 & [1.355,1.537] \\
+B1 & S3--S4 & 8 & 13.041 & 2.335 & 1.659 & [1.613,1.731] \\
+B1 & S2--S4 & 2 & 50.381 & 0.397 & 1.554 & [1.516,1.608] \\
+B1 & S2--S4 & 4 & 25.508 & 1.280 & 1.952 & [1.792,2.097] \\
+B1 & S2--S4 & 8 & 13.041 & 2.715 & 2.282 & [2.086,2.479] \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
 The Pareto audit uses mean speedup and mIoU drop, with Full treated as a reference. The same five-point reuse frontier is recovered for both models: S4/FI-2, S3--S4/FI-2, S2--S4/FI-2, S2--S4/FI-4, and S2--S4/FI-8. S4/FI-4 and S4/FI-8 are dominated by earlier-boundary points; S3--S4/FI-4 and FI-8 are also dominated. Under the two tested scales and this GPU, the measured frontier suggests that moving the reuse boundary earlier can be preferable to extending the interval at a later boundary.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\columnwidth]{round10_boundary_pareto.pdf}
-  \caption{Complete boundary--interval speed/quality characterization. Marker shape identifies the reuse boundary; annotations identify the interval.}
-  \label{fig:pareto}
-\end{figure}
-
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=0.82\textwidth]{round10_quality_refresh.pdf}
-  \caption{mIoU degradation versus actual refresh fraction for the three boundaries on B0 and B1. Earlier boundaries expose a larger computational suffix but show a steeper quality cost as refresh becomes less frequent.}
-  \label{fig:quality}
+  \includegraphics[width=0.78\textwidth]{round10_boundary_pareto.pdf}
+  \caption{Complete boundary--interval speed/quality characterization. Marker shape identifies the reuse boundary; annotations identify the interval.}
+  \label{fig:pareto}
 \end{figure*}
 
 \subsection{Conservative versus aggressive reuse}
@@ -187,7 +180,7 @@ B1 & 18.54 & 42.29 & 64.81 & .500 & 1.750 & 3.750 \\
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\columnwidth]{round10_runtime_opportunity.pdf}
+  \includegraphics[width=0.92\columnwidth]{round10_runtime_opportunity.pdf}
   \caption{Profiled skipped-runtime opportunity versus paired speedup, using only Round 10 RTX 4090 D measurements.}
   \label{fig:runtime}
 \end{figure}
