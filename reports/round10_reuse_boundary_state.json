@@ -1,0 +1,69 @@
+{
+  "round": 10,
+  "status": "complete",
+  "branch": "research/round10-reuse-boundary",
+  "gpu_required": "NVIDIA RTX 4090D",
+  "gpu_actual": "NVIDIA GeForce RTX 4090 D",
+  "gpu_driver": "595.71.05",
+  "cuda_runtime": "11.8",
+  "pytorch": "2.1.2+cu118",
+  "transformers": "4.44.2",
+  "formal_latency_allowed": true,
+  "models": {
+    "B0": {
+      "path": "/root/autodl-tmp/models/segformer-b0-vspw124",
+      "sha256": "8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b"
+    },
+    "B1": {
+      "path": "/root/autodl-tmp/models/segformer-b1-vspw124",
+      "sha256": "892a6589874d762c6b9c911e559e062fccbb226b33309aa6c8317dbec091fcfb"
+    }
+  },
+  "dataset": {
+    "name": "VSPW validation",
+    "videos": 343,
+    "frames": 24392,
+    "classes": 124,
+    "ignore": 255,
+    "cache_reset": "video boundary"
+  },
+  "boundaries": ["s4", "s3_s4", "s2_s4"],
+  "intervals": [2, 4, 8],
+  "equivalence": {
+    "B0": "PASS, 20 frames, all boundaries, max_abs_error=0",
+    "B1": "PASS, 20 frames, all boundaries, max_abs_error=0"
+  },
+  "tests": {
+    "round10_and_reuse_suite": "29 passed",
+    "smoke": "20 configurations passed"
+  },
+  "quality_matrix": {
+    "path": "results/R10_quality/full_results.csv",
+    "rows": 20
+  },
+  "latency_matrix": {
+    "B0": "results/R10_E04_latency/b0.json",
+    "B1": "results/R10_E04_latency/b1.json",
+    "repetitions": 5,
+    "measurements": 1000,
+    "warmup": 200
+  },
+  "profile": {
+    "B0": "results/R10_E05_profile/b0.json",
+    "B1": "results/R10_E05_profile/b1.json",
+    "repetitions": 3
+  },
+  "final_decision": "ROUND 10 = STRONG BOUNDARY RESULT",
+  "best_points": {
+    "B0_low_damage": {"boundary": "S4", "interval": 2, "miou_drop_pp": 0.09102398279099422, "speedup": 1.0676994707344953, "ci95": [1.0357762286866148, 1.0996227127823759]},
+    "B0_speed": {"boundary": "S2-S4", "interval": 8, "miou_drop_pp": 1.835033282461196, "speedup": 2.3957338187479125, "ci95": [2.291725316089612, 2.49167217644952]},
+    "B1_low_damage": {"boundary": "S4", "interval": 2, "miou_drop_pp": 0.11820466459607215, "speedup": 1.1111701844245907, "ci95": [1.0605948320814136, 1.200249590319326]},
+    "B1_speed": {"boundary": "S2-S4", "interval": 8, "miou_drop_pp": 2.7154598725672994, "speedup": 2.282435497601375, "ci95": [2.086018274317198, 2.4788527208855524]}
+  },
+  "artifacts": {
+    "main_table": "reports/round10_boundary_quality_latency_table.csv",
+    "profile_table": "reports/round10_profile_table.csv",
+    "final_report": "reports/round10_reuse_boundary_final_report.md",
+    "claims": "reports/round10_reuse_boundary_claims.md"
+  }
+}

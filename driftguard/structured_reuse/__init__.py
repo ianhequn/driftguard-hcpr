@@ -5,6 +5,11 @@ from driftguard.structured_reuse.pipeline import (
     StructuredReusePipeline,
     WholeStage4Cache,
 )
+from driftguard.structured_reuse.boundaries import (
+    BOUNDARIES,
+    BoundaryCacheState,
+    StructuredBoundaryReusePipeline,
+)
 from driftguard.structured_reuse.policies import (
     FixedIntervalPolicy,
     StageAgePolicy,
@@ -15,10 +20,13 @@ from driftguard.structured_reuse.policies import (
 
 __all__ = [
     "FixedIntervalPolicy",
+    "BOUNDARIES",
+    "BoundaryCacheState",
     "Stage4CacheState",
     "StageAgePolicy",
     "StageAgeVisualPolicy",
     "StructuredReusePipeline",
+    "StructuredBoundaryReusePipeline",
     "VisualRiskPolicy",
     "WholeStage4Cache",
     "aggregate_frame_risk",

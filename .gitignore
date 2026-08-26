@@ -405,6 +405,26 @@ results/R8R_*/**/*.npz
 # Keep directory placeholders
 !.gitkeep
 
+# Round 10 boundary characterization lightweight artifacts
+!reports/round10_reuse_boundary_*.md
+!reports/round10_reuse_boundary_state.json
+!results/R10_*/
+!results/R10_*/*.csv
+!results/R10_*/*.json
+!results/R10_*/*.md
+!results/R10_*/*.png
+!results/R10_*/*.pdf
+!results/R10_*/*/
+!results/R10_*/*/*.csv
+!results/R10_*/*/*.json
+!results/R10_*/*/*.md
+!results/R10_*/*/*.png
+!results/R10_*/*/*.pdf
+results/R10_*/raw/
+results/R10_*/**/*.pt
+results/R10_*/**/*.npy
+results/R10_*/**/*.npz
+
 # IDE and OS
 .vscode/
 .idea/
