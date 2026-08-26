@@ -216,7 +216,10 @@ class HardwareCalibratedProgressiveReusePipeline:
             q1 = self._score(d1, 2)
             drift_values["d1"] = float(d1.detach().item())
             score_values["q1"] = float(q1.detach().item())
-            if not self._guard_forces(state.age2) and bool((q1 <= self.lambda_value).item()):
+            # A deeper stale cache is only reachable through this prefix.  Its
+            # guard therefore propagates upward to preserve the stale bound.
+            stage2_guard = any(self._guard_forces(age) for age in (state.age2, state.age3, state.age4))
+            if not stage2_guard and bool((q1 <= self.lambda_value).item()):
                 features = [f1, state.cached_f2, state.cached_f3, state.cached_f4]
                 route = "S2-S4"
                 self._increment_reuse_ages(state, route)
@@ -229,7 +232,8 @@ class HardwareCalibratedProgressiveReusePipeline:
                 q2 = self._score(d2, 3)
                 drift_values["d2"] = float(d2.detach().item())
                 score_values["q2"] = float(q2.detach().item())
-                if not self._guard_forces(state.age3) and bool((q2 <= self.lambda_value).item()):
+                stage3_guard = any(self._guard_forces(age) for age in (state.age3, state.age4))
+                if not stage3_guard and bool((q2 <= self.lambda_value).item()):
                     features = [f1, f2, state.cached_f3, state.cached_f4]
                     route = "S3-S4"
                     state.age3 += 1

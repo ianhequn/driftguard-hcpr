@@ -64,6 +64,22 @@ def test_hcpr_age_guard_refreshes_at_bound(round5_tiny_model):
     assert state.age2 == state.age3 == state.age4 == 0
 
 
+def test_hcpr_propagates_deep_age_guard_to_progressive_prefix(round5_tiny_model):
+    pipeline = HardwareCalibratedProgressiveReusePipeline(
+        round5_tiny_model, lambda_value=1e6, max_stale_run=2
+    )
+    pixels = torch.randn(1, 3, 64, 64)
+    with torch.inference_mode():
+        _, state, _ = pipeline.forward(pixels)
+        state.age4 = 2
+        _, state, stats = pipeline.forward(pixels)
+    assert stats["route"] == "Full"
+    assert stats["stage_calls"] == {
+        "stage1": 1, "stage2": 1, "stage3": 1, "stage4": 1, "decoder": 1
+    }
+    assert state.age2 == state.age3 == state.age4 == 0
+
+
 def test_hcpr_is_deterministic_for_same_sequence(round5_tiny_model):
     first = HardwareCalibratedProgressiveReusePipeline(
         round5_tiny_model, stage_costs={2: 0.5, 3: 1.0, 4: 2.0},
