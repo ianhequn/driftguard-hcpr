@@ -1,0 +1,31 @@
+{
+  "round": 9,
+  "dataset": "Cityscapes",
+  "status": "blocked",
+  "official_data_found": false,
+  "local_search_roots": [
+    "D:/datasets",
+    "D:/DriftGuard",
+    "C:/Users/ianhe/Downloads",
+    "C:/Users/ianhe/Desktop"
+  ],
+  "cloud_search_roots": [
+    "/root/autodl-tmp",
+    "/root/autodl-tmp/DriftGuard"
+  ],
+  "local_observed_dataset_directories": [
+    "D:/datasets/KITTI",
+    "D:/datasets/VSPW_480p",
+    "D:/datasets/VSPW_repair_extracted",
+    "D:/datasets/VSPW-dataset-download-main"
+  ],
+  "local_cityscapes_named_files": 0,
+  "cloud_cityscapes_named_files": 0,
+  "missing_official_components": [
+    "leftImg8bit train/val",
+    "gtFine train/val",
+    "leftImg8bit_sequence train/val"
+  ],
+  "required_official_label_contract": "labelTrainIds with valid IDs 0..18 and ignore 255",
+  "decision": "ROUND 9 = DATASET BLOCKED"
+}

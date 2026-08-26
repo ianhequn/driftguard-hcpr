@@ -1,0 +1,25 @@
+{
+  "round": 9,
+  "status": "blocked",
+  "dataset": "Cityscapes",
+  "dataset_contract": "blocked_official_data_unavailable",
+  "sequence_manifest": null,
+  "b0_training": null,
+  "b0_full_miou": null,
+  "b0_fi2_miou": null,
+  "b0_fi2_drop_pp": null,
+  "b0_fi2_speedup": null,
+  "b1_training": null,
+  "b1_full_miou": null,
+  "b1_fi2_miou": null,
+  "b1_fi2_drop_pp": null,
+  "b1_fi2_speedup": null,
+  "dataset_generalization": "not_evaluated",
+  "final_decision": "ROUND 9 = DATASET BLOCKED",
+  "missing_official_components": [
+    "leftImg8bit train/val",
+    "gtFine train/val",
+    "leftImg8bit_sequence train/val"
+  ],
+  "historical_results_preserved": true
+}
