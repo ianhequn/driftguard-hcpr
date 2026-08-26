@@ -1,0 +1,20 @@
+{
+  "archive": "leftImg8bit_sequence_trainvaltest.zip",
+  "package_id": 14,
+  "official_endpoint": "https://www.cityscapes-dataset.com/file-handling/?packageID=14",
+  "listed_size": "324GB",
+  "browser_authenticated_page": true,
+  "cli_probe": {
+    "status": 302,
+    "location": "https://www.cityscapes-dataset.com/login/",
+    "content_type": "text/html; charset=UTF-8",
+    "content_length": 0,
+    "range_request": "bytes=0-1023",
+    "range_response": "not_reached_archive_endpoint"
+  },
+  "http_range_supported": null,
+  "zip_format": null,
+  "central_directory_retrieved": false,
+  "payload_downloaded": false,
+  "decision": "AUTHENTICATED CLI RANGE PROBE NOT AVAILABLE; FULL DOWNLOAD FORBIDDEN"
+}

@@ -1,0 +1,25 @@
+{
+  "authenticated_session": true,
+  "download_status": "not_started",
+  "reason": "browser file-handling endpoint was blocked and no authenticated CLI archive URL was available",
+  "packages": [
+    {
+      "filename": "gtFine_trainvaltest.zip",
+      "package_id": 1,
+      "official_host": "www.cityscapes-dataset.com",
+      "listed_size": "241MB",
+      "sha256": null,
+      "download_timestamp": null,
+      "extracted": false
+    },
+    {
+      "filename": "leftImg8bit_trainvaltest.zip",
+      "package_id": 3,
+      "official_host": "www.cityscapes-dataset.com",
+      "listed_size": "11GB",
+      "sha256": null,
+      "download_timestamp": null,
+      "extracted": false
+    }
+  ]
+}

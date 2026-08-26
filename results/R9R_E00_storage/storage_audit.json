@@ -1,0 +1,26 @@
+{
+  "round": "9-dataset-recovery",
+  "timestamp": "2026-08-26T08:55:38+08:00",
+  "local": {
+    "drive": "D:",
+    "total_bytes": null,
+    "used_bytes": 431583223808,
+    "available_bytes": 245431963648,
+    "available_gb_approx": 245
+  },
+  "cloud": {
+    "path": "/root/autodl-tmp",
+    "total_bytes": 136314880000,
+    "used_bytes": 37591244000,
+    "available_bytes": 101093003264,
+    "available_gb_approx": 95
+  },
+  "required_static_archives": {
+    "gtFine_trainvaltest.zip": "241MB",
+    "leftImg8bit_trainvaltest.zip": "11GB"
+  },
+  "required_sequence_archive": "leftImg8bit_sequence_trainvaltest.zip",
+  "sequence_archive_listed_size": "324GB",
+  "full_sequence_download_allowed": false,
+  "reason": "archive plus extraction workspace and safety margin exceed both available locations"
+}
