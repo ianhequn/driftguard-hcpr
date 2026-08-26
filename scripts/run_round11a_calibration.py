@@ -32,7 +32,7 @@ def image_tensor(path: Path) -> torch.Tensor:
 
 def cosine_drift(current: torch.Tensor, previous: torch.Tensor) -> float:
     current = F.normalize(F.adaptive_avg_pool2d(current.float(), 1).flatten(1), dim=1)
-    previous = F.normalize(previous.float(), dim=1)
+    previous = F.normalize(F.adaptive_avg_pool2d(previous.float(), 1).flatten(1), dim=1)
     return float((1.0 - (current * previous).sum(dim=1)).mean().item())
 
 
