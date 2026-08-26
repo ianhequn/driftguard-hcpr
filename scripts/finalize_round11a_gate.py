@@ -15,11 +15,11 @@ FRONTIER = (("S4", 2, "S4/FI2"), ("S3-S4", 2, "S3-S4/FI2"),
             ("S2-S4", 8, "S2-S4/FI8"))
 
 
-def fixed_quality(path: Path):
+def fixed_quality(path: Path, model_name: str):
     rows = list(csv.DictReader(path.open(encoding="utf-8", newline="")))
     result = {}
     for boundary, interval, name in FRONTIER:
-        row = next(row for row in rows if row["Model"] == "B0" and row["Boundary"] == boundary and int(row["Interval"]) == interval)
+        row = next(row for row in rows if row["Model"] == model_name and row["Boundary"] == boundary and int(row["Interval"]) == interval)
         result[name] = {"method": name, "kind": "fixed", "budget": f"{boundary}/FI{interval}",
                         "mIoU": float(row["mIoU"]), "mIoU_drop_pp": float(row["mIoU_drop_pp"]),
                         "pixel_accuracy": float(row["pixel_accuracy"]), "mean_class_accuracy": float(row["mean_class_accuracy"]),
@@ -38,9 +38,10 @@ def main():
     parser.add_argument("--latency", type=Path, required=True)
     parser.add_argument("--round10-table", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--model", default="B0")
     args = parser.parse_args()
     output = args.output_dir; output.mkdir(parents=True, exist_ok=True)
-    fixed = fixed_quality(args.round10_table)
+    fixed = fixed_quality(args.round10_table, args.model)
     quality = json.loads(args.quality.read_text(encoding="utf-8"))["rows"]
     latency = json.loads(args.latency.read_text(encoding="utf-8"))
     latency_by_method = {}
