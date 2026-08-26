@@ -1,8 +1,12 @@
 {
   "round": 9,
-  "status": "blocked",
+  "status": "blocked_storage",
   "dataset": "Cityscapes",
-  "dataset_contract": "blocked_official_data_unavailable",
+  "dataset_contract": "blocked_storage_official_download_access_confirmed",
+  "official_download_access": true,
+  "required_compressed_gb": 335,
+  "local_free_gb": 245,
+  "cloud_free_gb": 95,
   "sequence_manifest": null,
   "b0_training": null,
   "b0_full_miou": null,
@@ -15,6 +19,7 @@
   "b1_fi2_drop_pp": null,
   "b1_fi2_speedup": null,
   "dataset_generalization": "not_evaluated",
+  "block_reason": "storage_capacity",
   "final_decision": "ROUND 9 = DATASET BLOCKED",
   "missing_official_components": [
     "leftImg8bit train/val",

@@ -1,8 +1,10 @@
 {
   "round": 9,
   "dataset": "Cityscapes",
-  "status": "blocked",
+  "status": "blocked_storage",
   "official_data_found": false,
+  "official_download_access": true,
+  "download_page_login_signal": "Edit account and Logout visible",
   "local_search_roots": [
     "D:/datasets",
     "D:/DriftGuard",
@@ -21,11 +23,20 @@
   ],
   "local_cityscapes_named_files": 0,
   "cloud_cityscapes_named_files": 0,
+  "official_packages_visible": [
+    {"package": "gtFine_trainvaltest.zip", "size": "241MB", "package_id": 1},
+    {"package": "leftImg8bit_trainvaltest.zip", "size": "11GB", "package_id": 3},
+    {"package": "leftImg8bit_sequence_trainvaltest.zip", "size": "324GB", "package_id": 14}
+  ],
+  "local_d_free_bytes": 245431996416,
+  "cloud_autodl_tmp_available_bytes": 101000000000,
+  "storage_requirement": "at least about 335GB compressed, plus extraction workspace",
   "missing_official_components": [
     "leftImg8bit train/val",
     "gtFine train/val",
     "leftImg8bit_sequence train/val"
   ],
   "required_official_label_contract": "labelTrainIds with valid IDs 0..18 and ignore 255",
+  "block_reason": "storage_capacity",
   "decision": "ROUND 9 = DATASET BLOCKED"
 }

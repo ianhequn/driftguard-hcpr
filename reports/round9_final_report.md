@@ -4,6 +4,7 @@
 
 ```text
 ROUND 9 = DATASET BLOCKED
+BLOCK REASON = STORAGE CAPACITY
 ```
 
 ## Required Output
@@ -22,16 +23,18 @@ PUBLICATION EVIDENCE: UNCHANGED
 
 ## Reason
 
-The official Cityscapes data required by the frozen protocol is absent both
-locally and on the cloud GPU. In particular, no `leftImg8bit`, `gtFine`, or
-`leftImg8bit_sequence` package was found. Without these files, the 500 labeled
-validation targets and their chronological sequence context cannot be
-reconstructed.
+The logged-in Cityscapes official download page is accessible, but the data
+has not been downloaded. The required sequence package is listed as 324GB;
+with `gtFine_trainvaltest.zip` and `leftImg8bit_trainvaltest.zip`, the
+compressed requirement is about 335GB before extraction. The local D: drive
+has about 245GB free and the cloud volume has about 95GB free. Without the
+sequence files, the 500 labeled validation targets and their chronological
+context cannot be reconstructed.
 
 This is a data availability stop, not a temporal-reuse failure. Round 7.1 and
 Round 8 results remain frozen and unchanged. No model, algorithm, timing
 protocol, or dataset substitution was introduced.
 
-Round 9 stops here. The next allowed action is to place the verified official
-Cityscapes packages in the declared dataset location and restart only from
-the dataset audit gate.
+Round 9 stops here. The next allowed action is to provide a storage location
+with enough capacity for the official packages and extraction workspace, then
+restart only from the dataset audit gate. No large download was started.
