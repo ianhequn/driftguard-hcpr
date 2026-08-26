@@ -1,0 +1,79 @@
+{
+  "model": "segformer-b1-vspw124",
+  "encoder_class": "SegformerEncoder",
+  "stage4_index": 4,
+  "stage4_block_count": 2,
+  "stage4_spatial_reduction_ratio": 1,
+  "patch_embedding": "SegformerOverlapPatchEmbeddings(\n  (proj): Conv2d(320, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))\n  (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)\n)",
+  "layer_norm": "LayerNorm((512,), eps=1e-05, elementwise_affine=True)",
+  "blocks": [
+    {
+      "class": "SegformerLayer",
+      "modules": [
+        "layer_norm_1",
+        "attention",
+        "drop_path",
+        "layer_norm_2",
+        "mlp"
+      ],
+      "repr": "SegformerLayer(\n  (layer_norm_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)\n  (attention): SegformerAttention(\n    (self): SegformerEfficientSelfAttention(\n      (query): Linear(in_features=512, out_features=512, bias=True)\n      (key): Linear(in_features=512, out_features=512, bias=True)\n      (value): Linear(in_features=512, out_features=512, bias=True)\n      (dropout): Dropout(p=0.0, inplace=False)\n    )\n    (output): SegformerSelfOutput(\n      (dense): Linear(in_features=512, out_features=512, bias=True)\n      (dropout): Dropout(p=0.0, inplace=False)\n    )\n  )\n  (drop_path): SegformerDropPath(p=0.08571428805589676)\n  (layer_norm_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)\n  (mlp): SegformerMixFFN(\n    (dense1): Linear(in_features=512, out_features=2048, bias=True)\n    (dwconv): SegformerDWConv(\n      (dwconv): Conv2d(2048, 2048, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2048)\n    )\n    (intermediate_act_fn): GELUActivation()\n    (dense2): Linear(in_features=2048, out_features=512, bias=True)\n    (dropout): Dropout(p=0.0, inplace=False)\n  )\n)"
+    },
+    {
+      "class": "SegformerLayer",
+      "modules": [
+        "layer_norm_1",
+        "attention",
+        "drop_path",
+        "layer_norm_2",
+        "mlp"
+      ],
+      "repr": "SegformerLayer(\n  (layer_norm_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)\n  (attention): SegformerAttention(\n    (self): SegformerEfficientSelfAttention(\n      (query): Linear(in_features=512, out_features=512, bias=True)\n      (key): Linear(in_features=512, out_features=512, bias=True)\n      (value): Linear(in_features=512, out_features=512, bias=True)\n      (dropout): Dropout(p=0.0, inplace=False)\n    )\n    (output): SegformerSelfOutput(\n      (dense): Linear(in_features=512, out_features=512, bias=True)\n      (dropout): Dropout(p=0.0, inplace=False)\n    )\n  )\n  (drop_path): SegformerDropPath(p=0.10000000149011612)\n  (layer_norm_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)\n  (mlp): SegformerMixFFN(\n    (dense1): Linear(in_features=512, out_features=2048, bias=True)\n    (dwconv): SegformerDWConv(\n      (dwconv): Conv2d(2048, 2048, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2048)\n    )\n    (intermediate_act_fn): GELUActivation()\n    (dense2): Linear(in_features=2048, out_features=512, bias=True)\n    (dropout): Dropout(p=0.0, inplace=False)\n  )\n)"
+    }
+  ],
+  "attention": [
+    {
+      "class": "SegformerEfficientSelfAttention",
+      "modules": [
+        "query",
+        "key",
+        "value",
+        "dropout"
+      ],
+      "repr": "SegformerEfficientSelfAttention(\n  (query): Linear(in_features=512, out_features=512, bias=True)\n  (key): Linear(in_features=512, out_features=512, bias=True)\n  (value): Linear(in_features=512, out_features=512, bias=True)\n  (dropout): Dropout(p=0.0, inplace=False)\n)"
+    },
+    {
+      "class": "SegformerEfficientSelfAttention",
+      "modules": [
+        "query",
+        "key",
+        "value",
+        "dropout"
+      ],
+      "repr": "SegformerEfficientSelfAttention(\n  (query): Linear(in_features=512, out_features=512, bias=True)\n  (key): Linear(in_features=512, out_features=512, bias=True)\n  (value): Linear(in_features=512, out_features=512, bias=True)\n  (dropout): Dropout(p=0.0, inplace=False)\n)"
+    }
+  ],
+  "mlp": [
+    {
+      "class": "SegformerMixFFN",
+      "modules": [
+        "dense1",
+        "dwconv",
+        "intermediate_act_fn",
+        "dense2",
+        "dropout"
+      ],
+      "repr": "SegformerMixFFN(\n  (dense1): Linear(in_features=512, out_features=2048, bias=True)\n  (dwconv): SegformerDWConv(\n    (dwconv): Conv2d(2048, 2048, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2048)\n  )\n  (intermediate_act_fn): GELUActivation()\n  (dense2): Linear(in_features=2048, out_features=512, bias=True)\n  (dropout): Dropout(p=0.0, inplace=False)\n)"
+    },
+    {
+      "class": "SegformerMixFFN",
+      "modules": [
+        "dense1",
+        "dwconv",
+        "intermediate_act_fn",
+        "dense2",
+        "dropout"
+      ],
+      "repr": "SegformerMixFFN(\n  (dense1): Linear(in_features=512, out_features=2048, bias=True)\n  (dwconv): SegformerDWConv(\n    (dwconv): Conv2d(2048, 2048, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2048)\n  )\n  (intermediate_act_fn): GELUActivation()\n  (dense2): Linear(in_features=2048, out_features=512, bias=True)\n  (dropout): Dropout(p=0.0, inplace=False)\n)"
+    }
+  ]
+}
