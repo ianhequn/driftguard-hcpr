@@ -92,11 +92,6 @@ def main() -> None:
                         drifts[key].append(cosine_drift(features[index], previous[index]))
                 previous = [feature.detach() for feature in features]
     scales = {key: float(np.percentile(values, 90)) for key, values in drifts.items()}
-    scores = []
-    for key, values in drifts.items():
-        stage = int(key[-1]) + 1
-        scores.extend((np.asarray(values) / (scales[key] + 1e-12)).tolist())
-
     pipeline = HardwareCalibratedProgressiveReusePipeline(model)
     pixels = image_tensor(dataset.samples[0].image_path).to("cuda")
     with torch.inference_mode(), torch.autocast(device_type="cuda", dtype=torch.bfloat16):
@@ -116,6 +111,11 @@ def main() -> None:
     hardware = {"c2_ms": costs["Stage2"]["mean_ms"], "c3_ms": costs["Stage3"]["mean_ms"], "c4_ms": costs["Stage4"]["mean_ms"],
                 "full_ms": full_ms, "k2": costs["Stage2"]["mean_ms"] / full_ms, "k3": costs["Stage3"]["mean_ms"] / full_ms, "k4": costs["Stage4"]["mean_ms"] / full_ms,
                 "timings": costs}
+    scores = []
+    for key, values in drifts.items():
+        downstream_stage = int(key[-1]) + 1
+        normalized = np.asarray(values) / (scales[key] + 1e-12)
+        scores.extend((normalized / hardware[f"k{downstream_stage}"]).tolist())
     score_array = np.asarray(scores, dtype=np.float64)
     quantiles = [20, 35, 50, 65, 80, 90, 95]
     lambdas = [{"quantile": q, "lambda": float(np.quantile(score_array, q / 100.0))} for q in quantiles]
