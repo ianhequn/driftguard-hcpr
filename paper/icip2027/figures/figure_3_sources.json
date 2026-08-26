@@ -1,0 +1,10 @@
+{
+  "sources": [
+    "results/R71_E02_profile/profile_repetitions.json",
+    "results/R8R_E10_cross_scale/stage_profile.json"
+  ],
+  "claims": [
+    "B0 Stage 4 share",
+    "B1 Stage 4 share"
+  ]
+}

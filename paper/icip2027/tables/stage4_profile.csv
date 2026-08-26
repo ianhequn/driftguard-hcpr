@@ -1,0 +1,3 @@
+Model,Stage4_fraction,F4_dtype,F4_cache_MB
+SegFormer-B0,0.239754218003,bf16,0.125
+SegFormer-B1,0.189906604598,torch.bfloat16,0.250

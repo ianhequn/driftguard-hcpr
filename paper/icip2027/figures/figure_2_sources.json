@@ -1,0 +1,12 @@
+{
+  "sources": [
+    "results/R8R_E10_cross_scale/cross_scale_table.csv",
+    "reports/round71_latency_robustness.md",
+    "reports/round8_resume_cross_scale.md"
+  ],
+  "claims": [
+    "B0 FI-2",
+    "B1 FI-2",
+    "B1 FI-8"
+  ]
+}

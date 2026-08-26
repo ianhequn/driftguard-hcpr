@@ -1,0 +1,12 @@
+{
+  "sources": [
+    "reports/round6_final_report.md",
+    "reports/round7_restart_equivalence.md",
+    "driftguard/structured_reuse/pipeline.py"
+  ],
+  "claims": [
+    "Stage 1-3 fresh",
+    "whole Stage 4 dense refresh or cached final F4",
+    "decoder per frame"
+  ]
+}
