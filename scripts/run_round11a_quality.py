@@ -137,7 +137,8 @@ def main() -> None:
     scales = {int(key[-1]) + 1: value for key, value in json.loads(args.drift_statistics.read_text(encoding="utf-8"))["scales"].items()}
     full_payload = json.loads(args.full_results.read_text(encoding="utf-8"))
     if isinstance(full_payload, list):
-        full_payload = next(row for row in full_payload if str(row.get("boundary", "")).upper() == "FULL")
+        model_key = "B1" if "b1" in args.model_dir.name.lower() else "B0"
+        full_payload = next(row for row in full_payload if row.get("Model", row.get("model")) == model_key and str(row.get("Boundary", row.get("boundary", ""))).upper() == "FULL")
     full_miou = float(full_payload.get("mIoU", full_payload.get("miou")))
     args.output_dir.mkdir(parents=True, exist_ok=True)
     rows = []
