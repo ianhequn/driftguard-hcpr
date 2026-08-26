@@ -17,6 +17,12 @@ from driftguard.structured_reuse.policies import (
     VisualRiskPolicy,
     aggregate_frame_risk,
 )
+from driftguard.structured_reuse.hcpr import (
+    FORCED_ROUTES,
+    ROUTES,
+    HCPRCacheState,
+    HardwareCalibratedProgressiveReusePipeline,
+)
 
 __all__ = [
     "FixedIntervalPolicy",
@@ -30,4 +36,8 @@ __all__ = [
     "VisualRiskPolicy",
     "WholeStage4Cache",
     "aggregate_frame_risk",
+    "FORCED_ROUTES",
+    "ROUTES",
+    "HCPRCacheState",
+    "HardwareCalibratedProgressiveReusePipeline",
 ]
