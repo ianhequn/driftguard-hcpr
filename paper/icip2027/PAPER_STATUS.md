@@ -27,6 +27,8 @@
 | Pareto audit | PASS |
 | Claim audit | PASS |
 | Citation audit | PASS |
+| Reviewer #2 simulation | PASS; no fatal scientific flaw; novelty risk remains borderline |
+| Reviewed PDFs | `output/icip2027_blind_reviewed.pdf`, `output/icip2027_publish_reviewed.pdf` |
 
 ## Build status
 
