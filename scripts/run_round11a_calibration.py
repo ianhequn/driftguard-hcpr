@@ -37,14 +37,15 @@ def cosine_drift(current: torch.Tensor, previous: torch.Tensor) -> float:
 
 
 def timed(fn, warmup: int, measurements: int) -> list[float]:
-    for _ in range(warmup):
-        fn()
-    torch.cuda.synchronize()
     values = []
-    for _ in range(measurements):
-        start, end = torch.cuda.Event(True), torch.cuda.Event(True)
-        start.record(); fn(); end.record(); end.synchronize()
-        values.append(float(start.elapsed_time(end)))
+    with torch.inference_mode(), torch.autocast(device_type="cuda", dtype=torch.bfloat16):
+        for _ in range(warmup):
+            fn()
+        torch.cuda.synchronize()
+        for _ in range(measurements):
+            start, end = torch.cuda.Event(True), torch.cuda.Event(True)
+            start.record(); fn(); end.record(); end.synchronize()
+            values.append(float(start.elapsed_time(end)))
     return values
 
 
