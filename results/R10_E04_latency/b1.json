@@ -1,0 +1,1372 @@
+{
+  "model": "segformer-b1-vspw124",
+  "warmup": 200,
+  "measurements": 1000,
+  "repetitions": 5,
+  "pool": 256,
+  "precision": "bf16",
+  "timing_boundary": "CUDA-resident pool input to logits, CUDA Events, paired Full immediately after policy",
+  "rows": [
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 2,
+      "repetition": 1,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 10.068130939483643,
+        "median_ms": 10.276768207550049,
+        "p95_ms": 12.331405019760131,
+        "p99_ms": 15.971402196884155,
+        "std_ms": 1.8080017892704767,
+        "fps": 99.32330101889659,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.782170112609863,
+        "median_ms": 10.59873628616333,
+        "p95_ms": 12.373554801940918,
+        "p99_ms": 15.386300106048582,
+        "std_ms": 1.5162052928780096,
+        "fps": 92.74570791927029,
+        "measurements": 1000
+      },
+      "speedup": 1.0709207277316997,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 4,
+      "repetition": 1,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 8.13317069196701,
+        "median_ms": 7.346544027328491,
+        "p95_ms": 10.248243236541745,
+        "p99_ms": 12.177519035339355,
+        "std_ms": 1.2616678374577543,
+        "fps": 122.95327835522775,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.589611309051513,
+        "median_ms": 9.166880130767822,
+        "p95_ms": 10.630195331573486,
+        "p99_ms": 11.702364568710328,
+        "std_ms": 0.749182816109619,
+        "fps": 104.27951329540464,
+        "measurements": 1000
+      },
+      "speedup": 1.1790741486002505,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 8,
+      "repetition": 1,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 7.712507462978363,
+        "median_ms": 7.411183834075928,
+        "p95_ms": 9.288703918457031,
+        "p99_ms": 9.98292070388794,
+        "std_ms": 0.7223156206744681,
+        "fps": 129.65951797132226,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.77670536518097,
+        "median_ms": 9.215999603271484,
+        "p95_ms": 12.045875120162963,
+        "p99_ms": 13.28878828048706,
+        "std_ms": 1.1142069311863905,
+        "fps": 102.28394562870103,
+        "measurements": 1000
+      },
+      "speedup": 1.2676429049970046,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 2,
+      "repetition": 1,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 7.710074791431427,
+        "median_ms": 8.946208000183105,
+        "p95_ms": 10.624146032333373,
+        "p99_ms": 15.014072427749634,
+        "std_ms": 2.390974952183633,
+        "fps": 129.70042795322138,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 11.365403701782226,
+        "median_ms": 11.748368263244629,
+        "p95_ms": 13.111659049987788,
+        "p99_ms": 15.941584663391113,
+        "std_ms": 1.4677812172965299,
+        "fps": 87.98631586163442,
+        "measurements": 1000
+      },
+      "speedup": 1.474097723982281,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 4,
+      "repetition": 1,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 8.011296261310578,
+        "median_ms": 6.628175973892212,
+        "p95_ms": 11.916595554351806,
+        "p99_ms": 15.446519889831542,
+        "std_ms": 2.5245008214177007,
+        "fps": 124.82374479512866,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.411546936035156,
+        "median_ms": 10.45299243927002,
+        "p95_ms": 12.621546030044554,
+        "p99_ms": 14.943600225448607,
+        "std_ms": 1.3254012744231582,
+        "fps": 96.0472066392866,
+        "measurements": 1000
+      },
+      "speedup": 1.2996082776661562,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 8,
+      "repetition": 1,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 5.809495619773864,
+        "median_ms": 5.175295829772949,
+        "p95_ms": 9.247603225708009,
+        "p99_ms": 9.532497301101685,
+        "std_ms": 1.4877841918457484,
+        "fps": 172.13198278285736,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.294357089996337,
+        "median_ms": 9.118800163269043,
+        "p95_ms": 11.087706804275511,
+        "p99_ms": 12.475443534851074,
+        "std_ms": 0.6817158085202165,
+        "fps": 107.59216482830381,
+        "measurements": 1000
+      },
+      "speedup": 1.5998561145929777,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 2,
+      "repetition": 1,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 6.906501523971557,
+        "median_ms": 9.013247966766357,
+        "p95_ms": 10.841120004653929,
+        "p99_ms": 13.654250106811523,
+        "std_ms": 3.573367840579086,
+        "fps": 144.79110683305169,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 11.457585996627808,
+        "median_ms": 11.610255718231201,
+        "p95_ms": 13.85827813148498,
+        "p99_ms": 15.601196403503415,
+        "std_ms": 1.4409192019161225,
+        "fps": 87.27841975563784,
+        "measurements": 1000
+      },
+      "speedup": 1.658956558086614,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 4,
+      "repetition": 1,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 5.075607298135758,
+        "median_ms": 3.2716801166534424,
+        "p95_ms": 10.308710432052612,
+        "p99_ms": 12.958871965408324,
+        "std_ms": 3.106980263967343,
+        "fps": 197.02075855381767,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.217504949569703,
+        "median_ms": 10.159200191497803,
+        "p95_ms": 10.737526130676267,
+        "p99_ms": 13.926697130203246,
+        "std_ms": 0.6779475556081717,
+        "fps": 97.87125183062561,
+        "measurements": 1000
+      },
+      "speedup": 2.0130605756916093,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 8,
+      "repetition": 1,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 4.3690263686180115,
+        "median_ms": 3.3151999711990356,
+        "p95_ms": 10.55745792388916,
+        "p99_ms": 11.88948299407959,
+        "std_ms": 2.557416928097748,
+        "fps": 228.88394704660823,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 11.067091245651245,
+        "median_ms": 10.573823928833008,
+        "p95_ms": 18.22832622528076,
+        "p99_ms": 19.054799175262453,
+        "std_ms": 2.455469322104935,
+        "fps": 90.35797914767755,
+        "measurements": 1000
+      },
+      "speedup": 2.533079526629621,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 2,
+      "repetition": 2,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 8.377186284065246,
+        "median_ms": 8.918511867523193,
+        "p95_ms": 9.441377925872803,
+        "p99_ms": 9.840967750549316,
+        "std_ms": 0.9420794526543349,
+        "fps": 119.37182319822118,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.77698905467987,
+        "median_ms": 10.463600158691406,
+        "p95_ms": 12.19681086540222,
+        "p99_ms": 15.545064105987548,
+        "std_ms": 1.3241934998803213,
+        "fps": 92.79029559427394,
+        "measurements": 1000
+      },
+      "speedup": 1.2864688320444102,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 4,
+      "repetition": 2,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 7.79953835773468,
+        "median_ms": 7.312256097793579,
+        "p95_ms": 9.168075609207152,
+        "p99_ms": 9.791541872024537,
+        "std_ms": 0.8407220507430417,
+        "fps": 128.21271646267573,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.45055149269104,
+        "median_ms": 9.028608322143555,
+        "p95_ms": 11.964632272720337,
+        "p99_ms": 12.747201681137083,
+        "std_ms": 1.048464419314991,
+        "fps": 105.81393062334931,
+        "measurements": 1000
+      },
+      "speedup": 1.2116808789483133,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 8,
+      "repetition": 2,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 8.116754274845123,
+        "median_ms": 7.94484806060791,
+        "p95_ms": 9.982451152801513,
+        "p99_ms": 10.616235589981079,
+        "std_ms": 0.874190978184743,
+        "fps": 123.20195562641709,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.18878678560257,
+        "median_ms": 9.0731840133667,
+        "p95_ms": 10.178804397583006,
+        "p99_ms": 11.83809393882751,
+        "std_ms": 0.6297445352876204,
+        "fps": 108.8282951093008,
+        "measurements": 1000
+      },
+      "speedup": 1.1320765018204155,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 2,
+      "repetition": 2,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 7.153637578964234,
+        "median_ms": 8.428848266601562,
+        "p95_ms": 9.236542177200317,
+        "p99_ms": 9.587642431259152,
+        "std_ms": 1.9954293690226181,
+        "fps": 139.78902187337098,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.306611075401307,
+        "median_ms": 9.102367877960205,
+        "p95_ms": 10.816420555114739,
+        "p99_ms": 12.86261754989624,
+        "std_ms": 0.7114574944374331,
+        "fps": 107.45049856473985,
+        "measurements": 1000
+      },
+      "speedup": 1.30096205918623,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 4,
+      "repetition": 2,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 7.164824098110199,
+        "median_ms": 6.2267680168151855,
+        "p95_ms": 11.43423810005188,
+        "p99_ms": 14.085286598205567,
+        "std_ms": 2.321471279807498,
+        "fps": 139.57076772669978,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.69621439933777,
+        "median_ms": 10.12326431274414,
+        "p95_ms": 13.203964948654173,
+        "p99_ms": 15.30669919013977,
+        "std_ms": 1.366419728083629,
+        "fps": 93.49102052983461,
+        "measurements": 1000
+      },
+      "speedup": 1.4928788554849537,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 8,
+      "repetition": 2,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 6.105697365760803,
+        "median_ms": 5.4966881275177,
+        "p95_ms": 9.87672438621521,
+        "p99_ms": 10.968985595703115,
+        "std_ms": 1.6281225959774412,
+        "fps": 163.78145526958895,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.053396857261658,
+        "median_ms": 9.957231998443604,
+        "p95_ms": 11.765611362457275,
+        "p99_ms": 13.910623750686645,
+        "std_ms": 0.8269998083321689,
+        "fps": 99.46886750796982,
+        "measurements": 1000
+      },
+      "speedup": 1.6465599676850262,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 2,
+      "repetition": 2,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 6.6236744995117185,
+        "median_ms": 8.59284782409668,
+        "p95_ms": 10.251660442352295,
+        "p99_ms": 12.960112600326536,
+        "std_ms": 3.3847239271554095,
+        "fps": 150.97360235224687,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.951996804237366,
+        "median_ms": 9.83902359008789,
+        "p95_ms": 11.78286085128784,
+        "p99_ms": 13.457586469650268,
+        "std_ms": 0.7735429785470198,
+        "fps": 100.48234737919324,
+        "measurements": 1000
+      },
+      "speedup": 1.5024888081337637,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 4,
+      "repetition": 2,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 5.379654529571533,
+        "median_ms": 3.6545599699020386,
+        "p95_ms": 11.611673831939697,
+        "p99_ms": 14.618309001922606,
+        "std_ms": 3.4173387282369148,
+        "fps": 185.8855423713697,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.112229913711548,
+        "median_ms": 9.996032238006592,
+        "p95_ms": 11.41890263557434,
+        "p99_ms": 13.482489976882931,
+        "std_ms": 0.894805456868308,
+        "fps": 98.89015662549987,
+        "measurements": 1000
+      },
+      "speedup": 1.8797173420942601,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 8,
+      "repetition": 2,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 4.630177911520004,
+        "median_ms": 3.6340800523757935,
+        "p95_ms": 11.5429039478302,
+        "p99_ms": 12.003533115386963,
+        "std_ms": 2.635362947453348,
+        "fps": 215.9744223892507,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.299682696819305,
+        "median_ms": 8.935760021209717,
+        "p95_ms": 10.533895874023438,
+        "p99_ms": 12.06765640258789,
+        "std_ms": 0.9342204592185743,
+        "fps": 107.53055051459141,
+        "measurements": 1000
+      },
+      "speedup": 2.0084935988488586,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 2,
+      "repetition": 3,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 9.396271988391875,
+        "median_ms": 9.147040367126465,
+        "p95_ms": 11.632281255722045,
+        "p99_ms": 13.194850816726683,
+        "std_ms": 1.5775163343495313,
+        "fps": 106.42518663097415,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.887287326812745,
+        "median_ms": 9.656160354614258,
+        "p95_ms": 11.473113250732421,
+        "p99_ms": 12.355656261444091,
+        "std_ms": 0.9385388967298584,
+        "fps": 101.13997570275517,
+        "measurements": 1000
+      },
+      "speedup": 1.052256399030112,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 4,
+      "repetition": 3,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 9.20158716583252,
+        "median_ms": 8.90783977508545,
+        "p95_ms": 11.296358346939087,
+        "p99_ms": 13.729221220016479,
+        "std_ms": 1.4006014374269473,
+        "fps": 108.67690344913713,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.056348389148711,
+        "median_ms": 8.829408168792725,
+        "p95_ms": 10.935449647903443,
+        "p99_ms": 11.176991033554078,
+        "std_ms": 0.7585306115380541,
+        "fps": 110.4197803607243,
+        "measurements": 1000
+      },
+      "speedup": 0.984215899489263,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 8,
+      "repetition": 3,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 7.5522366433143615,
+        "median_ms": 7.215456008911133,
+        "p95_ms": 9.415049982070922,
+        "p99_ms": 11.194466152191158,
+        "std_ms": 0.9497205025390291,
+        "fps": 132.4111051108618,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 8.796488865852355,
+        "median_ms": 8.724479675292969,
+        "p95_ms": 9.522865724563598,
+        "p99_ms": 10.208653097152709,
+        "std_ms": 0.4985290058150807,
+        "fps": 113.68172179265332,
+        "measurements": 1000
+      },
+      "speedup": 1.1647528118229018,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 2,
+      "repetition": 3,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 7.1414065546989445,
+        "median_ms": 8.085440158843994,
+        "p95_ms": 9.629798316955567,
+        "p99_ms": 12.172319574356077,
+        "std_ms": 2.1036982411320677,
+        "fps": 140.02843730301478,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.112355534553528,
+        "median_ms": 8.92515230178833,
+        "p95_ms": 10.249766683578487,
+        "p99_ms": 12.824913806915282,
+        "std_ms": 0.8120050420180732,
+        "fps": 109.74110878444739,
+        "measurements": 1000
+      },
+      "speedup": 1.2759889056530085,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 4,
+      "repetition": 3,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 6.321109076499939,
+        "median_ms": 5.309920072555542,
+        "p95_ms": 9.567841434478758,
+        "p99_ms": 12.225427131652829,
+        "std_ms": 1.9327037422963886,
+        "fps": 158.2000860763045,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.196480983734132,
+        "median_ms": 10.027711868286133,
+        "p95_ms": 12.648041343688964,
+        "p99_ms": 14.158011789321899,
+        "std_ms": 1.2863325398448453,
+        "fps": 98.07305104528153,
+        "measurements": 1000
+      },
+      "speedup": 1.6130841693021416,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 8,
+      "repetition": 3,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 6.206086566448212,
+        "median_ms": 5.587967872619629,
+        "p95_ms": 9.986457347869873,
+        "p99_ms": 10.869253492355346,
+        "std_ms": 1.5810009669143195,
+        "fps": 161.13213847294224,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.049655849456787,
+        "median_ms": 9.975856304168701,
+        "p95_ms": 11.671909189224241,
+        "p99_ms": 14.268582010269164,
+        "std_ms": 0.9369636087783111,
+        "fps": 99.50589502565433,
+        "measurements": 1000
+      },
+      "speedup": 1.619322537940085,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 2,
+      "repetition": 3,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 6.62310031414032,
+        "median_ms": 8.548992156982422,
+        "p95_ms": 10.283055639266967,
+        "p99_ms": 13.070638504028318,
+        "std_ms": 3.3988439136295874,
+        "fps": 150.9866909104487,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.104614427566528,
+        "median_ms": 10.257823944091797,
+        "p95_ms": 12.248626995086669,
+        "p99_ms": 14.624807100296017,
+        "std_ms": 1.3405792886660948,
+        "fps": 98.96468659624333,
+        "measurements": 1000
+      },
+      "speedup": 1.5256622953442476,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 4,
+      "repetition": 3,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 4.498035647392273,
+        "median_ms": 2.9635039567947388,
+        "p95_ms": 9.142100763320922,
+        "p99_ms": 9.259140882492066,
+        "std_ms": 2.654708241474033,
+        "fps": 222.31926965268673,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.037226138591766,
+        "median_ms": 9.066495895385742,
+        "p95_ms": 9.25091872215271,
+        "p99_ms": 11.331912612915039,
+        "std_ms": 0.4423200436470691,
+        "fps": 110.6534222630204,
+        "measurements": 1000
+      },
+      "speedup": 2.0091495148178917,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 8,
+      "repetition": 3,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 4.552139138460159,
+        "median_ms": 3.548672080039978,
+        "p95_ms": 11.460925149917601,
+        "p99_ms": 11.839815711975097,
+        "std_ms": 2.663810235006571,
+        "fps": 219.67694079277803,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.377307466506958,
+        "median_ms": 10.253744125366211,
+        "p95_ms": 11.394457340240479,
+        "p99_ms": 12.370715188980101,
+        "std_ms": 0.6936209949076004,
+        "fps": 96.36411017284851,
+        "measurements": 1000
+      },
+      "speedup": 2.2796551579083024,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 2,
+      "repetition": 4,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 9.303441241741181,
+        "median_ms": 9.1146879196167,
+        "p95_ms": 11.43229603767395,
+        "p99_ms": 13.456614112854002,
+        "std_ms": 1.4366453257711997,
+        "fps": 107.4871086962275,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.962780294418335,
+        "median_ms": 9.605599880218506,
+        "p95_ms": 11.347930002212525,
+        "p99_ms": 14.18350514411925,
+        "std_ms": 1.2768441336793195,
+        "fps": 100.37358753763262,
+        "measurements": 1000
+      },
+      "speedup": 1.070870448422777,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 4,
+      "repetition": 4,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 7.924209921360016,
+        "median_ms": 7.5878400802612305,
+        "p95_ms": 9.62283205986023,
+        "p99_ms": 11.02824053764343,
+        "std_ms": 0.9954645655447736,
+        "fps": 126.1955462972354,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.153245358467101,
+        "median_ms": 9.13915205001831,
+        "p95_ms": 9.789593744277955,
+        "p99_ms": 10.218439674377441,
+        "std_ms": 0.4844375190116368,
+        "fps": 109.25086795307654,
+        "measurements": 1000
+      },
+      "speedup": 1.1550987984043901,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 8,
+      "repetition": 4,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 8.95978836107254,
+        "median_ms": 8.923600196838379,
+        "p95_ms": 11.392398500442503,
+        "p99_ms": 13.75006953239441,
+        "std_ms": 1.4148272654779253,
+        "fps": 111.60977912655673,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.158234137535095,
+        "median_ms": 9.777791976928711,
+        "p95_ms": 11.615232229232786,
+        "p99_ms": 13.524449882507318,
+        "std_ms": 1.1239759785245178,
+        "fps": 98.4423066510112,
+        "measurements": 1000
+      },
+      "speedup": 1.1337582684061405,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 2,
+      "repetition": 4,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 7.666504452705383,
+        "median_ms": 8.667744159698486,
+        "p95_ms": 10.17804799079895,
+        "p99_ms": 12.80741376876831,
+        "std_ms": 2.2322321385265216,
+        "fps": 130.4375424509297,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.243332953453065,
+        "median_ms": 9.80838394165039,
+        "p95_ms": 11.941628599166869,
+        "p99_ms": 14.05403387069702,
+        "std_ms": 1.1707384888059065,
+        "fps": 97.62447482124423,
+        "measurements": 1000
+      },
+      "speedup": 1.3361151769550412,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 4,
+      "repetition": 4,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 6.40125860118866,
+        "median_ms": 5.361552000045776,
+        "p95_ms": 9.612800455093383,
+        "p99_ms": 11.691509838104245,
+        "std_ms": 1.9283112839673588,
+        "fps": 156.21927847350338,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.425442166805267,
+        "median_ms": 9.327104091644287,
+        "p95_ms": 10.763612937927245,
+        "p99_ms": 13.278791980743408,
+        "std_ms": 0.8612747478909294,
+        "fps": 106.0958183502332,
+        "measurements": 1000
+      },
+      "speedup": 1.472435774592053,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 8,
+      "repetition": 4,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 5.823193056106567,
+        "median_ms": 5.290976047515869,
+        "p95_ms": 9.508505725860594,
+        "p99_ms": 9.841579647064208,
+        "std_ms": 1.5225552050058477,
+        "fps": 171.72709033772063,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.50968409538269,
+        "median_ms": 9.418335914611816,
+        "p95_ms": 11.612518835067748,
+        "p99_ms": 13.53407651901245,
+        "std_ms": 0.9391699230436733,
+        "fps": 105.15596416978117,
+        "measurements": 1000
+      },
+      "speedup": 1.6330703797309685,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 2,
+      "repetition": 4,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 6.375370077133178,
+        "median_ms": 8.25497579574585,
+        "p95_ms": 9.871718215942382,
+        "p99_ms": 12.926023635864258,
+        "std_ms": 3.2940931252818664,
+        "fps": 156.85363953800018,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.855210854530334,
+        "median_ms": 9.502208232879639,
+        "p95_ms": 11.252492666244507,
+        "p99_ms": 14.38612633705139,
+        "std_ms": 1.2332670265512464,
+        "fps": 101.46916334522774,
+        "measurements": 1000
+      },
+      "speedup": 1.545825690947488,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 4,
+      "repetition": 4,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 4.573763359069824,
+        "median_ms": 3.0431519746780396,
+        "p95_ms": 9.602260732650757,
+        "p99_ms": 10.17396222114563,
+        "std_ms": 2.7410221041209875,
+        "fps": 218.63833379507682,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 10.050903264522553,
+        "median_ms": 9.732608318328857,
+        "p95_ms": 11.539968347549438,
+        "p99_ms": 14.180923089981079,
+        "std_ms": 1.3575290791061962,
+        "fps": 99.49354537415329,
+        "measurements": 1000
+      },
+      "speedup": 2.197512742890709,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 8,
+      "repetition": 4,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 3.7297781467437745,
+        "median_ms": 2.9096959829330444,
+        "p95_ms": 9.150760078430176,
+        "p99_ms": 9.748500328063965,
+        "std_ms": 2.096948586442455,
+        "fps": 268.1124615610273,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.414798110961915,
+        "median_ms": 9.215487957000732,
+        "p95_ms": 10.427228689193726,
+        "p99_ms": 11.376402130126953,
+        "std_ms": 0.8790515397143651,
+        "fps": 106.21576673382638,
+        "measurements": 1000
+      },
+      "speedup": 2.524224696630109,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 2,
+      "repetition": 5,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 8.279433724880219,
+        "median_ms": 8.377312183380127,
+        "p95_ms": 9.942062044143677,
+        "p99_ms": 11.035367984771728,
+        "std_ms": 1.0652583050948432,
+        "fps": 120.7812071730144,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 8.903160848140717,
+        "median_ms": 8.82529592514038,
+        "p95_ms": 9.554995250701904,
+        "p99_ms": 9.80042727470398,
+        "std_ms": 0.5248224919068639,
+        "fps": 112.31966006868606,
+        "measurements": 1000
+      },
+      "speedup": 1.0753345148939544,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 4,
+      "repetition": 5,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 7.8086166009902955,
+        "median_ms": 7.546863794326782,
+        "p95_ms": 9.540641975402831,
+        "p99_ms": 10.03872950553894,
+        "std_ms": 0.9510238029360187,
+        "fps": 128.0636572518081,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.141587907314301,
+        "median_ms": 9.04804801940918,
+        "p95_ms": 10.119660377502441,
+        "p99_ms": 10.60061149597168,
+        "std_ms": 0.5540537987943185,
+        "fps": 109.39018583411392,
+        "measurements": 1000
+      },
+      "speedup": 1.1707051804995723,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s4",
+      "interval": 8,
+      "repetition": 5,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 7.774121179580688,
+        "median_ms": 7.597023963928223,
+        "p95_ms": 9.564313936233521,
+        "p99_ms": 10.288432216644287,
+        "std_ms": 0.8120515877625557,
+        "fps": 128.63190280935868,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.371018136024475,
+        "median_ms": 9.396687984466553,
+        "p95_ms": 9.977548933029173,
+        "p99_ms": 11.413954210281371,
+        "std_ms": 0.5266491989093715,
+        "fps": 106.71199068068779,
+        "measurements": 1000
+      },
+      "speedup": 1.2054118940978378,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 2,
+      "repetition": 5,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 7.45864262342453,
+        "median_ms": 8.452095985412598,
+        "p95_ms": 9.819340467453003,
+        "p99_ms": 12.332644510269162,
+        "std_ms": 2.1534602797920988,
+        "fps": 134.072652423299,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.473273117542266,
+        "median_ms": 9.360703945159912,
+        "p95_ms": 11.516774272918692,
+        "p99_ms": 13.440501346588134,
+        "std_ms": 0.911928492591244,
+        "fps": 105.56013614219947,
+        "measurements": 1000
+      },
+      "speedup": 1.2701068539992264,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 4,
+      "repetition": 5,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 7.303361032962799,
+        "median_ms": 6.317056179046631,
+        "p95_ms": 11.383961725234986,
+        "p99_ms": 13.488807172775266,
+        "std_ms": 2.3115463062166044,
+        "fps": 136.92325978225998,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.880165312767028,
+        "median_ms": 9.81811237335205,
+        "p95_ms": 11.367303800582885,
+        "p99_ms": 13.304936962127684,
+        "std_ms": 0.780864540538622,
+        "fps": 101.21288139863533,
+        "measurements": 1000
+      },
+      "speedup": 1.3528244418116737,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s3_s4",
+      "interval": 8,
+      "repetition": 5,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 6.136606650829315,
+        "median_ms": 5.52785587310791,
+        "p95_ms": 9.911343908309936,
+        "p99_ms": 10.421233177185059,
+        "std_ms": 1.6044636848600629,
+        "fps": 162.95650950103794,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 11.020922219276429,
+        "median_ms": 11.088863849639893,
+        "p95_ms": 13.518902587890624,
+        "p99_ms": 17.129500007629392,
+        "std_ms": 1.5022844970057907,
+        "fps": 90.73650826161573,
+        "measurements": 1000
+      },
+      "speedup": 1.7959310163357196,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 2,
+      "repetition": 5,
+      "refreshes": 504,
+      "actual_refresh": 0.504,
+      "policy": {
+        "mean_ms": 6.441882498025894,
+        "median_ms": 8.228863716125488,
+        "p95_ms": 9.936076879501343,
+        "p99_ms": 13.168557968139648,
+        "std_ms": 3.3133039572232406,
+        "fps": 155.23412609690547,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.89582781124115,
+        "median_ms": 9.692159652709961,
+        "p95_ms": 11.316480112075805,
+        "p99_ms": 15.157880506515502,
+        "std_ms": 1.1717964453891867,
+        "fps": 101.05268796856505,
+        "measurements": 1000
+      },
+      "speedup": 1.5361701822834726,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 4,
+      "repetition": 5,
+      "refreshes": 258,
+      "actual_refresh": 0.258,
+      "policy": {
+        "mean_ms": 5.411906758308411,
+        "median_ms": 3.4932159185409546,
+        "p95_ms": 11.152390718460083,
+        "p99_ms": 12.333628034591673,
+        "std_ms": 3.3436714601587645,
+        "fps": 184.77775849792505,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 8.986381639003755,
+        "median_ms": 8.967504024505615,
+        "p95_ms": 9.711053037643433,
+        "p99_ms": 11.96471321105957,
+        "std_ms": 0.5632663384440223,
+        "fps": 111.27949381313631,
+        "measurements": 1000
+      },
+      "speedup": 1.6604834562620236,
+      "peak_allocated_gb": 0.9177646636962891
+    },
+    {
+      "model": "segformer-b1-vspw124",
+      "boundary": "s2_s4",
+      "interval": 8,
+      "repetition": 5,
+      "refreshes": 133,
+      "actual_refresh": 0.133,
+      "policy": {
+        "mean_ms": 4.3921209936141965,
+        "median_ms": 3.359439969062805,
+        "p95_ms": 10.47059507369995,
+        "p99_ms": 11.044892501831054,
+        "std_ms": 2.5267882109902167,
+        "fps": 227.6804308109732,
+        "measurements": 1000
+      },
+      "paired_full": {
+        "mean_ms": 9.077304099559784,
+        "median_ms": 8.945519924163818,
+        "p95_ms": 10.467659378051756,
+        "p99_ms": 12.241472225189208,
+        "std_ms": 0.7602620521149648,
+        "fps": 110.16486712706875,
+        "measurements": 1000
+      },
+      "speedup": 2.066724507989985,
+      "peak_allocated_gb": 0.9177646636962891
+    }
+  ],
+  "summary": {
+    "s4/FI-2": {
+      "repetitions": 5,
+      "mean_speedup": 1.1111701844245907,
+      "std_speedup": 0.08800992292172756,
+      "min_speedup": 1.052256399030112,
+      "max_speedup": 1.2864688320444102,
+      "ci95": [
+        1.0605948320814136,
+        1.200249590319326
+      ]
+    },
+    "s4/FI-4": {
+      "repetitions": 5,
+      "mean_speedup": 1.1401549811883578,
+      "std_speedup": 0.080130250460735,
+      "min_speedup": 0.984215899489263,
+      "max_speedup": 1.2116808789483133,
+      "ci95": [
+        1.0588116118933868,
+        1.1921693231497805
+      ]
+    },
+    "s4/FI-8": {
+      "repetitions": 5,
+      "mean_speedup": 1.18072847622886,
+      "std_speedup": 0.05097416195632578,
+      "min_speedup": 1.1320765018204155,
+      "max_speedup": 1.2676429049970046,
+      "ci95": [
+        1.1392844704552028,
+        1.2284197754989985
+      ]
+    },
+    "s3_s4/FI-2": {
+      "repetitions": 5,
+      "mean_speedup": 1.3314541439551575,
+      "std_speedup": 0.07501808585932743,
+      "min_speedup": 1.2701068539992264,
+      "max_speedup": 1.474097723982281,
+      "ci95": [
+        1.27863071569814,
+        1.4057030405802222
+      ]
+    },
+    "s3_s4/FI-4": {
+      "repetitions": 5,
+      "mean_speedup": 1.4461663037713959,
+      "std_speedup": 0.11038630316130824,
+      "min_speedup": 1.2996082776661562,
+      "max_speedup": 1.6130841693021416,
+      "ci95": [
+        1.3554602427095426,
+        1.5369911610406104
+      ]
+    },
+    "s3_s4/FI-8": {
+      "repetitions": 5,
+      "mean_speedup": 1.6589480032569555,
+      "std_speedup": 0.07021323166508633,
+      "min_speedup": 1.5998561145929777,
+      "max_speedup": 1.7959310163357196,
+      "ci95": [
+        1.613141820648174,
+        1.7307351109264542
+      ]
+    },
+    "s2_s4/FI-2": {
+      "repetitions": 5,
+      "mean_speedup": 1.553820706959117,
+      "std_speedup": 0.054510308156061,
+      "min_speedup": 1.5024888081337637,
+      "max_speedup": 1.658956558086614,
+      "ci95": [
+        1.5159613577936473,
+        1.6077404303775125
+      ]
+    },
+    "s2_s4/FI-4": {
+      "repetitions": 5,
+      "mean_speedup": 1.9519847263512986,
+      "std_speedup": 0.17746979721060288,
+      "min_speedup": 1.6604834562620236,
+      "max_speedup": 2.197512742890709,
+      "ci95": [
+        1.7920237877613654,
+        2.097063229291599
+      ]
+    },
+    "s2_s4/FI-8": {
+      "repetitions": 5,
+      "mean_speedup": 2.282435497601375,
+      "std_speedup": 0.22039399777423022,
+      "min_speedup": 2.0084935988488586,
+      "max_speedup": 2.533079526629621,
+      "ci95": [
+        2.086018274317198,
+        2.4788527208855524
+      ]
+    }
+  }
+}
