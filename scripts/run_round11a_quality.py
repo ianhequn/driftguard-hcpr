@@ -125,6 +125,7 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--max-stale-run", type=int, default=7)
+    parser.add_argument("--no-age-guard", action="store_true")
     parser.add_argument("--limit-videos", type=int)
     parser.add_argument("--limit-frames", type=int)
     args = parser.parse_args()
@@ -133,6 +134,7 @@ def main() -> None:
     model = SegformerForSemanticSegmentation.from_pretrained(args.model_dir, local_files_only=True).to("cuda").eval()
     dataset = limit_dataset(VSPWFrameDataset(args.dataset_root, "val", training=False), args.limit_videos, args.limit_frames)
     grid = load_grid(args.lambda_grid)
+    max_stale_run = None if args.no_age_guard else args.max_stale_run
     hardware = json.loads(args.hardware_costs.read_text(encoding="utf-8"))
     scales = {int(key[-1]) + 1: value for key, value in json.loads(args.drift_statistics.read_text(encoding="utf-8"))["scales"].items()}
     full_payload = json.loads(args.full_results.read_text(encoding="utf-8"))
@@ -144,7 +146,7 @@ def main() -> None:
     rows = []
     for entry in grid:
         value = float(entry["lambda"] if isinstance(entry, dict) else entry)
-        result = evaluate_lambda(model, dataset, value, hardware, scales, args.max_stale_run, args.workers, full_miou)
+        result = evaluate_lambda(model, dataset, value, hardware, scales, max_stale_run, args.workers, full_miou)
         result["quantile"] = entry.get("quantile") if isinstance(entry, dict) else None
         rows.append(result)
         (args.output_dir / f"lambda_{value:.8g}.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

@@ -126,6 +126,7 @@ def main():
     parser.add_argument("--measurements", type=int, default=1000)
     parser.add_argument("--repetitions", type=int, default=5)
     parser.add_argument("--pool", type=int, default=256)
+    parser.add_argument("--no-age-guard", action="store_true")
     args = parser.parse_args()
     if not torch.cuda.is_available() or torch.cuda.get_device_name(0) != "NVIDIA GeForce RTX 4090 D":
         raise RuntimeError("Round 11A formal latency requires RTX 4090 D")
@@ -143,8 +144,9 @@ def main():
                ("fixed", {"name": "S2-S4/FI2", "boundary": "s2_s4", "interval": 2}),
                ("fixed", {"name": "S2-S4/FI4", "boundary": "s2_s4", "interval": 4}),
                ("fixed", {"name": "S2-S4/FI8", "boundary": "s2_s4", "interval": 8})]
+    max_stale_run = None if args.no_age_guard else 7
     for entry in grid:
-        configs.append(("hcpr", {"name": f"HCPR/lambda-{float(entry['lambda']):.8g}", "lambda": float(entry["lambda"]), "quantile": entry.get("quantile"), "hardware": hardware, "scales": scales, "max_stale_run": 7}))
+        configs.append(("hcpr", {"name": f"HCPR/lambda-{float(entry['lambda']):.8g}", "lambda": float(entry["lambda"]), "quantile": entry.get("quantile"), "hardware": hardware, "scales": scales, "max_stale_run": max_stale_run}))
     rows = []
     for repetition in range(args.repetitions):
         for kind, config in configs:
