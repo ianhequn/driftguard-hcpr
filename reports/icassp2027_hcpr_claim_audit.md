@@ -38,4 +38,3 @@
 
 All 11 bibliography entries are inherited from the verified ICIP source,
 remain cited, and have no undefined citation keys in the final build.
-

@@ -35,4 +35,3 @@ No new experiment was run for the manuscript rewrite.
 
 The paper uses rounded values only where the table is explicitly a compact
 summary. The headline abstract values retain four decimal places for damage.
-
