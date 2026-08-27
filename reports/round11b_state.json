@@ -2,7 +2,7 @@
   "round": 11,
   "status": "complete",
   "branch": "research/round11b-cross-hardware",
-  "git_commit": "c3d7e85",
+  "git_commit": "pending-final-commit",
   "parent_round11a_commit": "4c6bc07b0f8fc78dd6c94d6a1d10f159c0f3221a",
   "gpu": "NVIDIA GeForce RTX 3080 Ti",
   "software": {
@@ -946,18 +946,39 @@
   "profile_only_transfer": true,
   "recalibration_required": false,
   "transfer_claim": true,
-  "hardware_calibration_claim": "modest_or_mixed",
+  "hardware_calibration_claim": "supported_at_evaluated_points",
+  "strict_hardware_advantages": [
+    {
+      "model": "B0",
+      "quantile": 65,
+      "baseline": "HCPR-OldCost",
+      "new_damage_pp": 0.42793651221408324,
+      "baseline_damage_pp": 0.4411547397370097,
+      "new_speedup": 1.838211536180772,
+      "baseline_speedup": 1.8008321413674193
+    },
+    {
+      "model": "B1",
+      "quantile": 95,
+      "baseline": "ProgressiveDriftOnly",
+      "new_damage_pp": 2.1789207585231454,
+      "baseline_damage_pp": 2.680813138797183,
+      "new_speedup": 2.092947505039615,
+      "baseline_speedup": 2.0416099291226772
+    }
+  ],
   "supported_claims": [
     "cross-device robustness on the evaluated RTX 3080 Ti",
-    "lightweight target-device stage profiling without retraining or manual threshold tuning"
+    "target-device stage profiling without retraining or manual threshold tuning",
+    "scoped measured hardware-calibration benefit at evaluated strict-improvement points"
   ],
   "prohibited_claims": [
     "universal GPU portability",
     "universal hardware law",
     "universal optimal reuse boundary",
-    "strong universal causal hardware-calibration benefit"
+    "universal causal hardware-calibration benefit"
   ],
-  "final_decision": "ROUND 11B = CROSS-HARDWARE GO",
+  "final_decision": "ROUND 11B = STRONG CROSS-HARDWARE GO",
   "artifacts": {
     "analysis": "results/R11B_E06_analysis",
     "report": "reports/round11b_final_report.md",

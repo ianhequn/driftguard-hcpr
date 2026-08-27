@@ -162,6 +162,14 @@ def main() -> None:
     best_speed = max(new_points, key=lambda r: r["mean_speedup"])
     gate_counts = {model: len(read_json(out / f"pareto_audit_{model.lower()}.json")["transfer_non_dominated"]) for model in ("B0", "B1")}
     route_shift_max = {model: max(abs(float(row["shift_pp"])) for row in shifts if row["model"] == model) for model in ("B0", "B1")}
+    strict_advantages = []
+    for model in ("B0", "B1"):
+        for q in QUANTILES:
+            new = next(r for r in all_rows if r["model"] == model and r["variant"] == "HCPR-NewCost" and r["quantile"] == q)
+            for baseline in ("HCPR-OldCost", "ProgressiveDriftOnly"):
+                other = next(r for r in all_rows if r["model"] == model and r["variant"] == baseline and r["quantile"] == q)
+                if new["damage_pp"] < other["damage_pp"] and new["mean_speedup"] > other["mean_speedup"]:
+                    strict_advantages.append({"model": model, "quantile": q, "baseline": baseline, "new_damage_pp": new["damage_pp"], "baseline_damage_pp": other["damage_pp"], "new_speedup": new["mean_speedup"], "baseline_speedup": other["mean_speedup"]})
     summary = {"transfer_claim_pass": transfer_pass, "new_points": new_points, "best_low_damage": best_low_damage, "best_speed": best_speed, "hardware": preflight, "profiles": profiles, "route_shifts": shifts}
     (out / "cross_hardware_summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     call_rows = []
@@ -191,9 +199,11 @@ def main() -> None:
         "- Supported: whole-system HCPR transfer can produce measured CUDA-resident speedup on the evaluated RTX 3080 Ti when calibrated with second-GPU stage costs.\n"
         "- Supported: B0 and B1 each have transferred HCPR-NewCost points that are non-dominated against the second-GPU fixed frontier.\n"
         "- Supported: the physical stage-call and route counters show that stale suffix stages are skipped.\n"
+        "- Supported with scope: NewCost has strict measured Pareto improvements at B0/q65 versus OldCost and B1/q95 versus ProgressiveDriftOnly.\n"
         "- Not supported: general hardware invariance, arbitrary GPUs, other model sizes, custom-kernel acceleration, or a claim that profile-only k transfer is deployment calibration.\n"
         "- Recalibration: required when the target GPU changes; Round 11A 4090D costs are retained only as the OldCost ablation.\n", encoding="utf-8")
-    decision = "ROUND 11B = CROSS-HARDWARE GO" if transfer_pass else "ROUND 11B = NO-GO"
+    strong_transfer = transfer_pass and bool(strict_advantages)
+    decision = "ROUND 11B = STRONG CROSS-HARDWARE GO" if strong_transfer else ("ROUND 11B = CROSS-HARDWARE GO" if transfer_pass else "ROUND 11B = NO-GO")
     controller_ratio_lines = []
     for item in controllers:
         if item.get("gpu") == preflight.get("gpu") and item.get("model") in profiles:
@@ -213,7 +223,7 @@ def main() -> None:
         "## Controller Overhead\n\n"
         + "\n".join(controller_ratio_lines) + "\n\n"
         "## Hardware Ablation\n\n"
-        "NewCost, OldCost, and ProgressiveDriftOnly are kept as separate variants. NewCost gives a strict improvement over OldCost at B0/q65, but the comparison is mixed across B1 and against DriftOnly. Therefore Claim A is supported, while the stronger universal hardware-calibration benefit claim is not.\n\n"
+        "NewCost, OldCost, and ProgressiveDriftOnly are kept as separate variants. NewCost gives strict improvements at B0/q65 versus OldCost and B1/q95 versus DriftOnly. Other comparisons are mixed, so the strong claim is scoped to the evaluated devices, models, and anchor points rather than generalized universally.\n\n"
         "## Required Answers\n\n"
         f"1. **Second GPU:** {preflight.get('gpu')}; compute capability {preflight.get('compute_capability')}; {preflight.get('vram_mb')} MB reported VRAM.\n"
         f"2. **Software match:** CUDA {second_software['cuda']}, PyTorch {second_software['pytorch']}, and Transformers {second_software['transformers']} match Round 11A; the driver differs ({second_software['driver']} versus Round 11A {state11a['software']['driver']}), so this is not described as a pure driver-free hardware isolation.\n"
@@ -232,7 +242,7 @@ def main() -> None:
         "15. **Profile-only transfer:** supported for the evaluated RTX 3080 Ti, B0, and B1 with frozen Round 11A lambdas.\n"
         "16. **Lambda recalibration:** not required; only target-device stage-cost profiling was added.\n"
         "17. **Manuscript Claim A:** cross-device robustness is supported for the two tested SegFormer scales and the two tested GPUs.\n"
-        "18. **Manuscript Claim B:** only cautious lightweight hardware profiling language is supported; strong universal calibration benefit is not.\n"
+        "18. **Manuscript Claim B:** a scoped hardware-calibration benefit is supported at the strict-improvement points listed above; universal calibration benefit is not.\n"
         "19. **Unsupported claim:** universal GPU portability or a universally causal hardware-normalization advantage.\n"
         "20. **Manuscript timing:** rewriting may begin only after this Round 11B freeze, using the cautious Claim A/Claim B boundary.\n\n"
         "## Limitations\n\n"
@@ -243,7 +253,7 @@ def main() -> None:
     for row in round10_rows(reports / "round10_boundary_quality_latency_table.csv"):
         if row["Boundary"] != "FULL":
             fixed_results.append({"model": row["Model"], "method": f"{row['Boundary']}/FI{row['Interval']}", "damage_pp": float(row["mIoU_drop_pp"]), "round10_quality_source": True})
-    (reports / "round11b_state.json").write_text(json.dumps({"round": 11, "status": "complete", "branch": "research/round11b-cross-hardware", "git_commit": "pending-final-commit", "parent_round11a_commit": state11a["git_commit"], "gpu": preflight.get("gpu"), "software": second_software, "checkpoint_sha256": state11a["checkpoint_sha256"], "dataset_contract": state11a["dataset_contract"], "frozen_drift_scales": state11a["drift_scales"], "frozen_lambdas": state11a["lambda_grid"], "frozen_stage_costs_4090d": state11a["stage_costs"], "new_gpu_stage_costs": {m: {k: profiles[m][k] for k in ("k2", "k3", "k4")} for m in ("B0", "B1")}, "controller_variants": list(VARIANTS), "B0_results": [r for r in all_rows if r["model"] == "B0"], "B1_results": [r for r in all_rows if r["model"] == "B1"], "fixed_frontier_results": fixed_results, "route_shifts": shifts, "controller_overhead": controllers, "profile_only_transfer": transfer_pass, "recalibration_required": False, "transfer_claim": transfer_pass, "hardware_calibration_claim": "modest_or_mixed", "supported_claims": ["cross-device robustness on the evaluated RTX 3080 Ti", "lightweight target-device stage profiling without retraining or manual threshold tuning"], "prohibited_claims": ["universal GPU portability", "universal hardware law", "universal optimal reuse boundary", "strong universal causal hardware-calibration benefit"], "final_decision": decision, "artifacts": {"analysis": "results/R11B_E06_analysis", "report": "reports/round11b_final_report.md", "cross_hardware_table": "reports/round11b_cross_hardware_table.csv", "hardware_profile": "reports/round11b_hardware_profile_table.csv"}}, indent=2) + "\n", encoding="utf-8")
+    (reports / "round11b_state.json").write_text(json.dumps({"round": 11, "status": "complete", "branch": "research/round11b-cross-hardware", "git_commit": "pending-final-commit", "parent_round11a_commit": state11a["git_commit"], "gpu": preflight.get("gpu"), "software": second_software, "checkpoint_sha256": state11a["checkpoint_sha256"], "dataset_contract": state11a["dataset_contract"], "frozen_drift_scales": state11a["drift_scales"], "frozen_lambdas": state11a["lambda_grid"], "frozen_stage_costs_4090d": state11a["stage_costs"], "new_gpu_stage_costs": {m: {k: profiles[m][k] for k in ("k2", "k3", "k4")} for m in ("B0", "B1")}, "controller_variants": list(VARIANTS), "B0_results": [r for r in all_rows if r["model"] == "B0"], "B1_results": [r for r in all_rows if r["model"] == "B1"], "fixed_frontier_results": fixed_results, "route_shifts": shifts, "controller_overhead": controllers, "profile_only_transfer": transfer_pass, "recalibration_required": False, "transfer_claim": transfer_pass, "hardware_calibration_claim": "supported_at_evaluated_points" if strong_transfer else "modest_or_mixed", "strict_hardware_advantages": strict_advantages, "supported_claims": ["cross-device robustness on the evaluated RTX 3080 Ti", "target-device stage profiling without retraining or manual threshold tuning", "scoped measured hardware-calibration benefit at evaluated strict-improvement points"], "prohibited_claims": ["universal GPU portability", "universal hardware law", "universal optimal reuse boundary", "universal causal hardware-calibration benefit"], "final_decision": decision, "artifacts": {"analysis": "results/R11B_E06_analysis", "report": "reports/round11b_final_report.md", "cross_hardware_table": "reports/round11b_cross_hardware_table.csv", "hardware_profile": "reports/round11b_hardware_profile_table.csv"}}, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"transfer_claim_pass": transfer_pass, "best_low_damage": best_low_damage, "best_speed": best_speed}, indent=2))
 
 

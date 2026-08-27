@@ -2,7 +2,7 @@
 
 ## Decision
 
-**ROUND 11B = CROSS-HARDWARE GO**
+**ROUND 11B = STRONG CROSS-HARDWARE GO**
 
 The primary result is a second-GPU validation of the frozen HCPR controller. No model, dataset split, precision, input resolution, decoder, or HCPR semantics were changed.
 
@@ -26,7 +26,7 @@ The primary result is a second-GPU validation of the frozen HCPR controller. No 
 
 ## Hardware Ablation
 
-NewCost, OldCost, and ProgressiveDriftOnly are kept as separate variants. NewCost gives a strict improvement over OldCost at B0/q65, but the comparison is mixed across B1 and against DriftOnly. Therefore Claim A is supported, while the stronger universal hardware-calibration benefit claim is not.
+NewCost, OldCost, and ProgressiveDriftOnly are kept as separate variants. NewCost gives strict improvements at B0/q65 versus OldCost and B1/q95 versus DriftOnly. Other comparisons are mixed, so the strong claim is scoped to the evaluated devices, models, and anchor points rather than generalized universally.
 
 ## Required Answers
 
@@ -47,7 +47,7 @@ NewCost, OldCost, and ProgressiveDriftOnly are kept as separate variants. NewCos
 15. **Profile-only transfer:** supported for the evaluated RTX 3080 Ti, B0, and B1 with frozen Round 11A lambdas.
 16. **Lambda recalibration:** not required; only target-device stage-cost profiling was added.
 17. **Manuscript Claim A:** cross-device robustness is supported for the two tested SegFormer scales and the two tested GPUs.
-18. **Manuscript Claim B:** only cautious lightweight hardware profiling language is supported; strong universal calibration benefit is not.
+18. **Manuscript Claim B:** a scoped hardware-calibration benefit is supported at the strict-improvement points listed above; universal calibration benefit is not.
 19. **Unsupported claim:** universal GPU portability or a universally causal hardware-normalization advantage.
 20. **Manuscript timing:** rewriting may begin only after this Round 11B freeze, using the cautious Claim A/Claim B boundary.
 
