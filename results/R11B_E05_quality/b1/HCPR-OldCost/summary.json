@@ -1,0 +1,377 @@
+{
+  "model": "B1",
+  "variant": "HCPR-OldCost",
+  "rows": [
+    {
+      "variant": "HCPR-OldCost",
+      "lambda": 0.4098514739352681,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.3704478949183604,
+      "mIoU_drop_pp": 0.1147524581633752,
+      "pixel_accuracy": 0.7475387818934826,
+      "mean_class_accuracy": 0.4728144139577342,
+      "route_counts": {
+        "Full": 13974,
+        "S3-S4": 41,
+        "S2-S4": 10366,
+        "S4": 11
+      },
+      "route_percentages": {
+        "Full": 0.572892751721876,
+        "S3-S4": 0.0016808789767136765,
+        "S2-S4": 0.42497540177107246,
+        "S4": 0.0004509675303378157
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 14026,
+        "stage3": 13985,
+        "stage4": 13974,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.5750245982289275,
+        "stage3": 0.5733437192522138,
+        "stage4": 0.572892751721876
+      },
+      "average_age": {
+        "age2": 1.009470318137094,
+        "age3": 1.016357822236799,
+        "age4": 1.0181206953099378
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 20,
+      "model": "B1"
+    },
+    {
+      "variant": "HCPR-OldCost",
+      "lambda": 0.7848425765501561,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.36877792736674175,
+      "mIoU_drop_pp": 0.2817492133252386,
+      "pixel_accuracy": 0.7453833064050674,
+      "mean_class_accuracy": 0.47116615195414446,
+      "route_counts": {
+        "Full": 10391,
+        "S2-S4": 13878,
+        "S3-S4": 108,
+        "S4": 15
+      },
+      "route_percentages": {
+        "Full": 0.4260003279763857,
+        "S2-S4": 0.5689570350934733,
+        "S3-S4": 0.0044276812069531,
+        "S4": 0.0006149557231879305
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 10514,
+        "stage3": 10406,
+        "stage4": 10391,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.4310429649065267,
+        "stage3": 0.42661528369957363,
+        "stage4": 0.4260003279763857
+      },
+      "average_age": {
+        "age2": 1.532633650377173,
+        "age3": 1.560019678583142,
+        "age4": 1.5633814365365695
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 35,
+      "model": "B1"
+    },
+    {
+      "variant": "HCPR-OldCost",
+      "lambda": 1.18049021206853,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.366481458143442,
+      "mIoU_drop_pp": 0.5113961356552121,
+      "pixel_accuracy": 0.743038810665761,
+      "mean_class_accuracy": 0.46922286591525586,
+      "route_counts": {
+        "Full": 8437,
+        "S2-S4": 15779,
+        "S3-S4": 151,
+        "S4": 25
+      },
+      "route_percentages": {
+        "Full": 0.3458920957691046,
+        "S2-S4": 0.6468924237454903,
+        "S3-S4": 0.006190554280091833,
+        "S4": 0.0010249262053132174
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 8613,
+        "stage3": 8462,
+        "stage4": 8437,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.35310757625450967,
+        "stage3": 0.3469170219744178,
+        "stage4": 0.3458920957691046
+      },
+      "average_age": {
+        "age2": 1.866390619875369,
+        "age3": 1.9116923581502132,
+        "age4": 1.9186618563463431
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 50,
+      "model": "B1"
+    },
+    {
+      "variant": "HCPR-OldCost",
+      "lambda": 1.8899999324797039,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.3633048790649121,
+      "mIoU_drop_pp": 0.8290540435082039,
+      "pixel_accuracy": 0.7401488582075001,
+      "mean_class_accuracy": 0.4663400725715822,
+      "route_counts": {
+        "Full": 6629,
+        "S2-S4": 17481,
+        "S3-S4": 245,
+        "S4": 37
+      },
+      "route_percentages": {
+        "Full": 0.27176943260085273,
+        "S2-S4": 0.7166693998032142,
+        "S3-S4": 0.010044276812069531,
+        "S4": 0.0015168907838635619
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 6911,
+        "stage3": 6666,
+        "stage4": 6629,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.28333060019678585,
+        "stage3": 0.2732863233847163,
+        "stage4": 0.27176943260085273
+      },
+      "average_age": {
+        "age2": 2.2362249918005905,
+        "age3": 2.3092817317153167,
+        "age4": 2.3185880616595607
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 65,
+      "model": "B1"
+    },
+    {
+      "variant": "HCPR-OldCost",
+      "lambda": 2.952394341587442,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.3603567125173785,
+      "mIoU_drop_pp": 1.1238706982615643,
+      "pixel_accuracy": 0.7368880374202497,
+      "mean_class_accuracy": 0.46357457097181076,
+      "route_counts": {
+        "Full": 5339,
+        "S2-S4": 18666,
+        "S3-S4": 313,
+        "S4": 74
+      },
+      "route_percentages": {
+        "Full": 0.21888324040669072,
+        "S2-S4": 0.7652509019350606,
+        "S3-S4": 0.012832076090521482,
+        "S4": 0.0030337815677271237
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 5726,
+        "stage3": 5413,
+        "stage4": 5339,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.23474909806493932,
+        "stage3": 0.22191702197441784,
+        "stage4": 0.21888324040669072
+      },
+      "average_age": {
+        "age2": 2.5367743522466384,
+        "age3": 2.6318465070514923,
+        "age4": 2.650746146277468
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 80,
+      "model": "B1"
+    },
+    {
+      "variant": "HCPR-OldCost",
+      "lambda": 4.6759908904405325,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.35468854672415734,
+      "mIoU_drop_pp": 1.69068727758368,
+      "pixel_accuracy": 0.7322719792149678,
+      "mean_class_accuracy": 0.4582590116772149,
+      "route_counts": {
+        "Full": 4418,
+        "S2-S4": 19519,
+        "S4": 108,
+        "S3-S4": 347
+      },
+      "route_percentages": {
+        "Full": 0.18112495900295178,
+        "S2-S4": 0.8002213840603477,
+        "S4": 0.0044276812069531,
+        "S3-S4": 0.014225975729747459
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 4873,
+        "stage3": 4526,
+        "stage4": 4418,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.19977861593965235,
+        "stage3": 0.1855526402099049,
+        "stage4": 0.18112495900295178
+      },
+      "average_age": {
+        "age2": 2.777755001639882,
+        "age3": 2.895416530009839,
+        "age4": 2.9331338143653656
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 90,
+      "model": "B1"
+    },
+    {
+      "variant": "HCPR-OldCost",
+      "lambda": 7.857380506202121,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.35037693198617564,
+      "mIoU_drop_pp": 2.1218487513818496,
+      "pixel_accuracy": 0.728586043000263,
+      "mean_class_accuracy": 0.4540461182682198,
+      "route_counts": {
+        "Full": 3754,
+        "S2-S4": 20140,
+        "S3-S4": 378,
+        "S4": 120
+      },
+      "route_percentages": {
+        "Full": 0.15390291898983274,
+        "S2-S4": 0.825680551000328,
+        "S3-S4": 0.015496884224335847,
+        "S4": 0.004919645785503444
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 4252,
+        "stage3": 3874,
+        "stage4": 3754,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.17431944899967203,
+        "stage3": 0.15882256477533618,
+        "stage4": 0.15390291898983274
+      },
+      "average_age": {
+        "age2": 2.9934404722859953,
+        "age3": 3.1207773040341094,
+        "age4": 3.1640701869465397
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 95,
+      "model": "B1"
+    }
+  ]
+}

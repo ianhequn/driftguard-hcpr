@@ -1,0 +1,2442 @@
+{
+  "model": "B0",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "variant": "HCPR-NewCost",
+  "warmup": 200,
+  "measurements": 1000,
+  "repetitions": 5,
+  "pool": 256,
+  "precision": "bf16",
+  "timing_boundary": "CUDA-resident input to logits, controller included, paired Full immediately after each policy",
+  "rows": [
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.396136607170105,
+        "median_ms": 11.249663829803467,
+        "p95_ms": 12.923392152786255,
+        "p99_ms": 13.575160388946532,
+        "std_ms": 0.6157905046441996,
+        "fps": 87.74903587684534,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 11.450726457595826,
+        "median_ms": 11.943423748016357,
+        "p95_ms": 14.175743913650512,
+        "p99_ms": 15.214778537750243,
+        "std_ms": 1.5347734547057208,
+        "fps": 87.33070375082195,
+        "measurements": 1000
+      },
+      "paired_speedup": 0.9952326299446697,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.131585306167603,
+        "median_ms": 11.057663917541504,
+        "p95_ms": 11.678208208084106,
+        "p99_ms": 13.043687114715576,
+        "std_ms": 0.3981117738404317,
+        "fps": 89.8344640494231,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.843817214488983,
+        "median_ms": 11.961743831634521,
+        "p95_ms": 13.088562965393066,
+        "p99_ms": 14.67399136543274,
+        "std_ms": 2.848062765240177,
+        "fps": 101.5866079398664,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1308199922468258,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.075396859169006,
+        "median_ms": 11.001728057861328,
+        "p95_ms": 11.616103553771973,
+        "p99_ms": 12.907888927459716,
+        "std_ms": 0.3896200419018669,
+        "fps": 90.2902182843343,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.19539436173439,
+        "median_ms": 11.868671894073486,
+        "p95_ms": 12.757838010787964,
+        "p99_ms": 13.321904258728027,
+        "std_ms": 4.1877719838451775,
+        "fps": 122.01975351780023,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3514171948676208,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.008616790771484,
+        "median_ms": 10.94595193862915,
+        "p95_ms": 11.548774147033692,
+        "p99_ms": 11.998516092300415,
+        "std_ms": 0.3346466508883437,
+        "fps": 90.83793350299007,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.11624580001831,
+        "median_ms": 4.021183967590332,
+        "p95_ms": 12.680343675613402,
+        "p99_ms": 13.618201599121093,
+        "std_ms": 3.739111573549014,
+        "fps": 163.49898821872173,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7998977069787692,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.047477339744567,
+        "median_ms": 10.916864395141602,
+        "p95_ms": 11.788525104522705,
+        "p99_ms": 13.359307670593262,
+        "std_ms": 0.4944457207316833,
+        "fps": 90.51840245939091,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.020983554363251,
+        "median_ms": 3.9787039756774902,
+        "p95_ms": 12.198022031784058,
+        "p99_ms": 13.109842081069946,
+        "std_ms": 2.86176604736027,
+        "fps": 199.1641655808645,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.2002616061437354,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.329492923736572,
+        "median_ms": 11.130880355834961,
+        "p95_ms": 12.842086219787598,
+        "p99_ms": 14.056380386352537,
+        "std_ms": 0.7272094923602981,
+        "fps": 88.26520363545015,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.26416236782074,
+        "median_ms": 5.1195361614227295,
+        "p95_ms": 14.193761873245238,
+        "p99_ms": 15.407741403579712,
+        "std_ms": 4.432635494336369,
+        "fps": 121.00439893265312,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3709184814484907,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 0.8160514013877299,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.063943737983704,
+        "median_ms": 10.925568103790283,
+        "p95_ms": 12.068697261810302,
+        "p99_ms": 13.177011289596557,
+        "std_ms": 0.5102218216047044,
+        "fps": 90.38368448737613,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.18807510471344,
+        "median_ms": 4.336127996444702,
+        "p95_ms": 13.839462566375724,
+        "p99_ms": 15.559466533660888,
+        "std_ms": 4.17249749959769,
+        "fps": 139.1193032115468,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.5392081436000493,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 356,
+        "stage3": 300,
+        "stage4": 300,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 300,
+        "S3-S4": 56,
+        "S2-S4": 644
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 1.2729365992858317,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.95617951488495,
+        "median_ms": 10.879487991333008,
+        "p95_ms": 11.597824096679688,
+        "p99_ms": 11.912233304977416,
+        "std_ms": 0.34998105345687275,
+        "fps": 91.27269214979643,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.251364545106888,
+        "median_ms": 4.2619359493255615,
+        "p95_ms": 13.216961622238157,
+        "p99_ms": 14.204047508239746,
+        "std_ms": 3.64949797267921,
+        "fps": 159.9650752702827,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7526060807733004,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 265,
+        "stage3": 221,
+        "stage4": 221,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 221,
+        "S3-S4": 44,
+        "S2-S4": 735
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.984321763038635,
+        "median_ms": 10.906623840332031,
+        "p95_ms": 11.571453142166137,
+        "p99_ms": 12.697938280105591,
+        "std_ms": 0.38292430924614546,
+        "fps": 91.0388480575032,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.110186185598374,
+        "median_ms": 4.274128198623657,
+        "p95_ms": 13.332234954833984,
+        "p99_ms": 13.8327863407135,
+        "std_ms": 3.5555207445039807,
+        "fps": 163.66113398589826,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7977065558048841,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 245,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 755,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 3.020231624296541,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.9716645154953,
+        "median_ms": 10.89689588546753,
+        "p95_ms": 11.532441234588623,
+        "p99_ms": 12.738680047988892,
+        "std_ms": 0.3872391129118058,
+        "fps": 91.14387325530218,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.663243613481521,
+        "median_ms": 4.231167793273926,
+        "p95_ms": 13.094433879852295,
+        "p99_ms": 13.61545060157776,
+        "std_ms": 3.2171318346054356,
+        "fps": 176.57725294025317,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.937346380328214,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 153,
+        "stage4": 153,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 153,
+        "S2-S4": 799,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 4.454912710230208,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.22121219444275,
+        "median_ms": 11.073472023010254,
+        "p95_ms": 12.71966676712036,
+        "p99_ms": 13.279317350387572,
+        "std_ms": 0.5850449504444097,
+        "fps": 89.11693163553623,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.550965244054795,
+        "median_ms": 4.242432117462158,
+        "p95_ms": 12.977579069137573,
+        "p99_ms": 13.389533529281616,
+        "std_ms": 3.080479866000389,
+        "fps": 180.1488490800806,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.021488462112227,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 189,
+        "stage3": 145,
+        "stage4": 145,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 145,
+        "S2-S4": 811,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.39707611656189,
+        "median_ms": 11.196415901184082,
+        "p95_ms": 13.039769268035888,
+        "p99_ms": 14.12006911277771,
+        "std_ms": 0.7346691332844754,
+        "fps": 87.74180235111618,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.611329434633255,
+        "median_ms": 4.262687921524048,
+        "p95_ms": 13.221832227706908,
+        "p99_ms": 14.60760564804077,
+        "std_ms": 3.167525599656427,
+        "fps": 178.21088774934097,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.031083052479306,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.065017340660095,
+        "median_ms": 10.993616104125977,
+        "p95_ms": 11.627839612960814,
+        "p99_ms": 12.944005441665649,
+        "std_ms": 0.3938813710403847,
+        "fps": 90.37491485217537,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 11.344948046684266,
+        "median_ms": 11.907552242279053,
+        "p95_ms": 13.406305646896362,
+        "p99_ms": 14.642216634750366,
+        "std_ms": 1.4605584194870398,
+        "fps": 88.14496072481049,
+        "measurements": 1000
+      },
+      "paired_speedup": 0.975325518911831,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 10.986626497268677,
+        "median_ms": 10.9235200881958,
+        "p95_ms": 11.531301069259644,
+        "p99_ms": 12.304721584320067,
+        "std_ms": 0.34694651833055434,
+        "fps": 91.01975026170265,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.617374827384948,
+        "median_ms": 11.860527992248535,
+        "p95_ms": 12.693463993072509,
+        "p99_ms": 13.166185302734375,
+        "std_ms": 2.732774633046713,
+        "fps": 103.97847832160548,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1423727050738275,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.127411328315734,
+        "median_ms": 11.060735702514648,
+        "p95_ms": 11.71988844871521,
+        "p99_ms": 12.826427688598631,
+        "std_ms": 0.41156131199175205,
+        "fps": 89.86816165007912,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.188484791517258,
+        "median_ms": 11.818928241729736,
+        "p95_ms": 12.784998703002929,
+        "p99_ms": 13.616189165115355,
+        "std_ms": 4.183268086096651,
+        "fps": 122.12271567456968,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.358909689841888,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.093576809883118,
+        "median_ms": 10.945536136627197,
+        "p95_ms": 12.54115352630615,
+        "p99_ms": 13.339783182144165,
+        "std_ms": 0.6059039681477342,
+        "fps": 90.14225232650965,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.994118242502212,
+        "median_ms": 3.9741439819335938,
+        "p95_ms": 12.343344068527221,
+        "p99_ms": 12.831132745742797,
+        "std_ms": 3.6370010172823957,
+        "fps": 166.83020913891005,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.850743739291363,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.236810336112976,
+        "median_ms": 11.015120029449463,
+        "p95_ms": 12.928000450134277,
+        "p99_ms": 14.091608791351318,
+        "std_ms": 0.7550880464830919,
+        "fps": 88.99322584329734,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.060955032110214,
+        "median_ms": 3.960736036300659,
+        "p95_ms": 12.339191675186155,
+        "p99_ms": 14.070804100036622,
+        "std_ms": 2.9227699297254044,
+        "fps": 197.59116484049068,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.2202944434042284,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.966463495254517,
+        "median_ms": 10.876928329467773,
+        "p95_ms": 11.550822591781616,
+        "p99_ms": 12.635740518569945,
+        "std_ms": 0.39410386776348827,
+        "fps": 91.18709969104687,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.22247140455246,
+        "median_ms": 5.183520078659058,
+        "p95_ms": 13.811289405822752,
+        "p99_ms": 15.216014080047607,
+        "std_ms": 4.371396038824414,
+        "fps": 121.6179358734333,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.333718654124211,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 0.8160514013877299,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.891516129493713,
+        "median_ms": 10.808832168579102,
+        "p95_ms": 11.499361658096314,
+        "p99_ms": 11.90675483703613,
+        "std_ms": 0.35625956498963124,
+        "fps": 91.8145819287773,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.943488286972046,
+        "median_ms": 4.247040033340454,
+        "p95_ms": 13.29248366355896,
+        "p99_ms": 13.806610536575317,
+        "std_ms": 4.002427334795604,
+        "fps": 144.01982961162096,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.568594297181906,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 356,
+        "stage3": 300,
+        "stage4": 300,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 300,
+        "S3-S4": 56,
+        "S2-S4": 644
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 1.2729365992858317,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.924432892799377,
+        "median_ms": 10.817920207977295,
+        "p95_ms": 11.507760334014893,
+        "p99_ms": 13.187696437835692,
+        "std_ms": 0.4843301587089574,
+        "fps": 91.53793243209266,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.179644444227218,
+        "median_ms": 4.219903945922852,
+        "p95_ms": 13.090099430084228,
+        "p99_ms": 13.586244258880614,
+        "std_ms": 3.6204001294487855,
+        "fps": 161.82160786518403,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7678092957280989,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 265,
+        "stage3": 221,
+        "stage4": 221,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 221,
+        "S3-S4": 44,
+        "S2-S4": 735
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.850889087677002,
+        "median_ms": 10.786143779754639,
+        "p95_ms": 11.416475343704224,
+        "p99_ms": 11.810701971054076,
+        "std_ms": 0.33240282288412754,
+        "fps": 92.15834683405502,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.97834627199173,
+        "median_ms": 4.216655969619751,
+        "p95_ms": 13.041681909561158,
+        "p99_ms": 13.59784990310669,
+        "std_ms": 3.463851141495878,
+        "fps": 167.2703377328531,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8150318823974625,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 245,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 755,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 3.020231624296541,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.206185554504394,
+        "median_ms": 11.018752098083496,
+        "p95_ms": 12.844083452224732,
+        "p99_ms": 13.294956483840942,
+        "std_ms": 0.6302451608137933,
+        "fps": 89.23643064236465,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.736221633911133,
+        "median_ms": 4.256768226623535,
+        "p95_ms": 13.235302352905274,
+        "p99_ms": 14.319529218673704,
+        "std_ms": 3.2407010607614932,
+        "fps": 174.33078144823514,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9535830847706752,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 153,
+        "stage4": 153,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 153,
+        "S2-S4": 799,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 4.454912710230208,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.250815885543823,
+        "median_ms": 11.06169605255127,
+        "p95_ms": 12.902297401428221,
+        "p99_ms": 13.359114398956299,
+        "std_ms": 0.6521258901842928,
+        "fps": 88.88244285331345,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.70189863204956,
+        "median_ms": 4.288400173187256,
+        "p95_ms": 13.356083536148072,
+        "p99_ms": 14.741532621383667,
+        "std_ms": 3.2095027929419766,
+        "fps": 175.3801785214389,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.973170098518516,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 189,
+        "stage3": 145,
+        "stage4": 145,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 145,
+        "S2-S4": 811,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.966535458564758,
+        "median_ms": 10.864640235900879,
+        "p95_ms": 11.621478414535522,
+        "p99_ms": 12.576379013061521,
+        "std_ms": 0.39658756389021155,
+        "fps": 91.18650131377724,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.472175512313843,
+        "median_ms": 4.201887845993042,
+        "p95_ms": 12.966492843627929,
+        "p99_ms": 13.646017389297485,
+        "std_ms": 3.0631557187793055,
+        "fps": 182.74267661001286,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.0040540428367386,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 10.94791303539276,
+        "median_ms": 10.865071773529053,
+        "p95_ms": 11.529575824737549,
+        "p99_ms": 12.41560598373413,
+        "std_ms": 0.35634425460378866,
+        "fps": 91.34160974490464,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 11.078968297958374,
+        "median_ms": 11.886111736297607,
+        "p95_ms": 12.811724853515624,
+        "p99_ms": 13.135890769958497,
+        "std_ms": 1.2830439446438358,
+        "fps": 90.26111214563899,
+        "measurements": 1000
+      },
+      "paired_speedup": 0.988170806248289,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.005795110702515,
+        "median_ms": 10.907599925994873,
+        "p95_ms": 11.560717010498047,
+        "p99_ms": 13.149110774993895,
+        "std_ms": 0.4958903951596888,
+        "fps": 90.86122265056129,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.570219616889954,
+        "median_ms": 11.827199935913086,
+        "p95_ms": 12.760254526138306,
+        "p99_ms": 13.470914850234985,
+        "std_ms": 2.72962660268662,
+        "fps": 104.49081003691441,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1500044462176178,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.264032183647156,
+        "median_ms": 11.096063613891602,
+        "p95_ms": 12.825293159484863,
+        "p99_ms": 13.227274103164673,
+        "std_ms": 0.631147240708993,
+        "fps": 88.77815543280987,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.359635036706925,
+        "median_ms": 11.865600109100342,
+        "p95_ms": 13.351001548767089,
+        "p99_ms": 14.509060878753662,
+        "std_ms": 4.254923783502426,
+        "fps": 119.62244710552888,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.347431094083307,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.242345576286317,
+        "median_ms": 11.048559665679932,
+        "p95_ms": 12.824217748641967,
+        "p99_ms": 13.51769377708435,
+        "std_ms": 0.6563577756600498,
+        "fps": 88.94940946392167,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.194534234523773,
+        "median_ms": 4.047791957855225,
+        "p95_ms": 12.821524667739869,
+        "p99_ms": 14.215278396606445,
+        "std_ms": 3.744713418358922,
+        "fps": 161.43263757051116,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8148814988590685,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.003546781539917,
+        "median_ms": 10.925472259521484,
+        "p95_ms": 11.567155504226685,
+        "p99_ms": 12.045588865280148,
+        "std_ms": 0.338042988992121,
+        "fps": 90.87978811319714,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.068773886680603,
+        "median_ms": 3.9941118955612183,
+        "p95_ms": 12.26255168914795,
+        "p99_ms": 12.79183756828308,
+        "std_ms": 2.838343857625113,
+        "fps": 197.28636991043052,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.170849800669611,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.930556031227113,
+        "median_ms": 10.852319717407227,
+        "p95_ms": 11.514009523391724,
+        "p99_ms": 11.873310298919678,
+        "std_ms": 0.32834568367552325,
+        "fps": 91.48665421440006,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.057975872039794,
+        "median_ms": 4.3811681270599365,
+        "p95_ms": 13.507700443267822,
+        "p99_ms": 14.585428028106689,
+        "std_ms": 4.296274238642366,
+        "fps": 124.10064461347912,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3564890494590367,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 0.8160514013877299,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.954629616737366,
+        "median_ms": 10.864128112792969,
+        "p95_ms": 11.593728065490723,
+        "p99_ms": 12.453908424377442,
+        "std_ms": 0.3729786833773965,
+        "fps": 91.2856057198063,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.963253497362137,
+        "median_ms": 4.267007827758789,
+        "p95_ms": 13.173187351226806,
+        "p99_ms": 13.60199712753296,
+        "std_ms": 3.9926533787242082,
+        "fps": 143.61102900803857,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.5732056316615883,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 356,
+        "stage3": 300,
+        "stage4": 300,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 300,
+        "S3-S4": 56,
+        "S2-S4": 644
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 1.2729365992858317,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.232173837661744,
+        "median_ms": 11.053056240081787,
+        "p95_ms": 12.857855701446534,
+        "p99_ms": 13.473822793960572,
+        "std_ms": 0.6386731489434674,
+        "fps": 89.02996111464874,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.1998117704391476,
+        "median_ms": 4.234127998352051,
+        "p95_ms": 13.0366286277771,
+        "p99_ms": 13.410383529663086,
+        "std_ms": 3.6080949486442275,
+        "fps": 161.29521944005205,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8116959439344626,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 265,
+        "stage3": 221,
+        "stage4": 221,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 221,
+        "S3-S4": 44,
+        "S2-S4": 735
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.246083086967468,
+        "median_ms": 11.040256023406982,
+        "p95_ms": 12.860570001602174,
+        "p99_ms": 13.482089624404907,
+        "std_ms": 0.6559183149558647,
+        "fps": 88.91984811661678,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.252577406406402,
+        "median_ms": 4.31001615524292,
+        "p95_ms": 13.59677605628967,
+        "p99_ms": 15.151623020172119,
+        "std_ms": 3.6637629969678827,
+        "fps": 159.9340455946052,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7986315651917737,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 245,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 755,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 3.020231624296541,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.881428046226501,
+        "median_ms": 10.797056198120117,
+        "p95_ms": 11.380941152572632,
+        "p99_ms": 11.904757795333861,
+        "std_ms": 0.3865623101180892,
+        "fps": 91.89970247947221,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.839080899238587,
+        "median_ms": 4.303279876708984,
+        "p95_ms": 13.383936309814453,
+        "p99_ms": 15.116769218444823,
+        "std_ms": 3.315032495038604,
+        "fps": 171.2598296301049,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8635515133289957,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 153,
+        "stage4": 153,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 153,
+        "S2-S4": 799,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 4.454912710230208,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.883269785881042,
+        "median_ms": 10.761216163635254,
+        "p95_ms": 11.622605085372925,
+        "p99_ms": 12.621110849380493,
+        "std_ms": 0.40647800558899416,
+        "fps": 91.8841505975813,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.485705271244049,
+        "median_ms": 4.168191909790039,
+        "p95_ms": 12.798156499862671,
+        "p99_ms": 13.409678544998169,
+        "std_ms": 3.08094874747782,
+        "fps": 182.29196622027416,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9839326481739572,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 189,
+        "stage3": 145,
+        "stage4": 145,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 145,
+        "S2-S4": 811,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.809403461456299,
+        "median_ms": 10.715087890625,
+        "p95_ms": 11.394098949432372,
+        "p99_ms": 11.973385105133053,
+        "std_ms": 0.3440334966335257,
+        "fps": 92.51204320069618,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.429759424686432,
+        "median_ms": 4.1896960735321045,
+        "p95_ms": 12.796006536483764,
+        "p99_ms": 13.563135566711425,
+        "std_ms": 3.050951414881541,
+        "fps": 184.17022224842862,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9907702378693402,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 10.994934850692749,
+        "median_ms": 10.84825611114502,
+        "p95_ms": 11.965441417694091,
+        "p99_ms": 13.22408444404602,
+        "std_ms": 0.5805221570597339,
+        "fps": 90.95097093158253,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 10.964025237083435,
+        "median_ms": 11.800432205200195,
+        "p95_ms": 12.718951606750489,
+        "p99_ms": 13.118773584365844,
+        "std_ms": 1.2948722731002116,
+        "fps": 91.20737852898378,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.0028191848286494,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.349146502494811,
+        "median_ms": 11.098992347717285,
+        "p95_ms": 13.14146385192871,
+        "p99_ms": 14.637138271331787,
+        "std_ms": 0.8166289184224353,
+        "fps": 88.11235274654145,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.880391678333282,
+        "median_ms": 11.867087841033936,
+        "p95_ms": 13.948928308486936,
+        "p99_ms": 14.726246242523194,
+        "std_ms": 2.87442517417234,
+        "fps": 101.21056255218107,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1486535020046182,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.021959302902221,
+        "median_ms": 10.95417594909668,
+        "p95_ms": 11.616728353500365,
+        "p99_ms": 12.141165695190429,
+        "std_ms": 0.3373140029812837,
+        "fps": 90.72797063737,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.412297024726868,
+        "median_ms": 11.898799896240234,
+        "p95_ms": 13.390293979644774,
+        "p99_ms": 14.585137329101562,
+        "std_ms": 4.304469296849491,
+        "fps": 118.87359624376413,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3102199399883987,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 10.972313600540161,
+        "median_ms": 10.886735916137695,
+        "p95_ms": 11.570329713821412,
+        "p99_ms": 12.370186023712158,
+        "std_ms": 0.39441704014191603,
+        "fps": 91.1384814913393,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.070538149595261,
+        "median_ms": 3.998703956604004,
+        "p95_ms": 12.481945514678955,
+        "p99_ms": 12.880589122772216,
+        "std_ms": 3.662350331112753,
+        "fps": 164.73004128417722,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.80746967239992,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 10.902716799736023,
+        "median_ms": 10.804111957550049,
+        "p95_ms": 11.551949214935302,
+        "p99_ms": 12.751144781112671,
+        "std_ms": 0.37779839743227367,
+        "fps": 91.72025820428648,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 4.956713309288025,
+        "median_ms": 3.9045119285583496,
+        "p95_ms": 12.05355520248413,
+        "p99_ms": 12.73540545463562,
+        "std_ms": 2.798225600769296,
+        "fps": 201.74658843515775,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.1995859190214238,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.919319102287293,
+        "median_ms": 10.801152229309082,
+        "p95_ms": 11.597001457214356,
+        "p99_ms": 12.861867866516112,
+        "std_ms": 0.44836639307311243,
+        "fps": 91.58080193759773,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.973411521196366,
+        "median_ms": 4.380160093307495,
+        "p95_ms": 13.332378864288328,
+        "p99_ms": 14.097756452560425,
+        "std_ms": 4.223784097122901,
+        "fps": 125.41683034189556,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.369466391300585,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 0.8160514013877299,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.309701422691345,
+        "median_ms": 11.13753604888916,
+        "p95_ms": 12.829695701599121,
+        "p99_ms": 13.485098457336425,
+        "std_ms": 0.6354762216163051,
+        "fps": 88.41966402345855,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.113415588378906,
+        "median_ms": 4.3144800662994385,
+        "p95_ms": 13.714943790435791,
+        "p99_ms": 15.375408926010131,
+        "std_ms": 4.119048982090145,
+        "fps": 140.57944282542508,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.5899115245238666,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 356,
+        "stage3": 300,
+        "stage4": 300,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 300,
+        "S3-S4": 56,
+        "S2-S4": 644
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 1.2729365992858317,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.239142663955688,
+        "median_ms": 11.075072288513184,
+        "p95_ms": 12.656844854354858,
+        "p99_ms": 13.421675539016723,
+        "std_ms": 0.6516917389747552,
+        "fps": 88.974758119855,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.510659296512603,
+        "median_ms": 4.3427839279174805,
+        "p95_ms": 13.806636810302734,
+        "p99_ms": 15.273141775131226,
+        "std_ms": 3.846485818313621,
+        "fps": 153.59427585707704,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7262679787246538,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 265,
+        "stage3": 221,
+        "stage4": 221,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 221,
+        "S3-S4": 44,
+        "S2-S4": 735
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.906683266639709,
+        "median_ms": 10.803631782531738,
+        "p95_ms": 11.587839555740356,
+        "p99_ms": 12.344596452713013,
+        "std_ms": 0.3729116732701168,
+        "fps": 91.68690201710558,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.933900927066803,
+        "median_ms": 4.191200017929077,
+        "p95_ms": 12.88437795639038,
+        "p99_ms": 13.51986904144287,
+        "std_ms": 3.43045331278725,
+        "fps": 168.52320459861667,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8380292156362323,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 245,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 755,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 3.020231624296541,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.057921420097351,
+        "median_ms": 10.97208023071289,
+        "p95_ms": 11.645183992385864,
+        "p99_ms": 12.563462944030762,
+        "std_ms": 0.3728277645600613,
+        "fps": 90.43290886319178,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.6231488039493565,
+        "median_ms": 4.213248014450073,
+        "p95_ms": 12.922460842132567,
+        "p99_ms": 13.647112045288086,
+        "std_ms": 3.160948131226619,
+        "fps": 177.8363039757477,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9664998750043645,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 153,
+        "stage4": 153,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 153,
+        "S2-S4": 799,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 4.454912710230208,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.849707043647767,
+        "median_ms": 10.736512184143066,
+        "p95_ms": 11.523123407363892,
+        "p99_ms": 12.414832973480221,
+        "std_ms": 0.3709107496215168,
+        "fps": 92.16838721792725,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.541170968770981,
+        "median_ms": 4.215296030044556,
+        "p95_ms": 12.94340991973877,
+        "p99_ms": 13.710323238372803,
+        "std_ms": 3.0895697712738572,
+        "fps": 180.46727048052043,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.958017015680389,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 189,
+        "stage3": 145,
+        "stage4": 145,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 145,
+        "S2-S4": 811,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.387700379371642,
+        "median_ms": 11.209216117858887,
+        "p95_ms": 13.057086086273193,
+        "p99_ms": 14.275942373275756,
+        "std_ms": 0.7420900297168856,
+        "fps": 87.81404205290292,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.407987810611725,
+        "median_ms": 4.172800064086914,
+        "p95_ms": 12.742656373977661,
+        "p99_ms": 13.354004364013672,
+        "std_ms": 3.0274054603857863,
+        "fps": 184.91165938609706,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.1057185737412976,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.331119099617004,
+        "median_ms": 11.13646411895752,
+        "p95_ms": 12.960717248916625,
+        "p99_ms": 14.113556652069091,
+        "std_ms": 0.7448234570111167,
+        "fps": 88.2525363301318,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 11.378136697769165,
+        "median_ms": 11.899871826171875,
+        "p95_ms": 13.74115719795227,
+        "p99_ms": 14.893151245117187,
+        "std_ms": 1.4770283757494806,
+        "fps": 87.88785251596276,
+        "measurements": 1000
+      },
+      "paired_speedup": 0.9958677242679481,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.06413201713562,
+        "median_ms": 10.976256370544434,
+        "p95_ms": 11.57213306427002,
+        "p99_ms": 12.91930136680603,
+        "std_ms": 0.3658695486816537,
+        "fps": 90.38214642153997,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.787402728557586,
+        "median_ms": 12.00935983657837,
+        "p95_ms": 13.04918713569641,
+        "p99_ms": 14.36369960784912,
+        "std_ms": 2.7963841276955224,
+        "fps": 102.17215207485128,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1304461790310116,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.032153316497803,
+        "median_ms": 10.959263801574707,
+        "p95_ms": 11.565404748916626,
+        "p99_ms": 12.783358545303344,
+        "std_ms": 0.36263393165311514,
+        "fps": 90.64413549298403,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.208741215467454,
+        "median_ms": 11.881824016571045,
+        "p95_ms": 12.774502182006836,
+        "p99_ms": 13.258634271621704,
+        "std_ms": 4.164736393259559,
+        "fps": 121.82135771508229,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3439518955367102,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 10.97953400325775,
+        "median_ms": 10.905599594116211,
+        "p95_ms": 11.51735053062439,
+        "p99_ms": 12.716032028198242,
+        "std_ms": 0.35706455212744476,
+        "fps": 91.07854665810851,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.054383847951889,
+        "median_ms": 4.000768184661865,
+        "p95_ms": 12.420864391326903,
+        "p99_ms": 12.914905500411987,
+        "std_ms": 3.6425970060175055,
+        "fps": 165.1695738350461,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8134849522254803,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.210915578842163,
+        "median_ms": 11.016736030578613,
+        "p95_ms": 12.953855943679809,
+        "p99_ms": 13.756837978363036,
+        "std_ms": 0.6793057478486672,
+        "fps": 89.19878068542887,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 4.984259073257446,
+        "median_ms": 3.9296319484710693,
+        "p95_ms": 12.135510063171386,
+        "p99_ms": 12.655185480117797,
+        "std_ms": 2.806839027214948,
+        "fps": 200.63162554398548,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.249264216419494,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.324855003356934,
+        "median_ms": 11.12831974029541,
+        "p95_ms": 13.02430534362793,
+        "p99_ms": 13.722767190933228,
+        "std_ms": 0.6897764113470396,
+        "fps": 88.30135129355548,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.349447326660156,
+        "median_ms": 5.139408111572266,
+        "p95_ms": 14.425497961044305,
+        "p99_ms": 15.376475944519044,
+        "std_ms": 4.430190920946767,
+        "fps": 119.76840632396777,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3563598356020725,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 0.8160514013877299,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.05311818408966,
+        "median_ms": 10.95737600326538,
+        "p95_ms": 11.757821130752562,
+        "p99_ms": 12.555765495300289,
+        "std_ms": 0.40490549651657676,
+        "fps": 90.47220733054709,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.166286779880524,
+        "median_ms": 4.331007957458496,
+        "p95_ms": 13.61653594970703,
+        "p99_ms": 15.129763412475587,
+        "std_ms": 4.144156643616917,
+        "fps": 139.54228050257737,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.5423773180723779,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 356,
+        "stage3": 300,
+        "stage4": 300,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 300,
+        "S3-S4": 56,
+        "S2-S4": 644
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 1.2729365992858317,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.993072573661804,
+        "median_ms": 10.93222427368164,
+        "p95_ms": 11.537561464309693,
+        "p99_ms": 11.965975151062011,
+        "std_ms": 0.339473687422179,
+        "fps": 90.96637844417495,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.268929762840271,
+        "median_ms": 4.255232095718384,
+        "p95_ms": 13.231086301803588,
+        "p99_ms": 13.580523452758788,
+        "std_ms": 3.657835982739168,
+        "fps": 159.51686138319866,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.753580433908253,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 265,
+        "stage3": 221,
+        "stage4": 221,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 221,
+        "S3-S4": 44,
+        "S2-S4": 735
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 10.957137251853943,
+        "median_ms": 10.890079975128174,
+        "p95_ms": 11.427121591567992,
+        "p99_ms": 12.315736598968506,
+        "std_ms": 0.33209528000697774,
+        "fps": 91.26471422367192,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.055989216089249,
+        "median_ms": 4.268032073974609,
+        "p95_ms": 13.183943796157836,
+        "p99_ms": 13.606973104476928,
+        "std_ms": 3.497907846262404,
+        "fps": 165.12578941574895,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8093059384490926,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 245,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 755,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 3.020231624296541,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.16002429008484,
+        "median_ms": 11.073999881744385,
+        "p95_ms": 11.735163450241089,
+        "p99_ms": 13.198735008239746,
+        "std_ms": 0.441350514345731,
+        "fps": 89.60553973779908,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.633284322500229,
+        "median_ms": 4.230000019073486,
+        "p95_ms": 12.969083499908447,
+        "p99_ms": 13.368588724136352,
+        "std_ms": 3.152838832643692,
+        "fps": 177.51633731779555,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9810866363534922,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 153,
+        "stage4": 153,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 153,
+        "S2-S4": 799,
+        "S3-S4": 48
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 4.454912710230208,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.38563869380951,
+        "median_ms": 11.230095863342285,
+        "p95_ms": 12.942118263244629,
+        "p99_ms": 13.576222620010377,
+        "std_ms": 0.6078170732424113,
+        "fps": 87.8299432199364,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.758197152853012,
+        "median_ms": 4.3079681396484375,
+        "p95_ms": 13.389923095703125,
+        "p99_ms": 14.377814512252806,
+        "std_ms": 3.2165362590513777,
+        "fps": 173.66546741188435,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9772922655432648,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 189,
+        "stage3": 145,
+        "stage4": 145,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 145,
+        "S2-S4": 811,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.227046681404113,
+        "median_ms": 11.095040321350098,
+        "p95_ms": 12.651694679260254,
+        "p99_ms": 13.531606607437134,
+        "std_ms": 0.6106143865509962,
+        "fps": 89.0706192267239,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.696177280187607,
+        "median_ms": 4.302815914154053,
+        "p95_ms": 13.510656356811523,
+        "p99_ms": 15.056424684524535,
+        "std_ms": 3.261525486704619,
+        "fps": 175.55633380270504,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9709791548191322,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    }
+  ],
+  "summary": {
+    "S4/FI2": {
+      "repetitions": 5,
+      "mean_speedup": 0.9914831728402774,
+      "std_speedup": 0.00931482088406688,
+      "min_speedup": 0.975325518911831,
+      "max_speedup": 1.0028191848286494,
+      "ci95": [
+        0.9830326913137057,
+        0.998521289627573
+      ]
+    },
+    "S3-S4/FI2": {
+      "repetitions": 5,
+      "mean_speedup": 1.1404593649147803,
+      "std_speedup": 0.008427273903981876,
+      "min_speedup": 1.1304461790310116,
+      "max_speedup": 1.1500044462176178,
+      "ci95": [
+        1.1329810095259005,
+        1.1479377203036598
+      ]
+    },
+    "S2-S4/FI2": {
+      "repetitions": 5,
+      "mean_speedup": 1.342385962863585,
+      "std_speedup": 0.01683541045850799,
+      "min_speedup": 1.3102199399883987,
+      "max_speedup": 1.358909689841888,
+      "ci95": [
+        1.3252057820739054,
+        1.3543182515384555
+      ]
+    },
+    "S2-S4/FI4": {
+      "repetitions": 5,
+      "mean_speedup": 1.8172955139509201,
+      "std_speedup": 0.017540595643122887,
+      "min_speedup": 1.7998977069787692,
+      "max_speedup": 1.850743739291363,
+      "ci95": [
+        1.8053326050774536,
+        1.8349164778266154
+      ]
+    },
+    "S2-S4/FI8": {
+      "repetitions": 5,
+      "mean_speedup": 2.2080511971316983,
+      "std_speedup": 0.0259410585677589,
+      "min_speedup": 2.170849800669611,
+      "max_speedup": 2.249264216419494,
+      "ci95": [
+        2.1865326838195878,
+        2.2296631723091904
+      ]
+    },
+    "HCPR-NewCost/q20": {
+      "repetitions": 5,
+      "mean_speedup": 1.357390482386879,
+      "std_speedup": 0.01334964120955142,
+      "min_speedup": 1.333718654124211,
+      "max_speedup": 1.3709184814484907,
+      "ci95": [
+        1.345396437855058,
+        1.3677163342496257
+      ]
+    },
+    "HCPR-NewCost/q35": {
+      "repetitions": 5,
+      "mean_speedup": 1.5626593830079578,
+      "std_speedup": 0.019237715934785904,
+      "min_speedup": 1.5392081436000493,
+      "max_speedup": 1.5899115245238666,
+      "ci95": [
+        1.5463530441053521,
+        1.5789657219105633
+      ]
+    },
+    "HCPR-NewCost/q50": {
+      "repetitions": 5,
+      "mean_speedup": 1.7623919466137536,
+      "std_speedup": 0.02806627444348981,
+      "min_speedup": 1.7262679787246538,
+      "max_speedup": 1.8116959439344626,
+      "ci95": [
+        1.739843862535072,
+        1.7882548692969884
+      ]
+    },
+    "HCPR-NewCost/q65": {
+      "repetitions": 5,
+      "mean_speedup": 1.8117410314958888,
+      "std_speedup": 0.014674144730781984,
+      "min_speedup": 1.7977065558048841,
+      "max_speedup": 1.8380292156362323,
+      "ci95": [
+        1.8003964360884814,
+        1.8255502188995867
+      ]
+    },
+    "HCPR-NewCost/q80": {
+      "repetitions": 5,
+      "mean_speedup": 1.9404134979571483,
+      "std_speedup": 0.0410497580086041,
+      "min_speedup": 1.8635515133289957,
+      "max_speedup": 1.9810866363534922,
+      "ci95": [
+        1.9018175113337386,
+        1.9697512214972779
+      ]
+    },
+    "HCPR-NewCost/q90": {
+      "repetitions": 5,
+      "mean_speedup": 1.9827800980056707,
+      "std_speedup": 0.02114400371369323,
+      "min_speedup": 1.958017015680389,
+      "max_speedup": 2.021488462112227,
+      "ci95": [
+        1.9662307587467283,
+        2.0029855500796923
+      ]
+    },
+    "HCPR-NewCost/q95": {
+      "repetitions": 5,
+      "mean_speedup": 2.020521012349163,
+      "std_speedup": 0.04686330435100698,
+      "min_speedup": 1.9709791548191322,
+      "max_speedup": 2.1057185737412976,
+      "ci95": [
+        1.9855105656427365,
+        2.065052761379474
+      ]
+    }
+  }
+}

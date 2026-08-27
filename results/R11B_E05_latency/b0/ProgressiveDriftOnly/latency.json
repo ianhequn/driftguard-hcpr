@@ -1,0 +1,638 @@
+{
+  "model": "B0",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "variant": "ProgressiveDriftOnly",
+  "warmup": 200,
+  "measurements": 1000,
+  "repetitions": 5,
+  "pool": 256,
+  "precision": "bf16",
+  "timing_boundary": "CUDA-resident input to logits, controller included, paired Full immediately after each policy",
+  "rows": [
+    {
+      "method": "ProgressiveDriftOnly/q20",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 12.239897634506226,
+        "median_ms": 12.203984260559082,
+        "p95_ms": 13.283318567276002,
+        "p99_ms": 15.115837383270263,
+        "std_ms": 0.9254150724289888,
+        "fps": 81.70002967842152,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.078152710676194,
+        "median_ms": 4.8670079708099365,
+        "p95_ms": 15.737967920303344,
+        "p99_ms": 18.786539192199697,
+        "std_ms": 4.35075967716581,
+        "fps": 141.27980009412195,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7292502909755556,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 205,
+        "stage4": 205,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 205,
+        "S2-S4": 751,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q65",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 13.651322662353516,
+        "median_ms": 13.466495990753174,
+        "p95_ms": 16.141361236572266,
+        "p99_ms": 17.117900485992433,
+        "std_ms": 1.6032238432000405,
+        "fps": 73.25297516831222,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.089109858512878,
+        "median_ms": 4.759504079818726,
+        "p95_ms": 14.978441905975341,
+        "p99_ms": 15.933645009994507,
+        "std_ms": 3.4992899129530706,
+        "fps": 164.22761671838623,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.2419241858920134,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 165,
+        "stage3": 141,
+        "stage4": 137,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 137,
+        "S2-S4": 835,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q95",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 12.116707265853881,
+        "median_ms": 11.941887855529785,
+        "p95_ms": 13.262899112701415,
+        "p99_ms": 13.921309480667112,
+        "std_ms": 0.8680919240287501,
+        "fps": 82.53067257126052,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.935939102649689,
+        "median_ms": 4.601632118225098,
+        "p95_ms": 14.81738224029541,
+        "p99_ms": 15.927274770736695,
+        "std_ms": 3.439596874396515,
+        "fps": 168.46534014367148,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.04124521096337,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 141,
+        "stage3": 133,
+        "stage4": 133,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 133,
+        "S2-S4": 859,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q20",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 12.255907287597656,
+        "median_ms": 11.997488021850586,
+        "p95_ms": 13.336627626419068,
+        "p99_ms": 14.410057315826416,
+        "std_ms": 0.8283375772957292,
+        "fps": 81.59330652019115,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.704506892442703,
+        "median_ms": 4.588032007217407,
+        "p95_ms": 15.438626956939695,
+        "p99_ms": 15.970477619171142,
+        "std_ms": 3.9978213843089394,
+        "fps": 149.15340024889773,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8280102450804359,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 205,
+        "stage4": 205,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 205,
+        "S2-S4": 751,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q65",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 12.628537434577941,
+        "median_ms": 12.547584056854248,
+        "p95_ms": 14.508761787414542,
+        "p99_ms": 16.955986747741697,
+        "std_ms": 1.1216449941645381,
+        "fps": 79.1857335166874,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.334720287799835,
+        "median_ms": 4.8261120319366455,
+        "p95_ms": 15.66156802177429,
+        "p99_ms": 18.152182159423827,
+        "std_ms": 3.744755481842724,
+        "fps": 157.86016660055535,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9935430233438238,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 165,
+        "stage3": 141,
+        "stage4": 137,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 137,
+        "S2-S4": 835,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q95",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 14.289086494445801,
+        "median_ms": 14.119935989379883,
+        "p95_ms": 16.193637561798095,
+        "p99_ms": 17.557526206970216,
+        "std_ms": 1.466478270319157,
+        "fps": 69.98348007681962,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.646585031032562,
+        "median_ms": 5.144063949584961,
+        "p95_ms": 16.8762882232666,
+        "p99_ms": 19.75709432601929,
+        "std_ms": 4.038670870917532,
+        "fps": 150.45320195725347,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.149838816133517,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 141,
+        "stage3": 133,
+        "stage4": 133,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 133,
+        "S2-S4": 859,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q20",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 12.26879026889801,
+        "median_ms": 11.937727928161621,
+        "p95_ms": 13.557760238647461,
+        "p99_ms": 16.79459144592285,
+        "std_ms": 1.1179727311109222,
+        "fps": 81.50762855039176,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.48069322347641,
+        "median_ms": 5.7747838497161865,
+        "p95_ms": 19.469005203247068,
+        "p99_ms": 21.57350446701049,
+        "std_ms": 5.236394997327442,
+        "fps": 117.91488898947338,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.4466730425922403,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 205,
+        "stage4": 205,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 205,
+        "S2-S4": 751,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q65",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 14.388927968978882,
+        "median_ms": 14.013423919677734,
+        "p95_ms": 16.149542140960694,
+        "p99_ms": 17.398456707000733,
+        "std_ms": 1.1892266477191122,
+        "fps": 69.49788074246406,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.0354365432262425,
+        "median_ms": 4.571536064147949,
+        "p95_ms": 14.609994029998777,
+        "p99_ms": 15.882501516342163,
+        "std_ms": 3.4705318127631086,
+        "fps": 165.68809776027402,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.384074103989714,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 165,
+        "stage3": 141,
+        "stage4": 137,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 137,
+        "S2-S4": 835,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q95",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 14.440045511245728,
+        "median_ms": 14.025312423706055,
+        "p95_ms": 16.132907581329345,
+        "p99_ms": 17.456151161193844,
+        "std_ms": 1.1540518651209761,
+        "fps": 69.25185929789573,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.155782331943512,
+        "median_ms": 5.43887996673584,
+        "p95_ms": 17.971303272247315,
+        "p99_ms": 19.553194332122803,
+        "std_ms": 4.2039892168657325,
+        "fps": 139.74712387994057,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.0179548288920364,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 141,
+        "stage3": 133,
+        "stage4": 133,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 133,
+        "S2-S4": 859,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q20",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 14.149697907447814,
+        "median_ms": 13.695536136627197,
+        "p95_ms": 16.179980659484862,
+        "p99_ms": 17.33670774459839,
+        "std_ms": 1.209948278131296,
+        "fps": 70.67288690832342,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.011220438957213,
+        "median_ms": 5.43886399269104,
+        "p95_ms": 18.24419765472412,
+        "p99_ms": 19.615189151763914,
+        "std_ms": 4.853874476822516,
+        "fps": 124.82492619191562,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7662349969350764,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 205,
+        "stage4": 205,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 205,
+        "S2-S4": 751,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q65",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 13.912486562728882,
+        "median_ms": 13.384111881256104,
+        "p95_ms": 16.075036334991456,
+        "p99_ms": 16.473517150878905,
+        "std_ms": 1.1787782095047474,
+        "fps": 71.87787714950747,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.202671389102936,
+        "median_ms": 5.335551977157593,
+        "p95_ms": 17.765528774261476,
+        "p99_ms": 19.670125732421877,
+        "std_ms": 4.236058828820658,
+        "fps": 138.83737657571325,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9315731360141402,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 165,
+        "stage3": 141,
+        "stage4": 137,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 137,
+        "S2-S4": 835,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q95",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 13.9061722240448,
+        "median_ms": 13.376512050628662,
+        "p95_ms": 16.056320190429688,
+        "p99_ms": 16.13352918624878,
+        "std_ms": 1.1174865010055113,
+        "fps": 71.91051454626214,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.8438342018127445,
+        "median_ms": 5.1834399700164795,
+        "p95_ms": 16.6026442527771,
+        "p99_ms": 19.161344928741453,
+        "std_ms": 3.9748186029268973,
+        "fps": 146.11692371728225,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.0319271060601434,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 141,
+        "stage3": 133,
+        "stage4": 133,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 133,
+        "S2-S4": 859,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q20",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 12.834722230911256,
+        "median_ms": 12.901887893676758,
+        "p95_ms": 16.001225852966307,
+        "p99_ms": 16.15060987472534,
+        "std_ms": 1.4504931869841269,
+        "fps": 77.91364565659173,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.905706856250763,
+        "median_ms": 5.302783966064453,
+        "p95_ms": 17.88298406600952,
+        "p99_ms": 19.48883930206299,
+        "std_ms": 4.771594477354855,
+        "fps": 126.49090311378487,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.6234756062025364,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 205,
+        "stage4": 205,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 205,
+        "S2-S4": 751,
+        "S3-S4": 44
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q65",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 11.789444053649902,
+        "median_ms": 11.418063640594482,
+        "p95_ms": 13.236275386810302,
+        "p99_ms": 14.579701433181762,
+        "std_ms": 0.9162027975700502,
+        "fps": 84.82164175421056,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.812471643209458,
+        "median_ms": 4.370944023132324,
+        "p95_ms": 13.653453254699704,
+        "p99_ms": 15.759419507980347,
+        "std_ms": 3.2986865744047473,
+        "fps": 172.04385008368533,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.028301345336139,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 165,
+        "stage3": 141,
+        "stage4": 137,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 137,
+        "S2-S4": 835,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "ProgressiveDriftOnly/q95",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "ProgressiveDriftOnly",
+      "paired_full": {
+        "mean_ms": 11.964242331504822,
+        "median_ms": 11.58240032196045,
+        "p95_ms": 13.36323390007019,
+        "p99_ms": 15.132887344360352,
+        "std_ms": 0.9813494308168694,
+        "fps": 83.58239262395676,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.739574629783631,
+        "median_ms": 4.375424146652222,
+        "p95_ms": 14.217062616348265,
+        "p99_ms": 15.841728944778442,
+        "std_ms": 3.2933041802881307,
+        "fps": 174.22893933826205,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.0845172514040207,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 141,
+        "stage3": 133,
+        "stage4": 133,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 133,
+        "S2-S4": 859,
+        "S3-S4": 8
+      }
+    }
+  ],
+  "summary": {
+    "ProgressiveDriftOnly/q20": {
+      "repetitions": 5,
+      "mean_speedup": 1.678728836357169,
+      "std_speedup": 0.13371424409436655,
+      "min_speedup": 1.4466730425922403,
+      "max_speedup": 1.8280102450804359,
+      "ci95": [
+        1.5459459461828668,
+        1.783548155001316
+      ]
+    },
+    "ProgressiveDriftOnly/q65": {
+      "repetitions": 5,
+      "mean_speedup": 2.1158831589151665,
+      "std_speedup": 0.1699532823363763,
+      "min_speedup": 1.9315731360141402,
+      "max_speedup": 2.384074103989714,
+      "ci95": [
+        1.9757067328104134,
+        2.2703541695115534
+      ]
+    },
+    "ProgressiveDriftOnly/q95": {
+      "repetitions": 5,
+      "mean_speedup": 2.0650966426906177,
+      "std_speedup": 0.047853642633692184,
+      "min_speedup": 2.0179548288920364,
+      "max_speedup": 2.149838816133517,
+      "ci95": [
+        2.028201816173546,
+        2.1103977057393215
+      ]
+    }
+  }
+}

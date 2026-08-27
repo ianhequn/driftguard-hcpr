@@ -1,0 +1,638 @@
+{
+  "model": "B0",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "variant": "HCPR-OldCost",
+  "warmup": 200,
+  "measurements": 1000,
+  "repetitions": 5,
+  "pool": 256,
+  "precision": "bf16",
+  "timing_boundary": "CUDA-resident input to logits, controller included, paired Full immediately after each policy",
+  "rows": [
+    {
+      "method": "HCPR-OldCost/q20",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.45649785041809,
+        "median_ms": 12.35968017578125,
+        "p95_ms": 13.486081552505492,
+        "p99_ms": 15.595683374404905,
+        "std_ms": 0.900145590094236,
+        "fps": 80.27938606888901,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.302698011875153,
+        "median_ms": 5.267376184463501,
+        "p95_ms": 16.243711471557617,
+        "p99_ms": 17.663012905120848,
+        "std_ms": 5.009829147601779,
+        "fps": 107.49569627257299,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3390199095485014,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q65",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.644978065490722,
+        "median_ms": 12.505087852478027,
+        "p95_ms": 14.83371558189392,
+        "p99_ms": 17.01900842666626,
+        "std_ms": 1.1030740927039113,
+        "fps": 79.08277854028783,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.9070667552947995,
+        "median_ms": 4.873728036880493,
+        "p95_ms": 15.792281246185302,
+        "p99_ms": 16.326600131988524,
+        "std_ms": 4.128751992558479,
+        "fps": 144.77925803068615,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.830730542136048,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 751,
+        "S3-S4": 52
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q95",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.457538216590882,
+        "median_ms": 12.281856060028076,
+        "p95_ms": 13.793987655639647,
+        "p99_ms": 16.398244876861572,
+        "std_ms": 1.0792391771780052,
+        "fps": 80.27268169791408,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.291272280216217,
+        "median_ms": 4.7299041748046875,
+        "p95_ms": 15.715398168563842,
+        "p99_ms": 17.360220489501952,
+        "std_ms": 3.704227347579762,
+        "fps": 158.95036098574838,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9801301965208769,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q20",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.533879106521606,
+        "median_ms": 12.413007736206055,
+        "p95_ms": 13.535538816452027,
+        "p99_ms": 15.555673875808715,
+        "std_ms": 0.87202050055303,
+        "fps": 79.78375980024266,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.202742762565613,
+        "median_ms": 5.098495960235596,
+        "p95_ms": 16.200651359558105,
+        "p99_ms": 16.511036949157713,
+        "std_ms": 4.974570415277235,
+        "fps": 108.66325679206665,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.361972123952676,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q65",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.565000263214111,
+        "median_ms": 12.326799869537354,
+        "p95_ms": 14.298118495941155,
+        "p99_ms": 16.0583097076416,
+        "std_ms": 1.0341813746327753,
+        "fps": 79.58615034236388,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.0306854343414305,
+        "median_ms": 4.937056064605713,
+        "p95_ms": 15.668582487106322,
+        "p99_ms": 17.84584119796753,
+        "std_ms": 4.161570580927839,
+        "fps": 142.23364269940072,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.787165757955872,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 751,
+        "S3-S4": 52
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q95",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.236032616615296,
+        "median_ms": 11.970047950744629,
+        "p95_ms": 13.3795636177063,
+        "p99_ms": 13.677824430465698,
+        "std_ms": 0.8125342681802671,
+        "fps": 81.7258364154817,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.277084639072418,
+        "median_ms": 4.8123040199279785,
+        "p95_ms": 15.354214477539061,
+        "p99_ms": 16.345537300109864,
+        "std_ms": 3.63232340502142,
+        "fps": 159.3096250089393,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.949317767750133,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q20",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.243879109382629,
+        "median_ms": 12.0033278465271,
+        "p95_ms": 13.427468729019164,
+        "p99_ms": 13.696653938293455,
+        "std_ms": 0.8389585591136779,
+        "fps": 81.67346239425773,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.054323558330536,
+        "median_ms": 5.090816020965576,
+        "p95_ms": 16.135219287872314,
+        "p99_ms": 16.28882743835449,
+        "std_ms": 4.857025122653843,
+        "fps": 110.44447368792541,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3522687841343493,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q65",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.222324440956116,
+        "median_ms": 11.961296081542969,
+        "p95_ms": 13.46256980895996,
+        "p99_ms": 13.628190536499023,
+        "std_ms": 0.8763359421078187,
+        "fps": 81.81749754973555,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.804184131622314,
+        "median_ms": 4.806527853012085,
+        "p95_ms": 15.40932946205139,
+        "p99_ms": 16.274261837005614,
+        "std_ms": 4.025625643104646,
+        "fps": 146.96839189764418,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7962953683385934,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 751,
+        "S3-S4": 52
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q95",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.437843580245971,
+        "median_ms": 11.969023704528809,
+        "p95_ms": 14.633904027938842,
+        "p99_ms": 15.250503454208372,
+        "std_ms": 1.114858776022209,
+        "fps": 80.39978904287072,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.175047864437103,
+        "median_ms": 4.616735935211182,
+        "p95_ms": 14.969731426239013,
+        "p99_ms": 16.908227252960206,
+        "std_ms": 3.5620001943757313,
+        "fps": 161.94206457234588,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.0142100682129307,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q20",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.464693727493286,
+        "median_ms": 12.168191909790039,
+        "p95_ms": 13.563428688049315,
+        "p99_ms": 15.799672594070435,
+        "std_ms": 0.9504431802141746,
+        "fps": 80.22660017664992,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.544128973484039,
+        "median_ms": 5.935104131698608,
+        "p95_ms": 16.54481287002563,
+        "p99_ms": 19.95787250518799,
+        "std_ms": 5.215556978485344,
+        "fps": 104.77645501001174,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.306006421552276,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q65",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.194101215362549,
+        "median_ms": 11.89030408859253,
+        "p95_ms": 13.411579513549805,
+        "p99_ms": 13.854948806762694,
+        "std_ms": 0.8596350392727631,
+        "fps": 82.00686400242157,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.871709890842438,
+        "median_ms": 4.921823978424072,
+        "p95_ms": 15.793254280090332,
+        "p99_ms": 16.528278465270994,
+        "std_ms": 4.089129182101671,
+        "fps": 145.52418770365244,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7745366741417559,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 751,
+        "S3-S4": 52
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q95",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.186812448501588,
+        "median_ms": 11.943424224853516,
+        "p95_ms": 13.387776374816895,
+        "p99_ms": 13.738290910720824,
+        "std_ms": 0.8281282720406987,
+        "fps": 82.05591119300055,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.0951096901893616,
+        "median_ms": 4.542879819869995,
+        "p95_ms": 15.007897424697877,
+        "p99_ms": 16.038316268920898,
+        "std_ms": 3.5337824524789347,
+        "fps": 164.06595628780755,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9994410384635704,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q20",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 0.43981295670944426,
+      "quantile": 20,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.849373345375062,
+        "median_ms": 12.215263843536377,
+        "p95_ms": 14.927002000808717,
+        "p99_ms": 15.61588728904724,
+        "std_ms": 1.234707479204967,
+        "fps": 77.82480694748705,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.052462050437928,
+        "median_ms": 5.075968027114868,
+        "p95_ms": 16.132098579406737,
+        "p99_ms": 16.305152893066406,
+        "std_ms": 4.891584831818062,
+        "fps": 110.46718499655277,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.419434102433321,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 480,
+        "stage3": 416,
+        "stage4": 416,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 416,
+        "S3-S4": 64,
+        "S2-S4": 520
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q65",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 1.9519066141631425,
+      "quantile": 65,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.698442397117615,
+        "median_ms": 12.426640033721924,
+        "p95_ms": 13.943039846420286,
+        "p99_ms": 15.879350061416625,
+        "std_ms": 0.9040400599702048,
+        "fps": 78.74981582205604,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.994720732688903,
+        "median_ms": 4.91212797164917,
+        "p95_ms": 15.937996816635131,
+        "p99_ms": 17.029682903289793,
+        "std_ms": 4.213632335981909,
+        "fps": 142.96496432325483,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8154323642648265,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 249,
+        "stage3": 197,
+        "stage4": 197,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 197,
+        "S2-S4": 751,
+        "S3-S4": 52
+      }
+    },
+    {
+      "method": "HCPR-OldCost/q95",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 7.566630439611342,
+      "quantile": 95,
+      "variant": "HCPR-OldCost",
+      "paired_full": {
+        "mean_ms": 12.516136876106263,
+        "median_ms": 12.24283218383789,
+        "p95_ms": 14.619105863571166,
+        "p99_ms": 16.89514848709106,
+        "std_ms": 1.2095115049410279,
+        "fps": 79.89685714519746,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.409892795085907,
+        "median_ms": 4.868607997894287,
+        "p95_ms": 15.931596517562866,
+        "p99_ms": 17.843548831939696,
+        "std_ms": 3.7868842487487226,
+        "fps": 156.00884944076475,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9526281134844656,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 169,
+        "stage3": 145,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 831,
+        "S3-S4": 24,
+        "S4": 4
+      }
+    }
+  ],
+  "summary": {
+    "HCPR-OldCost/q20": {
+      "repetitions": 5,
+      "mean_speedup": 1.3557402683242246,
+      "std_speedup": 0.037042725717463296,
+      "min_speedup": 1.306006421552276,
+      "max_speedup": 1.419434102433321,
+      "ci95": [
+        1.3245113665851052,
+        1.3899182001965626
+      ]
+    },
+    "HCPR-OldCost/q65": {
+      "repetitions": 5,
+      "mean_speedup": 1.8008321413674193,
+      "std_speedup": 0.02002940248164158,
+      "min_speedup": 1.7745366741417559,
+      "max_speedup": 1.830730542136048,
+      "ci95": [
+        1.7839400465067698,
+        1.8189579497257686
+      ]
+    },
+    "HCPR-OldCost/q95": {
+      "repetitions": 5,
+      "mean_speedup": 1.9791454368863952,
+      "std_speedup": 0.02543724769501545,
+      "min_speedup": 1.949317767750133,
+      "max_speedup": 2.0142100682129307,
+      "ci95": [
+        1.956804391798015,
+        2.0014864819747755
+      ]
+    }
+  }
+}

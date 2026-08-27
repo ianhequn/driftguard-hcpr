@@ -1,0 +1,29 @@
+{
+  "boundary_2": {
+    "mean_ms": 0.21227660785615443,
+    "median_ms": 0.20844799280166626,
+    "p95_ms": 0.23607520163059234,
+    "p99_ms": 0.3502444940805435,
+    "std_ms": 0.02709573919811834,
+    "measurements": 1000
+  },
+  "boundary_3": {
+    "mean_ms": 0.21488128021359443,
+    "median_ms": 0.2093760073184967,
+    "p95_ms": 0.2346495985984802,
+    "p99_ms": 0.4108140784502029,
+    "std_ms": 0.029640759396869682,
+    "measurements": 1000
+  },
+  "boundary_4": {
+    "mean_ms": 0.21598809613287448,
+    "median_ms": 0.20824000239372253,
+    "p95_ms": 0.2326559983193874,
+    "p99_ms": 0.3599449720978735,
+    "std_ms": 0.13184507530183198,
+    "measurements": 1000
+  },
+  "sum_mean_ms": 0.6431459842026234,
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "definition": "GPU-resident GAP + cosine drift + score + scalar branch synchronization"
+}

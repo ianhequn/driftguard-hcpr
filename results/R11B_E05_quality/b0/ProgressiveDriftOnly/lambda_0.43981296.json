@@ -1,0 +1,53 @@
+{
+  "variant": "ProgressiveDriftOnly",
+  "lambda": 0.43981295670944426,
+  "max_stale_run": 7,
+  "videos": 343,
+  "frames": 24392,
+  "mIoU": 0.29715354310593944,
+  "mIoU_drop_pp": 0.41374623113969444,
+  "pixel_accuracy": 0.695702416653567,
+  "mean_class_accuracy": 0.39459549858896065,
+  "route_counts": {
+    "Full": 6604,
+    "S2-S4": 17038,
+    "S3-S4": 610,
+    "S4": 140
+  },
+  "route_percentages": {
+    "Full": 0.27074450639553954,
+    "S2-S4": 0.698507707445064,
+    "S3-S4": 0.025008199409642506,
+    "S4": 0.005739586749754018
+  },
+  "stage_calls": {
+    "stage1": 24392,
+    "stage2": 7354,
+    "stage3": 6744,
+    "stage4": 6604,
+    "decoder": 24392
+  },
+  "actual_stage_refresh_ratios": {
+    "stage2": 0.30149229255493604,
+    "stage3": 0.27648409314529354,
+    "stage4": 0.27074450639553954
+  },
+  "average_age": {
+    "age2": 2.1382010495244343,
+    "age3": 2.2946047884552314,
+    "age4": 2.3298212528697935
+  },
+  "maximum_age": {
+    "age2": 7,
+    "age3": 7,
+    "age4": 7
+  },
+  "maximum_stale_runs": {
+    "stage2": 7,
+    "stage3": 7,
+    "stage4": 7
+  },
+  "persistent_cache_bytes": 1967104,
+  "quantile": 20,
+  "model": "B0"
+}

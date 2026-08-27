@@ -1,0 +1,6 @@
+LATENCY b0 HCPR-NewCost
+LATENCY b0 HCPR-OldCost
+LATENCY b0 ProgressiveDriftOnly
+LATENCY b1 HCPR-NewCost
+LATENCY b1 HCPR-OldCost
+LATENCY b1 ProgressiveDriftOnly

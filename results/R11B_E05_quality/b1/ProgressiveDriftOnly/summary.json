@@ -1,0 +1,377 @@
+{
+  "model": "B1",
+  "variant": "ProgressiveDriftOnly",
+  "rows": [
+    {
+      "variant": "ProgressiveDriftOnly",
+      "lambda": 0.4098514739352681,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.3644834691035202,
+      "mIoU_drop_pp": 0.7111950396473943,
+      "pixel_accuracy": 0.7407377746986958,
+      "mean_class_accuracy": 0.4674489649046406,
+      "route_counts": {
+        "Full": 6878,
+        "S2-S4": 17193,
+        "S3-S4": 204,
+        "S4": 117
+      },
+      "route_percentages": {
+        "Full": 0.2819776976057724,
+        "S2-S4": 0.704862249918006,
+        "S3-S4": 0.008363397835355854,
+        "S4": 0.004796654640865858
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 7199,
+        "stage3": 6995,
+        "stage4": 6878,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.2951377500819941,
+        "stage3": 0.2867743522466382,
+        "stage4": 0.2819776976057724
+      },
+      "average_age": {
+        "age2": 2.163291243030502,
+        "age3": 2.2250737946867827,
+        "age4": 2.25340275500164
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 20,
+      "model": "B1"
+    },
+    {
+      "variant": "ProgressiveDriftOnly",
+      "lambda": 0.7848425765501561,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.35924537773149,
+      "mIoU_drop_pp": 1.2350041768504127,
+      "pixel_accuracy": 0.7353091635848917,
+      "mean_class_accuracy": 0.46243344467005154,
+      "route_counts": {
+        "Full": 4972,
+        "S2-S4": 18916,
+        "S3-S4": 319,
+        "S4": 185
+      },
+      "route_percentages": {
+        "Full": 0.2038373237126927,
+        "S2-S4": 0.7755001639881929,
+        "S3-S4": 0.013078058379796654,
+        "S4": 0.007584453919317809
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 5476,
+        "stage3": 5157,
+        "stage4": 4972,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.22449983601180715,
+        "stage3": 0.2114217776320105,
+        "stage4": 0.2038373237126927
+      },
+      "average_age": {
+        "age2": 2.605854378484749,
+        "age3": 2.7035913414234174,
+        "age4": 2.754263693014103
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 35,
+      "model": "B1"
+    },
+    {
+      "variant": "ProgressiveDriftOnly",
+      "lambda": 1.18049021206853,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.354149461276516,
+      "mIoU_drop_pp": 1.7445958223478164,
+      "pixel_accuracy": 0.731393432669636,
+      "mean_class_accuracy": 0.4576726728221992,
+      "route_counts": {
+        "Full": 4211,
+        "S2-S4": 19597,
+        "S4": 247,
+        "S3-S4": 337
+      },
+      "route_percentages": {
+        "Full": 0.17263857002295835,
+        "S2-S4": 0.8034191538209249,
+        "S4": 0.010126270908494588,
+        "S3-S4": 0.013816005247622172
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 4795,
+        "stage3": 4458,
+        "stage4": 4211,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.19658084617907512,
+        "stage3": 0.18276484093145293,
+        "stage4": 0.17263857002295835
+      },
+      "average_age": {
+        "age2": 2.803132174483437,
+        "age3": 2.914316169235815,
+        "age4": 2.999918005903575
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 50,
+      "model": "B1"
+    },
+    {
+      "variant": "ProgressiveDriftOnly",
+      "lambda": 1.8899999324797039,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.3501523114557871,
+      "mIoU_drop_pp": 2.1443108044207015,
+      "pixel_accuracy": 0.7282709371834823,
+      "mean_class_accuracy": 0.45353097061834247,
+      "route_counts": {
+        "Full": 3659,
+        "S2-S4": 20138,
+        "S3-S4": 364,
+        "S4": 231
+      },
+      "route_percentages": {
+        "Full": 0.1500081994096425,
+        "S2-S4": 0.8255985569039029,
+        "S3-S4": 0.014922925549360446,
+        "S4": 0.00947031813709413
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 4254,
+        "stage3": 3890,
+        "stage4": 3659,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.1744014430960971,
+        "stage3": 0.15947851754673664,
+        "stage4": 0.1500081994096425
+      },
+      "average_age": {
+        "age2": 2.9934404722859953,
+        "age3": 3.1167595933092818,
+        "age4": 3.2005575598556906
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 65,
+      "model": "B1"
+    },
+    {
+      "variant": "ProgressiveDriftOnly",
+      "lambda": 2.952394341587442,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.34768423631291906,
+      "mIoU_drop_pp": 2.391118318707508,
+      "pixel_accuracy": 0.7252919701546257,
+      "mean_class_accuracy": 0.45161406360806416,
+      "route_counts": {
+        "Full": 3382,
+        "S2-S4": 20507,
+        "S3-S4": 305,
+        "S4": 198
+      },
+      "route_percentages": {
+        "Full": 0.13865201705477206,
+        "S2-S4": 0.840726467694326,
+        "S3-S4": 0.012504099704821253,
+        "S4": 0.008117415546080682
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 3885,
+        "stage3": 3580,
+        "stage4": 3382,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.15927353230567398,
+        "stage3": 0.14676943260085273,
+        "stage4": 0.13865201705477206
+      },
+      "average_age": {
+        "age2": 3.1297556575926535,
+        "age3": 3.238848802886192,
+        "age4": 3.320022958346999
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 80,
+      "model": "B1"
+    },
+    {
+      "variant": "ProgressiveDriftOnly",
+      "lambda": 4.6759908904405325,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.3462890503131484,
+      "mIoU_drop_pp": 2.530636918684576,
+      "pixel_accuracy": 0.7231666695469741,
+      "mean_class_accuracy": 0.4501833166259301,
+      "route_counts": {
+        "Full": 3246,
+        "S2-S4": 20738,
+        "S3-S4": 283,
+        "S4": 125
+      },
+      "route_percentages": {
+        "Full": 0.13307641849786817,
+        "S2-S4": 0.8501967858314201,
+        "S3-S4": 0.011602164644145622,
+        "S4": 0.005124631026566087
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 3654,
+        "stage3": 3371,
+        "stage4": 3246,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.14980321416857986,
+        "stage3": 0.13820104952443424,
+        "stage4": 0.13307641849786817
+      },
+      "average_age": {
+        "age2": 3.213102656608724,
+        "age3": 3.326008527386028,
+        "age4": 3.379714660544441
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 90,
+      "model": "B1"
+    },
+    {
+      "variant": "ProgressiveDriftOnly",
+      "lambda": 7.857380506202121,
+      "max_stale_run": 7,
+      "videos": 343,
+      "frames": 24392,
+      "mIoU": 0.3447872881120223,
+      "mIoU_drop_pp": 2.680813138797183,
+      "pixel_accuracy": 0.7211953070085204,
+      "mean_class_accuracy": 0.448843961034729,
+      "route_counts": {
+        "Full": 3196,
+        "S2-S4": 20958,
+        "S3-S4": 182,
+        "S4": 56
+      },
+      "route_percentages": {
+        "Full": 0.13102656608724172,
+        "S2-S4": 0.8592161364381764,
+        "S3-S4": 0.007461462774680223,
+        "S4": 0.0022958346999016072
+      },
+      "stage_calls": {
+        "stage1": 24392,
+        "stage2": 3434,
+        "stage3": 3252,
+        "stage4": 3196,
+        "decoder": 24392
+      },
+      "actual_stage_refresh_ratios": {
+        "stage2": 0.14078386356182354,
+        "stage3": 0.13332240078714333,
+        "stage4": 0.13102656608724172
+      },
+      "average_age": {
+        "age2": 3.307436864545753,
+        "age3": 3.383445391931781,
+        "age4": 3.4077566415218103
+      },
+      "maximum_age": {
+        "age2": 7,
+        "age3": 7,
+        "age4": 7
+      },
+      "maximum_stale_runs": {
+        "stage2": 7,
+        "stage3": 7,
+        "stage4": 7
+      },
+      "persistent_cache_bytes": 3934208,
+      "quantile": 95,
+      "model": "B1"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000391.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000392.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000393.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000394.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000395.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000396.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000398.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000397.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+{"variant": "ProgressiveDriftOnly", "lambda": 0.43981295670944426, "mIoU": 0.29715354310593944, "mIoU_drop_pp": 0.41374623113969444, "route_counts": {"Full": 6604, "S2-S4": 17038, "S3-S4": 610, "S4": 140}, "stage_calls": {"stage1": 24392, "stage2": 7354, "stage3": 6744, "stage4": 6604, "decoder": 24392}}
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000391.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000392.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000393.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000394.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000395.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000396.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000397.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000398.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+{"variant": "ProgressiveDriftOnly", "lambda": 0.8160514013877299, "mIoU": 0.29297659373200235, "mIoU_drop_pp": 0.8314411685334033, "route_counts": {"Full": 4845, "S2-S4": 18713, "S3-S4": 605, "S4": 229}, "stage_calls": {"stage1": 24392, "stage2": 5679, "stage3": 5074, "stage4": 4845, "decoder": 24392}}
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000391.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000392.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000393.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000394.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000395.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000396.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000397.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000398.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+{"variant": "ProgressiveDriftOnly", "lambda": 1.2729365992858317, "mIoU": 0.2900306373822128, "mIoU_drop_pp": 1.1260368035123591, "route_counts": {"Full": 4062, "S2-S4": 19470, "S3-S4": 591, "S4": 269}, "stage_calls": {"stage1": 24392, "stage2": 4922, "stage3": 4331, "stage4": 4062, "decoder": 24392}}
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000391.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000392.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000393.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000394.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000395.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000396.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000397.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000398.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+{"variant": "ProgressiveDriftOnly", "lambda": 1.9519066141631425, "mIoU": 0.28689761894292903, "mIoU_drop_pp": 1.4393386474407355, "route_counts": {"Full": 3612, "S2-S4": 20030, "S3-S4": 528, "S4": 222}, "stage_calls": {"stage1": 24392, "stage2": 4362, "stage3": 3834, "stage4": 3612, "decoder": 24392}}
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000391.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000392.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000393.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000394.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000395.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000396.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000397.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000398.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+{"variant": "ProgressiveDriftOnly", "lambda": 3.020231624296541, "mIoU": 0.28617200766761547, "mIoU_drop_pp": 1.511899774972092, "route_counts": {"Full": 3366, "S2-S4": 20384, "S3-S4": 427, "S4": 215}, "stage_calls": {"stage1": 24392, "stage2": 4008, "stage3": 3581, "stage4": 3366, "decoder": 24392}}
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000391.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000392.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000393.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000394.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000395.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000396.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000397.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000398.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+{"variant": "ProgressiveDriftOnly", "lambda": 4.454912710230208, "mIoU": 0.2852228783733459, "mIoU_drop_pp": 1.6068127043990466, "route_counts": {"Full": 3257, "S2-S4": 20635, "S3-S4": 361, "S4": 139}, "stage_calls": {"stage1": 24392, "stage2": 3757, "stage3": 3396, "stage4": 3257, "decoder": 24392}}
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000391.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000392.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000393.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000394.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000395.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000396.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000397.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+/root/autodl-tmp/DriftGuard/driftguard/training/vspw_segformer.py:71: RuntimeWarning: VSPW normalized out-of-range IDs [252] in data/raw/VSPW/data/353_-5sqmCF8OFU/mask/00000398.png are canonicalized to void 255
+  mask_array = normalize_vspw_mask(raw_mask, source=sample.mask_path)
+{"variant": "ProgressiveDriftOnly", "lambda": 7.566630439611342, "mIoU": 0.28350632534601083, "mIoU_drop_pp": 1.7784680071325554, "route_counts": {"Full": 3199, "S2-S4": 20867, "S3-S4": 251, "S4": 75}, "stage_calls": {"stage1": 24392, "stage2": 3525, "stage3": 3274, "stage4": 3199, "decoder": 24392}}

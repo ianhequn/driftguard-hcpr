@@ -1,0 +1,6 @@
+QUALITY b0 HCPR-NewCost
+QUALITY b0 HCPR-OldCost
+QUALITY b0 ProgressiveDriftOnly
+QUALITY b1 HCPR-NewCost
+QUALITY b1 HCPR-OldCost
+QUALITY b1 ProgressiveDriftOnly

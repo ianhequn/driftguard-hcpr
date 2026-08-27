@@ -1,0 +1,15 @@
+{"method": "HCPR-OldCost/q20", "repetition": 1, "policy_mean_ms": 8.234671329021454, "full_mean_ms": 11.174966255187988, "paired_speedup": 1.357062815100349}
+{"method": "HCPR-OldCost/q65", "repetition": 1, "policy_mean_ms": 6.407415995359421, "full_mean_ms": 12.157098194122314, "paired_speedup": 1.8973480421635036}
+{"method": "HCPR-OldCost/q95", "repetition": 1, "policy_mean_ms": 5.9991505346298215, "full_mean_ms": 11.035233889579773, "paired_speedup": 1.8394660753850718}
+{"method": "HCPR-OldCost/q20", "repetition": 2, "policy_mean_ms": 8.099264801979064, "full_mean_ms": 11.186237374305724, "paired_speedup": 1.3811423194327903}
+{"method": "HCPR-OldCost/q65", "repetition": 2, "policy_mean_ms": 6.344556193828582, "full_mean_ms": 11.62965556049347, "paired_speedup": 1.833013248713245}
+{"method": "HCPR-OldCost/q95", "repetition": 2, "policy_mean_ms": 5.784482944488525, "full_mean_ms": 11.21864274597168, "paired_speedup": 1.9394374317692198}
+{"method": "HCPR-OldCost/q20", "repetition": 3, "policy_mean_ms": 8.117701020479203, "full_mean_ms": 11.112371312141418, "paired_speedup": 1.3689062068321203}
+{"method": "HCPR-OldCost/q65", "repetition": 3, "policy_mean_ms": 6.145321208953858, "full_mean_ms": 12.054012913703918, "paired_speedup": 1.961494363572237}
+{"method": "HCPR-OldCost/q95", "repetition": 3, "policy_mean_ms": 6.680826016426087, "full_mean_ms": 11.47700783920288, "paired_speedup": 1.7179025184886516}
+{"method": "HCPR-OldCost/q20", "repetition": 4, "policy_mean_ms": 8.261320024967194, "full_mean_ms": 11.541627526283264, "paired_speedup": 1.3970682035561377}
+{"method": "HCPR-OldCost/q65", "repetition": 4, "policy_mean_ms": 6.342479235649109, "full_mean_ms": 11.650553245544433, "paired_speedup": 1.8369083780456523}
+{"method": "HCPR-OldCost/q95", "repetition": 4, "policy_mean_ms": 5.679224067687988, "full_mean_ms": 11.335604509353638, "paired_speedup": 1.9959776853756648}
+{"method": "HCPR-OldCost/q20", "repetition": 5, "policy_mean_ms": 8.307540904521941, "full_mean_ms": 11.540499555587768, "paired_speedup": 1.3891595224413604}
+{"method": "HCPR-OldCost/q65", "repetition": 5, "policy_mean_ms": 6.28521906709671, "full_mean_ms": 11.281466966629027, "paired_speedup": 1.794920247997052}
+{"method": "HCPR-OldCost/q95", "repetition": 5, "policy_mean_ms": 5.695215577125549, "full_mean_ms": 11.604092386245728, "paired_speedup": 2.037515916491868}

@@ -1,0 +1,492 @@
+{
+  "transfer_claim_pass": true,
+  "new_points": [
+    {
+      "model": "B0",
+      "variant": "HCPR-NewCost",
+      "quantile": 20,
+      "lambda": 0.43981295670944426,
+      "mIoU": 0.3005651390439599,
+      "damage_pp": 0.07258663733765158,
+      "route_counts": "{\"Full\": 13781, \"S2-S4\": 10298, \"S3-S4\": 302, \"S4\": 11}",
+      "stage_calls": "{\"decoder\": 24392, \"stage1\": 24392, \"stage2\": 14094, \"stage3\": 13792, \"stage4\": 13781}",
+      "physical_stage4_ratio": 0.564980321416858,
+      "mean_speedup": 1.3540066449381745,
+      "speedup_std": 0.025805122306689524,
+      "speedup_ci_low": 1.3322176376286297,
+      "speedup_ci_high": 1.3788343118264361,
+      "mean_latency_ms": 8.720121951675415
+    },
+    {
+      "model": "B0",
+      "variant": "HCPR-NewCost",
+      "quantile": 65,
+      "lambda": 1.9519066141631425,
+      "mIoU": 0.29701164029519556,
+      "damage_pp": 0.42793651221408324,
+      "route_counts": "{\"Full\": 6463, \"S2-S4\": 17150, \"S3-S4\": 716, \"S4\": 63}",
+      "stage_calls": "{\"decoder\": 24392, \"stage1\": 24392, \"stage2\": 7242, \"stage3\": 6526, \"stage4\": 6463}",
+      "physical_stage4_ratio": 0.26496392259757295,
+      "mean_speedup": 1.838211536180772,
+      "speedup_std": 0.0682394388988339,
+      "speedup_ci_low": 1.78810438835161,
+      "speedup_ci_high": 1.906524417018271,
+      "mean_latency_ms": 6.597120431232452
+    },
+    {
+      "model": "B0",
+      "variant": "HCPR-NewCost",
+      "quantile": 95,
+      "lambda": 7.566630439611342,
+      "mIoU": 0.2873512784655477,
+      "damage_pp": 1.393972695178869,
+      "route_counts": "{\"Full\": 3724, \"S2-S4\": 19920, \"S3-S4\": 619, \"S4\": 129}",
+      "stage_calls": "{\"decoder\": 24392, \"stage1\": 24392, \"stage2\": 4472, \"stage3\": 3853, \"stage4\": 3724}",
+      "physical_stage4_ratio": 0.15267300754345686,
+      "mean_speedup": 2.0100914075579746,
+      "speedup_std": 0.02058738679635161,
+      "speedup_ci_low": 1.9907491281224512,
+      "speedup_ci_high": 2.0265483428685855,
+      "mean_latency_ms": 5.916164075803756
+    },
+    {
+      "model": "B1",
+      "variant": "HCPR-NewCost",
+      "quantile": 20,
+      "lambda": 0.4098514739352681,
+      "mIoU": 0.3704024310789048,
+      "damage_pp": 0.1192988421089336,
+      "route_counts": "{\"Full\": 13659, \"S2-S4\": 10692, \"S3-S4\": 31, \"S4\": 10}",
+      "stage_calls": "{\"decoder\": 24392, \"stage1\": 24392, \"stage2\": 13700, \"stage3\": 13669, \"stage4\": 13659}",
+      "physical_stage4_ratio": 0.5599786815349295,
+      "mean_speedup": 1.3436238068732949,
+      "speedup_std": 0.07568012872873969,
+      "speedup_ci_low": 1.2674241721438164,
+      "speedup_ci_high": 1.3916934716188294,
+      "mean_latency_ms": 9.03140788383484
+    },
+    {
+      "model": "B1",
+      "variant": "HCPR-NewCost",
+      "quantile": 65,
+      "lambda": 1.8899999324797039,
+      "mIoU": 0.36284922365171246,
+      "damage_pp": 0.8746195848281679,
+      "route_counts": "{\"Full\": 6491, \"S2-S4\": 17629, \"S3-S4\": 237, \"S4\": 35}",
+      "stage_calls": "{\"decoder\": 24392, \"stage1\": 24392, \"stage2\": 6763, \"stage3\": 6526, \"stage4\": 6491}",
+      "physical_stage4_ratio": 0.2661118399475238,
+      "mean_speedup": 1.8493508499120828,
+      "speedup_std": 0.012770051184082773,
+      "speedup_ci_low": 1.8385503704114563,
+      "speedup_ci_high": 1.8601513294127094,
+      "mean_latency_ms": 6.541389622068405
+    },
+    {
+      "model": "B1",
+      "variant": "HCPR-NewCost",
+      "quantile": 95,
+      "lambda": 7.857380506202121,
+      "mIoU": 0.3498062119147627,
+      "damage_pp": 2.1789207585231454,
+      "route_counts": "{\"Full\": 3711, \"S2-S4\": 20199, \"S3-S4\": 362, \"S4\": 120}",
+      "stage_calls": "{\"decoder\": 24392, \"stage1\": 24392, \"stage2\": 4193, \"stage3\": 3831, \"stage4\": 3711}",
+      "physical_stage4_ratio": 0.152140045916694,
+      "mean_speedup": 2.092947505039615,
+      "speedup_std": 0.2148572342125806,
+      "speedup_ci_low": 1.909252206406991,
+      "speedup_ci_high": 2.2766428036722397,
+      "mean_latency_ms": 6.057031332778931
+    }
+  ],
+  "best_low_damage": {
+    "model": "B0",
+    "variant": "HCPR-NewCost",
+    "quantile": 20,
+    "lambda": 0.43981295670944426,
+    "mIoU": 0.3005651390439599,
+    "damage_pp": 0.07258663733765158,
+    "route_counts": "{\"Full\": 13781, \"S2-S4\": 10298, \"S3-S4\": 302, \"S4\": 11}",
+    "stage_calls": "{\"decoder\": 24392, \"stage1\": 24392, \"stage2\": 14094, \"stage3\": 13792, \"stage4\": 13781}",
+    "physical_stage4_ratio": 0.564980321416858,
+    "mean_speedup": 1.3540066449381745,
+    "speedup_std": 0.025805122306689524,
+    "speedup_ci_low": 1.3322176376286297,
+    "speedup_ci_high": 1.3788343118264361,
+    "mean_latency_ms": 8.720121951675415
+  },
+  "best_speed": {
+    "model": "B1",
+    "variant": "HCPR-NewCost",
+    "quantile": 95,
+    "lambda": 7.857380506202121,
+    "mIoU": 0.3498062119147627,
+    "damage_pp": 2.1789207585231454,
+    "route_counts": "{\"Full\": 3711, \"S2-S4\": 20199, \"S3-S4\": 362, \"S4\": 120}",
+    "stage_calls": "{\"decoder\": 24392, \"stage1\": 24392, \"stage2\": 4193, \"stage3\": 3831, \"stage4\": 3711}",
+    "physical_stage4_ratio": 0.152140045916694,
+    "mean_speedup": 2.092947505039615,
+    "speedup_std": 0.2148572342125806,
+    "speedup_ci_low": 1.909252206406991,
+    "speedup_ci_high": 2.2766428036722397,
+    "mean_latency_ms": 6.057031332778931
+  },
+  "hardware": {
+    "round": 11,
+    "variant": "Round 11B preflight",
+    "python": "3.10.8",
+    "platform": "Linux-5.4.0-100-generic-x86_64-with-glibc2.35",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "compute_capability": [
+      8,
+      6
+    ],
+    "vram_mb": 11910,
+    "driver": "580.76.05",
+    "cuda_runtime": "11.8",
+    "pytorch": "2.1.2+cu118",
+    "transformers": "4.44.2",
+    "cudnn": 8700,
+    "power_limit_w": "350.00",
+    "persistence_mode": "Enabled",
+    "dataset": {
+      "split": "val",
+      "videos": 343,
+      "frames": 24392,
+      "classes": 124,
+      "ignore": 255
+    },
+    "precision": "bf16",
+    "resolution": [
+      512,
+      512
+    ],
+    "batch_size": 1,
+    "checkpoints": {
+      "B0": {
+        "path": "/root/autodl-tmp/models/segformer-b0-vspw124",
+        "sha256": "8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b"
+      },
+      "B1": {
+        "path": "/root/autodl-tmp/models/segformer-b1-vspw124",
+        "sha256": "892a6589874d762c6b9c911e559e062fccbb226b33309aa6c8317dbec091fcfb"
+      }
+    },
+    "parent_round11a_commit": "4c6bc07b0f8fc78dd6c94d6a1d10f159c0f3221a",
+    "checks": {
+      "gpu_is_second_device": true,
+      "dataset": true,
+      "precision": true,
+      "resolution": true,
+      "batch_size": true,
+      "B0_hash": true,
+      "B1_hash": true
+    },
+    "contract_pass": true
+  },
+  "profiles": {
+    "B0": {
+      "model": "segformer-b0-vspw124",
+      "gpu": "NVIDIA GeForce RTX 3080 Ti",
+      "precision": "bf16",
+      "resolution": [
+        512,
+        512
+      ],
+      "batch_size": 1,
+      "warmup": 200,
+      "measurements": 1000,
+      "repetitions": 3,
+      "timing_boundary": "CUDA-resident stage input to stage output / logits",
+      "timings": {
+        "Stage2": {
+          "mean_ms": 2.603708776394526,
+          "median_ms": 2.574336051940918,
+          "p95_ms": 2.891097509860992,
+          "p99_ms": 3.729568965435028,
+          "std_ms": 0.2323546992383309,
+          "measurements": 3000
+        },
+        "Stage3": {
+          "mean_ms": 2.7283367574214936,
+          "median_ms": 2.691103935241699,
+          "p95_ms": 2.9831135630607597,
+          "p99_ms": 3.9475805497169474,
+          "std_ms": 0.2640661084681074,
+          "measurements": 3000
+        },
+        "Stage4": {
+          "mean_ms": 2.2886582186222078,
+          "median_ms": 2.2578400373458862,
+          "p95_ms": 2.5929983258247358,
+          "p99_ms": 3.3956045842170712,
+          "std_ms": 0.24337112791384305,
+          "measurements": 3000
+        },
+        "Full": {
+          "mean_ms": 11.052737083435058,
+          "median_ms": 10.958576202392578,
+          "p95_ms": 11.692185449600219,
+          "p99_ms": 13.199759254455557,
+          "std_ms": 0.46996900619747023,
+          "measurements": 3000
+        }
+      },
+      "c2_ms": 2.603708776394526,
+      "c3_ms": 2.7283367574214936,
+      "c4_ms": 2.2886582186222078,
+      "full_ms": 11.052737083435058,
+      "k2": 0.23557140251682568,
+      "k3": 0.2468471598325181,
+      "k4": 0.20706710033411202
+    },
+    "B1": {
+      "model": "segformer-b1-vspw124",
+      "gpu": "NVIDIA GeForce RTX 3080 Ti",
+      "precision": "bf16",
+      "resolution": [
+        512,
+        512
+      ],
+      "batch_size": 1,
+      "warmup": 200,
+      "measurements": 1000,
+      "repetitions": 3,
+      "timing_boundary": "CUDA-resident stage input to stage output / logits",
+      "timings": {
+        "Stage2": {
+          "mean_ms": 2.7450452807744345,
+          "median_ms": 2.7028480768203735,
+          "p95_ms": 3.338700699806205,
+          "p99_ms": 4.069436473846434,
+          "std_ms": 0.2851144348507485,
+          "measurements": 3000
+        },
+        "Stage3": {
+          "mean_ms": 2.733098529736201,
+          "median_ms": 2.7023199796676636,
+          "p95_ms": 3.1467521071433966,
+          "p99_ms": 3.9802982687950133,
+          "std_ms": 0.27406805409648816,
+          "measurements": 3000
+        },
+        "Stage4": {
+          "mean_ms": 2.2461736522515614,
+          "median_ms": 2.233344078063965,
+          "p95_ms": 2.4381439685821533,
+          "p99_ms": 3.0947896480560284,
+          "std_ms": 0.18305553208021638,
+          "measurements": 3000
+        },
+        "Full": {
+          "mean_ms": 11.02825709660848,
+          "median_ms": 10.959360122680664,
+          "p95_ms": 11.578368186950684,
+          "p99_ms": 12.714556980133043,
+          "std_ms": 0.3782612527384991,
+          "measurements": 3000
+        }
+      },
+      "c2_ms": 2.7450452807744345,
+      "c3_ms": 2.733098529736201,
+      "c4_ms": 2.2461736522515614,
+      "full_ms": 11.02825709660848,
+      "k2": 0.24891016383890965,
+      "k3": 0.24782687833571734,
+      "k4": 0.20367440045828522
+    }
+  },
+  "route_shifts": [
+    {
+      "model": "B0",
+      "quantile": 20,
+      "route": "Full",
+      "round11a_fraction": 0.5661692358150213,
+      "round11b_fraction": 0.564980321416858,
+      "shift_pp": -0.11889143981633322
+    },
+    {
+      "model": "B0",
+      "quantile": 20,
+      "route": "S2-S4",
+      "round11a_fraction": 0.4214086585765825,
+      "round11b_fraction": 0.42218760249262055,
+      "shift_pp": 0.07789439160380453
+    },
+    {
+      "model": "B0",
+      "quantile": 20,
+      "route": "S3-S4",
+      "round11a_fraction": 0.012094129222695966,
+      "round11b_fraction": 0.012381108560183667,
+      "shift_pp": 0.02869793374877009
+    },
+    {
+      "model": "B0",
+      "quantile": 20,
+      "route": "S4",
+      "round11a_fraction": 0.00032797638570022957,
+      "round11b_fraction": 0.0004509675303378157,
+      "shift_pp": 0.01229911446375861
+    },
+    {
+      "model": "B0",
+      "quantile": 65,
+      "route": "Full",
+      "round11a_fraction": 0.2667267956707117,
+      "round11b_fraction": 0.26496392259757295,
+      "shift_pp": -0.1762873073138734
+    },
+    {
+      "model": "B0",
+      "quantile": 65,
+      "route": "S2-S4",
+      "round11a_fraction": 0.7028123975073794,
+      "round11b_fraction": 0.7030993768448671,
+      "shift_pp": 0.02869793374877009
+    },
+    {
+      "model": "B0",
+      "quantile": 65,
+      "route": "S3-S4",
+      "round11a_fraction": 0.02865693670055756,
+      "round11b_fraction": 0.029353886520170548,
+      "shift_pp": 0.06969498196129878
+    },
+    {
+      "model": "B0",
+      "quantile": 65,
+      "route": "S4",
+      "round11a_fraction": 0.0018038701213512628,
+      "round11b_fraction": 0.002582814037389308,
+      "shift_pp": 0.07789439160380453
+    },
+    {
+      "model": "B0",
+      "quantile": 95,
+      "route": "Full",
+      "round11a_fraction": 0.1535749426041325,
+      "round11b_fraction": 0.15267300754345686,
+      "shift_pp": -0.09019350606756314
+    },
+    {
+      "model": "B0",
+      "quantile": 95,
+      "route": "S2-S4",
+      "round11a_fraction": 0.8166202033453591,
+      "round11b_fraction": 0.8166612003935717,
+      "shift_pp": 0.0040997048212528696
+    },
+    {
+      "model": "B0",
+      "quantile": 95,
+      "route": "S3-S4",
+      "round11a_fraction": 0.02521318465070515,
+      "round11b_fraction": 0.025377172843555264,
+      "shift_pp": 0.016398819285011478
+    },
+    {
+      "model": "B0",
+      "quantile": 95,
+      "route": "S4",
+      "round11a_fraction": 0.0045916693998032145,
+      "round11b_fraction": 0.005288619219416202,
+      "shift_pp": 0.06969498196129878
+    },
+    {
+      "model": "B1",
+      "quantile": 20,
+      "route": "Full",
+      "round11a_fraction": 0.572892751721876,
+      "round11b_fraction": 0.5599786815349295,
+      "shift_pp": -1.291407018694654
+    },
+    {
+      "model": "B1",
+      "quantile": 20,
+      "route": "S2-S4",
+      "round11a_fraction": 0.42497540177107246,
+      "round11b_fraction": 0.4383404394883568,
+      "shift_pp": 1.3365037717284356
+    },
+    {
+      "model": "B1",
+      "quantile": 20,
+      "route": "S3-S4",
+      "round11a_fraction": 0.0016808789767136765,
+      "round11b_fraction": 0.0012709084945883896,
+      "shift_pp": -0.0409970482125287
+    },
+    {
+      "model": "B1",
+      "quantile": 20,
+      "route": "S4",
+      "round11a_fraction": 0.0004509675303378157,
+      "round11b_fraction": 0.00040997048212528697,
+      "shift_pp": -0.0040997048212528696
+    },
+    {
+      "model": "B1",
+      "quantile": 65,
+      "route": "Full",
+      "round11a_fraction": 0.27176943260085273,
+      "round11b_fraction": 0.2661118399475238,
+      "shift_pp": -0.5657592653328961
+    },
+    {
+      "model": "B1",
+      "quantile": 65,
+      "route": "S2-S4",
+      "round11a_fraction": 0.7166693998032142,
+      "round11b_fraction": 0.7227369629386684,
+      "shift_pp": 0.6067563135454247
+    },
+    {
+      "model": "B1",
+      "quantile": 65,
+      "route": "S3-S4",
+      "round11a_fraction": 0.010044276812069531,
+      "round11b_fraction": 0.009716300426369302,
+      "shift_pp": -0.032797638570022956
+    },
+    {
+      "model": "B1",
+      "quantile": 65,
+      "route": "S4",
+      "round11a_fraction": 0.0015168907838635619,
+      "round11b_fraction": 0.0014348966874385045,
+      "shift_pp": -0.008199409642505739
+    },
+    {
+      "model": "B1",
+      "quantile": 95,
+      "route": "Full",
+      "round11a_fraction": 0.15390291898983274,
+      "round11b_fraction": 0.152140045916694,
+      "shift_pp": -0.1762873073138734
+    },
+    {
+      "model": "B1",
+      "quantile": 95,
+      "route": "S2-S4",
+      "round11a_fraction": 0.825680551000328,
+      "round11b_fraction": 0.8280993768448671,
+      "shift_pp": 0.24188258445391933
+    },
+    {
+      "model": "B1",
+      "quantile": 95,
+      "route": "S3-S4",
+      "round11a_fraction": 0.015496884224335847,
+      "round11b_fraction": 0.014840931452935389,
+      "shift_pp": -0.06559527714004591
+    },
+    {
+      "model": "B1",
+      "quantile": 95,
+      "route": "S4",
+      "round11a_fraction": 0.004919645785503444,
+      "round11b_fraction": 0.004919645785503444,
+      "shift_pp": 0.0
+    }
+  ]
+}

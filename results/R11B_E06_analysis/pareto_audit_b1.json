@@ -1,0 +1,265 @@
+{
+  "model": "B1",
+  "gate": "A",
+  "definition": "A transferred HCPR-NewCost point is accepted when it is non-dominated against the second-GPU fixed frontier using mIoU damage and paired mean speedup.",
+  "fixed_points": [
+    {
+      "method": "S2-S4/FI2",
+      "damage_pp": 0.3967076407124237,
+      "speedup": 1.3339804349779958,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "S2-S4/FI4",
+      "damage_pp": 1.2802349556489512,
+      "speedup": 1.7962369853771052,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "S2-S4/FI8",
+      "damage_pp": 2.7154598725672994,
+      "speedup": 2.147952925909149,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "S3-S4/FI2",
+      "damage_pp": 0.28288357383501883,
+      "speedup": 1.131843984681042,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "S4/FI2",
+      "damage_pp": 0.11820466459607215,
+      "speedup": 0.9681932560000265,
+      "source": "Round10 quality"
+    }
+  ],
+  "hcpr_points": [
+    {
+      "method": "HCPR-NewCost/q20",
+      "quantile": 20,
+      "damage_pp": 0.1192988421089336,
+      "speedup": 1.4229041616819447,
+      "ci95": [
+        1.3562076271645018,
+        1.5143196731419397
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "quantile": 35,
+      "damage_pp": 0.290302403051218,
+      "speedup": 1.6235020834094847,
+      "ci95": [
+        1.546863926084605,
+        1.6720761181331387
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "quantile": 50,
+      "damage_pp": 0.5223107347810785,
+      "speedup": 1.7285950926404205,
+      "ci95": [
+        1.632892983586077,
+        1.7967852052981623
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "quantile": 65,
+      "damage_pp": 0.8746195848281679,
+      "speedup": 1.8405759586329384,
+      "ci95": [
+        1.8335066032501914,
+        1.8476453140156852
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "quantile": 80,
+      "damage_pp": 1.1623519145868622,
+      "speedup": 1.9460577335979437,
+      "ci95": [
+        1.9109521678194636,
+        1.985028303225063
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "quantile": 90,
+      "damage_pp": 1.742581655997627,
+      "speedup": 2.012761446085843,
+      "ci95": [
+        1.9684002803699123,
+        2.079715312459276
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "quantile": 95,
+      "damage_pp": 2.1789207585231454,
+      "speedup": 1.9970174335151232,
+      "ci95": [
+        1.9873134101491037,
+        2.006296987689746
+      ],
+      "source": "Round11B E03/E04"
+    }
+  ],
+  "non_dominated": [
+    {
+      "method": "S2-S4/FI8",
+      "damage_pp": 2.7154598725672994,
+      "speedup": 2.147952925909149,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "S4/FI2",
+      "damage_pp": 0.11820466459607215,
+      "speedup": 0.9681932560000265,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "quantile": 20,
+      "damage_pp": 0.1192988421089336,
+      "speedup": 1.4229041616819447,
+      "ci95": [
+        1.3562076271645018,
+        1.5143196731419397
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "quantile": 35,
+      "damage_pp": 0.290302403051218,
+      "speedup": 1.6235020834094847,
+      "ci95": [
+        1.546863926084605,
+        1.6720761181331387
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "quantile": 50,
+      "damage_pp": 0.5223107347810785,
+      "speedup": 1.7285950926404205,
+      "ci95": [
+        1.632892983586077,
+        1.7967852052981623
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "quantile": 65,
+      "damage_pp": 0.8746195848281679,
+      "speedup": 1.8405759586329384,
+      "ci95": [
+        1.8335066032501914,
+        1.8476453140156852
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "quantile": 80,
+      "damage_pp": 1.1623519145868622,
+      "speedup": 1.9460577335979437,
+      "ci95": [
+        1.9109521678194636,
+        1.985028303225063
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "quantile": 90,
+      "damage_pp": 1.742581655997627,
+      "speedup": 2.012761446085843,
+      "ci95": [
+        1.9684002803699123,
+        2.079715312459276
+      ],
+      "source": "Round11B E03/E04"
+    }
+  ],
+  "transfer_non_dominated": [
+    {
+      "method": "HCPR-NewCost/q20",
+      "quantile": 20,
+      "damage_pp": 0.1192988421089336,
+      "speedup": 1.4229041616819447,
+      "ci95": [
+        1.3562076271645018,
+        1.5143196731419397
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "quantile": 35,
+      "damage_pp": 0.290302403051218,
+      "speedup": 1.6235020834094847,
+      "ci95": [
+        1.546863926084605,
+        1.6720761181331387
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "quantile": 50,
+      "damage_pp": 0.5223107347810785,
+      "speedup": 1.7285950926404205,
+      "ci95": [
+        1.632892983586077,
+        1.7967852052981623
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "quantile": 65,
+      "damage_pp": 0.8746195848281679,
+      "speedup": 1.8405759586329384,
+      "ci95": [
+        1.8335066032501914,
+        1.8476453140156852
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "quantile": 80,
+      "damage_pp": 1.1623519145868622,
+      "speedup": 1.9460577335979437,
+      "ci95": [
+        1.9109521678194636,
+        1.985028303225063
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "quantile": 90,
+      "damage_pp": 1.742581655997627,
+      "speedup": 2.012761446085843,
+      "ci95": [
+        1.9684002803699123,
+        2.079715312459276
+      ],
+      "source": "Round11B E03/E04"
+    }
+  ],
+  "pass": true
+}

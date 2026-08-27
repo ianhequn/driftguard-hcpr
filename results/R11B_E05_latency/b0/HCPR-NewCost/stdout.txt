@@ -1,0 +1,15 @@
+{"method": "HCPR-NewCost/q20", "repetition": 1, "policy_mean_ms": 8.306637022018432, "full_mean_ms": 11.255867243766785, "paired_speedup": 1.3550450337399862}
+{"method": "HCPR-NewCost/q65", "repetition": 1, "policy_mean_ms": 6.254245570898056, "full_mean_ms": 11.434638109207153, "paired_speedup": 1.828300149008258}
+{"method": "HCPR-NewCost/q95", "repetition": 1, "policy_mean_ms": 5.652303999662399, "full_mean_ms": 11.372459112167359, "paired_speedup": 2.012004151377317}
+{"method": "HCPR-NewCost/q20", "repetition": 2, "policy_mean_ms": 8.324057627677918, "full_mean_ms": 11.65093123435974, "paired_speedup": 1.3996696990203188}
+{"method": "HCPR-NewCost/q65", "repetition": 2, "policy_mean_ms": 6.551519507408142, "full_mean_ms": 12.881471725463868, "paired_speedup": 1.9661807785046082}
+{"method": "HCPR-NewCost/q95", "repetition": 2, "policy_mean_ms": 5.790438856124878, "full_mean_ms": 11.44019330406189, "paired_speedup": 1.9757040162786528}
+{"method": "HCPR-NewCost/q20", "repetition": 3, "policy_mean_ms": 8.627563823699951, "full_mean_ms": 11.38973040485382, "paired_speedup": 1.3201560298593429}
+{"method": "HCPR-NewCost/q65", "repetition": 3, "policy_mean_ms": 6.420484286308288, "full_mean_ms": 11.605438084602357, "paired_speedup": 1.8075642844187012}
+{"method": "HCPR-NewCost/q95", "repetition": 3, "policy_mean_ms": 5.757073977947235, "full_mean_ms": 11.722066285133362, "paired_speedup": 2.0361152783576055}
+{"method": "HCPR-NewCost/q20", "repetition": 4, "policy_mean_ms": 9.215868537902832, "full_mean_ms": 12.444279899597168, "paired_speedup": 1.3503100492825602}
+{"method": "HCPR-NewCost/q65", "repetition": 4, "policy_mean_ms": 7.0128396468162535, "full_mean_ms": 12.360108865737915, "paired_speedup": 1.7624970038134637}
+{"method": "HCPR-NewCost/q95", "repetition": 4, "policy_mean_ms": 6.136725379467011, "full_mean_ms": 12.421693234443664, "paired_speedup": 2.0241566089963303}
+{"method": "HCPR-NewCost/q20", "repetition": 5, "policy_mean_ms": 9.126482747077942, "full_mean_ms": 12.273772342681884, "paired_speedup": 1.3448524127886639}
+{"method": "HCPR-NewCost/q65", "repetition": 5, "policy_mean_ms": 6.746513144731521, "full_mean_ms": 12.32261059474945, "paired_speedup": 1.8265154651588293}
+{"method": "HCPR-NewCost/q95", "repetition": 5, "policy_mean_ms": 6.244278165817261, "full_mean_ms": 12.504023301124572, "paired_speedup": 2.0024769827799664}

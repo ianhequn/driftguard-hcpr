@@ -1,0 +1,15 @@
+{"method": "ProgressiveDriftOnly/q20", "repetition": 1, "policy_mean_ms": 6.2446958069801335, "full_mean_ms": 11.362095458984374, "paired_speedup": 1.8194794126375484}
+{"method": "ProgressiveDriftOnly/q65", "repetition": 1, "policy_mean_ms": 5.8437534987926485, "full_mean_ms": 11.733671256065369, "paired_speedup": 2.007899761427242}
+{"method": "ProgressiveDriftOnly/q95", "repetition": 1, "policy_mean_ms": 5.516051711559296, "full_mean_ms": 11.194295204162598, "paired_speedup": 2.0294036005326275}
+{"method": "ProgressiveDriftOnly/q20", "repetition": 2, "policy_mean_ms": 6.190132979154587, "full_mean_ms": 11.139303359985352, "paired_speedup": 1.799525696377963}
+{"method": "ProgressiveDriftOnly/q65", "repetition": 2, "policy_mean_ms": 5.643663620471954, "full_mean_ms": 11.136662013053893, "paired_speedup": 1.9733036484769417}
+{"method": "ProgressiveDriftOnly/q95", "repetition": 2, "policy_mean_ms": 5.647834422826767, "full_mean_ms": 11.584116843223573, "paired_speedup": 2.05107231833926}
+{"method": "ProgressiveDriftOnly/q20", "repetition": 3, "policy_mean_ms": 6.388286553382874, "full_mean_ms": 12.507946902275085, "paired_speedup": 1.957950194900319}
+{"method": "ProgressiveDriftOnly/q65", "repetition": 3, "policy_mean_ms": 6.094736647605896, "full_mean_ms": 12.282919247627259, "paired_speedup": 2.015332237932245}
+{"method": "ProgressiveDriftOnly/q95", "repetition": 3, "policy_mean_ms": 5.965797822237015, "full_mean_ms": 12.029918368339539, "paired_speedup": 2.0164810687179204}
+{"method": "ProgressiveDriftOnly/q20", "repetition": 4, "policy_mean_ms": 6.475431622505188, "full_mean_ms": 11.958644642829896, "paired_speedup": 1.846771820007789}
+{"method": "ProgressiveDriftOnly/q65", "repetition": 4, "policy_mean_ms": 6.1018557579517365, "full_mean_ms": 12.311476410865783, "paired_speedup": 2.0176610033467073}
+{"method": "ProgressiveDriftOnly/q95", "repetition": 4, "policy_mean_ms": 5.974885856151581, "full_mean_ms": 12.283104181289673, "paired_speedup": 2.0557889266860756}
+{"method": "ProgressiveDriftOnly/q20", "repetition": 5, "policy_mean_ms": 6.730806491851807, "full_mean_ms": 12.26460646724701, "paired_speedup": 1.8221600163508374}
+{"method": "ProgressiveDriftOnly/q65", "repetition": 5, "policy_mean_ms": 6.133751000881195, "full_mean_ms": 12.142643686294555, "paired_speedup": 1.979644052155052}
+{"method": "ProgressiveDriftOnly/q95", "repetition": 5, "policy_mean_ms": 5.9326179823875425, "full_mean_ms": 12.193331875801086, "paired_speedup": 2.0553037313375033}

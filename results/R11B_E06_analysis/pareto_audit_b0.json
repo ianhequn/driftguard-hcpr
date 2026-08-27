@@ -1,0 +1,281 @@
+{
+  "model": "B0",
+  "gate": "A",
+  "definition": "A transferred HCPR-NewCost point is accepted when it is non-dominated against the second-GPU fixed frontier using mIoU damage and paired mean speedup.",
+  "fixed_points": [
+    {
+      "method": "S2-S4/FI2",
+      "damage_pp": 0.23130394519251807,
+      "speedup": 1.342385962863585,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "S2-S4/FI4",
+      "damage_pp": 0.8253910316201873,
+      "speedup": 1.8172955139509201,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "S2-S4/FI8",
+      "damage_pp": 1.835033282461196,
+      "speedup": 2.2080511971316983,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "S3-S4/FI2",
+      "damage_pp": 0.18388048211957497,
+      "speedup": 1.1404593649147803,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "S4/FI2",
+      "damage_pp": 0.09102398279099422,
+      "speedup": 0.9914831728402774,
+      "source": "Round10 quality"
+    }
+  ],
+  "hcpr_points": [
+    {
+      "method": "HCPR-NewCost/q20",
+      "quantile": 20,
+      "damage_pp": 0.07258663733765158,
+      "speedup": 1.357390482386879,
+      "ci95": [
+        1.345396437855058,
+        1.3677163342496257
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "quantile": 35,
+      "damage_pp": 0.1825897803400589,
+      "speedup": 1.5626593830079578,
+      "ci95": [
+        1.5463530441053521,
+        1.5789657219105633
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "quantile": 50,
+      "damage_pp": 0.27352517270893273,
+      "speedup": 1.7623919466137536,
+      "ci95": [
+        1.739843862535072,
+        1.7882548692969884
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "quantile": 65,
+      "damage_pp": 0.42793651221408324,
+      "speedup": 1.8117410314958888,
+      "ci95": [
+        1.8003964360884814,
+        1.8255502188995867
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "quantile": 80,
+      "damage_pp": 0.7988569377298249,
+      "speedup": 1.9404134979571483,
+      "ci95": [
+        1.9018175113337386,
+        1.9697512214972779
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "quantile": 90,
+      "damage_pp": 0.9896651936077305,
+      "speedup": 1.9827800980056707,
+      "ci95": [
+        1.9662307587467283,
+        2.0029855500796923
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "quantile": 95,
+      "damage_pp": 1.393972695178869,
+      "speedup": 2.020521012349163,
+      "ci95": [
+        1.9855105656427365,
+        2.065052761379474
+      ],
+      "source": "Round11B E03/E04"
+    }
+  ],
+  "non_dominated": [
+    {
+      "method": "S2-S4/FI8",
+      "damage_pp": 1.835033282461196,
+      "speedup": 2.2080511971316983,
+      "source": "Round10 quality"
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "quantile": 20,
+      "damage_pp": 0.07258663733765158,
+      "speedup": 1.357390482386879,
+      "ci95": [
+        1.345396437855058,
+        1.3677163342496257
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "quantile": 35,
+      "damage_pp": 0.1825897803400589,
+      "speedup": 1.5626593830079578,
+      "ci95": [
+        1.5463530441053521,
+        1.5789657219105633
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "quantile": 50,
+      "damage_pp": 0.27352517270893273,
+      "speedup": 1.7623919466137536,
+      "ci95": [
+        1.739843862535072,
+        1.7882548692969884
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "quantile": 65,
+      "damage_pp": 0.42793651221408324,
+      "speedup": 1.8117410314958888,
+      "ci95": [
+        1.8003964360884814,
+        1.8255502188995867
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "quantile": 80,
+      "damage_pp": 0.7988569377298249,
+      "speedup": 1.9404134979571483,
+      "ci95": [
+        1.9018175113337386,
+        1.9697512214972779
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "quantile": 90,
+      "damage_pp": 0.9896651936077305,
+      "speedup": 1.9827800980056707,
+      "ci95": [
+        1.9662307587467283,
+        2.0029855500796923
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "quantile": 95,
+      "damage_pp": 1.393972695178869,
+      "speedup": 2.020521012349163,
+      "ci95": [
+        1.9855105656427365,
+        2.065052761379474
+      ],
+      "source": "Round11B E03/E04"
+    }
+  ],
+  "transfer_non_dominated": [
+    {
+      "method": "HCPR-NewCost/q20",
+      "quantile": 20,
+      "damage_pp": 0.07258663733765158,
+      "speedup": 1.357390482386879,
+      "ci95": [
+        1.345396437855058,
+        1.3677163342496257
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "quantile": 35,
+      "damage_pp": 0.1825897803400589,
+      "speedup": 1.5626593830079578,
+      "ci95": [
+        1.5463530441053521,
+        1.5789657219105633
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "quantile": 50,
+      "damage_pp": 0.27352517270893273,
+      "speedup": 1.7623919466137536,
+      "ci95": [
+        1.739843862535072,
+        1.7882548692969884
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "quantile": 65,
+      "damage_pp": 0.42793651221408324,
+      "speedup": 1.8117410314958888,
+      "ci95": [
+        1.8003964360884814,
+        1.8255502188995867
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "quantile": 80,
+      "damage_pp": 0.7988569377298249,
+      "speedup": 1.9404134979571483,
+      "ci95": [
+        1.9018175113337386,
+        1.9697512214972779
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "quantile": 90,
+      "damage_pp": 0.9896651936077305,
+      "speedup": 1.9827800980056707,
+      "ci95": [
+        1.9662307587467283,
+        2.0029855500796923
+      ],
+      "source": "Round11B E03/E04"
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "quantile": 95,
+      "damage_pp": 1.393972695178869,
+      "speedup": 2.020521012349163,
+      "ci95": [
+        1.9855105656427365,
+        2.065052761379474
+      ],
+      "source": "Round11B E03/E04"
+    }
+  ],
+  "pass": true
+}

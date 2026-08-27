@@ -1,0 +1,53 @@
+{
+  "round": 11,
+  "variant": "Round 11B preflight",
+  "python": "3.10.8",
+  "platform": "Linux-5.4.0-100-generic-x86_64-with-glibc2.35",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "compute_capability": [
+    8,
+    6
+  ],
+  "vram_mb": 11910,
+  "driver": "580.76.05",
+  "cuda_runtime": "11.8",
+  "pytorch": "2.1.2+cu118",
+  "transformers": "4.44.2",
+  "cudnn": 8700,
+  "power_limit_w": "350.00",
+  "persistence_mode": "Enabled",
+  "dataset": {
+    "split": "val",
+    "videos": 343,
+    "frames": 24392,
+    "classes": 124,
+    "ignore": 255
+  },
+  "precision": "bf16",
+  "resolution": [
+    512,
+    512
+  ],
+  "batch_size": 1,
+  "checkpoints": {
+    "B0": {
+      "path": "/root/autodl-tmp/models/segformer-b0-vspw124",
+      "sha256": "8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b"
+    },
+    "B1": {
+      "path": "/root/autodl-tmp/models/segformer-b1-vspw124",
+      "sha256": "892a6589874d762c6b9c911e559e062fccbb226b33309aa6c8317dbec091fcfb"
+    }
+  },
+  "parent_round11a_commit": "4c6bc07b0f8fc78dd6c94d6a1d10f159c0f3221a",
+  "checks": {
+    "gpu_is_second_device": true,
+    "dataset": true,
+    "precision": true,
+    "resolution": true,
+    "batch_size": true,
+    "B0_hash": true,
+    "B1_hash": true
+  },
+  "contract_pass": true
+}

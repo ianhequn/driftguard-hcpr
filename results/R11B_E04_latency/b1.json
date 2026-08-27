@@ -1,0 +1,2432 @@
+{
+  "model": "B1",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "variant": "HCPR-NewCost",
+  "warmup": 200,
+  "measurements": 1000,
+  "repetitions": 5,
+  "pool": 256,
+  "precision": "bf16",
+  "timing_boundary": "CUDA-resident input to logits, controller included, paired Full immediately after each policy",
+  "rows": [
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.21788918685913,
+        "median_ms": 11.011008262634277,
+        "p95_ms": 12.818483066558837,
+        "p99_ms": 13.723709268569944,
+        "std_ms": 0.6818310187907868,
+        "fps": 89.14333020613368,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 11.501253210067748,
+        "median_ms": 12.041215896606445,
+        "p95_ms": 13.902847766876219,
+        "p99_ms": 15.289476318359375,
+        "std_ms": 1.4980231944880005,
+        "fps": 86.94704670310527,
+        "measurements": 1000
+      },
+      "paired_speedup": 0.9753623350401005,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 10.942346726417542,
+        "median_ms": 10.858495712280273,
+        "p95_ms": 11.507917165756226,
+        "p99_ms": 12.92394513130188,
+        "std_ms": 0.3922723391558437,
+        "fps": 91.3880746975191,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 9.744947041988373,
+        "median_ms": 11.936255931854248,
+        "p95_ms": 12.865724754333495,
+        "p99_ms": 13.277201461791993,
+        "std_ms": 2.7520571312747997,
+        "fps": 102.61728418751453,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1228739037031081,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 10.901060636520386,
+        "median_ms": 10.773712158203125,
+        "p95_ms": 11.537155485153198,
+        "p99_ms": 13.89156054496765,
+        "std_ms": 0.5591448310222933,
+        "fps": 91.73419296924483,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.221051090717316,
+        "median_ms": 11.908607959747314,
+        "p95_ms": 12.8175612449646,
+        "p99_ms": 13.580072174072264,
+        "std_ms": 4.221514367327785,
+        "fps": 121.6389472544619,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.325993539783394,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 10.905782071113586,
+        "median_ms": 10.793968200683594,
+        "p95_ms": 11.654349088668823,
+        "p99_ms": 12.899655904769897,
+        "std_ms": 0.5371120640104013,
+        "fps": 91.69447853251393,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.089877353191376,
+        "median_ms": 4.008944034576416,
+        "p95_ms": 12.53932123184204,
+        "p99_ms": 13.097113666534424,
+        "std_ms": 3.6818470530971394,
+        "fps": 164.20691945067728,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.790804878097989,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 1,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.278734650611877,
+        "median_ms": 11.133984088897705,
+        "p95_ms": 12.785542201995849,
+        "p99_ms": 13.40833568572998,
+        "std_ms": 0.6722980726289276,
+        "fps": 88.66242809832835,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.0603754956722256,
+        "median_ms": 4.012959957122803,
+        "p95_ms": 12.396027421951294,
+        "p99_ms": 13.05656295776367,
+        "std_ms": 2.879997721589881,
+        "fps": 197.61379384894025,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.2288335441229146,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 0.4098514739352681,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.723663027763367,
+        "median_ms": 11.572704315185547,
+        "p95_ms": 13.085798597335815,
+        "p99_ms": 13.881626005172727,
+        "std_ms": 0.5436880855223941,
+        "fps": 85.29757274939173,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.391512289524078,
+        "median_ms": 4.513792037963867,
+        "p95_ms": 15.154329824447629,
+        "p99_ms": 16.0532781791687,
+        "std_ms": 4.820743386544802,
+        "fps": 119.16803139863062,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3970858437994698,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 402,
+        "stage3": 398,
+        "stage4": 398,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 398,
+        "S3-S4": 4,
+        "S2-S4": 598
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 0.7848425765501561,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.75996046257019,
+        "median_ms": 11.412352085113525,
+        "p95_ms": 13.8656765460968,
+        "p99_ms": 15.17474006652832,
+        "std_ms": 0.9617388489273279,
+        "fps": 85.03429949299725,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.969201382875442,
+        "median_ms": 4.39139199256897,
+        "p95_ms": 14.112768173217773,
+        "p99_ms": 15.508500547409058,
+        "std_ms": 4.25401040810983,
+        "fps": 143.48846375097963,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.6874186605464563,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 271,
+        "stage3": 271,
+        "stage4": 271,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 271,
+        "S2-S4": 729
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 1.18049021206853,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.280211663246154,
+        "median_ms": 11.298175811767578,
+        "p95_ms": 11.84782886505127,
+        "p99_ms": 12.092673625946045,
+        "std_ms": 0.3959499626263538,
+        "fps": 88.65081878368103,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.310199194908142,
+        "median_ms": 5.095983982086182,
+        "p95_ms": 17.149820137023926,
+        "p99_ms": 18.863152179718018,
+        "std_ms": 4.690654416300913,
+        "fps": 136.79517798865749,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.543078562223488,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 225,
+        "stage3": 225,
+        "stage4": 225,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 225,
+        "S2-S4": 775
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 1.8899999324797039,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.57577672958374,
+        "median_ms": 11.55020809173584,
+        "p95_ms": 11.849980449676513,
+        "p99_ms": 12.506460466384885,
+        "std_ms": 0.2434510015014298,
+        "fps": 86.38729161425002,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.255748605012894,
+        "median_ms": 4.425727844238281,
+        "p95_ms": 14.099497556686401,
+        "p99_ms": 14.474573640823364,
+        "std_ms": 3.7850992634791383,
+        "fps": 159.8529709455834,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.85042230122671,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 193,
+        "stage4": 193,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 193,
+        "S2-S4": 799,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 2.952394341587442,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 12.117737504959106,
+        "median_ms": 11.63263988494873,
+        "p95_ms": 13.614234018325806,
+        "p99_ms": 15.056949434280396,
+        "std_ms": 0.9024413954302462,
+        "fps": 82.52365588797055,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.988804708480835,
+        "median_ms": 4.414463996887207,
+        "p95_ms": 14.030803394317626,
+        "p99_ms": 14.289957180023194,
+        "std_ms": 3.5099193004590137,
+        "fps": 166.97822832390665,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.0233983398722284,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 177,
+        "stage3": 161,
+        "stage4": 161,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 161,
+        "S2-S4": 823,
+        "S3-S4": 16
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 4.6759908904405325,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 13.614228348731995,
+        "median_ms": 13.747200012207031,
+        "p95_ms": 15.227084875106812,
+        "p99_ms": 15.972433948516846,
+        "std_ms": 1.0501319249686192,
+        "fps": 73.45256553546336,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.350059931755066,
+        "median_ms": 4.748800039291382,
+        "p95_ms": 15.669903755187988,
+        "p99_ms": 16.68812726974487,
+        "std_ms": 3.8327840662889283,
+        "fps": 157.47882866415944,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.143952733524708,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 161,
+        "stage3": 153,
+        "stage4": 149,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 149,
+        "S2-S4": 839,
+        "S4": 4,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 1,
+      "lambda": 7.857380506202121,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 13.829935972213745,
+        "median_ms": 13.717343807220459,
+        "p95_ms": 14.551231718063354,
+        "p99_ms": 15.861073818206787,
+        "std_ms": 0.4610764223803125,
+        "fps": 72.30691465304962,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.976725695610046,
+        "median_ms": 5.150848150253296,
+        "p95_ms": 17.318133068084716,
+        "p99_ms": 18.585825176239013,
+        "std_ms": 4.253266627481415,
+        "fps": 143.33371321008485,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9822960763551207,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 153,
+        "stage3": 141,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 847,
+        "S3-S4": 12
+      }
+    },
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 13.625846115112305,
+        "median_ms": 13.56390380859375,
+        "p95_ms": 13.993965101242065,
+        "p99_ms": 15.136952657699585,
+        "std_ms": 0.34353022916691256,
+        "fps": 73.3899378836305,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 14.467558299064637,
+        "median_ms": 15.69279956817627,
+        "p95_ms": 16.38768606185913,
+        "p99_ms": 16.808416996002197,
+        "std_ms": 1.677453158250133,
+        "fps": 69.12016384026961,
+        "measurements": 1000
+      },
+      "paired_speedup": 0.9418207159388636,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 13.72431238746643,
+        "median_ms": 13.681024074554443,
+        "p95_ms": 14.101592302322388,
+        "p99_ms": 15.118789691925048,
+        "std_ms": 0.28963158715836584,
+        "fps": 72.86339539409191,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 12.46754860496521,
+        "median_ms": 15.567359924316406,
+        "p95_ms": 16.332616901397706,
+        "p99_ms": 16.681051864624024,
+        "std_ms": 3.5890359465884565,
+        "fps": 80.20822951528334,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1008027979133534,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.768780204772948,
+        "median_ms": 11.526144027709961,
+        "p95_ms": 13.272269010543823,
+        "p99_ms": 15.191562280654907,
+        "std_ms": 0.7769332201028418,
+        "fps": 84.9705732115245,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.752338879823684,
+        "median_ms": 12.500991821289062,
+        "p95_ms": 14.487142753601074,
+        "p99_ms": 16.2684614944458,
+        "std_ms": 4.595514695763549,
+        "fps": 114.25517381476722,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.344644027884125,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.601569143295288,
+        "median_ms": 11.442016124725342,
+        "p95_ms": 12.95502095222473,
+        "p99_ms": 14.122065019607543,
+        "std_ms": 0.5598009133135388,
+        "fps": 86.19523683810601,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.500864001750946,
+        "median_ms": 4.140832185745239,
+        "p95_ms": 13.305712175369262,
+        "p99_ms": 14.770513210296631,
+        "std_ms": 3.9730659992172277,
+        "fps": 153.82570681845667,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7846195736705945,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 2,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.45200955581665,
+        "median_ms": 11.405279636383057,
+        "p95_ms": 11.773128223419189,
+        "p99_ms": 12.555405178070066,
+        "std_ms": 0.27894805482622176,
+        "fps": 87.3209191038515,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.277833693265915,
+        "median_ms": 4.097615957260132,
+        "p95_ms": 12.963123416900634,
+        "p99_ms": 13.272279243469239,
+        "std_ms": 3.026888465034879,
+        "fps": 189.47167685028015,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.1698314538460126,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 0.4098514739352681,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.461662240028382,
+        "median_ms": 11.404288291931152,
+        "p95_ms": 11.774053955078125,
+        "p99_ms": 13.146070985794065,
+        "std_ms": 0.35182624376464944,
+        "fps": 87.24737992257603,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.193233338356018,
+        "median_ms": 4.452352046966553,
+        "p95_ms": 14.137137413024902,
+        "p99_ms": 14.815457553863526,
+        "std_ms": 4.657388998950917,
+        "fps": 122.05193709284144,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3989180786993403,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 402,
+        "stage3": 398,
+        "stage4": 398,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 398,
+        "S3-S4": 4,
+        "S2-S4": 598
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 0.7848425765501561,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.408494751930236,
+        "median_ms": 11.376640319824219,
+        "p95_ms": 11.74324460029602,
+        "p99_ms": 12.792874917984008,
+        "std_ms": 0.274201654277931,
+        "fps": 87.65398255811154,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.915695206165314,
+        "median_ms": 4.388207912445068,
+        "p95_ms": 13.980723094940185,
+        "p99_ms": 14.159073095321656,
+        "std_ms": 4.19475807015953,
+        "fps": 144.59862243618025,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.6496526251995043,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 271,
+        "stage3": 271,
+        "stage4": 271,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 271,
+        "S2-S4": 729
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 1.18049021206853,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.71204452419281,
+        "median_ms": 11.539391994476318,
+        "p95_ms": 13.056153345108033,
+        "p99_ms": 13.704836635589599,
+        "std_ms": 0.609511735088743,
+        "fps": 85.3821890733394,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.465903714179992,
+        "median_ms": 4.35584020614624,
+        "p95_ms": 13.910417652130127,
+        "p99_ms": 14.314832038879395,
+        "std_ms": 3.9306514238764647,
+        "fps": 154.6574221028004,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8113546136648797,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 225,
+        "stage3": 225,
+        "stage4": 225,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 225,
+        "S2-S4": 775
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 1.8899999324797039,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.656158634185791,
+        "median_ms": 11.512831687927246,
+        "p95_ms": 12.962879705429076,
+        "p99_ms": 13.513738384246826,
+        "std_ms": 0.5100994205762336,
+        "fps": 85.79155718309698,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.350372210502624,
+        "median_ms": 4.427727937698364,
+        "p95_ms": 14.25843162536621,
+        "p99_ms": 15.571097431182862,
+        "std_ms": 3.8553192661446234,
+        "fps": 157.47108466274472,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8355079431262535,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 193,
+        "stage4": 193,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 193,
+        "S2-S4": 799,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 2.952394341587442,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.524604962348938,
+        "median_ms": 11.486720085144043,
+        "p95_ms": 11.887730026245118,
+        "p99_ms": 12.456058578491207,
+        "std_ms": 0.28056560466237584,
+        "fps": 86.77087008769631,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.069928583621979,
+        "median_ms": 4.420447826385498,
+        "p95_ms": 14.144563388824462,
+        "p99_ms": 15.510625,
+        "std_ms": 3.5884466890863354,
+        "fps": 164.74658411932936,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8986393008716598,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 177,
+        "stage3": 161,
+        "stage4": 161,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 161,
+        "S2-S4": 823,
+        "S3-S4": 16
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 4.6759908904405325,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.489537127494811,
+        "median_ms": 11.452928066253662,
+        "p95_ms": 11.814194822311402,
+        "p99_ms": 12.729593391418456,
+        "std_ms": 0.2715827522734868,
+        "fps": 87.03570813196379,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.8320448005199435,
+        "median_ms": 4.3816962242126465,
+        "p95_ms": 13.870009803771973,
+        "p99_ms": 14.130452070236206,
+        "std_ms": 3.3692716941775407,
+        "fps": 171.46644688169184,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9700701075668154,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 161,
+        "stage3": 153,
+        "stage4": 149,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 149,
+        "S2-S4": 839,
+        "S4": 4,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 2,
+      "lambda": 7.857380506202121,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.520668472290039,
+        "median_ms": 11.474944114685059,
+        "p95_ms": 11.88574047088623,
+        "p99_ms": 12.83099642753601,
+        "std_ms": 0.2852530216911348,
+        "fps": 86.800518772434,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.73383217048645,
+        "median_ms": 4.373504161834717,
+        "p95_ms": 13.82338571548462,
+        "p99_ms": 14.111907129287719,
+        "std_ms": 3.277405512277937,
+        "fps": 174.4034304225478,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.009244102328276,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 153,
+        "stage3": 141,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 847,
+        "S3-S4": 12
+      }
+    },
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.577256249427796,
+        "median_ms": 11.454463958740234,
+        "p95_ms": 12.621513366699217,
+        "p99_ms": 14.906301555633544,
+        "std_ms": 0.6066584746498673,
+        "fps": 86.37625171762306,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 11.700570469856261,
+        "median_ms": 12.600255966186523,
+        "p95_ms": 13.29776611328125,
+        "p99_ms": 14.117686414718628,
+        "std_ms": 1.3505088915091938,
+        "fps": 85.46591831366362,
+        "measurements": 1000
+      },
+      "paired_speedup": 0.9894608369099477,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.953690263748168,
+        "median_ms": 11.604896068572998,
+        "p95_ms": 13.575731563568114,
+        "p99_ms": 15.208560724258422,
+        "std_ms": 0.8735187497650617,
+        "fps": 83.65617461518889,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 10.265760192871094,
+        "median_ms": 12.534783840179443,
+        "p95_ms": 14.026236534118652,
+        "p99_ms": 14.863647117614747,
+        "std_ms": 2.9441879493287844,
+        "fps": 97.4111981199829,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1644232905468834,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 13.799027402877808,
+        "median_ms": 13.770751953125,
+        "p95_ms": 14.119218969345093,
+        "p99_ms": 15.0405735206604,
+        "std_ms": 0.25796816505685644,
+        "fps": 72.46887558114773,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 10.708266759395599,
+        "median_ms": 15.678976058959961,
+        "p95_ms": 16.918869495391842,
+        "p99_ms": 17.956746253967285,
+        "std_ms": 5.699080719304643,
+        "fps": 93.38579458926763,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.2886331385768222,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 13.649772973060609,
+        "median_ms": 13.583903789520264,
+        "p95_ms": 14.080032110214233,
+        "p99_ms": 15.061084394454957,
+        "std_ms": 0.292207570850113,
+        "fps": 73.26129174262566,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 7.667179306030273,
+        "median_ms": 4.818272113800049,
+        "p95_ms": 16.131071090698242,
+        "p99_ms": 16.396082878112793,
+        "std_ms": 4.882273873167448,
+        "fps": 130.42606153914977,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7802861297798263,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 3,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 12.3310330991745,
+        "median_ms": 11.546640396118164,
+        "p95_ms": 13.928397226333617,
+        "p99_ms": 15.327354993820189,
+        "std_ms": 1.2046133878770073,
+        "fps": 81.09620596727981,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.2149583668708805,
+        "median_ms": 4.749311923980713,
+        "p95_ms": 15.766905736923217,
+        "p99_ms": 16.113848934173586,
+        "std_ms": 3.742057978122893,
+        "fps": 160.90212371019985,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9840894131979443,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 0.4098514739352681,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 14.028834173202515,
+        "median_ms": 13.786031723022461,
+        "p95_ms": 15.601152038574217,
+        "p99_ms": 17.56822458267212,
+        "std_ms": 0.8141511172815761,
+        "fps": 71.28176066904918,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.812667043685913,
+        "median_ms": 5.103503942489624,
+        "p95_ms": 17.087897777557373,
+        "p99_ms": 17.60003774642944,
+        "std_ms": 5.21750921959179,
+        "fps": 113.47302638835976,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.5918942703337322,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 402,
+        "stage3": 398,
+        "stage4": 398,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 398,
+        "S3-S4": 4,
+        "S2-S4": 598
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 0.7848425765501561,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 12.463254358291627,
+        "median_ms": 11.980799674987793,
+        "p95_ms": 14.111743688583372,
+        "p99_ms": 15.662650995254516,
+        "std_ms": 1.096069202563786,
+        "fps": 80.23586546917532,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.438563687324525,
+        "median_ms": 5.156192064285278,
+        "p95_ms": 17.51767072677612,
+        "p99_ms": 18.7199680519104,
+        "std_ms": 5.351551418190902,
+        "fps": 118.50357916976904,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.4769402495607808,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 271,
+        "stage3": 271,
+        "stage4": 271,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 271,
+        "S2-S4": 729
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 1.18049021206853,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.440273406028748,
+        "median_ms": 11.354159832000732,
+        "p95_ms": 11.895849800109863,
+        "p99_ms": 13.185310878753661,
+        "std_ms": 0.46781555285814325,
+        "fps": 87.4104983778643,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.636372094154358,
+        "median_ms": 4.485119819641113,
+        "p95_ms": 14.352394819259644,
+        "p99_ms": 14.730218954086304,
+        "std_ms": 4.056378398413026,
+        "fps": 150.68473946493282,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7238746175950415,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 225,
+        "stage3": 225,
+        "stage4": 225,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 225,
+        "S2-S4": 775
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 1.8899999324797039,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.33234508037567,
+        "median_ms": 11.302847862243652,
+        "p95_ms": 11.685939455032349,
+        "p99_ms": 11.906014852523803,
+        "std_ms": 0.2213306509571227,
+        "fps": 88.24298879953007,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.1936365790367125,
+        "median_ms": 4.353024005889893,
+        "p95_ms": 13.857156991958618,
+        "p99_ms": 14.247864322662352,
+        "std_ms": 3.7108678578958973,
+        "fps": 161.45603430860785,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8296754960941177,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 193,
+        "stage4": 193,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 193,
+        "S2-S4": 799,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 2.952394341587442,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.391896969795226,
+        "median_ms": 11.351823806762695,
+        "p95_ms": 11.693104124069214,
+        "p99_ms": 12.80576558113098,
+        "std_ms": 0.27966651437156465,
+        "fps": 87.78169278140648,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.978308773756027,
+        "median_ms": 4.384768009185791,
+        "p95_ms": 13.900427627563475,
+        "p99_ms": 14.386434984207153,
+        "std_ms": 3.515551142802937,
+        "fps": 167.2713869162907,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9055384057451372,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 177,
+        "stage3": 161,
+        "stage4": 161,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 161,
+        "S2-S4": 823,
+        "S3-S4": 16
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 4.6759908904405325,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.609276964187622,
+        "median_ms": 11.416128158569336,
+        "p95_ms": 13.082777976989743,
+        "p99_ms": 15.057492151260375,
+        "std_ms": 0.7470490905545171,
+        "fps": 86.13800868777676,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.783468724727631,
+        "median_ms": 4.356095790863037,
+        "p95_ms": 13.70020170211792,
+        "p99_ms": 13.955123596191406,
+        "std_ms": 3.323645003971078,
+        "fps": 172.9066149738874,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.0073207821720094,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 161,
+        "stage3": 153,
+        "stage4": 149,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 149,
+        "S2-S4": 839,
+        "S4": 4,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 3,
+      "lambda": 7.857380506202121,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.70678030204773,
+        "median_ms": 11.527120113372803,
+        "p95_ms": 13.129830694198608,
+        "p99_ms": 13.810021934509276,
+        "std_ms": 0.6053315462505992,
+        "fps": 85.42058313207447,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.840062301635742,
+        "median_ms": 4.384191989898682,
+        "p95_ms": 13.95435676574707,
+        "p99_ms": 15.013384532928466,
+        "std_ms": 3.355499801517291,
+        "fps": 171.23105000436558,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.0045642832900565,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 153,
+        "stage3": 141,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 847,
+        "S3-S4": 12
+      }
+    },
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.431306920051576,
+        "median_ms": 11.384832382202148,
+        "p95_ms": 11.75469903945923,
+        "p99_ms": 13.015665035247801,
+        "std_ms": 0.28191094439504744,
+        "fps": 87.47906140512306,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 11.984982950210572,
+        "median_ms": 12.717055797576904,
+        "p95_ms": 14.433758163452147,
+        "p99_ms": 15.71763608932495,
+        "std_ms": 1.5115153949272273,
+        "fps": 83.43774906934101,
+        "measurements": 1000
+      },
+      "paired_speedup": 0.9538025183298847,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.47967398071289,
+        "median_ms": 11.381759643554688,
+        "p95_ms": 11.923646593093872,
+        "p99_ms": 13.855170574188232,
+        "std_ms": 0.56376650380341,
+        "fps": 87.11048777866945,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 10.09970243692398,
+        "median_ms": 12.319231986999512,
+        "p95_ms": 13.114318609237671,
+        "p99_ms": 13.354315195083618,
+        "std_ms": 2.853366994536392,
+        "fps": 99.01281807511998,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1366348714140138,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.510505725860595,
+        "median_ms": 11.43500804901123,
+        "p95_ms": 11.839024209976197,
+        "p99_ms": 14.557870292663573,
+        "std_ms": 0.4600358525438297,
+        "fps": 86.87715586234452,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.571299452781677,
+        "median_ms": 12.554240226745605,
+        "p95_ms": 13.236224174499512,
+        "p99_ms": 14.024837102890015,
+        "std_ms": 4.427257340549956,
+        "fps": 116.66842414139039,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3429125641066064,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.467832468986511,
+        "median_ms": 11.399168014526367,
+        "p95_ms": 12.361881542205808,
+        "p99_ms": 13.231995229721068,
+        "std_ms": 0.4185843298773359,
+        "fps": 87.20043676120922,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.338234840631485,
+        "median_ms": 4.092927932739258,
+        "p95_ms": 12.95359992980957,
+        "p99_ms": 13.176893634796143,
+        "std_ms": 3.8341757072065445,
+        "fps": 157.7726330980139,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8093101245588998,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 4,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.76585648727417,
+        "median_ms": 11.556351661682129,
+        "p95_ms": 13.234841299057006,
+        "p99_ms": 15.341562738418578,
+        "std_ms": 0.721463114909145,
+        "fps": 84.9916876923996,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.420768669366836,
+        "median_ms": 4.135423898696899,
+        "p95_ms": 13.200588941574097,
+        "p99_ms": 14.74049801826477,
+        "std_ms": 3.16222203665522,
+        "fps": 184.47568250810514,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.170514405782319,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 0.4098514739352681,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.571925051689147,
+        "median_ms": 11.457967758178711,
+        "p95_ms": 12.24648756980896,
+        "p99_ms": 14.324838047027589,
+        "std_ms": 0.543564758538299,
+        "fps": 86.41604534537065,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.715158072471619,
+        "median_ms": 4.801440000534058,
+        "p95_ms": 15.8317955493927,
+        "p99_ms": 17.208179359436034,
+        "std_ms": 5.058624752383744,
+        "fps": 114.74261185906408,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3277929046681478,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 402,
+        "stage3": 398,
+        "stage4": 398,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 398,
+        "S3-S4": 4,
+        "S2-S4": 598
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 0.7848425765501561,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.41481165790558,
+        "median_ms": 11.363791942596436,
+        "p95_ms": 11.881778860092163,
+        "p99_ms": 12.940657358169554,
+        "std_ms": 0.30028767805105944,
+        "fps": 87.60547523422588,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.8970550704002385,
+        "median_ms": 4.374527931213379,
+        "p95_ms": 13.913526773452759,
+        "p99_ms": 14.334986438751221,
+        "std_ms": 4.182553340830871,
+        "fps": 144.9894179171705,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.6550268979138618,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 271,
+        "stage3": 271,
+        "stage4": 271,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 271,
+        "S2-S4": 729
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 1.18049021206853,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.458494751930237,
+        "median_ms": 11.398143768310547,
+        "p95_ms": 11.89379653930664,
+        "p99_ms": 13.069742174148558,
+        "std_ms": 0.33409260594831763,
+        "fps": 87.27149784063437,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.480614557743072,
+        "median_ms": 4.376032114028931,
+        "p95_ms": 13.942806100845337,
+        "p99_ms": 14.231504011154176,
+        "std_ms": 3.92719665461342,
+        "fps": 154.30635336971164,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7681185402763335,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 225,
+        "stage3": 225,
+        "stage4": 225,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 225,
+        "S2-S4": 775
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 1.8899999324797039,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.424374466896056,
+        "median_ms": 11.372544288635254,
+        "p95_ms": 11.855972957611083,
+        "p99_ms": 12.796006088256835,
+        "std_ms": 0.308010942757627,
+        "fps": 87.5321447924925,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.2184765067100525,
+        "median_ms": 4.380671977996826,
+        "p95_ms": 13.968894386291504,
+        "p99_ms": 14.242644443511963,
+        "std_ms": 3.729658508762375,
+        "fps": 160.81109238266788,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8371661378102138,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 193,
+        "stage4": 193,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 193,
+        "S2-S4": 799,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 2.952394341587442,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.783719784736633,
+        "median_ms": 11.62559986114502,
+        "p95_ms": 13.131100416183472,
+        "p99_ms": 14.434396829605102,
+        "std_ms": 0.5594649683690783,
+        "fps": 84.86284622070637,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.044768071174621,
+        "median_ms": 4.412415981292725,
+        "p95_ms": 14.057822608947754,
+        "p99_ms": 15.331495866775512,
+        "std_ms": 3.573007623632546,
+        "fps": 165.432319027863,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9494080907634916,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 177,
+        "stage3": 161,
+        "stage4": 161,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 161,
+        "S2-S4": 823,
+        "S3-S4": 16
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 4.6759908904405325,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.734732552528381,
+        "median_ms": 11.523056030273438,
+        "p95_ms": 13.1697151184082,
+        "p99_ms": 14.731371202468871,
+        "std_ms": 0.6938102917451918,
+        "fps": 85.21711044744166,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.917469408035278,
+        "median_ms": 4.390352010726929,
+        "p95_ms": 14.033769464492797,
+        "p99_ms": 15.26807430267334,
+        "std_ms": 3.4622212735333413,
+        "fps": 168.99115669987395,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9830660276154355,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 161,
+        "stage3": 153,
+        "stage4": 149,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 149,
+        "S2-S4": 839,
+        "S4": 4,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 4,
+      "lambda": 7.857380506202121,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.404896089553834,
+        "median_ms": 11.361615657806396,
+        "p95_ms": 11.743304300308228,
+        "p99_ms": 12.626753387451172,
+        "std_ms": 0.2767317017993899,
+        "fps": 87.68164059959625,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.691440323352814,
+        "median_ms": 4.334511995315552,
+        "p95_ms": 13.684889841079713,
+        "p99_ms": 14.224752941131591,
+        "std_ms": 3.2532734601427267,
+        "fps": 175.70244844645975,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.003868167212063,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 153,
+        "stage3": 141,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 847,
+        "S3-S4": 12
+      }
+    },
+    {
+      "method": "S4/FI2",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.48308903312683,
+        "median_ms": 11.468367576599121,
+        "p95_ms": 11.720542383193969,
+        "p99_ms": 12.040089950561523,
+        "std_ms": 0.21671019787076126,
+        "fps": 87.08458125815831,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 11.711225177764893,
+        "median_ms": 12.67251205444336,
+        "p95_ms": 13.19659390449524,
+        "p99_ms": 13.386895484924317,
+        "std_ms": 1.3165708150693491,
+        "fps": 85.38816262354983,
+        "measurements": 1000
+      },
+      "paired_speedup": 0.9805198737813354,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 500500,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S3-S4/FI2",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.378304329872131,
+        "median_ms": 11.338863849639893,
+        "p95_ms": 11.718501091003418,
+        "p99_ms": 12.792105083465575,
+        "std_ms": 0.24986485198072844,
+        "fps": 87.88655769864067,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 10.029488031864167,
+        "median_ms": 12.559360027313232,
+        "p95_ms": 12.99870743751526,
+        "p99_ms": 13.225711917877197,
+        "std_ms": 2.841083150393131,
+        "fps": 99.7059866688062,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.1344850598278506,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 500500,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S3-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI2",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.817664662361144,
+        "median_ms": 11.564863681793213,
+        "p95_ms": 13.223575830459595,
+        "p99_ms": 15.261726579666139,
+        "std_ms": 0.8135985599894524,
+        "fps": 84.61908749069227,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.640419184923172,
+        "median_ms": 12.578735828399658,
+        "p95_ms": 13.405335807800293,
+        "p99_ms": 14.817334423065185,
+        "std_ms": 4.4758270689159625,
+        "fps": 115.73512564586203,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3677189045390306,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 252392,
+        "stage3": 252392,
+        "stage4": 252392,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI2": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI4",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.8015296087265,
+        "median_ms": 11.609087944030762,
+        "p95_ms": 13.176268768310546,
+        "p99_ms": 14.638129482269285,
+        "std_ms": 0.6619799542691482,
+        "fps": 84.73477872398523,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.498052033901215,
+        "median_ms": 4.140031814575195,
+        "p95_ms": 13.276365041732788,
+        "p99_ms": 14.664079647064208,
+        "std_ms": 3.982632962562784,
+        "fps": 153.89227337406118,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8161642207782158,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 129072,
+        "stage3": 129072,
+        "stage4": 129072,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI4": 1000
+      }
+    },
+    {
+      "method": "S2-S4/FI8",
+      "kind": "fixed",
+      "repetition": 5,
+      "lambda": null,
+      "quantile": null,
+      "variant": null,
+      "paired_full": {
+        "mean_ms": 11.640033024787902,
+        "median_ms": 11.60745620727539,
+        "p95_ms": 11.943065690994263,
+        "p99_ms": 12.746894903182982,
+        "std_ms": 0.2517613932586243,
+        "fps": 85.91040917757374,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.323601791381836,
+        "median_ms": 4.138751983642578,
+        "p95_ms": 13.083652544021607,
+        "p99_ms": 13.50155972480774,
+        "std_ms": 3.0527014730827466,
+        "fps": 187.84274992522163,
+        "measurements": 1000
+      },
+      "paired_speedup": 2.186495812596555,
+      "stage_calls": {
+        "stage1": 500500,
+        "stage2": 66514,
+        "stage3": 66514,
+        "stage4": 66514,
+        "decoder": 500500
+      },
+      "route_counts": {
+        "S2-S4/FI8": 1000
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q20",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 0.4098514739352681,
+      "quantile": 20,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.490652771949769,
+        "median_ms": 11.413439750671387,
+        "p95_ms": 11.89360842704773,
+        "p99_ms": 14.01653398513794,
+        "std_ms": 0.4377392094983784,
+        "fps": 87.02725770646683,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 8.21447577381134,
+        "median_ms": 4.4481120109558105,
+        "p95_ms": 14.182329559326172,
+        "p99_ms": 14.433728733062743,
+        "std_ms": 4.685917029715777,
+        "fps": 121.73631373874288,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.3988297109090326,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 402,
+        "stage3": 398,
+        "stage4": 398,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 398,
+        "S3-S4": 4,
+        "S2-S4": 598
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q35",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 0.7848425765501561,
+      "quantile": 35,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.374871934890747,
+        "median_ms": 11.330048084259033,
+        "p95_ms": 11.693107318878173,
+        "p99_ms": 12.8248100566864,
+        "std_ms": 0.2758724624681755,
+        "fps": 87.91307767893606,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.90025189781189,
+        "median_ms": 4.360191822052002,
+        "p95_ms": 13.914385175704956,
+        "p99_ms": 14.443973350524901,
+        "std_ms": 4.174605725924961,
+        "fps": 144.92224556571708,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.6484719838268203,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 271,
+        "stage3": 271,
+        "stage4": 271,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 271,
+        "S2-S4": 729
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q50",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 1.18049021206853,
+      "quantile": 50,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.521345806121825,
+        "median_ms": 11.391839981079102,
+        "p95_ms": 12.780953884124756,
+        "p99_ms": 13.516912784576412,
+        "std_ms": 0.5375214637092528,
+        "fps": 86.79541581580284,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.413042436361313,
+        "median_ms": 4.334591865539551,
+        "p95_ms": 13.77112798690796,
+        "p99_ms": 14.023865213394165,
+        "std_ms": 3.896099875030877,
+        "fps": 155.9322287234682,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.7965491294423594,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 225,
+        "stage3": 225,
+        "stage4": 225,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 225,
+        "S2-S4": 775
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q65",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 1.8899999324797039,
+      "quantile": 65,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.703053173065186,
+        "median_ms": 11.47327995300293,
+        "p95_ms": 13.225203609466552,
+        "p99_ms": 14.613909425735473,
+        "std_ms": 0.740327678637224,
+        "fps": 85.44778744588808,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 6.325605700492859,
+        "median_ms": 4.396543979644775,
+        "p95_ms": 14.111780738830566,
+        "p99_ms": 15.608934755325317,
+        "std_ms": 3.8340783248048744,
+        "fps": 158.08762786496243,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.8501079149073967,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 201,
+        "stage3": 193,
+        "stage4": 193,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 193,
+        "S2-S4": 799,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q80",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 2.952394341587442,
+      "quantile": 80,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.710881755828858,
+        "median_ms": 11.401215553283691,
+        "p95_ms": 13.154237174987793,
+        "p99_ms": 14.715288953781128,
+        "std_ms": 0.8262297720557192,
+        "fps": 85.3906666338143,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.9954203615188595,
+        "median_ms": 4.3617119789123535,
+        "p95_ms": 13.941452646255492,
+        "p99_ms": 15.380551490783692,
+        "std_ms": 3.537105995763701,
+        "fps": 166.79397601849945,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9533045307372012,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 177,
+        "stage3": 161,
+        "stage4": 161,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 161,
+        "S2-S4": 823,
+        "S3-S4": 16
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q90",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 4.6759908904405325,
+      "quantile": 90,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.413691967964173,
+        "median_ms": 11.370863914489746,
+        "p95_ms": 11.737099075317383,
+        "p99_ms": 12.499527711868284,
+        "std_ms": 0.2552974201861534,
+        "fps": 87.61406938322754,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.825102616786957,
+        "median_ms": 4.3673601150512695,
+        "p95_ms": 13.826099109649657,
+        "p99_ms": 14.194882402420044,
+        "std_ms": 3.377851409313412,
+        "fps": 171.67079548404345,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.959397579550247,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 161,
+        "stage3": 153,
+        "stage4": 149,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 149,
+        "S2-S4": 839,
+        "S4": 4,
+        "S3-S4": 8
+      }
+    },
+    {
+      "method": "HCPR-NewCost/q95",
+      "kind": "hcpr",
+      "repetition": 5,
+      "lambda": 7.857380506202121,
+      "quantile": 95,
+      "variant": "HCPR-NewCost",
+      "paired_full": {
+        "mean_ms": 11.391240951538085,
+        "median_ms": 11.342720031738281,
+        "p95_ms": 11.801637220382691,
+        "p99_ms": 12.424048824310303,
+        "std_ms": 0.26240572529154316,
+        "fps": 87.78674810359239,
+        "measurements": 1000
+      },
+      "policy": {
+        "mean_ms": 5.738329316139221,
+        "median_ms": 4.362655878067017,
+        "p95_ms": 13.737114000320435,
+        "p99_ms": 14.345103616714475,
+        "std_ms": 3.273287953439741,
+        "fps": 174.26674993843076,
+        "measurements": 1000
+      },
+      "paired_speedup": 1.9851145383900997,
+      "stage_calls": {
+        "stage1": 1000,
+        "stage2": 153,
+        "stage3": 141,
+        "stage4": 141,
+        "decoder": 1000
+      },
+      "route_counts": {
+        "Full": 141,
+        "S2-S4": 847,
+        "S3-S4": 12
+      }
+    }
+  ],
+  "summary": {
+    "S4/FI2": {
+      "repetitions": 5,
+      "mean_speedup": 0.9681932560000265,
+      "std_speedup": 0.01765364210545706,
+      "min_speedup": 0.9418207159388636,
+      "max_speedup": 0.9894608369099477,
+      "ci95": [
+        0.9519569079855621,
+        0.9830647512845333
+      ]
+    },
+    "S3-S4/FI2": {
+      "repetitions": 5,
+      "mean_speedup": 1.131843984681042,
+      "std_speedup": 0.02066570430939395,
+      "min_speedup": 1.1008027979133534,
+      "max_speedup": 1.1644232905468834,
+      "ci95": [
+        1.114275702679152,
+        1.150125767034322
+      ]
+    },
+    "S2-S4/FI2": {
+      "repetitions": 5,
+      "mean_speedup": 1.3339804349779958,
+      "std_speedup": 0.02627526311382682,
+      "min_speedup": 1.2886331385768222,
+      "max_speedup": 1.3677189045390306,
+      "ci95": [
+        1.3106912015442393,
+        1.3544125635014184
+      ]
+    },
+    "S2-S4/FI4": {
+      "repetitions": 5,
+      "mean_speedup": 1.7962369853771052,
+      "std_speedup": 0.014049224301245198,
+      "min_speedup": 1.7802861297798263,
+      "max_speedup": 1.8161642207782158,
+      "ci95": [
+        1.784123256999766,
+        1.8084844721128284
+      ]
+    },
+    "S2-S4/FI8": {
+      "repetitions": 5,
+      "mean_speedup": 2.147952925909149,
+      "std_speedup": 0.08469494633523991,
+      "min_speedup": 1.9840894131979443,
+      "max_speedup": 2.2288335441229146,
+      "ci95": [
+        2.061855691594541,
+        2.2053692983994155
+      ]
+    },
+    "HCPR-NewCost/q20": {
+      "repetitions": 5,
+      "mean_speedup": 1.4229041616819447,
+      "std_speedup": 0.0887978658843035,
+      "min_speedup": 1.3277929046681478,
+      "max_speedup": 1.5918942703337322,
+      "ci95": [
+        1.3562076271645018,
+        1.5143196731419397
+      ]
+    },
+    "HCPR-NewCost/q35": {
+      "repetitions": 5,
+      "mean_speedup": 1.6235020834094847,
+      "std_speedup": 0.07465502081749105,
+      "min_speedup": 1.4769402495607808,
+      "max_speedup": 1.6874186605464563,
+      "ci95": [
+        1.546863926084605,
+        1.6720761181331387
+      ]
+    },
+    "HCPR-NewCost/q50": {
+      "repetitions": 5,
+      "mean_speedup": 1.7285950926404205,
+      "std_speedup": 0.09743475590721891,
+      "min_speedup": 1.543078562223488,
+      "max_speedup": 1.8113546136648797,
+      "ci95": [
+        1.632892983586077,
+        1.7967852052981623
+      ]
+    },
+    "HCPR-NewCost/q65": {
+      "repetitions": 5,
+      "mean_speedup": 1.8405759586329384,
+      "std_speedup": 0.008293857916210328,
+      "min_speedup": 1.8296754960941177,
+      "max_speedup": 1.85042230122671,
+      "ci95": [
+        1.8335066032501914,
+        1.8476453140156852
+      ]
+    },
+    "HCPR-NewCost/q80": {
+      "repetitions": 5,
+      "mean_speedup": 1.9460577335979437,
+      "std_speedup": 0.04457720052369495,
+      "min_speedup": 1.8986393008716598,
+      "max_speedup": 2.0233983398722284,
+      "ci95": [
+        1.9109521678194636,
+        1.985028303225063
+      ]
+    },
+    "HCPR-NewCost/q90": {
+      "repetitions": 5,
+      "mean_speedup": 2.012761446085843,
+      "std_speedup": 0.06751714632298668,
+      "min_speedup": 1.959397579550247,
+      "max_speedup": 2.143952733524708,
+      "ci95": [
+        1.9684002803699123,
+        2.079715312459276
+      ]
+    },
+    "HCPR-NewCost/q95": {
+      "repetitions": 5,
+      "mean_speedup": 1.9970174335151232,
+      "std_speedup": 0.011061430223691548,
+      "min_speedup": 1.9822960763551207,
+      "max_speedup": 2.009244102328276,
+      "ci95": [
+        1.9873134101491037,
+        2.006296987689746
+      ]
+    }
+  }
+}
