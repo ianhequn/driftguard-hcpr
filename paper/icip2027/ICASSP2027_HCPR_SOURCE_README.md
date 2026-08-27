@@ -25,4 +25,3 @@ generation does not run inference or change any experiment.
 The manuscript reports the frozen HCPR results on VSPW validation with
 SegFormer-B0/B1 and RTX 4090 D/RTX 3080 Ti. It does not include datasets,
 checkpoints, raw videos, profiler traces, or result dumps.
-
