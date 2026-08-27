@@ -2,7 +2,7 @@
   "round": 11,
   "status": "complete",
   "branch": "research/round11b-cross-hardware",
-  "git_commit": "pending-final-commit",
+  "git_commit": "d59980d",
   "parent_round11a_commit": "4c6bc07b0f8fc78dd6c94d6a1d10f159c0f3221a",
   "gpu": "NVIDIA GeForce RTX 3080 Ti",
   "software": {
