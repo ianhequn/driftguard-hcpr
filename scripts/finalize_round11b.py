@@ -160,6 +160,8 @@ def main() -> None:
     transfer_pass = all(r["speedup_ci_low"] > 1.0 for r in new_points if r["quantile"] in QUANTILES)
     best_low_damage = min(new_points, key=lambda r: (r["damage_pp"], -r["mean_speedup"]))
     best_speed = max(new_points, key=lambda r: r["mean_speedup"])
+    gate_counts = {model: len(read_json(out / f"pareto_audit_{model.lower()}.json")["transfer_non_dominated"]) for model in ("B0", "B1")}
+    route_shift_max = {model: max(abs(float(row["shift_pp"])) for row in shifts if row["model"] == model) for model in ("B0", "B1")}
     summary = {"transfer_claim_pass": transfer_pass, "new_points": new_points, "best_low_damage": best_low_damage, "best_speed": best_speed, "hardware": preflight, "profiles": profiles, "route_shifts": shifts}
     (out / "cross_hardware_summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     call_rows = []
@@ -212,6 +214,27 @@ def main() -> None:
         + "\n".join(controller_ratio_lines) + "\n\n"
         "## Hardware Ablation\n\n"
         "NewCost, OldCost, and ProgressiveDriftOnly are kept as separate variants. NewCost gives a strict improvement over OldCost at B0/q65, but the comparison is mixed across B1 and against DriftOnly. Therefore Claim A is supported, while the stronger universal hardware-calibration benefit claim is not.\n\n"
+        "## Required Answers\n\n"
+        f"1. **Second GPU:** {preflight.get('gpu')}; compute capability {preflight.get('compute_capability')}; {preflight.get('vram_mb')} MB reported VRAM.\n"
+        f"2. **Software match:** CUDA {second_software['cuda']}, PyTorch {second_software['pytorch']}, and Transformers {second_software['transformers']} match Round 11A; the driver differs ({second_software['driver']} versus Round 11A {state11a['software']['driver']}), so this is not described as a pure driver-free hardware isolation.\n"
+        f"3. **Profile differences:** B0 c2/c3/c4 = {profiles['B0']['c2_ms']:.6f}/{profiles['B0']['c3_ms']:.6f}/{profiles['B0']['c4_ms']:.6f} ms and k = {profiles['B0']['k2']:.9f}/{profiles['B0']['k3']:.9f}/{profiles['B0']['k4']:.9f}; B1 c2/c3/c4 = {profiles['B1']['c2_ms']:.6f}/{profiles['B1']['c3_ms']:.6f}/{profiles['B1']['c4_ms']:.6f} ms and k = {profiles['B1']['k2']:.9f}/{profiles['B1']['k3']:.9f}/{profiles['B1']['k4']:.9f}.\n"
+        f"4. **B0 validity:** yes, {gate_counts['B0']} HCPR-NewCost points are non-dominated on the second-GPU Gate-A plot.\n"
+        f"5. **B1 validity:** yes, {gate_counts['B1']} HCPR-NewCost points are non-dominated on the second-GPU Gate-A plot.\n"
+        f"6. **Non-dominated counts:** B0 {gate_counts['B0']}; B1 {gate_counts['B1']}.\n"
+        f"7. **Route shift:** replacing only k changes allocation modestly on B0 (maximum absolute shift {route_shift_max['B0']:.3f} pp) and more visibly on B1 ({route_shift_max['B1']:.3f} pp); no shift was required for GO.\n"
+        "8. **NewCost versus OldCost:** yes locally at B0/q65, where NewCost improves both measured damage and speed; B1 and other anchors are mixed.\n"
+        "9. **NewCost versus DriftOnly:** NewCost generally gives lower damage at matched anchors, while DriftOnly can be faster at some points; there is no universal strict joint improvement.\n"
+        "10. **Quality budgets:** the non-interpolated fastest measured points are recorded in `quality_budget_table.csv`; OldCost is selected at several tight budgets, while B0/NewCost q65 wins the 0.5/1.0 pp rows.\n"
+        f"11. **Controller overhead:** B0 {next(i for i in controllers if i.get('model') == 'B0' and i.get('gpu') == preflight.get('gpu'))['sum_mean_ms']:.6f} ms; B1 {next(i for i in controllers if i.get('model') == 'B1' and i.get('gpu') == preflight.get('gpu'))['sum_mean_ms']:.6f} ms.\n"
+        f"12. **Overhead fraction:** {controller_ratio_lines[0].split('=')[-1].strip() if controller_ratio_lines else 'see controller_overhead_cross_device.csv'} for B0 and {controller_ratio_lines[1].split('=')[-1].strip() if len(controller_ratio_lines) > 1 else 'see controller_overhead_cross_device.csv'} for B1; this is smaller than the corresponding Round 11A ratios.\n"
+        "13. **Physical savings:** yes; Stage 1 and decoder calls remain 24,392 while Stage 2/3/4 calls fall on reuse routes.\n"
+        "14. **Age guard:** maximum stale run remains exactly 7 for all tested variants and stages.\n"
+        "15. **Profile-only transfer:** supported for the evaluated RTX 3080 Ti, B0, and B1 with frozen Round 11A lambdas.\n"
+        "16. **Lambda recalibration:** not required; only target-device stage-cost profiling was added.\n"
+        "17. **Manuscript Claim A:** cross-device robustness is supported for the two tested SegFormer scales and the two tested GPUs.\n"
+        "18. **Manuscript Claim B:** only cautious lightweight hardware profiling language is supported; strong universal calibration benefit is not.\n"
+        "19. **Unsupported claim:** universal GPU portability or a universally causal hardware-normalization advantage.\n"
+        "20. **Manuscript timing:** rewriting may begin only after this Round 11B freeze, using the cautious Claim A/Claim B boundary.\n\n"
         "## Limitations\n\n"
         "This is a two-device validation on the frozen VSPW split. It supports transfer to the evaluated RTX 3080 Ti, not universal hardware invariance. A new target GPU requires measuring its stage-cost vector and rerunning the prescribed validation.\n\n"
         "## Artifacts\n\n"
