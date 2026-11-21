@@ -1,0 +1,27 @@
+name: algorithm-tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  cpu-semantic-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CPU test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install pytest transformers pillow numpy pyyaml
+      - name: Run algorithm-semantic tests
+        run: >-
+          python -m pytest -q
+          tests/test_hcpr_pipeline.py
+          tests/test_round11b_variants.py
+          tests/test_audit_mmm_pareto_consistency.py
+          tests/test_audit_checkpoint_inventory.py

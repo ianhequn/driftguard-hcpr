@@ -78,6 +78,9 @@ reports/*
 !reports/round765_progress.md
 !reports/round765_official_semantics_audit.md
 !reports/round765_label_contract.md
+!reports/post_mmm/
+!reports/post_mmm/pareto_consistency_audit.json
+!reports/post_mmm/pareto_consistency_audit.md
 !reports/round765_final_report.md
 !reports/round76_restart_state.json
 !reports/round76_restart_progress.md

@@ -1,0 +1,56 @@
+protocol_id: POSTMMM-R1
+status: prepared_not_run
+scope: device_matched_kill_test_a
+models: [B0, B1]
+checkpoint_contract:
+  same_checkpoint_for_fixed_and_hcpr: true
+  sha256_required: true
+  expected_historical_sha256:
+    B0: 8b673cb6bc173f3e986da8446c2c3debacc77779109b4916b230af36f197f17b
+    B1: 892a6589874d762c6b9c911e559e062fccbb226b33309aa6c8317dbec091fcfb
+  accepted_post_mmm_lineage: new_reproduction_with_recorded_sha256
+dataset_contract:
+  split: val
+  natural_video_order: true
+  cache_reset: video_boundary
+  first_frame: full
+  manifest_sha256: TODO_EVIDENCE_REQUIRED
+input_contract:
+  resolution: [512, 512]
+  batch_size: 1
+  precision: bf16
+timing_contract:
+  input: cuda_resident
+  warmup: 200
+  measurements: 1000
+  repetitions: 5
+  paired_full_in_same_repetition: true
+  confidence_interval_unit: video
+fixed_grid:
+  boundaries: [S4, S3-S4, S2-S4]
+  refresh_intervals: [1, 2, 3, 4, 6, 8]
+hcpr_grid:
+  quantiles: [20, 35, 50, 65, 80, 90, 95]
+  controller: HCPR
+  calibration_videos: 32
+  calibration_seed: 42
+  calibration_labels: false
+  lambda_grid: TODO_EVIDENCE_REQUIRED
+required_outputs:
+  - absolute_latency_ms
+  - speedup
+  - speedup_ci_95
+  - miou
+  - miou_damage_pp
+  - stage_calls_per_frame
+  - route_counts
+  - checkpoint_sha256
+  - git_commit
+  - environment_fingerprint
+  - dataset_manifest_sha256
+  - protocol_id
+fail_closed:
+  reject_mixed_device: true
+  reject_mixed_quality_latency_protocol: true
+  reject_missing_checkpoint_sha256: true
+  reject_reusing_round10_or_round11_latency: true

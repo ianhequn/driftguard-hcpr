@@ -1,0 +1,13 @@
+{
+  "bundle_id": "post_mmm_kill_test_a",
+  "protocol_id": "POSTMMM-R1",
+  "status": "prepared_not_run",
+  "purpose": "device-matched fixed versus HCPR Pareto kill test",
+  "models": ["B0", "B1"],
+  "checkpoint_sha256_required": true,
+  "fixed_grid": {"boundaries": ["S4", "S3-S4", "S2-S4"], "refresh_intervals": [1, 2, 3, 4, 6, 8]},
+  "hcpr_quantiles": [20, 35, 50, 65, 80, 90, 95],
+  "timing": {"warmup": 200, "measurements": 1000, "repetitions": 5, "ci_unit": "video"},
+  "forbidden_inputs": ["Round10 latency", "Round11A latency", "Round11B latency", "mixed quality/timing protocol"],
+  "required_artifact_fields": ["checkpoint_sha256", "git_commit", "environment_fingerprint", "dataset_manifest_sha256", "device", "protocol_id", "absolute_latency_ms", "speedup", "speedup_ci_95", "miou_damage_pp", "stage_calls_per_frame"]
+}

@@ -1,0 +1,46 @@
+experiment_id: POSTMMM-R1
+model: SegFormer-B1
+lineage: new_reproduction_not_historical_checkpoint
+base_checkpoint:
+  historical_path: /root/autodl-tmp/models/segformer-b1-ade512-source
+  source_sha256: 4dbca19129b1373ca6bce75d68834a246d6b1e5e5202886183cd284d2f41abef
+  target_frozen_sha256: 892a6589874d762c6b9c911e559e062fccbb226b33309aa6c8317dbec091fcfb
+  local_recovery: NOT_RECOVERED
+dataset:
+  name: VSPW
+  root: TODO_EVIDENCE_REQUIRED
+  train_split: train.txt
+  validation_split: val.txt
+  validation_videos: 343
+  validation_frames: 24392
+  num_labels: 124
+  ignore_index: 255
+  mapping: official_normalization_then_valid_range_0_to_123_else_255
+  dataset_manifest_sha256: TODO_EVIDENCE_REQUIRED
+training:
+  steps: 40000
+  batch_size: 8
+  accumulation: 1
+  optimizer: AdamW
+  learning_rate: 0.00006
+  weight_decay: 0.01
+  scheduler: linear_decay_with_warmup
+  warmup_ratio: 0.02
+  warmup_steps: 800
+  max_grad_norm: 1.0
+  seed: 42
+  precision: bf16
+  resolution: [512, 512]
+  workers: 8
+  cudnn_benchmark: true
+  deterministic: false
+  validation_frequency: 10000
+selection:
+  rule: best_validation_miou
+  historical_selected_step: 40000
+  exact_reproduction_rule: TODO_EVIDENCE_REQUIRED
+outputs:
+  checkpoint_sha256: TODO_EVIDENCE_REQUIRED
+  git_commit: TODO_EVIDENCE_REQUIRED
+  environment_fingerprint: TODO_EVIDENCE_REQUIRED
+  protocol_id: POSTMMM-R1

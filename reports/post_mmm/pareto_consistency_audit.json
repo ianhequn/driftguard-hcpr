@@ -1,0 +1,1267 @@
+{
+  "audit": "MMM 2027 Pareto consistency audit",
+  "definition": "A dominates B when damage is no larger, speedup is no smaller, and one inequality is strict.",
+  "strict_rule": "Points from different device, quality protocol, or latency protocol are never placed in one strict Pareto set.",
+  "points": [
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S4/FI2",
+      "boundary": "S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s4_fi2.json",
+      "latency_source": "results\\R10_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 0.09102398279099422,
+      "speedup": 1.0676994707344953,
+      "speedup_ci_low": 1.0357762286866148,
+      "speedup_ci_high": 1.0996227127823759,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S3-S4/FI2",
+      "boundary": "S3-S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s3_s4_fi2.json",
+      "latency_source": "results\\R10_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 0.18388048211957497,
+      "speedup": 1.2536412072802408,
+      "speedup_ci_low": 1.220241589573783,
+      "speedup_ci_high": 1.2858692389422957,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S2-S4/FI2",
+      "boundary": "S2-S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s2_s4_fi2.json",
+      "latency_source": "results\\R10_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 0.23130394519251807,
+      "speedup": 1.5053041124133684,
+      "speedup_ci_low": 1.389765328281415,
+      "speedup_ci_high": 1.6208428965453212,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S2-S4/FI4",
+      "boundary": "S2-S4",
+      "interval": 4,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s2_s4_fi4.json",
+      "latency_source": "results\\R10_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 0.8253910316201873,
+      "speedup": 2.057414274655143,
+      "speedup_ci_low": 2.0129055509605362,
+      "speedup_ci_high": 2.1228400591879644,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S2-S4/FI8",
+      "boundary": "S2-S4",
+      "interval": 8,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s2_s4_fi8.json",
+      "latency_source": "results\\R10_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 1.835033282461196,
+      "speedup": 2.3957338187479125,
+      "speedup_ci_low": 2.291725316089612,
+      "speedup_ci_high": 2.49167217644952,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S4/FI2",
+      "boundary": "S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s4_fi2.json",
+      "latency_source": "results\\R10_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 0.11820466459607215,
+      "speedup": 1.1111701844245907,
+      "speedup_ci_low": 1.0605948320814136,
+      "speedup_ci_high": 1.200249590319326,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S3-S4/FI2",
+      "boundary": "S3-S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s3_s4_fi2.json",
+      "latency_source": "results\\R10_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 0.28288357383501883,
+      "speedup": 1.3314541439551575,
+      "speedup_ci_low": 1.27863071569814,
+      "speedup_ci_high": 1.4057030405802222,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S2-S4/FI2",
+      "boundary": "S2-S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s2_s4_fi2.json",
+      "latency_source": "results\\R10_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 0.3967076407124237,
+      "speedup": 1.553820706959117,
+      "speedup_ci_low": 1.5159613577936473,
+      "speedup_ci_high": 1.6077404303775125,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S2-S4/FI4",
+      "boundary": "S2-S4",
+      "interval": 4,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s2_s4_fi4.json",
+      "latency_source": "results\\R10_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 1.2802349556489512,
+      "speedup": 1.9519847263512986,
+      "speedup_ci_low": 1.7920237877613654,
+      "speedup_ci_high": 2.097063229291599,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "S2-S4/FI8",
+      "boundary": "S2-S4",
+      "interval": 8,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s2_s4_fi8.json",
+      "latency_source": "results\\R10_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R10-FIXED-4090D-v1",
+      "measurement_protocol_id": "R10-FIXED-4090D-v1",
+      "mIoU_damage_pp": 2.7154598725672994,
+      "speedup": 2.282435497601375,
+      "speedup_ci_low": 2.086018274317198,
+      "speedup_ci_high": 2.4788527208855524,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S4/FI2",
+      "boundary": "S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s4_fi2.json",
+      "latency_source": "results\\R11B_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 0.09102398279099422,
+      "speedup": 0.9914831728402774,
+      "speedup_ci_low": 0.9830326913137057,
+      "speedup_ci_high": 0.998521289627573,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S3-S4/FI2",
+      "boundary": "S3-S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s3_s4_fi2.json",
+      "latency_source": "results\\R11B_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 0.18388048211957497,
+      "speedup": 1.1404593649147803,
+      "speedup_ci_low": 1.1329810095259005,
+      "speedup_ci_high": 1.1479377203036598,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S2-S4/FI2",
+      "boundary": "S2-S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s2_s4_fi2.json",
+      "latency_source": "results\\R11B_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 0.23130394519251807,
+      "speedup": 1.342385962863585,
+      "speedup_ci_low": 1.3252057820739054,
+      "speedup_ci_high": 1.3543182515384555,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S2-S4/FI4",
+      "boundary": "S2-S4",
+      "interval": 4,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s2_s4_fi4.json",
+      "latency_source": "results\\R11B_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 0.8253910316201873,
+      "speedup": 1.8172955139509201,
+      "speedup_ci_low": 1.8053326050774536,
+      "speedup_ci_high": 1.8349164778266154,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S2-S4/FI8",
+      "boundary": "S2-S4",
+      "interval": 8,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b0/s2_s4_fi8.json",
+      "latency_source": "results\\R11B_E04_latency\\b0.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 1.835033282461196,
+      "speedup": 2.2080511971316983,
+      "speedup_ci_low": 2.1865326838195878,
+      "speedup_ci_high": 2.2296631723091904,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S4/FI2",
+      "boundary": "S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s4_fi2.json",
+      "latency_source": "results\\R11B_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 0.11820466459607215,
+      "speedup": 0.9681932560000265,
+      "speedup_ci_low": 0.9519569079855621,
+      "speedup_ci_high": 0.9830647512845333,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S3-S4/FI2",
+      "boundary": "S3-S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s3_s4_fi2.json",
+      "latency_source": "results\\R11B_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 0.28288357383501883,
+      "speedup": 1.131843984681042,
+      "speedup_ci_low": 1.114275702679152,
+      "speedup_ci_high": 1.150125767034322,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S2-S4/FI2",
+      "boundary": "S2-S4",
+      "interval": 2,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s2_s4_fi2.json",
+      "latency_source": "results\\R11B_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 0.3967076407124237,
+      "speedup": 1.3339804349779958,
+      "speedup_ci_low": 1.3106912015442393,
+      "speedup_ci_high": 1.3544125635014184,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S2-S4/FI4",
+      "boundary": "S2-S4",
+      "interval": 4,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s2_s4_fi4.json",
+      "latency_source": "results\\R11B_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 1.2802349556489512,
+      "speedup": 1.7962369853771052,
+      "speedup_ci_low": 1.784123256999766,
+      "speedup_ci_high": 1.8084844721128284,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "S2-S4/FI8",
+      "boundary": "S2-S4",
+      "interval": 8,
+      "quantile": null,
+      "quality_source": "results/R10_E03_quality/b1/s2_s4_fi8.json",
+      "latency_source": "results\\R11B_E04_latency\\b1.json",
+      "quality_protocol_id": "R10-FIXED-4090D-v1",
+      "latency_protocol_id": "R11B-FIXED-3080Ti-v1",
+      "measurement_protocol_id": "MIXED_PROTOCOL",
+      "mIoU_damage_pp": 2.7154598725672994,
+      "speedup": 2.147952925909149,
+      "speedup_ci_low": 2.061855691594541,
+      "speedup_ci_high": 2.2053692983994155,
+      "valid_for_strict_pareto": false,
+      "invalid_reason": "quality and latency came from different measurement protocols"
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q20",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 20,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.07295820715235157,
+      "speedup": 1.2293888924532796,
+      "speedup_ci_low": 1.1823595996728191,
+      "speedup_ci_high": 1.2706437503229513,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q35",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 35,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.18982594493291427,
+      "speedup": 1.4779595792998952,
+      "speedup_ci_low": 1.3634828743141074,
+      "speedup_ci_high": 1.600866502230954,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q50",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 50,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.2928245397104623,
+      "speedup": 1.609628801500239,
+      "speedup_ci_low": 1.58176902757255,
+      "speedup_ci_high": 1.6384410552424193,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q65",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 65,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.4415153349229317,
+      "speedup": 1.6565603461056906,
+      "speedup_ci_low": 1.6223168827560819,
+      "speedup_ci_high": 1.6811894776859233,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q80",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 80,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.7963186717860671,
+      "speedup": 1.8073756999528228,
+      "speedup_ci_low": 1.7706172895604861,
+      "speedup_ci_high": 1.8517432976872654,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q90",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 90,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.9881747474380365,
+      "speedup": 1.7853033238106342,
+      "speedup_ci_low": 1.7060754496083874,
+      "speedup_ci_high": 1.8646246783442813,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q95",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 95,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 1.3788796201693543,
+      "speedup": 1.8360881709568424,
+      "speedup_ci_low": 1.7835094626309804,
+      "speedup_ci_high": 1.893046563944391,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q20",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 20,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.11487669847503046,
+      "speedup": 1.3229207552427489,
+      "speedup_ci_low": 1.3030070988449787,
+      "speedup_ci_high": 1.3399703653498054,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q35",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 35,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.28249755385680864,
+      "speedup": 1.604621446744949,
+      "speedup_ci_low": 1.5485211432500061,
+      "speedup_ci_high": 1.6931307404661688,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q50",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 50,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.5111035542249287,
+      "speedup": 1.6070618903170995,
+      "speedup_ci_low": 1.559265891626921,
+      "speedup_ci_high": 1.6449581278902379,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q65",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 65,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 0.8298295335656958,
+      "speedup": 1.7069193621430876,
+      "speedup_ci_low": 1.667372393452905,
+      "speedup_ci_high": 1.7446088819629124,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q80",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 80,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 1.124092396312243,
+      "speedup": 1.8192962874015557,
+      "speedup_ci_low": 1.761317584088361,
+      "speedup_ci_high": 1.8772749907147506,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q90",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 90,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 1.6904546550587152,
+      "speedup": 1.8372673543126734,
+      "speedup_ci_low": 1.7318982588396292,
+      "speedup_ci_high": 1.9378313569533745,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 4090 D",
+      "method": "HCPR-NewCost/q95",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 95,
+      "quality_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "latency_source": "reports\\round11a_hcpr_quality_latency_table.csv",
+      "quality_protocol_id": "R11A-HCPR-4090D-v1",
+      "latency_protocol_id": "R11A-HCPR-4090D-v1",
+      "measurement_protocol_id": "R11A-HCPR-4090D-v1",
+      "mIoU_damage_pp": 2.1223289390397913,
+      "speedup": 1.9187589501148605,
+      "speedup_ci_low": 1.869862273635206,
+      "speedup_ci_high": 1.971464512337525,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q20",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 20,
+      "quality_source": "results\\R11B_E03_transfer\\b0\\summary.json",
+      "latency_source": "results\\R11B_E05_latency\\b0\\HCPR-NewCost\\latency.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.07258663733765158,
+      "speedup": 1.3540066449381745,
+      "speedup_ci_low": 1.3322176376286297,
+      "speedup_ci_high": 1.3788343118264361,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q35",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 35,
+      "quality_source": "results\\R11B_E03_transfer\\b0\\summary.json",
+      "latency_source": "results\\R11B_E04_latency\\b0.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.1825897803400589,
+      "speedup": 1.5626593830079578,
+      "speedup_ci_low": 1.5463530441053521,
+      "speedup_ci_high": 1.5789657219105633,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q50",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 50,
+      "quality_source": "results\\R11B_E03_transfer\\b0\\summary.json",
+      "latency_source": "results\\R11B_E04_latency\\b0.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.27352517270893273,
+      "speedup": 1.7623919466137536,
+      "speedup_ci_low": 1.739843862535072,
+      "speedup_ci_high": 1.7882548692969884,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q65",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 65,
+      "quality_source": "results\\R11B_E03_transfer\\b0\\summary.json",
+      "latency_source": "results\\R11B_E05_latency\\b0\\HCPR-NewCost\\latency.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.42793651221408324,
+      "speedup": 1.838211536180772,
+      "speedup_ci_low": 1.78810438835161,
+      "speedup_ci_high": 1.906524417018271,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q80",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 80,
+      "quality_source": "results\\R11B_E03_transfer\\b0\\summary.json",
+      "latency_source": "results\\R11B_E04_latency\\b0.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.7988569377298249,
+      "speedup": 1.9404134979571483,
+      "speedup_ci_low": 1.9018175113337386,
+      "speedup_ci_high": 1.9697512214972779,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q90",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 90,
+      "quality_source": "results\\R11B_E03_transfer\\b0\\summary.json",
+      "latency_source": "results\\R11B_E04_latency\\b0.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.9896651936077305,
+      "speedup": 1.9827800980056707,
+      "speedup_ci_low": 1.9662307587467283,
+      "speedup_ci_high": 2.0029855500796923,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B0",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q95",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 95,
+      "quality_source": "results\\R11B_E03_transfer\\b0\\summary.json",
+      "latency_source": "results\\R11B_E05_latency\\b0\\HCPR-NewCost\\latency.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 1.393972695178869,
+      "speedup": 2.0100914075579746,
+      "speedup_ci_low": 1.9907491281224512,
+      "speedup_ci_high": 2.0265483428685855,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q20",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 20,
+      "quality_source": "results\\R11B_E03_transfer\\b1\\summary.json",
+      "latency_source": "results\\R11B_E05_latency\\b1\\HCPR-NewCost\\latency.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.1192988421089336,
+      "speedup": 1.3436238068732949,
+      "speedup_ci_low": 1.2674241721438164,
+      "speedup_ci_high": 1.3916934716188294,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q35",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 35,
+      "quality_source": "results\\R11B_E03_transfer\\b1\\summary.json",
+      "latency_source": "results\\R11B_E04_latency\\b1.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.290302403051218,
+      "speedup": 1.6235020834094847,
+      "speedup_ci_low": 1.546863926084605,
+      "speedup_ci_high": 1.6720761181331387,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q50",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 50,
+      "quality_source": "results\\R11B_E03_transfer\\b1\\summary.json",
+      "latency_source": "results\\R11B_E04_latency\\b1.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.5223107347810785,
+      "speedup": 1.7285950926404205,
+      "speedup_ci_low": 1.632892983586077,
+      "speedup_ci_high": 1.7967852052981623,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q65",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 65,
+      "quality_source": "results\\R11B_E03_transfer\\b1\\summary.json",
+      "latency_source": "results\\R11B_E05_latency\\b1\\HCPR-NewCost\\latency.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 0.8746195848281679,
+      "speedup": 1.8493508499120828,
+      "speedup_ci_low": 1.8385503704114563,
+      "speedup_ci_high": 1.8601513294127094,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q80",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 80,
+      "quality_source": "results\\R11B_E03_transfer\\b1\\summary.json",
+      "latency_source": "results\\R11B_E04_latency\\b1.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 1.1623519145868622,
+      "speedup": 1.9460577335979437,
+      "speedup_ci_low": 1.9109521678194636,
+      "speedup_ci_high": 1.985028303225063,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q90",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 90,
+      "quality_source": "results\\R11B_E03_transfer\\b1\\summary.json",
+      "latency_source": "results\\R11B_E04_latency\\b1.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 1.742581655997627,
+      "speedup": 2.012761446085843,
+      "speedup_ci_low": 1.9684002803699123,
+      "speedup_ci_high": 2.079715312459276,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    },
+    {
+      "model": "B1",
+      "device": "NVIDIA GeForce RTX 3080 Ti",
+      "method": "HCPR-NewCost/q95",
+      "boundary": "progressive-adaptive",
+      "interval": null,
+      "quantile": 95,
+      "quality_source": "results\\R11B_E03_transfer\\b1\\summary.json",
+      "latency_source": "results\\R11B_E05_latency\\b1\\HCPR-NewCost\\latency.json",
+      "quality_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "latency_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "measurement_protocol_id": "R11B-HCPR-3080Ti-v1",
+      "mIoU_damage_pp": 2.1789207585231454,
+      "speedup": 2.092947505039615,
+      "speedup_ci_low": 1.909252206406991,
+      "speedup_ci_high": 2.2766428036722397,
+      "valid_for_strict_pareto": true,
+      "invalid_reason": null
+    }
+  ],
+  "strict_pareto_sets": {},
+  "diagnostic_comparisons": {
+    "source_4090D": {
+      "B0": {
+        "numeric_only": true,
+        "reason": "historical comparison; protocol mismatch is retained as an explicit warning",
+        "hcpr_non_dominated_count": 5,
+        "hcpr_point_count": 7,
+        "points": [
+          {
+            "method": "HCPR-NewCost/q20",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q35",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q50",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q65",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q80",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q90",
+            "dominators": [
+              "S2-S4/FI4",
+              "HCPR-NewCost/q80"
+            ]
+          },
+          {
+            "method": "HCPR-NewCost/q95",
+            "dominators": [
+              "S2-S4/FI4"
+            ]
+          }
+        ]
+      },
+      "B1": {
+        "numeric_only": true,
+        "reason": "historical comparison; protocol mismatch is retained as an explicit warning",
+        "hcpr_non_dominated_count": 5,
+        "hcpr_point_count": 7,
+        "points": [
+          {
+            "method": "HCPR-NewCost/q20",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q35",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q50",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q65",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q80",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q90",
+            "dominators": [
+              "S2-S4/FI4"
+            ]
+          },
+          {
+            "method": "HCPR-NewCost/q95",
+            "dominators": [
+              "S2-S4/FI4"
+            ]
+          }
+        ]
+      }
+    },
+    "target_3080Ti": {
+      "B0": {
+        "numeric_only": true,
+        "reason": "historical comparison; protocol mismatch is retained as an explicit warning",
+        "hcpr_non_dominated_count": 7,
+        "hcpr_point_count": 7,
+        "points": [
+          {
+            "method": "HCPR-NewCost/q20",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q35",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q50",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q65",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q80",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q90",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q95",
+            "dominators": []
+          }
+        ]
+      },
+      "B1": {
+        "numeric_only": true,
+        "reason": "historical comparison; protocol mismatch is retained as an explicit warning",
+        "hcpr_non_dominated_count": 7,
+        "hcpr_point_count": 7,
+        "points": [
+          {
+            "method": "HCPR-NewCost/q20",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q35",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q50",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q65",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q80",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q90",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q95",
+            "dominators": []
+          }
+        ]
+      }
+    }
+  },
+  "paper_claim_checks": {
+    "table_2_source_anchor_values_match_artifact": true,
+    "table_2_target_anchor_values_match_artifact": true,
+    "table_3_fixed_values_match_round10_artifact": true,
+    "table_3_has_explicit_gpu_label": false,
+    "paper_mentions_source_all_7_non_dominated": true,
+    "paper_claimed_target_counts": true,
+    "source_numeric_b0_q90_dominated_by": [
+      "S2-S4/FI4",
+      "HCPR-NewCost/q80"
+    ],
+    "source_numeric_b0_q95_dominated_by": [
+      "S2-S4/FI4"
+    ],
+    "source_numeric_counts": {
+      "B0": {
+        "numeric_only": true,
+        "reason": "historical comparison; protocol mismatch is retained as an explicit warning",
+        "hcpr_non_dominated_count": 5,
+        "hcpr_point_count": 7,
+        "points": [
+          {
+            "method": "HCPR-NewCost/q20",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q35",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q50",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q65",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q80",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q90",
+            "dominators": [
+              "S2-S4/FI4",
+              "HCPR-NewCost/q80"
+            ]
+          },
+          {
+            "method": "HCPR-NewCost/q95",
+            "dominators": [
+              "S2-S4/FI4"
+            ]
+          }
+        ]
+      },
+      "B1": {
+        "numeric_only": true,
+        "reason": "historical comparison; protocol mismatch is retained as an explicit warning",
+        "hcpr_non_dominated_count": 5,
+        "hcpr_point_count": 7,
+        "points": [
+          {
+            "method": "HCPR-NewCost/q20",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q35",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q50",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q65",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q80",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q90",
+            "dominators": [
+              "S2-S4/FI4"
+            ]
+          },
+          {
+            "method": "HCPR-NewCost/q95",
+            "dominators": [
+              "S2-S4/FI4"
+            ]
+          }
+        ]
+      }
+    },
+    "target_numeric_counts": {
+      "B0": {
+        "numeric_only": true,
+        "reason": "historical comparison; protocol mismatch is retained as an explicit warning",
+        "hcpr_non_dominated_count": 7,
+        "hcpr_point_count": 7,
+        "points": [
+          {
+            "method": "HCPR-NewCost/q20",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q35",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q50",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q65",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q80",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q90",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q95",
+            "dominators": []
+          }
+        ]
+      },
+      "B1": {
+        "numeric_only": true,
+        "reason": "historical comparison; protocol mismatch is retained as an explicit warning",
+        "hcpr_non_dominated_count": 7,
+        "hcpr_point_count": 7,
+        "points": [
+          {
+            "method": "HCPR-NewCost/q20",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q35",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q50",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q65",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q80",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q90",
+            "dominators": []
+          },
+          {
+            "method": "HCPR-NewCost/q95",
+            "dominators": []
+          }
+        ]
+      }
+    },
+    "table_5_cost_values_match_artifact": true,
+    "table_6_ablation_values_match_artifact": false,
+    "table_6_ablation_mismatches": [
+      {
+        "model": "B0",
+        "variant": "ProgressiveDriftOnly",
+        "quantile": 95,
+        "artifact": "1.778/2.065"
+      }
+    ]
+  },
+  "findings": [
+    "Round 10 fixed-policy quality and latency are a complete same-protocol 4090D set.",
+    "Round 11A HCPR is a separate same-protocol 4090D set; combining it with Round 10 fixed points is diagnostic-only.",
+    "Round 11B target fixed points mix Round 10 quality with Round 11B latency; they are invalid for a strict same-protocol set.",
+    "Round 11B HCPR quality and latency form a same-protocol 3080 Ti set, but no same-protocol target fixed quality sweep is present."
+  ]
+}
